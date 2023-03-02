@@ -1,0 +1,196 @@
+design:
+  end_duration: 1.0
+  fix_movie_interval: 1
+  n_trials: 1
+  post_fix_movie_interval: 0.75
+  pre_fix_movie_interval: 0.0
+  start_duration: 1.0
+eyetracker:
+  address: 100.1.1.1
+  dot_size: 0.1
+  options:
+    calibration_type: HV13
+monitor:
+  distance: 165
+  gamma: 1
+  name: 7T
+  verbose: true
+  width: 69
+path:
+  category_path: /stimulis/raws/
+  information_list_original: /information_list_originals.csv
+  output_path': /experiment/output/
+  reversed_path: /stimulis/reversed/
+  rootpath: /tank/shared/2022/arrow_of_time/arrow_of_time4
+  rootpath_video: zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4
+  server_stimuli_path: zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/
+  setting_temp: /settings_code/settings_template.yml
+  settings_path: /experiment/settings/
+  stimuli_path: /stimulis_flat/
+  streched_path: /stimulis/resampled/
+stimuli:
+  aperture_radius: 400
+  fix_color:
+  - 1
+  - 1
+  - 1
+  fix_line_width: 0.25
+  fix_radius: 6
+  movie_files:
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/S_yt-BLmwmX-mni8_56.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/S_m-aeoYPMqfg_185.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/R_S_yt-oUrpKe5nyuI_5.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/S_yt-3V8US8ZD3NU_229.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/R_S_yt-qF-69JWJX_Y_55.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/R_S_wc-DVD7mCf3fqw1_2.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/S_yt-HFiRYTnMZxE_338.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/S_yt-3V8US8ZD3NU_229.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/R_S_yt-bl9EuWKeVmY_6.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/R_S_yt-N1EsjM9gD5Q_21.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/R_S_yt-Kabm8kuBnFo_27.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/R_S_yt-jYSri2JVUqo_1036.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/S_yt-hMyqUMAbFAk_303.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/R_S_yt-5Mnpi51EFok_77.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/R_S_yt-XF0fyyFEgWo_280.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/S_yt-dkBlyE3igk0_44.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/S_yt-jYSri2JVUqo_1036.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/S_yt-nwa8jP9fa1Y_767.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/R_S_yt-nn-8LZcafGs_35.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/S_yt-n2PnABmSpxI_115.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/R_S_yt-OPzchvF7jO8_53.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/R_S_wc-hmW1OnCPF_xn_37.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/R_S_ILSVRC2015_train_00768002.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/R_S_yt-4rwBpRuHg-c_1308.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/R_S_yt-hHdxZ26SImA_17.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/S_yt-FhnT_42bV7M_11.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/S_ILSVRC2015_train_00715000.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/R_S_yt-RNPFV7lgAvE_362.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/R_S_yt-ikhlUegH24c_552.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/R_S_ILSVRC2015_train_00042003.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/S_wc-Mf8SQpviaD6D_17.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/R_S_ILSVRC2015_train_00363000.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/R_S_ILSVRC2015_train_00768002.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/R_S_yt-CGBD5bNhmZc_75.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/S_yt-tEzCpMrjOHs_24.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/S_yt-MMsrBb7W-dk_25.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/S_yt-Xkx53mjgj2E_30.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/S_yt-ZzC953ahaxs_195.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/S_yt-rqYMMAU_GJs_91.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/S_ILSVRC2015_train_00079001.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/S_ILSVRC2015_train_00549001.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/R_S_yt--Ra34zJ69AU_68.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/S_yt-fymgyhmYnMI_76.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/R_S_ILSVRC2015_train_00354000.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/S_yt-7e6Z9QQieAk_183.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/R_S_yt-zQnaVApUPH0_14.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/R_S_yt-VQtbKGzI9SE_431.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/R_S_yt-D99Pp5JlUQI_47.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/S_yt-hDYtYKUsVE4_120.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/S_yt-yhHs1BmQp2Y_54.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/S_yt-CINajD_PVjQ_494.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/R_S_yt-Hs5HF3mTQ7A_9.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/S_yt-QI6k6mhpxLo_453.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/S_yt-wjBwgccZM5k_150.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/R_S_yt-sTBOjPxix5c_1072.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/S_ILSVRC2015_train_00743001.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/S_yt-3roniRu6w58_10.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/R_S_yt-T9Vwt7wFvPk_100.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/R_S_flickr-hapanine-31880782705_22.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/S_yt-yhHs1BmQp2Y_54.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/S_yt-7lULOC_rSE0_747.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/S_goAwcQiFu1Q_99.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/R_S_fHdEaNT0gA0_35.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/R_S_yt-YyKEeu2gLrI_158.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/S_yt-kbf7N5K5cS0_35.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/R_S_ILSVRC2015_train_00549001.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/R_S_yt-cM5PvgE7aJs_243.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/S_wc-sd8_iKx0t7s7_9.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/R_S_yt-XpM1Jtwlvvk_42.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/R_S_yt-LYStNoRhVO8_846.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/S_yt-gaCbT4RR9Tw_191.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/S_yt-ic9iGSfe1iA_3.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/S_yt-28ODBE9bVh0_44.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/R_S_yt-wUqpCtBOFBA_89.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/S_yt-pZRvYLT6SmU_40.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/R_S_ILSVRC2015_train_00545000.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/S_yt-SRcIvTQcmOk_62.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/R_S_yt-patyDyMQU8M_4.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/R_S_yt-5ws2gxbcjs4_381.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/R_S_yt-PRqnM7xDsus_24.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/R_S_wc-sd8_iKx0t7s7_9.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/R_S_ILSVRC2015_train_00545000.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/S_yt-GOgS--rzmKQ_51.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/R_S_yt-tX3slAQb9yY_13.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/S_flickr-hapanine-31880782705_22.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/R_S_yt-PCSXJ5YB_AE_3.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/R_S_yt-lkpfs_4qAGE_50.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/S_yt--C2DDZ7LOQA_95.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/R_S_yt-w_e3sxIzepA_115.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/S_yt-YMI27rk5qUQ_117.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/S_yt-4wYTkhggZNM_90.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/R_S_yt-qF-69JWJX_Y_55.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/S_yt-dj0XQUJos38_14.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/S_flickr-53807584@N00-5566422012_16.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/S_yt-xTxDfoAAFZc_6.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/R_S_yt-mj82m2mHYG4_6.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/S_yt-patyDyMQU8M_4.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/R_S_ILSVRC2015_train_00638001.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/R_S_bing-www_cnn_com_2015_04_20_living_steak-eating-contest-molly-schuyler-feat_index_html_1.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/S_yt-GigCK1Gssew_185.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/S_yt-lADkWM79teI_18.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/S_yt-a9bnYU0Gnxg_59.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/R_S_yt-MSdNCUWOp4o_4.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/S_yt-sWBjSPt7tZI_85.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/R_S_yt-3roniRu6w58_10.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/R_S_yt-Uih643A1YtA_110.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/R_S_yt-5DD4XtHSA9Q_171.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/R_S_ILSVRC2015_train_00743005.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/R_S_ILSVRC2015_train_00638000.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/S_yt-N1EsjM9gD5Q_21.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/R_S_yt-zr0tzAC2XHk_417.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/R_S_yt-PaxmJhMoP3w_87.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/S_ILSVRC2015_train_00322000.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/R_S_ILSVRC2015_train_00479004.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/R_S_wc-hmW1OnCPF_xn_37.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/R_S_yt-gaCbT4RR9Tw_191.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/S_yt-DfgpLIP0jnk_105.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/R_S_yt-MMsrBb7W-dk_25.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/R_S_yt-s2PWkCdT-TM_258.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/S_yt-PRqnM7xDsus_24.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/R_S_yt-Bejo5TLEpg4_36.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/R_S_yt-dj0XQUJos38_14.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/S_yt-k-MRlbCOzZU_163.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/S_ahJft-G235A_122.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/R_S_yt-ic9iGSfe1iA_3.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/R_S_goAwcQiFu1Q_99.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/R_S_yt-Dj42sI_Z-kQ_38.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/S_yt-mL3MuCfKtdY_79.mp4
+  - zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/R_S_yt-Kwfwhd07dVo_2.mp4
+  movie_size_pix:
+  - 1536
+  - 1080
+various:
+  button_size: 2
+  buttons:
+  - j
+  - k
+  - l
+  - semicolon
+  group_number: 5
+  piechart_width: 1
+  rootpath: /Users/shufanzhang/Documents/PhD/Arrow_of_time/arrow_of_time
+  text_height: 22.5
+  text_list:
+  - Positive negative?
+  - Arousing or not?
+  - Reverse or not?
+  text_width: 14
+window:
+  color:
+  - 0
+  - 0
+  - 0
+  size:
+  - 1920
+  - 1080
+  units: pix

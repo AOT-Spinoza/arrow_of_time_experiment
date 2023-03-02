@@ -21,8 +21,8 @@ settings_folder_path = rootpath+settings_temp['path']['settings_path']
 stimuli_path = rootpath+settings_temp['path']['stimuli_path'] #the path of the stimuli on the local folder
 
 
-#target_stimuli_path = settings_temp['path']['server_stimuli_path'] #the path of the stimuli on the server
-target_stimuli_path = rootpath+settings_temp['path']['stimuli_path']
+target_stimuli_path = settings_temp['path']['server_stimuli_path'] #the path of the stimuli on the server
+#target_stimuli_path = rootpath+settings_temp['path']['stimuli_path']
 #print(settings_temp['stimuli']['movie_files'])
 group_number = settings_temp['various']['group_number']
 #create settings files for each group folder
@@ -71,7 +71,7 @@ def create_experiment_settings_for_one_group(group_name, group_videos):#########
     sub_number = group_name[-1]
 
     for i in range(len(group_videos)):
-        settings_list[i%10]['stimuli']['movie_files'].append(stimuli_path+group_videos[i])
+        settings_list[i%10]['stimuli']['movie_files'].append(target_stimuli_path+group_videos[i])
     #write 10 settings files to disk
     for i in range(10): 
         with open(settings_folder_path+'/experiment_settings_'+'sub_'+sub_number+'_run_'+str(i+1)+'.yml', 'w') as outfile:
@@ -88,7 +88,7 @@ def create_experiment_settings_for_one_group_grading(group_name, group_videos):#
     sub_number = group_name[-1]
     #add 90 videos to each settings file
     for i in range(len(group_videos)):
-        settings_list[i%10]['stimuli']['movie_files'].append(stimuli_path+group_videos[i])
+        settings_list[i%10]['stimuli']['movie_files'].append(target_stimuli_path+group_videos[i])
     #write 10 settings files to disk
     for i in range(10):
         with open(settings_folder_path+'/grading_experiment_settings_'+'sub_'+sub_number+'_run_'+str(i+1)+'.yml', 'w') as outfile:
@@ -105,7 +105,7 @@ def create_experiment_settings_for_one_group_labeling(group_name, group_videos):
     #add 90 videos to each settings file
     sub_number = group_name[-1]
     for i in range(len(group_videos)):
-        settings_list[i%10]['stimuli']['movie_files'].append(stimuli_path+group_videos[i])
+        settings_list[i%10]['stimuli']['movie_files'].append(target_stimuli_path+group_videos[i])
     #write 10 settings files to disk
     for i in range(10):
         with open(settings_folder_path+'/labeling_experiment_settings_'+'sub_'+sub_number+'_run_'+str(i+1)+'.yml', 'w') as outfile:
