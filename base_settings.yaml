@@ -1,0 +1,60 @@
+monitor:
+  name: 7T
+  width: 69  # width of monitor (in cm)
+  distance: 165  # distance of participant from monitor (in cm)
+  gamma: 1 # 0.454545454545  # specific value for gamma correction
+  verbose: True
+
+window:
+  units: pix
+  color: [0, 0, 0]
+  size: [1920, 1080]
+
+eyetracker:
+  address: '100.1.1.1'
+  dot_size: 0.1  # in deg
+  options:
+    calibration_type: HV13
+
+design:
+  n_trials: 1
+  start_duration: 1.0 ###################################################
+  end_duration: 1.0 #########################
+  pre_fix_movie_interval: 0.0     
+  post_fix_movie_interval: 0.75     
+  fix_movie_interval: 1
+
+various:
+  group_number: 5
+  piechart_width: 1 
+  text_width: 14
+  text_height: 22.5
+  buttons: ['j', 'k', 'l', 'semicolon']
+  button_size: 2  
+  text_list: ['Positive negative?','Arousing or not?','Reverse or not?']
+  rootpath: '/Users/shufanzhang/Documents/PhD/Arrow_of_time/arrow_of_time'
+
+
+stimuli:
+  movie_files: []
+  aperture_radius: 400
+  fix_radius: 6
+  fix_color: [1, 1, 1]
+  fix_line_width: 0.25
+  movie_size_pix: [1536,1080]
+
+path:
+  rootpath: '/tank/shared/2022/arrow_of_time/arrow_of_time4'
+  rootpath_video: 'zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4' #/Users/shufanzhang/Documents/PhD/Arrow_of_time/arrow_of_time'
+  information_list_original: '/information_list_originals.csv' 
+  settings_path: '/experiment/settings/'
+  output_path': '/experiment/output/'
+  streched_path : '/stimulis/resampled/'
+  reversed_path : '/stimulis/reversed/'
+  category_path : '/stimulis/raws/'
+  setting_temp : '/settings_code/settings_template.yml'
+  stimuli_path : '/stimulis_flat/'
+  settings_path : '/experiment/settings/'
+  server_stimuli_path : 'zhangs@node230.labs.vu.nl:/tank/shared/2022/arrow_of_time/arrow_of_time4/stimulis_flat/'
+
+  

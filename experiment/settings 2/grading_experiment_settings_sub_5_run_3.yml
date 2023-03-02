@@ -1,0 +1,90 @@
+design:
+  end_duration: 1.0
+  fix_movie_interval: 1
+  n_trials: 1
+  post_fix_movie_interval: 0.75
+  pre_fix_movie_interval: 0.0
+  start_duration: 1.0
+eyetracker:
+  address: 100.1.1.1
+  dot_size: 0.1
+  options:
+    calibration_type: HV13
+monitor:
+  distance: 165
+  gamma: 1
+  name: 7T
+  verbose: true
+  width: 69
+stimuli:
+  aperture_radius: 400
+  fix_color:
+  - 1
+  - 1
+  - 1
+  fix_line_width: 0.25
+  fix_radius: 6
+  movie_files:
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-Pd3_4Z2tbFU_47.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-cokedWwwYYs_136.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-OEKvI2pFleg_118.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-fqbi4rGc9dk_65.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_SAiA2MWgCWE_5.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-NNl5SiIQHsA_29.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-lCb_efvJcdE_5.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt--jzScB82vKI_212.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_ILSVRC2015_train_00368000.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_ILSVRC2015_train_00479003.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_ILSVRC2015_train_00518001.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_ILSVRC2015_train_00743005.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-WCT9dyz0-gQ_36.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-0d5TkclKWVA_146.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-cgwHIb9LAFc_336.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-Gam0NeyyG8w_22.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-K7viJXt9vX8_143.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-gaCbT4RR9Tw_191.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-06XMUn9DTKc_35.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-NVYfkMFUxMk_466.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-u0N1IsXxLM4_103.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-Dlk44AGz-xM_37.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_5Bc466bkeA0_35.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-6DJulOrg2-8_122.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-Fm97IY0Z2LU_79.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-6vkiJedss6g_5.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-UZ-k4A-eD20_124.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-osz-TXlRdXs_2.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-Xkx53mjgj2E_30.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_production_ID_4101307.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_Pexels_Videos_2795737.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_pexels-koolshooters-7689098.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-yXJr3FR2xrM_27.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-QxNuo4ojvz4_420.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-e5ua5Pj86E4_140.mp4
+  movie_size_pix:
+  - 1536
+  - 1080
+various:
+  button_size: 2
+  buttons:
+  - j
+  - k
+  - l
+  - semicolon
+  group_number: 5
+  piechart_width: 1
+  rootpath: /tank/shared/2022/arrow_of_time/arrow_of_time2
+  text_height: 22.5
+  text_list:
+  - Positive negative?
+  - Arousing or not?
+  - Reverse or not?
+  text_width: 14
+window:
+  color:
+  - 0
+  - 0
+  - 0
+  size:
+  - 1920
+  - 1080
+  units: pix

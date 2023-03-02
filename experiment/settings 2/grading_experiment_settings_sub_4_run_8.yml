@@ -1,0 +1,90 @@
+design:
+  end_duration: 1.0
+  fix_movie_interval: 1
+  n_trials: 1
+  post_fix_movie_interval: 0.75
+  pre_fix_movie_interval: 0.0
+  start_duration: 1.0
+eyetracker:
+  address: 100.1.1.1
+  dot_size: 0.1
+  options:
+    calibration_type: HV13
+monitor:
+  distance: 165
+  gamma: 1
+  name: 7T
+  verbose: true
+  width: 69
+stimuli:
+  aperture_radius: 400
+  fix_color:
+  - 1
+  - 1
+  - 1
+  fix_line_width: 0.25
+  fix_radius: 6
+  movie_files:
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-rbJOb1spY9M_16.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-NuJbedGLcQY_112.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-xnEuj-JKmqQ_134.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_b3TCugtX0h0_108.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_wc-16LozRfhUGea_49.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-9Fxa53fDUWU_34.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_gX_VbZnZO0k_13.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_ILSVRC2015_train_00471000.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_ILSVRC2015_train_00001009.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_ILSVRC2015_train_00460000.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_ILSVRC2015_train_00469000.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-iAQ98zgVlds_97.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-jYSri2JVUqo_1036.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_bing-www_nbcnews_com_storyline_isis-terror_fall-isis-stronghold-raqqa-will-change-war-extremists-not-end-n808621_86.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-lfDIg8kaXhA_169.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_JApTAOdfunE_1251.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-waWM9vAfsIw_116.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_TYs22gin-EU_57.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-CAeQzlUyq38_352.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-xBhTD9mVR7s_43.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-VxTTEZNJWjs_110.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-mI9voWol7cE_104.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-4NjyKFnwHBo_13.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-YOLaQ53ooks_195.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-bOgChEHiroI_20.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_flickr-csgzs-8144064966_10.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-tMP5WhHMtWE_55.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-nA-1mD3ky2c_37.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_pexels-pavel-danilyuk-8626652.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_pexels-c-technical-6809719.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_pexels-rodnae-productions-5993671.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_production_ID_4802712.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_wc-1MzpHfRq1MUK_32.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-p-kbRhTdyiQ_31.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-9CUR6mjzaiY_85.mp4
+  movie_size_pix:
+  - 1536
+  - 1080
+various:
+  button_size: 2
+  buttons:
+  - j
+  - k
+  - l
+  - semicolon
+  group_number: 5
+  piechart_width: 1
+  rootpath: /tank/shared/2022/arrow_of_time/arrow_of_time2
+  text_height: 22.5
+  text_list:
+  - Positive negative?
+  - Arousing or not?
+  - Reverse or not?
+  text_width: 14
+window:
+  color:
+  - 0
+  - 0
+  - 0
+  size:
+  - 1920
+  - 1080
+  units: pix

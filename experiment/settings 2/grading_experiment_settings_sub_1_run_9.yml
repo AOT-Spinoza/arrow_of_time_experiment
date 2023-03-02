@@ -1,0 +1,90 @@
+design:
+  end_duration: 1.0
+  fix_movie_interval: 1
+  n_trials: 1
+  post_fix_movie_interval: 0.75
+  pre_fix_movie_interval: 0.0
+  start_duration: 1.0
+eyetracker:
+  address: 100.1.1.1
+  dot_size: 0.1
+  options:
+    calibration_type: HV13
+monitor:
+  distance: 165
+  gamma: 1
+  name: 7T
+  verbose: true
+  width: 69
+stimuli:
+  aperture_radius: 400
+  fix_color:
+  - 1
+  - 1
+  - 1
+  fix_line_width: 0.25
+  fix_radius: 6
+  movie_files:
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-zQnaVApUPH0_14.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-FE5srhxadno_73.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-fq7m668hqZo_39.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-oypn4VCTu6U_279.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-H2ce6U0SbVA_542.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-5hgLXyLw82w_23.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_flickr-53807584@N00-5566422012_16.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-Q5wYs9vSzlA_30.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_ILSVRC2015_train_00425000.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_ILSVRC2015_train_00611000.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_ILSVRC2015_train_00532000.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_ILSVRC2015_train_00155004.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-tX3slAQb9yY_13.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-aSEKRE_FNaI_62.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-xCh0LI9VKeI_28.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-tX5U0Lyo6Gs_376.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-wLylWnZs3z0_27.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-JTVyt-eu4VI_1.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-7K5X1G7Cpls_965.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-E8EDQCPbBeI_196.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-zlbtESb7Fcw_28.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-AKnqtBjARlM_118.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-p0buJEEKeuI_61.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-OPzchvF7jO8_53.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-zhQ32_OayBQ_39.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-cvwUZbYSd4Q_35.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-PltpRRYmQQk_62.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-IDpUZ2NWBUY_60.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-0Ut9QANGX20_35.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_pexels-koolshooters-7327405.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_pexels-pavel-danilyuk-8057714.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_pexels-tima-miroshnichenko-5717005.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-5IEO9Gn5fZ4_59.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-UzWRbs9Syf4_7.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-bH4nJibL4Jo_164.mp4
+  movie_size_pix:
+  - 1536
+  - 1080
+various:
+  button_size: 2
+  buttons:
+  - j
+  - k
+  - l
+  - semicolon
+  group_number: 5
+  piechart_width: 1
+  rootpath: /tank/shared/2022/arrow_of_time/arrow_of_time2
+  text_height: 22.5
+  text_list:
+  - Positive negative?
+  - Arousing or not?
+  - Reverse or not?
+  text_width: 14
+window:
+  color:
+  - 0
+  - 0
+  - 0
+  size:
+  - 1920
+  - 1080
+  units: pix

@@ -1,0 +1,197 @@
+design:
+    end_duration: 1.0
+    fix_movie_interval: 2
+    n_trials: 1
+    start_duration: 1.0
+eyetracker:
+    address: 100.1.1.1
+    dot_size: 0.1
+    options:
+        active_eye: left
+        automatic_calibration_pacing: 1000
+        autothreshold_click: true
+        autothreshold_repeat: true
+        binocular_enabled: false
+        calibration_type: HV13
+        enable_automatic_calibration: true
+        enable_camera_position_detect: true
+        enable_search_limits: true
+        file_event_filter: LEFT,RIGHT,FIXATION,SACCADE,BLINK,MESSAGE,BUTTON,INPUT
+        heuristic_filter: 2
+        link_event_filter: LEFT,RIGHT,FIXATION,SACCADE,BLINK,BUTTON
+        link_sample_data: LEFT,RIGHT,GAZE,GAZERES,AREA,STATUS,HTARGET
+        pupil_size_diameter: true
+        sample_rate: 1000
+        track_search_limits: true
+        x_gaze_constraint: AUTO
+        y_gaze_constraint: AUTO
+monitor:
+    distance: 165
+    gamma: 1
+    name: 7T
+    verbose: true
+    width: 69
+mouse:
+    visible: false
+mri:
+    TA: 2.0
+    TR: 2.0
+    simulate: false
+    skip: 0
+    sound: false
+    sync: t
+    volumes: 10
+preferences:
+    general:
+        audioLib: sounddevice
+        units: deg
+stimuli:
+    aperture_radius: 400
+    fix_color:
+    - 1
+    - 1
+    - 1
+    fix_line_width: 0.25
+    fix_radius: 6
+    movie_files:
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/2_S_R_yt-GyMWMiWvuiA_237.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/2_S_yt-7SsfOM7v3ns_56.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/1_S_yt-s2PWkCdT-TM_258.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/1_S_yt-oASqBTM-5fw_73.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/1_S_R_yt-VinOD6g7xEc_135.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/2_S_R_yt-MWX0EtpWIs8_286.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/1_S_yt-oxUpc8I5wWQ_238.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/1_S_yt-qp46Jph_oCQ_1.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/1_S_yt-kRR0CluqaX4_130.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/2_S_yt-FoO02U39gy4_398.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/1_S_R_yt-8gaLZxx-q50_142.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/1_S_R_yt-IPiZqn4dG9k_9.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/2_S_R_yt-16eN45838LU_255.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/2_S_R_yt-Y32yFYRmNVU_22.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/2_S_R_yt-loYSF41PfgI_79.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/1_S_R_yt-GpVFUM8K0yE_68.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/2_S_yt-wUqpCtBOFBA_89.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/1_S_yt-6UFUeTKci2o_164.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/1_S_R_yt-fQgLKiz2tuM_14.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/2_S_R_yt-3roniRu6w58_10.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/1_S_yt-XbNHfZjXuVM_43.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/2_S_R_yt-3aTDYxyF6bc_35.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/1_S_flickr-reginahart-31964450591_23.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/2_S_R_yt-rPYBHkUEwwc_10.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/2_S_yt-P2RwcXMKIbQ_1.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/2_S_yt-ibDaDIEazxg_3.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/1_S_yt-kbf7N5K5cS0_35.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/1_S_R_yt-oASqBTM-5fw_73.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/2_S_yt-146gReE6xKw_379.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/2_S_R_yt-wb0vMCXWj84_229.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/1_S_yt-IigHVUksnw8_7.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/2_S_yt-KC6I552mXwM_6.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/1_S_R_wc-dwTccI0TNwps_15.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/1_S_R_yt-g_RCws799LQ_52.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/1_S_yt--_ZMybcaUOw_254.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/1_S_Pz_NXxhQCJc_70.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/2_S_R_yt-q9-_bG9ry3E_5.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/2_S_yt-6UFUeTKci2o_164.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/1_S_R_-IkGMlLHrOI_108.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/2_S_yt-xSGPe0KemD4_384.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/2_S_R_yt-qurTr1BJMec_244.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/1_S_R_wc-eJe3wXMgTLRV_20.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/2_S_yt-a9bnYU0Gnxg_59.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/1_S_yt-wUqpCtBOFBA_89.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/1_S_yt-jcuaf9iSEkI_169.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/2_S_R_yt-Ryb0K9lGPrg_5.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/2_S_yt-Y32yFYRmNVU_22.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/1_S_yt-Y32yFYRmNVU_22.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/1_S_ahUa35lQM6E_44.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/1_S_R_yt-3aTDYxyF6bc_35.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/2_S_R_wc-DVD7mCf3fqw1_2.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/1_S_yt_R-lST38EdfMMQ_5.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/2_S_bing-www_cnet_com_videos_amazon-wants-to-put-alexa-on-your-pc__50.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/1_S_yt-mdxs8FCKLFc_232.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/2_S_R_yt-25xuzTBhwPk_109.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/2_S_R_yt-Q9fI2ar05IE_77.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/1_S_R_yt-o_CT2MjZ9fA_216.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/2_S_R_yt-RHPOCG1mII0_138.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/1_S_R_yt-xSGPe0KemD4_384.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/1_S_R_yt-XpM1Jtwlvvk_42.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/1_S_R_xtIv_5iIk18_2.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/1_S_wc-DVD7mCf3fqw1_2.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/1_S_R_yt-ybH6uAiFbjc_273.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/1_S_yt-CNqOVuIyWjA_18.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/1_S_yt-JTBXPfbkjsA_11.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/1_S_R_yt-c6kLumgTX54_7.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/2_S_yt-XbNHfZjXuVM_43.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/1_S_yt-fGN7sGPy8BA_13.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/2_S_yt-icd9UxxxeW0_255.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/1_S_yt-sde4IKBgBMw_21.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/1_S_R_yt-EvKV7iY1_HM_193.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/2_S_yt-16eN45838LU_255.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/2_S_yt-xnqqB-leeaQ_128.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/2_S_yt-SHTeTAnZgho_43.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/1_S_yt--s2mcDTgwkc_65.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/1_S_yt-16eN45838LU_255.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/2_S_R_yt-xTxDfoAAFZc_6.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/2_S_R_yt-NqZHX-eOVUA_35.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/1_S_R_yt-FoO02U39gy4_398.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/1_S_R_yt-u0N1IsXxLM4_103.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/1_S_yt-9t5-3Qe_t9A_591.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/2_S_yt-8RmEimCI80g_35.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/2_S_R_yt-Y3pi1bgUwIg_78.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/2_S_yt-Wmh9ezFQwPg_3.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/2_S_yt-Oxu6w0Zx9dQ_3.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/2_S_yt-X6ivH9SqGu8_306.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/2_S_yt-SvCjZ59S9wk_211.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/2_S_R_yt-Q5Mfl5NdT7g_3.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/2_S_yt--a-d97T4Gak_75.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/1_S_R_wc-AyT9mzwZsu0T_14.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/2_S_yt-kuzdrmHa-W0_39.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/2_S_R_yt-x7NWmdlvVIQ_183.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/2_S_yt-Q5Mfl5NdT7g_3.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/1_S_yt-bZfmqTZ-d2k_112.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/1_S_R_yt-ja8Pmpik_ao_112.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/2_S_yt-Gokv9ZtV6zo_70.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/1_S_yt-nB2WgvYt7bA_170.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/1_S_yt-9mWz93En7Gw_97.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/2_S_R_yt-_68FWLGgPYE_25.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/1_S_R_yt_R-lST38EdfMMQ_5.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/1_S_R_yt-wE0cEswyaaM_53.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/2_S_R_Oo8otu7cQ20_112.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/1_S_R_yt-EuyfT0PuOoQ_91.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/1_S_yt-2WPmM2vIuBE_41.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/1_S_R_yt-Q9fI2ar05IE_77.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/2_S_R_yt-T2CzKcU8pHo_17.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/1_S_yt-qiPhBL4lBr0_44.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/2_S_R_yt-bwSRV1Vr21s_435.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/2_S_R_wc-8bTJmWfuVyJ4_8.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/1_S_yt-TqVe93JCGmM_12.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/1_S_R_yt-JTBXPfbkjsA_11.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/1_S_yt-ja8Pmpik_ao_112.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/2_S_R_yt-XpM1Jtwlvvk_42.mp4
+    - /Users/shufanzhang/Documents/PhD/Arrow_of_time/hcp_movie_eyetracking-main/movs/MomentsInTime/groups/group3/final_videos2/2_S_R_yt--a-d97T4Gak_75.mp4
+    movie_size_pix:
+    - 1536
+    - 1080
+various:
+    button_size: 2
+    buttons:
+    - j
+    - k
+    - l
+    - semicolon
+    piechart_width: 1
+    text_height: 22.5
+    text_width: 14
+window:
+    color:
+    - 0
+    - 0
+    - 0
+    fullscr: true
+    pos:
+    - 0
+    - 0
+    size:
+    - 1920
+    - 1080
+    units: pix
+    waitBlanking: true

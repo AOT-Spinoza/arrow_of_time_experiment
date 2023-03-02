@@ -1,0 +1,90 @@
+design:
+  end_duration: 1.0
+  fix_movie_interval: 1
+  n_trials: 1
+  post_fix_movie_interval: 0.75
+  pre_fix_movie_interval: 0.0
+  start_duration: 1.0
+eyetracker:
+  address: 100.1.1.1
+  dot_size: 0.1
+  options:
+    calibration_type: HV13
+monitor:
+  distance: 165
+  gamma: 1
+  name: 7T
+  verbose: true
+  width: 69
+stimuli:
+  aperture_radius: 400
+  fix_color:
+  - 1
+  - 1
+  - 1
+  fix_line_width: 0.25
+  fix_radius: 6
+  movie_files:
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-fCjjH_4i8Fg_115.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-Id-f63kUHsE_20.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-auGMEMsCRJI_470.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-PvWkOmfZuSY_4.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-un00Oks5uVc_7.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-o96A55Szxkc_982.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-XHYYkaHcEtM_72.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_ILSVRC2015_train_00415005.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_ILSVRC2015_train_00479004.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_ILSVRC2015_train_00545000.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_ILSVRC2015_train_00682009.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-ycfVJyrFgB4_15.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-oVrkSsEpuvk_118.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-QXsedpZh800_275.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-eczLsCTIyn0_553.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_bing-www_yahoo_com_entertainment_anastasia-karanikolaou-chantel-jeffries-discuss-182400502_html_9.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-ZTAaH5XbtfE_3.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_bing-vimeo_com_161378598_22.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_fHdEaNT0gA0_35.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-hyZEDFkh49w_196.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-uWeU2s6JYyk_10.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-BJsMGxfjrZk_59.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-xTxDfoAAFZc_6.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-Faxdis4m3Fw_9.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-aiwDdJm1ek8_90.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-MUfa26F8dfE_97.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-UojTppgtyCE_121.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt--C2DDZ7LOQA_95.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_pexels-tima-miroshnichenko-8724308.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_pexels-anastasia-shuraeva-6014070.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_pexels-nkem-6237382.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-IxUQZ_1JuFs_35.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-utYnOeoj2Rw_3.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-mL3MuCfKtdY_79.mp4
+  - /tank/shared/2022/arrow_of_time/arrow_of_time2/stimulis_flat/S_yt-CH4HfNRC1hY_40.mp4
+  movie_size_pix:
+  - 1536
+  - 1080
+various:
+  button_size: 2
+  buttons:
+  - j
+  - k
+  - l
+  - semicolon
+  group_number: 5
+  piechart_width: 1
+  rootpath: /tank/shared/2022/arrow_of_time/arrow_of_time2
+  text_height: 22.5
+  text_list:
+  - Positive negative?
+  - Arousing or not?
+  - Reverse or not?
+  text_width: 14
+window:
+  color:
+  - 0
+  - 0
+  - 0
+  size:
+  - 1920
+  - 1080
+  units: pix
