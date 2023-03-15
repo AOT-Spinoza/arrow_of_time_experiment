@@ -1,0 +1,59 @@
+monitor:
+  name: 7T
+  width: 69  # width of monitor (in cm)
+  distance: 165  # distance of participant from monitor (in cm)
+  gamma: 1 # 0.454545454545  # specific value for gamma correction
+  verbose: True
+
+
+window:
+  units: pix
+  color: [0, 0, 0]
+  size: [1920, 1080]
+
+eyetracker:
+  address: '100.1.1.1'
+  dot_size: 0.1  # in deg
+  options:
+    calibration_type: HV13
+
+design:
+  n_trials: 1
+  start_duration: 1.0 ###################################################
+  end_duration: 1.0 #########################
+  pre_fix_movie_interval: 0.0
+  post_fix_movie_interval: 0.75
+  fix_movie_interval: 1
+
+various:
+  subject_number: 5
+  session_number: 6
+  run_number: 10
+  video_number_per_session: 225
+  piechart_width: 1
+  text_width: 14
+  text_height: 22.5
+  buttons: ['j', 'k', 'l', 'semicolon']
+  button_size: 2
+  text_list: ['Positive negative?','Arousing or not?','Reverse or not?']
+  monitor_framerate: 60
+
+
+stimuli:
+  movie_files: []
+  aperture_radius: 400
+  fix_radius: 6
+  fix_color: [1, 1, 1]
+  fix_line_width: 1.25
+  movie_size_pix: [1536,1080]
+  experiment_movie_duration: 2.5
+
+paths: 
+  information_list_original: 'information_list_originals.tsv'   
+  settings_path: 'data/experiment/settings'
+  output_path : 'data/experiment/outputs'
+  stimuli_path : '/Users/shufanzhang/Documents/PhD/Arrow_of_time/arrow_of_time/stimuli_flat'
+  stimuli_processing_path : '/Users/shufanzhang/Documents/PhD/Arrow_of_time/arrow_of_time/stimuli'
+  #streched_path : 'stimuli/resampled'
+  #reversed_path : 'stimuli/reversed'
+  #category_path : 'stimuli/raws'

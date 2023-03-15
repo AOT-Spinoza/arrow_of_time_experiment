@@ -1,0 +1,101 @@
+design:
+    end_duration: 1.0
+    fix_movie_interval: 1
+    n_trials: 1
+    post_fix_movie_interval: 0.75
+    pre_fix_movie_interval: 0.0
+    start_duration: 1.0
+eyetracker:
+    address: 100.1.1.1
+    dot_size: 0.1
+    options:
+        active_eye: left
+        automatic_calibration_pacing: 1000
+        autothreshold_click: true
+        autothreshold_repeat: true
+        binocular_enabled: false
+        calibration_type: HV13
+        enable_automatic_calibration: true
+        enable_camera_position_detect: true
+        enable_search_limits: true
+        file_event_filter: LEFT,RIGHT,FIXATION,SACCADE,BLINK,MESSAGE,BUTTON,INPUT
+        heuristic_filter: 2
+        link_event_filter: LEFT,RIGHT,FIXATION,SACCADE,BLINK,BUTTON
+        link_sample_data: LEFT,RIGHT,GAZE,GAZERES,AREA,STATUS,HTARGET
+        pupil_size_diameter: true
+        sample_rate: 1000
+        track_search_limits: true
+        x_gaze_constraint: AUTO
+        y_gaze_constraint: AUTO
+monitor:
+    distance: 165
+    gamma: 1
+    name: 7T
+    verbose: true
+    width: 69
+mouse:
+    visible: false
+mri:
+    TA: 2.0
+    TR: 2.0
+    simulate: false
+    skip: 0
+    sound: false
+    sync: t
+    volumes: 10
+paths:
+    information_list_original: information_list_originals.tsv
+    output_path: data/experiment/outputs
+    settings_path: data/experiment/settings
+    stimuli_path: /Users/shufanzhang/Documents/PhD/Arrow_of_time/arrow_of_time/stimuli_flat
+    stimuli_processing_path: /Users/shufanzhang/Documents/PhD/Arrow_of_time/arrow_of_time/stimuli
+preferences:
+    general:
+        audioLib: sounddevice
+        units: deg
+stimuli:
+    aperture_radius: 400
+    experiment_movie_duration: 2.5
+    fix_color:
+    - 1
+    - 1
+    - 1
+    fix_line_width: 1.25
+    fix_radius: 6
+    movie_files: []
+    movie_size_pix:
+    - 1536
+    - 1080
+various:
+    button_size: 2
+    buttons:
+    - j
+    - k
+    - l
+    - semicolon
+    monitor_framerate: 60
+    piechart_width: 1
+    run_number: 10
+    session_number: 6
+    subject_number: 5
+    text_height: 22.5
+    text_list:
+    - Positive negative?
+    - Arousing or not?
+    - Reverse or not?
+    text_width: 14
+    video_number_per_session: 225
+window:
+    color:
+    - 0
+    - 0
+    - 0
+    fullscr: true
+    pos:
+    - 0
+    - 0
+    size:
+    - 1920
+    - 1080
+    units: pix
+    waitBlanking: true
