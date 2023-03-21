@@ -7,13 +7,13 @@ from pathlib import Path
 import aot
 
 
-
 # strech all videos into n seconds long and save them into stretched_videos folder
 def stretch_video_n_seconds(n):
 
     base_dir = Path(aot.__path__[0])
     core_expt_yaml_path = base_dir / "experiment/core_exp_settings.yml"
-    core_settings = yaml.load(open(core_expt_yaml_path), Loader=yaml.FullLoader)
+    core_settings = yaml.load(
+        open(core_expt_yaml_path), Loader=yaml.FullLoader)
 
     stimuli_processing_path = core_settings["paths"]["stimuli_processing_path"]
     category_path = base_dir / stimuli_processing_path / "raws"
@@ -35,7 +35,7 @@ def stretch_video_n_seconds(n):
                         str(category_path / category_folder / sub_content)
                     )
                     video_info = next(
-                        s for s in probe["streams"] if s["codec_type"] == "video" 
+                        s for s in probe["streams"] if s["codec_type"] == "video"
                     )
                     duration = float(video_info["duration"])
                     time_ratio = n / duration
