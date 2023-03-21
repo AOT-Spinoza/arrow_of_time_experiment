@@ -62,10 +62,27 @@ class HCPMovieELTrial(Trial):
         pass
 
     def draw(self):
-        #self.session.fixation.draw()
         if self.phase == 1:
             self.session.movie_stims[self.parameters["movie_index"]].draw()
-            #self.session.fixation.draw()
+            if (
+                self.session.tracker
+                and self.settings["various"]["capture_eyemovements"]
+            ):
+                el_smp = self.session.tracker.getNewestSample()
+                if el_smp != None:
+                    if el_smp.isLeftSample():
+                        sample = np.array(el_smp.getLeftEye().getGaze())
+                        fix_dist_pix = np.linalg.norm(
+                            np.array(self.session.win.size) - sample
+                        )
+                        fix_dist_deg = fix_dist_pix * self.session.pix_per_deg
+                        if (
+                            fix_dist_deg
+                            > self.settings["various"]["gaze_threshold_deg"]
+                        ):
+                            self.session.play_sound("beep")
+
+        self.session.fixation.draw()
 
 
 class HCPMovieELTrialGrading(Trial):
@@ -116,10 +133,10 @@ class HCPMovieELTrialGrading(Trial):
         pass
 
     def draw(self):
-        #self.session.fixation.draw()
+        # self.session.fixation.draw()
         if self.phase == 1:
             self.session.movie_stims[self.parameters["movie_index"]].draw()
-            #self.session.fixation.draw()
+            # self.session.fixation.draw()
 
     def get_events(self):  # record grading of movie
         # trail waiting for events to stop
@@ -208,7 +225,7 @@ class HCPMovieELTrialLabeling(Trial):
         pass
 
     def draw(self):
-        #self.session.fixation.draw()
+        # self.session.fixation.draw()
         if self.phase == 1:
             self.session.movie_stims[self.parameters["movie_index"]].draw()
             self.session.grades[self.parameters["movie_file"]] = {}
@@ -217,7 +234,7 @@ class HCPMovieELTrialLabeling(Trial):
         for phase in range(2, phase_length + 1):
             if self.phase == phase:
                 self.text_stims[phase - 2].draw()
-                #self.session.fixation.draw()
+                # self.session.fixation.draw()
 
     def get_events(
         self,
