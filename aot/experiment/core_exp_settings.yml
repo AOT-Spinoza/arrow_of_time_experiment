@@ -5,7 +5,6 @@ monitor:
   gamma: 1 # 0.454545454545  # specific value for gamma correction
   verbose: True
 
-
 window:
   units: pix
   color: [0, 0, 0]
@@ -37,7 +36,8 @@ various:
   button_size: 2
   text_list: ['Positive negative?','Arousing or not?','Reverse or not?']
   monitor_framerate: 60
-
+  capture_eyemovements: True
+  gaze_threshold_deg: 1.0
 
 stimuli:
   movie_files: []
@@ -48,11 +48,11 @@ stimuli:
   movie_size_pix: [1536,1080]
   experiment_movie_duration: 2.5
 
-paths: 
-  information_list_original: 'information_list_originals.tsv'   
+paths:
+  information_list_original: 'information_list_originals.tsv'
   settings_path: 'data/experiment/settings'
   output_path : 'data/experiment/outputs'
-  stimuli_path : '/Users/shufanzhang/Documents/PhD/Arrow_of_time/arrow_of_time/stimuli_flat'
+  stimuli_path : '/Users/knapen/Movies/aot_movie_stimuli'
   stimuli_processing_path : '/Users/shufanzhang/Documents/PhD/Arrow_of_time/arrow_of_time/stimuli'
   #streched_path : 'stimuli/resampled'
   #reversed_path : 'stimuli/reversed'
