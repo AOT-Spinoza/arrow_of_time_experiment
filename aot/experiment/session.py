@@ -23,7 +23,8 @@ core_expt_yaml_path = base_dir / "experiment/core_exp_settings.yml"
 core_settings = yaml.load(open(core_expt_yaml_path), Loader=yaml.FullLoader)
 monitor_framerate = core_settings["various"].get("monitor_framerate")
 target_stimuli_path = core_settings["paths"].get("stimuli_path")
-experiment_movie_duration = core_settings["stimuli"].get("experiment_movie_duration")
+experiment_movie_duration = core_settings["stimuli"].get(
+    "experiment_movie_duration")
 
 
 def save_grades_to_csv(grades, name):
@@ -81,7 +82,8 @@ class HCPMovieELSession(PylinkEyetrackerSession):
         )  # initialize parent class!
 
         # supplement this run's settings with the per-run yaml file's settings
-        self.run_settings = yaml.load(open(run_settings_file), Loader=yaml.FullLoader)
+        self.run_settings = yaml.load(
+            open(run_settings_file), Loader=yaml.FullLoader)
 
         self.fixation = FixationBullsEye(
             win=self.win,
@@ -103,7 +105,8 @@ class HCPMovieELSession(PylinkEyetrackerSession):
             + self.run_settings["stimuli"].get("movie_files")[i]
             for i in range(len(self.run_settings["stimuli"].get("movie_files")))
         ]
-        self.movie_durations = [experiment_movie_duration for movie in self.movies]
+        self.movie_durations = [
+            experiment_movie_duration for movie in self.movies]
         print(f"movie duration for this run: {self.movie_durations}")
 
         # count the time for loading the movies
@@ -139,7 +142,8 @@ class HCPMovieELSession(PylinkEyetrackerSession):
         dummy_trial = DummyWaiterTrial(
             session=self,
             trial_nr=1,
-            phase_durations=[np.inf, self.settings["design"].get("start_duration")],
+            phase_durations=[
+                np.inf, self.settings["design"].get("start_duration")],
             txt="Waiting for experiment to start",
         )
 
@@ -220,7 +224,8 @@ class HCPMovieELSessionGrading(PylinkEyetrackerSession):
             eyetracker_on=eyetracker_on,
         )  # initialize parent class!
 
-        self.run_settings = yaml.load(open(run_settings_file), Loader=yaml.FullLoader)
+        self.run_settings = yaml.load(
+            open(run_settings_file), Loader=yaml.FullLoader)
 
         self.fixation = FixationLines(
             win=self.win,
@@ -240,7 +245,8 @@ class HCPMovieELSessionGrading(PylinkEyetrackerSession):
         self.n_trials = len(self.run_settings["stimuli"].get("movie_files"))
 
         self.movies = [
-            target_stimuli_path + "/" + self.run_settings["stimuli"].get("movie_files")[i]
+            target_stimuli_path + "/" +
+            self.run_settings["stimuli"].get("movie_files")[i]
             for i in range(len(self.run_settings["stimuli"].get("movie_files")))
         ]
         self.movie_durations = [
@@ -274,14 +280,15 @@ class HCPMovieELSessionGrading(PylinkEyetrackerSession):
             session=self,
             trial_nr=0,
             phase_durations=[np.inf],
-            txt="Please keep fixating at the center.",
+            txt="Please press buttons to grade each videos. J for good, l for bad, K for in between",
             keys=["space"],
         )
 
         dummy_trial = DummyWaiterTrial(
             session=self,
             trial_nr=1,
-            phase_durations=[np.inf, self.settings["design"].get("start_duration")],
+            phase_durations=[
+                np.inf, self.settings["design"].get("start_duration")],
             txt="Waiting for experiment to start",
         )
 
@@ -331,7 +338,8 @@ class HCPMovieELSessionGrading(PylinkEyetrackerSession):
         for trial in self.trials:
             trial.run()
             save_grades_to_csv(
-                self.grades, os.path.join(self.output_dir, f"{self.output_str}_grades")
+                self.grades, os.path.join(
+                    self.output_dir, f"{self.output_str}_grades")
             )
 
         self.close()
@@ -365,7 +373,8 @@ class HCPMovieELSessionLabeling(PylinkEyetrackerSession):
             eyetracker_on=eyetracker_on,
         )  # initialize parent class!
 
-        self.run_settings = yaml.load(open(run_settings_file), Loader=yaml.FullLoader) 
+        self.run_settings = yaml.load(
+            open(run_settings_file), Loader=yaml.FullLoader)
 
         self.fixation = FixationLines(
             win=self.win,
@@ -389,7 +398,8 @@ class HCPMovieELSessionLabeling(PylinkEyetrackerSession):
 
         self.n_trials = len(self.run_settings["stimuli"].get("movie_files"))
         self.movies = [
-            target_stimuli_path + "/" + self.run_settings["stimuli"].get("movie_files")[i]
+            target_stimuli_path + "/" +
+            self.run_settings["stimuli"].get("movie_files")[i]
             for i in range(len(self.run_settings["stimuli"].get("movie_files")))
         ]
         # self.movie_durations = [2.0 for movie in self.movies]#####################not 2.0
@@ -435,7 +445,8 @@ class HCPMovieELSessionLabeling(PylinkEyetrackerSession):
         dummy_trial = DummyWaiterTrial(
             session=self,
             trial_nr=1,
-            phase_durations=[np.inf, self.settings["design"].get("start_duration")],
+            phase_durations=[
+                np.inf, self.settings["design"].get("start_duration")],
             txt="Waiting for experiment to start",
         )
 
@@ -491,7 +502,8 @@ class HCPMovieELSessionLabeling(PylinkEyetrackerSession):
         for trial in self.trials:
             trial.run()
             save_grades_to_csv(
-                self.grades, os.path.join(self.output_dir, f"{self.output_str}_labels")
+                self.grades, os.path.join(
+                    self.output_dir, f"{self.output_str}_labels")
             )
 
         self.close()
