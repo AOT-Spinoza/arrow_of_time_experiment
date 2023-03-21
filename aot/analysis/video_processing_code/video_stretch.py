@@ -35,7 +35,7 @@ def stretch_video_n_seconds(n):
                         str(category_path / category_folder / sub_content)
                     )
                     video_info = next(
-                        s for s in probe["streams"] if s["codec_type"] == "video"
+                        s for s in probe["streams"] if s["codec_type"] == "video" 
                     )
                     duration = float(video_info["duration"])
                     time_ratio = n / duration
