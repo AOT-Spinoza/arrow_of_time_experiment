@@ -11,8 +11,10 @@ from pathlib import Path
 
 base_dir = Path(aot.__path__[0])
 core_expt_yaml_path = base_dir / "experiment/core_exp_settings.yml"
-core_settings = yaml.load(open(core_expt_yaml_path, "r"), Loader=yaml.FullLoader)
-all_catagories_path = base_dir / core_settings["paths"]["stimuli_processing_path"] / "raws"
+core_settings = yaml.load(
+    open(core_expt_yaml_path, "r"), Loader=yaml.FullLoader)
+all_catagories_path = base_dir / \
+    core_settings["paths"]["stimuli_processing_path"] / "raws"
 all_catagory_folders = os.listdir(all_catagories_path)
 
 # make information list of (video_name, category_name, group_name, duration, width, height, size, frame_rate)
@@ -110,7 +112,9 @@ def save_list_to_tsv(information_list):
             "frame_rate",
         ],
     )
-    df.to_csv(base_dir / "data/videos/database_originals.tsv", sep="\t", index=False)
+    df.to_csv(base_dir / "data/videos/database_originals.tsv",
+              sep="\t", index=False)
+
 
 if __name__ == "__main__":
     information_list = get_information_list()
