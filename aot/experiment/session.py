@@ -58,6 +58,7 @@ class HCPMovieELSession(PylinkEyetrackerSession):
         core_settings_file: Path,
         run_settings_file: Path,
         eyetracker_on: bool = True,
+        training_mode: bool = False,
     ):
         """Initializes StroopSession object.
 
@@ -80,7 +81,7 @@ class HCPMovieELSession(PylinkEyetrackerSession):
             settings_file=core_settings_file,
             eyetracker_on=eyetracker_on,
         )  # initialize parent class!
-
+        self.training_mode = training_mode
         # supplement this run's settings with the per-run yaml file's settings
         self.run_settings = yaml.load(
             open(run_settings_file), Loader=yaml.FullLoader)
@@ -98,20 +99,25 @@ class HCPMovieELSession(PylinkEyetrackerSession):
         )
 
         self.win._monitorFrameRate = monitor_framerate  # 120? yaml?
-        self.n_trials = len(self.run_settings["stimuli"].get("movie_files"))
-        self.movies = [
-            str(target_stimuli_path)
-            + "/"
-            + self.run_settings["stimuli"].get("movie_files")[i]
-            for i in range(len(self.run_settings["stimuli"].get("movie_files")))
-        ]
+        # movie_trial_nr is in range(self.n_trials) that comes from the number of movies listed in the yaml file
+        # but not all of them are actually movies, some are blank trials, we have to deal with that
+        self.n_trials = len(self.run_settings["stimuli"].get(
+            "movie_files"))  # include the movdies and blank trials
+        self.movies = ["blank" if self.run_settings["stimuli"].get("movie_files")[i] == "blank" else
+                       str(target_stimuli_path)
+                       + "/"
+                       + self.run_settings["stimuli"].get("movie_files")[i]
+                       for i in range(len(self.run_settings["stimuli"].get("movie_files")))
+                       ]
         self.movie_durations = [
             experiment_movie_duration for movie in self.movies]
         print(f"movie duration for this run: {self.movie_durations}")
 
         # count the time for loading the movies
         start = time.perf_counter()
+        # this self.movie_stims is the list that accessed by the trial class by using movie_trial_nr
         self.movie_stims = [
+            "blank" if movie == "blank" else
             MovieStim3(
                 self.win,
                 filename=movie,
@@ -121,7 +127,7 @@ class HCPMovieELSession(PylinkEyetrackerSession):
                 noAudio=True,
                 fps=None,
             )
-            for movie in self.movies
+            for movie in self.movies  # movie is movie file path name
         ]
 
         print(
@@ -150,21 +156,36 @@ class HCPMovieELSession(PylinkEyetrackerSession):
         self.trials = [instruction_trial, dummy_trial]
 
         for movie_trial_nr in range(self.n_trials):
-            trial = HCPMovieELTrial(
-                session=self,
-                trial_nr=2 + movie_trial_nr,
-                phase_durations=[
-                    self.settings["design"].get("pre_fix_movie_interval"),
-                    self.movie_durations[movie_trial_nr],
-                    self.settings["design"].get("post_fix_movie_interval"),
-                ],
-                phase_names=["fix_pre", "movie", "fix_post"],
-                parameters={
-                    "movie_index": movie_trial_nr,
-                    "movie_duration": self.movie_durations[movie_trial_nr],
-                    "movie_file": self.movies[movie_trial_nr],
-                },
-            )
+            if self.movies[movie_trial_nr] == "blank":
+                print(f"blank trial {movie_trial_nr}")
+                trial = DummyWaiterTrial(
+                    session=self,
+                    trial_nr=2 + movie_trial_nr,
+                    phase_durations=[
+                        self.settings["design"].get("blank_duration")
+                    ],
+                    txt="Waiting for next movie",
+                )
+            else:
+                trial = HCPMovieELTrial(
+                    session=self,
+                    # this trial number is not explicitly used in the trial class for movie playing
+                    trial_nr=2 + movie_trial_nr,
+                    phase_durations=[
+                        self.settings["design"].get("pre_fix_movie_interval"),
+                        self.movie_durations[movie_trial_nr],
+                        self.settings["design"].get("post_fix_movie_interval"),
+                    ],
+                    phase_names=["fix_pre", "movie", "fix_post"],
+                    parameters={
+                        # movie trail draw the movie by self.session.movie_stims[self.parameters["movie_index"]].draw()
+                        # this movie_trail_nr is used to index the movie_stims list
+                        "movie_index": movie_trial_nr,
+                        "movie_duration": self.movie_durations[movie_trial_nr],
+                        "movie_file": self.movies[movie_trial_nr],
+                    },
+                    training_mode=self.training_mode
+                )
             self.trials.append(trial)
 
         outro_trial = OutroTrial(

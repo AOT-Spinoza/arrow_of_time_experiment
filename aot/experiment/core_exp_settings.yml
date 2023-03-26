@@ -23,19 +23,21 @@ design:
   pre_fix_movie_interval: 0.0
   post_fix_movie_interval: 0.75
   fix_movie_interval: 1
+  blank_duration: 3.2
 
 various:
   subject_number: 5
   session_number: 6
   run_number: 10
-  video_number_per_session: 225
+  unique_video_number_per_session: 225
+  blank_number_per_run: 15
   piechart_width: 1
   text_width: 14
   text_height: 22.5
   buttons: ['j', 'k', 'l', 'semicolon']
   button_size: 2
   text_list: ['Positive negative?','Arousing or not?','Reverse or not?'] 
-  monitor_framerate: 60
+  monitor_framerate: 120 ###################################################
   capture_eyemovements: True
   gaze_threshold_deg: 1.0
 
@@ -52,7 +54,7 @@ paths:
   information_list_original: 'information_list_originals.tsv'
   settings_path: 'data/experiment/settings'
   output_path : 'data/experiment/outputs'
-  stimuli_path : '/Users/knapen/Movies/aot_movie_stimuli'
+  stimuli_path : '/Users/shufanzhang/Documents/PhD/Arrow_of_time/arrow_of_time/stimuli_flat'
   stimuli_processing_path : '/Users/shufanzhang/Documents/PhD/Arrow_of_time/arrow_of_time/stimuli'
   #streched_path : 'stimuli/resampled'
   #reversed_path : 'stimuli/reversed'

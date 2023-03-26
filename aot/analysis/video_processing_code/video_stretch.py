@@ -25,7 +25,7 @@ def stretch_video_n_seconds(n):
         if os.path.isdir(category_path / folder)
     ]
     for category_folder in all_categories_folder:
-        if os.path.isdir(category_path / category_folder):
+        if os.path.isdir(category_path / category_folder) and category_folder == "scenesclips":
             all_sub_content = os.listdir(category_path / category_folder)
             ###############################################
             for sub_content in all_sub_content:

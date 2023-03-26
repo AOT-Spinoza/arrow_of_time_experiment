@@ -15,7 +15,8 @@ parser.add_argument("--subject", default=1, nargs="?")
 parser.add_argument("--ses", default=1, nargs="?")
 parser.add_argument("--run", default=1, nargs="?")
 
-parser.add_argument("--eyelink", default=False, action=argparse.BooleanOptionalAction)
+parser.add_argument("--eyelink", default=False,
+                    action=argparse.BooleanOptionalAction)
 
 cmd_args = parser.parse_args()
 subject, ses, run, eyelink = (
@@ -28,7 +29,8 @@ subject, ses, run, eyelink = (
 settings_dir = base_dir / core_settings["paths"]["settings_path"] / "main"
 output_dir = base_dir / core_settings["paths"]["output_path"] / "main"
 output_str = f"sub-{str(subject).zfill(2)}_ses-{str(ses).zfill(2)}_run-{str(run).zfill(2)}_task-movie"
-runs_input_yaml = settings_dir / f"experiment_settings_sub_{str(subject).zfill(2)}_ses_{str(ses).zfill(2)}_run_{str(run).zfill(2)}.yml"
+runs_input_yaml = settings_dir / \
+    f"experiment_settings_sub_{str(subject).zfill(2)}_ses_{str(ses).zfill(2)}_run_{str(run).zfill(2)}.yml"
 
 session_object = HCPMovieELSession(
     output_str=output_str,

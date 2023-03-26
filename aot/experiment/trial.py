@@ -24,6 +24,7 @@ class HCPMovieELTrial(Trial):
         parameters,
         timing="seconds",
         verbose=True,
+        training_mode: bool = False,
     ):
         """Initializes a StroopTrial object.
 
@@ -57,6 +58,7 @@ class HCPMovieELTrial(Trial):
             load_next_during_phase=None,
             verbose=verbose,
         )
+        self.training_mode = training_mode
 
     def create_trial(self):
         pass
@@ -67,6 +69,7 @@ class HCPMovieELTrial(Trial):
             if (
                 self.session.tracker
                 and self.settings["various"]["capture_eyemovements"]
+                and self.training_mode == True
             ):
                 el_smp = self.session.tracker.getNewestSample()
                 if el_smp != None:
@@ -246,19 +249,23 @@ class HCPMovieELTrialLabeling(Trial):
             label = self.text_list[label_index]
             for key, t in events:
                 if key == "J" or key == "j":
-                    self.session.grades[self.parameters["movie_file"]][label] = key
+                    self.session.grades[self.parameters["movie_file"]
+                                        ][label] = key
                     # self.session.grades.append((self.parameters['movie_file'], key))
                     self.stop_phase()
                 elif key == "K" or key == "k":
-                    self.session.grades[self.parameters["movie_file"]][label] = key
+                    self.session.grades[self.parameters["movie_file"]
+                                        ][label] = key
                     # self.session.grades.append((self.parameters['movie_file'], key))
                     self.stop_phase()
                 if key == "L" or key == "l":
-                    self.session.grades[self.parameters["movie_file"]][label] = key
+                    self.session.grades[self.parameters["movie_file"]
+                                        ][label] = key
                     # self.session.grades.append((self.parameters['movie_file'], key))
                     self.stop_phase()
                 elif key == ":" or key == ";":
-                    self.session.grades[self.parameters["movie_file"]][label] = key
+                    self.session.grades[self.parameters["movie_file"]
+                                        ][label] = key
                     # self.session.grades.append((self.parameters['movie_file'], key))
                     self.stop_phase()
 

@@ -116,7 +116,7 @@ class FixationBullsEye(object):
         )
 
     def draw(self):
-        self.surround_fixation_dot.draw()
+        # self.surround_fixation_dot.draw()
         self.circle2.draw()
         self.line1.draw()
         self.line2.draw()
