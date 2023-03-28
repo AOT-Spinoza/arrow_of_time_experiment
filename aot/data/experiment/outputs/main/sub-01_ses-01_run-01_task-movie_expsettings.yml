@@ -45,6 +45,7 @@ mri:
     sync: t
     volumes: 10
 paths:
+    grades_path: data/grading
     information_list_original: information_list_originals.tsv
     output_path: data/experiment/outputs
     settings_path: data/experiment/settings
