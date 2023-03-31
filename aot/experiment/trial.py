@@ -1,8 +1,8 @@
 import numpy as np
 from exptools2.core import Trial
 from psychopy.visual import TextStim
-from stimuli import FixationLines
 import warnings
+from beepy import beep
 
 try:
     import pylink
@@ -12,6 +12,17 @@ except ModuleNotFoundError:
     PYLINK_AVAILABLE = False
 else:
     PYLINK_AVAILABLE = True
+
+try:
+    from psychtoolbox import audio
+    import psychtoolbox as ptb
+except Exception:
+    raise "psychtoolbox audio failed to import"
+try:
+    import soundfile as sf
+except Exception:
+    raise "soundfile not working"
+from psychopy import sound
 
 
 class HCPMovieELTrial(Trial):
@@ -68,22 +79,23 @@ class HCPMovieELTrial(Trial):
             self.session.movie_stims[self.parameters["movie_index"]].draw()
             if (
                 self.session.tracker
-                and self.settings["various"]["capture_eyemovements"]
-                and self.training_mode == True
+                and self.session.settings["various"]["capture_eyemovements"]
             ):
                 el_smp = self.session.tracker.getNewestSample()
                 if el_smp != None:
                     if el_smp.isLeftSample():
                         sample = np.array(el_smp.getLeftEye().getGaze())
                         fix_dist_pix = np.linalg.norm(
-                            np.array(self.session.win.size) - sample
+                            (np.array(self.session.win.size)/2) - np.array(sample)
                         )
-                        fix_dist_deg = fix_dist_pix * self.session.pix_per_deg
+                        fix_dist_deg = fix_dist_pix / self.session.pix_per_deg
                         if (
                             fix_dist_deg
-                            > self.settings["various"]["gaze_threshold_deg"]
+                            > self.session.settings["various"]["gaze_threshold_deg"]
                         ):
-                            self.session.play_sound("beep")
+                            self.session.fixation.circle.color = [1, -1, -1]
+                            #self.session.error_sound.play() 
+                            beep(sound=3)
 
         self.session.fixation.draw()
 
@@ -293,7 +305,6 @@ class InstructionTrial(Trial):
 
     def draw(self):
         self.session.fixation.draw()
-        self.session.report_fixation.draw()
 
         self.text.draw()
 
@@ -327,8 +338,7 @@ class DummyWaiterTrial(InstructionTrial):
         self.session.fixation.draw()
         if self.phase == 0:
             self.text.draw()
-        else:
-            self.session.report_fixation.draw()
+
 
     def get_events(self):
         events = Trial.get_events(self)

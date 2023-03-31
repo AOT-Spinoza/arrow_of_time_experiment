@@ -10,17 +10,16 @@ eyetracker:
     address: 100.1.1.1
     dot_size: 0.1
     options:
-        active_eye: left
         automatic_calibration_pacing: 1000
         autothreshold_click: true
         autothreshold_repeat: true
-        binocular_enabled: false
+        binocular_enabled: true
         calibration_type: HV13
         enable_automatic_calibration: true
         enable_camera_position_detect: true
         enable_search_limits: true
         file_event_filter: LEFT,RIGHT,FIXATION,SACCADE,BLINK,MESSAGE,BUTTON,INPUT
-        heuristic_filter: 2
+        heuristic_filter: 0
         link_event_filter: LEFT,RIGHT,FIXATION,SACCADE,BLINK,BUTTON
         link_sample_data: LEFT,RIGHT,GAZE,GAZERES,AREA,STATUS,HTARGET
         pupil_size_diameter: true
@@ -49,22 +48,26 @@ paths:
     information_list_original: information_list_originals.tsv
     output_path: data/experiment/outputs
     settings_path: data/experiment/settings
-    stimuli_path: /Users/shufanzhang/Documents/PhD/Arrow_of_time/arrow_of_time/stimuli_flat
+    stimuli_path: /experiments/aot/videos
     stimuli_processing_path: /Users/shufanzhang/Documents/PhD/Arrow_of_time/arrow_of_time/stimuli
 preferences:
     general:
         audioLib: sounddevice
         units: deg
 stimuli:
-    aperture_radius: 400
     experiment_movie_duration: 2.5
-    fix_color:
+    fix_fill_color:
+    - -1
+    - -1
+    - -1
+    fix_line_color:
     - 1
     - 1
     - 1
-    fix_line_width: 1.25
-    fix_radius: 6
-    movie_files: []
+    fix_line_width: 0.75
+    fix_perimeter_size: 0.625
+    fix_perimeter_smooth: 0.3
+    fix_size: 0.0625
     movie_size_pix:
     - 1536
     - 1080
