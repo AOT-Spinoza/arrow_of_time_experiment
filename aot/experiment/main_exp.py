@@ -15,7 +15,7 @@ parser.add_argument("--subject", default=1, nargs="?")
 parser.add_argument("--ses", default=1, nargs="?")
 parser.add_argument("--run", default=1, nargs="?")
 
-parser.add_argument("--eyelink", default=True,
+parser.add_argument("--eyelink", default=False,
                     action=argparse.BooleanOptionalAction)
 
 cmd_args = parser.parse_args()
@@ -25,6 +25,7 @@ subject, ses, run, eyelink = (
     cmd_args.run,
     cmd_args.eyelink,
 )
+
 
 def main():
     settings_dir = base_dir / core_settings["paths"]["settings_path"] / "main"
@@ -44,6 +45,7 @@ def main():
     logging.warn(f"Writing results to: {output_dir / output_str}")
     session_object.run()
     session_object.close()
+
 
 if __name__ == "__main__":
     main()

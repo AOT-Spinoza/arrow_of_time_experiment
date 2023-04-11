@@ -31,6 +31,7 @@ from psychopy import sound
 
 import aot
 
+
 def save_grades_to_csv(grades, name):
     df = pd.DataFrame.from_dict(grades, orient="index")
     df.to_csv(name + ".csv")
@@ -92,7 +93,10 @@ class HCPMovieELSession(PylinkEyetrackerSession):
             open(run_settings_file), Loader=yaml.FullLoader)
         self.settings['stimuli'].update(video_files['stimuli'])
 
-        experiment_movie_duration = self.settings["stimuli"].get("experiment_movie_duration")
+        experiment_movie_duration = self.settings["stimuli"].get(
+            "experiment_movie_duration")
+
+        self.pix_per_deg = self.win.size[0] / self.win.monitor.getWidth()
 
         self.fixation = FixationBullsEye(
             win=self.win,
@@ -101,15 +105,18 @@ class HCPMovieELSession(PylinkEyetrackerSession):
             line_width=self.settings['stimuli'].get('fix_line_width'),
             dot_color=self.settings['stimuli'].get('fix_fill_color'),
             dot_size=self.settings['stimuli'].get('fix_size')*self.pix_per_deg,
-            dot_perimeter_size=self.settings['stimuli'].get('fix_perimeter_size')*self.pix_per_deg,
-            dot_perimeter_smoothness=self.settings['stimuli'].get('fix_perimeter_smooth')
+            dot_perimeter_size=self.settings['stimuli'].get(
+                'fix_perimeter_size')*self.pix_per_deg,
+            dot_perimeter_smoothness=self.settings['stimuli'].get(
+                'fix_perimeter_smooth')
         )
-        #self.error_sound = sound.Sound('A')
-        #self.error_sound.play()
-        #print(self.error_sound)
-        #print(dir(self.error_sound))
+        # self.error_sound = sound.Sound('A')
+        # self.error_sound.play()
+        # print(self.error_sound)
+        # print(dir(self.error_sound))
 
-        self.win._monitorFrameRate = self.settings["various"].get("monitor_framerate")  # 120? yaml?
+        self.win._monitorFrameRate = self.settings["various"].get(
+            "monitor_framerate")  # 120? yaml?
         # movie_trial_nr is in range(self.n_trials) that comes from the number of movies listed in the yaml file
         # but not all of them are actually movies, some are blank trials, we have to deal with that
         self.n_trials = len(self.settings["stimuli"].get(
@@ -181,7 +188,8 @@ class HCPMovieELSession(PylinkEyetrackerSession):
                     trial_nr=2 + movie_trial_nr,
                     phase_durations=[
                         self.settings["design"].get("pre_fix_movie_interval"),
-                        self.settings["stimuli"].get("experiment_movie_duration"),
+                        self.settings["stimuli"].get(
+                            "experiment_movie_duration"),
                         self.settings["design"].get("post_fix_movie_interval"),
                     ],
                     phase_names=["fix_pre", "movie", "fix_post"],
@@ -220,13 +228,32 @@ class HCPMovieELSession(PylinkEyetrackerSession):
         if self.eyetracker_on:
             self.start_recording_eyetracker()
         for trial in self.trials:
-            self.fixation.circle.color = self.settings['stimuli'].get('fix_fill_color')
+            self.fixation.circle.color = self.settings['stimuli'].get(
+                'fix_fill_color')
             trial.run()
 
         self.close()
 
 
 class HCPMovieELSessionGrading(HCPMovieELSession):
+    def __init__(
+        self,
+        output_str: str,
+        output_dir: Path,
+        core_settings_file: Path,
+        run_settings_file: Path,
+        eyetracker_on: bool = True,
+        training_mode: bool = False,
+    ):
+        super().__init__(
+            output_str,
+            output_dir,
+            core_settings_file,
+            run_settings_file,
+            eyetracker_on,
+            training_mode,
+        )
+        self.grades = {}
 
     def create_trials(self):
         """Creates trials (ideally before running your session!)"""
@@ -301,6 +328,24 @@ class HCPMovieELSessionGrading(HCPMovieELSession):
 
 
 class HCPMovieELSessionLabeling(HCPMovieELSession):
+    def __init__(
+        self,
+        output_str: str,
+        output_dir: Path,
+        core_settings_file: Path,
+        run_settings_file: Path,
+        eyetracker_on: bool = True,
+        training_mode: bool = False,
+    ):
+        super().__init__(
+            output_str,
+            output_dir,
+            core_settings_file,
+            run_settings_file,
+            eyetracker_on,
+            training_mode,
+        )
+        self.grades = {}
 
     def create_trials(self):
         """Creates trials (ideally before running your session!)"""

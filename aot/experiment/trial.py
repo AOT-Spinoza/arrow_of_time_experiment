@@ -94,7 +94,7 @@ class HCPMovieELTrial(Trial):
                             > self.session.settings["various"]["gaze_threshold_deg"]
                         ):
                             self.session.fixation.circle.color = [1, -1, -1]
-                            #self.session.error_sound.play() 
+                            # self.session.error_sound.play()
                             beep(sound=3)
 
         self.session.fixation.draw()
@@ -338,7 +338,6 @@ class DummyWaiterTrial(InstructionTrial):
         self.session.fixation.draw()
         if self.phase == 0:
             self.text.draw()
-
 
     def get_events(self):
         events = Trial.get_events(self)

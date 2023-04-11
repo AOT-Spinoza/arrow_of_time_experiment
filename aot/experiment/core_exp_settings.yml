@@ -39,7 +39,7 @@ various:
   button_size: 2
   text_list: ['Positive negative?','Arousing or not?','Reverse or not?'] 
   monitor_framerate: 120 ###################################################
-  capture_eyemovements: True
+  capture_eyemovements: False
   gaze_threshold_deg: 1.0
 
 stimuli:
@@ -56,7 +56,8 @@ paths:
   information_list_original: 'information_list_originals.tsv'
   settings_path: 'data/experiment/settings'
   output_path : 'data/experiment/outputs'
-  stimuli_path : '/experiments/aot/videos'
+  #stimuli_path : '/experiments/aot/videos'
+  stimuli_path : '/Users/shufanzhang/Documents/PhD/Arrow_of_time/arrow_of_time_local/stimuli_flat'
   stimuli_processing_path : '/Users/shufanzhang/Documents/PhD/Arrow_of_time/arrow_of_time/stimuli'
   grades_path : 'data/grading'
   #streched_path : 'stimuli/resampled'
