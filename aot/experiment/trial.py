@@ -2,7 +2,11 @@ import numpy as np
 from exptools2.core import Trial
 from psychopy.visual import TextStim
 import warnings
-from beepy import beep
+from playsound import playsound
+from pathlib import Path
+import aot
+import yaml
+
 
 try:
     import pylink
@@ -24,6 +28,10 @@ except Exception:
     raise "soundfile not working"
 from psychopy import sound
 
+base_dir = Path(aot.__path__[0])
+core_expt_yaml_path = base_dir / "experiment/core_exp_settings.yml"
+core_settings = yaml.load(open(core_expt_yaml_path), Loader=yaml.FullLoader)
+soundfile = core_settings["paths"]["sound_path"]
 
 class HCPMovieELTrial(Trial):
     def __init__(
@@ -94,8 +102,7 @@ class HCPMovieELTrial(Trial):
                             > self.session.settings["various"]["gaze_threshold_deg"]
                         ):
                             self.session.fixation.circle.color = [1, -1, -1]
-                            # self.session.error_sound.play()
-                            beep(sound=3)
+                            playsound(soundfile)
 
         self.session.fixation.draw()
 
