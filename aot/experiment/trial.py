@@ -104,6 +104,16 @@ class HCPMovieELTrial(Trial):
                         ):
                             self.session.fixation.circle.color = [1, -1, -1]
                             playsound(soundfile)
+                            # stop the movie playing
+                            self.session.movie_stims[self.parameters["movie_index"]].stop(
+                            )
+                            if (
+                                fix_dist_deg
+                                < self.session.settings["various"]["gaze_threshold_deg"]
+                            ):
+                                self.session.fixation.circle.color = [1, 1, 1]
+                                self.session.movie_stims[self.parameters["movie_index"]].play(
+                                )
 
         self.session.fixation.draw()
 

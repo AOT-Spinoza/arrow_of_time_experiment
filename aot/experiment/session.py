@@ -96,8 +96,8 @@ class HCPMovieELSession(PylinkEyetrackerSession):
         experiment_movie_duration = self.settings["stimuli"].get(
             "experiment_movie_duration")
 
-        #we dont need this for lab computer but required by my laptop????    
-        #self.pix_per_deg = self.win.size[0] / self.win.monitor.getWidth() 
+        # we dont need this for lab computer but required by my laptop????
+        self.pix_per_deg = self.win.size[0] / self.win.monitor.getWidth()
 
         self.fixation = FixationBullsEye(
             win=self.win,
