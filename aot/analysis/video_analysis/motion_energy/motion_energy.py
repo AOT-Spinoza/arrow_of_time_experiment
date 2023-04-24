@@ -34,5 +34,5 @@ def get_motion_energy(video_file):
 all_videos = [video for video in os.listdir(stimuli_path) if video.endswith(".mp4")]
 for video in all_videos:
     print(video)
-    moten_features = get_motion_energy(stimuli_path / video)
+    moten_features = get_motion_energy(str(stimuli_path / video))
     pickle.dump(moten_features, open(result_path / f"{video}.pkl", "wb"))
