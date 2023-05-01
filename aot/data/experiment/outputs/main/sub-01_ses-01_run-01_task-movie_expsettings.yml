@@ -48,6 +48,7 @@ paths:
     information_list_original: information_list_originals.tsv
     output_path: data/experiment/outputs
     settings_path: data/experiment/settings
+    sound_path: /home/wang/Projects/arrow_of_time/beep-02.wav
     stimuli_path: /experiments/aot/videos
     stimuli_processing_path: /Users/shufanzhang/Documents/PhD/Arrow_of_time/arrow_of_time/stimuli
 preferences:
@@ -79,7 +80,7 @@ various:
     - k
     - l
     - semicolon
-    capture_eyemovements: false
+    capture_eyemovements: true
     gaze_threshold_deg: 1.0
     monitor_framerate: 120
     piechart_width: 1
