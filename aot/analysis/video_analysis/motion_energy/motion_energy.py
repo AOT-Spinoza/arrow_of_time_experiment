@@ -9,7 +9,8 @@ import aot.analysis.video_processing_code.database_append as db_append
 
 base_dir = Path(aot.__path__[0])
 core_expt_yaml_path = base_dir / "experiment/core_exp_settings.yml"
-core_settings = yaml.load(open(core_expt_yaml_path, "r"), Loader=yaml.FullLoader)
+core_settings = yaml.load(
+    open(core_expt_yaml_path, "r"), Loader=yaml.FullLoader)
 stimuli_path = Path(core_settings["paths"]["stimuli_path"])
 
 result_path = base_dir / "analysis/video_analysis/motion_energy/result"
@@ -40,7 +41,8 @@ def check_result_existence(video):
         return False
 
 
-all_videos = [video for video in os.listdir(stimuli_path) if video.endswith(".mp4")]
+all_videos = [video for video in os.listdir(
+    stimuli_path) if video.endswith(".mp4")]
 
 
 for video in all_videos:
