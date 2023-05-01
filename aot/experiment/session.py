@@ -128,6 +128,7 @@ class HCPMovieELSession(PylinkEyetrackerSession):
                        + self.settings["stimuli"].get("movie_files")[i]
                        for i in range(len(self.settings["stimuli"].get("movie_files")))
                        ]
+        print(self.movies)
 
         # count the time for loading the movies
         start = time.perf_counter()
