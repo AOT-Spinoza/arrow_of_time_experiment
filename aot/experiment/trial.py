@@ -88,7 +88,7 @@ class HCPMovieELTrial(Trial):
             self.session.movie_stims[self.parameters["movie_index"]].draw()
             if (
                 self.session.tracker
-                and self.session.settings["various"]["capture_eyemovements"]
+                and self.session.settings["various"]["eyemovements_alert"]
             ):
                 el_smp = self.session.tracker.getNewestSample()
                 if el_smp != None:
