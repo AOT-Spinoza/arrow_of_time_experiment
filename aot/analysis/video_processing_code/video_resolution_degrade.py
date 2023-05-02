@@ -5,6 +5,9 @@ import aot
 import ffmpeg
 from pathlib import Path
 
+original_width = 1280
+original_height = 720
+
 
 def degrade_resolution_t_times(n):
     base_dir = Path(aot.__path__[0])
@@ -21,25 +24,30 @@ def degrade_resolution_t_times(n):
         stimuli_path) if video.endswith(".mp4")]
 
     for video in all_videos:
+        '''
         probe = ffmpeg.probe(str(stimuli_path / video))
-        video_info = next(
-            s for s in probe["streams"] if s["codec_type"] == "video")
-        width = int(video_info["width"])
-        height = int(video_info["height"])
-        os.system(
-            "ffmpeg -i "
-            + str(stimuli_path)
-            + "/"
-            + str(video)
-            + " -vf scale="
-            + str(int(width/n))
-            + ":"
-            + str(int(height/n))
-            + " "
-            + str(target_stimuli_degraded_path)
-            + "/"
-            + str(video)
-        )
+        if (
+            "h264"
+            in probe["streams"][0]["codec_name"]
+        ):
+            width = ffmpeg.probe(str(stimuli_path / video)
+                                 )["streams"][0]["width"]
+            height = ffmpeg.probe(str(stimuli_path / video)
+                                  )["streams"][0]["height"]
+        elif (
+            "acc"
+            in probe["streams"][0]["codec_name"]
+        ):
+            width = ffmpeg.probe(str(stimuli_path / video)
+                                 )["streams"][1]["width"]
+            height = ffmpeg.probe(str(stimuli_path / video)
+                                  )["streams"][1]["height"]
+    '''
+        width_degraded = original_width // n
+        height_degraded = original_height // n
+
+        os.system("ffmpeg -i " + str(stimuli_path / video) + " -vf scale=" + str(width_degraded) +
+                  ":" + str(height_degraded) + " " + str(target_stimuli_degraded_path / video))
 
 
 if __name__ == "__main__":
