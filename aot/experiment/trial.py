@@ -31,7 +31,7 @@ from psychopy import sound
 base_dir = Path(aot.__path__[0])
 core_expt_yaml_path = base_dir / "experiment/core_exp_settings.yml"
 core_settings = yaml.load(open(core_expt_yaml_path), Loader=yaml.FullLoader)
-soundfile = core_settings["paths"]["sound_path"]
+soundfile = base_dir / core_settings["paths"]["sound_path"]
 
 
 class HCPMovieELTrial(Trial):
@@ -103,7 +103,7 @@ class HCPMovieELTrial(Trial):
                             > self.session.settings["various"]["gaze_threshold_deg"]
                         ):
                             self.session.fixation.circle.color = [1, -1, -1]
-                            playsound(soundfile)
+                            playsound(str(soundfile))
                             # stop the movie playing
                             self.session.movie_stims[self.parameters["movie_index"]].stop(
                             )
