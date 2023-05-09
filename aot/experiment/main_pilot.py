@@ -13,7 +13,8 @@ core_settings = yaml.load(open(core_expt_yaml_path), Loader=yaml.FullLoader)
 parser = argparse.ArgumentParser()
 parser.add_argument("--task", default=90, nargs="?")  # 90 80 72
 parser.add_argument("--run", default=1, nargs="?")
-parser.add_argument("--eyelink", default=True, action=argparse.BooleanOptionalAction)
+parser.add_argument("--eyelink", default=True,
+                    action=argparse.BooleanOptionalAction)
 
 cmd_args = parser.parse_args()
 task, run, eyelink = (
