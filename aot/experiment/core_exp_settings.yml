@@ -9,6 +9,7 @@ window:
   units: pix
   color: [0, 0, 0]
   size: [1920, 1080]
+  screen: 1
 
 eyetracker:
   address: '100.1.1.1'
@@ -55,7 +56,7 @@ paths:
   information_list_original: 'information_list_originals.tsv'
   settings_path: 'data/experiment/settings'
   output_path : 'data/experiment/outputs'
-  #stimuli_path : '/experiments/knapen_aot/videos'
+  stimuli_path : '/experiments/aot'
   #stimuli_path : '/tank/shared/2022/arrow_of_time/arrow_of_time/videos1'
   stimuli_path : '/Users/shufanzhang/Documents/PhD/Arrow_of_time/arrow_of_time_spinoza/stimuli_flat' 
   stimuli_processing_path : '/Users/shufanzhang/Documents/PhD/Arrow_of_time/arrow_of_time/stimuli'

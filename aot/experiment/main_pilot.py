@@ -11,7 +11,7 @@ core_expt_yaml_path = base_dir / "experiment/core_exp_settings.yml"
 core_settings = yaml.load(open(core_expt_yaml_path), Loader=yaml.FullLoader)
 
 parser = argparse.ArgumentParser()
-parser.add_argument("--task", default=90, nargs="?")
+parser.add_argument("--task", default=90, nargs="?")#90 80 72 
 parser.add_argument("--run", default=1, nargs="?")
 parser.add_argument("--eyelink", default=False,
                     action=argparse.BooleanOptionalAction)
