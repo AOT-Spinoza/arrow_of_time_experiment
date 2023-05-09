@@ -69,7 +69,7 @@ class HCPMovieELSession(PylinkEyetrackerSession):
 
         Parameters
         ----------
-        output_str : str 
+        output_str : str
             Basename for all output-files (like logs), e.g., "sub-01_task-stroop_run-1"
         output_dir : str
             Path to desired output-directory (default: None, which results in $pwd/logs)
@@ -89,27 +89,28 @@ class HCPMovieELSession(PylinkEyetrackerSession):
 
         self.training_mode = training_mode
         # supplement this run's settings with the per-run yaml file's settings
-        video_files = yaml.load(
-            open(run_settings_file), Loader=yaml.FullLoader)
-        self.settings['stimuli'].update(video_files['stimuli'])
+        video_files = yaml.load(open(run_settings_file), Loader=yaml.FullLoader)
+        self.settings["stimuli"].update(video_files["stimuli"])
 
         experiment_movie_duration = self.settings["stimuli"].get(
-            "experiment_movie_duration")
+            "experiment_movie_duration"
+        )
 
         # we dont need this for lab computer but required by my laptop????
-        #self.pix_per_deg = self.win.size[0] / self.win.monitor.getWidth()
+        # self.pix_per_deg = self.win.size[0] / self.win.monitor.getWidth()
 
         self.fixation = FixationBullsEye(
             win=self.win,
             outer_radius=max(self.win.size),
-            line_color=self.settings['stimuli'].get('fix_line_color'),
-            line_width=self.settings['stimuli'].get('fix_line_width'),
-            dot_color=self.settings['stimuli'].get('fix_fill_color'),
-            dot_size=self.settings['stimuli'].get('fix_size')*self.pix_per_deg,
-            dot_perimeter_size=self.settings['stimuli'].get(
-                'fix_perimeter_size')*self.pix_per_deg,
-            dot_perimeter_smoothness=self.settings['stimuli'].get(
-                'fix_perimeter_smooth')
+            line_color=self.settings["stimuli"].get("fix_line_color"),
+            line_width=self.settings["stimuli"].get("fix_line_width"),
+            dot_color=self.settings["stimuli"].get("fix_fill_color"),
+            dot_size=self.settings["stimuli"].get("fix_size") * self.pix_per_deg,
+            dot_perimeter_size=self.settings["stimuli"].get("fix_perimeter_size")
+            * self.pix_per_deg,
+            dot_perimeter_smoothness=self.settings["stimuli"].get(
+                "fix_perimeter_smooth"
+            ),
         )
         # self.error_sound = sound.Sound('A')
         # self.error_sound.play()
@@ -117,25 +118,30 @@ class HCPMovieELSession(PylinkEyetrackerSession):
         # print(dir(self.error_sound))
 
         self.win._monitorFrameRate = self.settings["various"].get(
-            "monitor_framerate")  # 120? yaml?
+            "monitor_framerate"
+        )  # 120? yaml?
         # movie_trial_nr is in range(self.n_trials) that comes from the number of movies listed in the yaml file
         # but not all of them are actually movies, some are blank trials, we have to deal with that
-        self.n_trials = len(self.settings["stimuli"].get(
-            "movie_files"))  # include the movdies and blank trials
-        self.movies = ["blank" if self.settings["stimuli"].get("movie_files")[i] == "blank" else
-                       self.settings["paths"].get("stimuli_path")
-                       + "/"
-                       + self.settings["stimuli"].get("movie_files")[i]
-                       for i in range(len(self.settings["stimuli"].get("movie_files")))
-                       ]
+        self.n_trials = len(
+            self.settings["stimuli"].get("movie_files")
+        )  # include the movdies and blank trials
+        self.movies = [
+            "blank"
+            if self.settings["stimuli"].get("movie_files")[i] == "blank"
+            else self.settings["paths"].get("stimuli_path")
+            + "/"
+            + self.settings["stimuli"].get("movie_files")[i]
+            for i in range(len(self.settings["stimuli"].get("movie_files")))
+        ]
         print(self.movies)
 
         # count the time for loading the movies
         start = time.perf_counter()
         # this self.movie_stims is the list that accessed by the trial class by using movie_trial_nr
         self.movie_stims = [
-            "blank" if movie == "blank" else
-            MovieStim3(
+            "blank"
+            if movie == "blank"
+            else MovieStim3(
                 self.win,
                 filename=movie,
                 size=self.settings["stimuli"].get(
@@ -165,45 +171,39 @@ class HCPMovieELSession(PylinkEyetrackerSession):
         dummy_trial = DummyWaiterTrial(
             session=self,
             trial_nr=1,
-            phase_durations=[
-                np.inf, self.settings["design"].get("start_duration")],
-            txt="Waiting for experiment to start",
+            phase_durations=[np.inf, self.settings["design"].get("start_duration")],
+            txt="",
         )
 
         self.trials = [instruction_trial, dummy_trial]
 
         for movie_trial_nr in range(self.n_trials):
             if self.movies[movie_trial_nr] == "blank":
-                print(f"blank trial {movie_trial_nr}")
-                trial = DummyWaiterTrial(
-                    session=self,
-                    trial_nr=2 + movie_trial_nr,
-                    phase_durations=[
-                        self.settings["design"].get("blank_duration")
-                    ],
-                    txt="",
-                )
+                blank = 1
             else:
-                trial = HCPMovieELTrial(
-                    session=self,
-                    # this trial number is not explicitly used in the trial class for movie playing
-                    trial_nr=2 + movie_trial_nr,
-                    phase_durations=[
-                        self.settings["design"].get("pre_fix_movie_interval"),
-                        self.settings["stimuli"].get(
-                            "experiment_movie_duration"),
-                        self.settings["design"].get("post_fix_movie_interval"),
-                    ],
-                    phase_names=["fix_pre", "movie", "fix_post"],
-                    parameters={
-                        # movie trail draw the movie by self.session.movie_stims[self.parameters["movie_index"]].draw()
-                        # this movie_trail_nr is used to index the movie_stims list
-                        "movie_index": movie_trial_nr,
-                        "movie_duration": self.settings["stimuli"].get("experiment_movie_duration"),
-                        "movie_file": self.movies[movie_trial_nr],
-                    },
-                    training_mode=self.training_mode
-                )
+                blank = 0
+            trial = HCPMovieELTrial(
+                session=self,
+                # this trial number is not explicitly used in the trial class for movie playing
+                trial_nr=2 + movie_trial_nr,
+                phase_durations=[
+                    self.settings["design"].get("pre_fix_movie_interval"),
+                    self.settings["stimuli"].get("experiment_movie_duration"),
+                    self.settings["design"].get("post_fix_movie_interval"),
+                ],
+                phase_names=["fix_pre", "movie", "fix_post"],
+                parameters={
+                    # movie trail draw the movie by self.session.movie_stims[self.parameters["movie_index"]].draw()
+                    # this movie_trail_nr is used to index the movie_stims list
+                    "movie_index": movie_trial_nr,
+                    "movie_duration": self.settings["stimuli"].get(
+                        "experiment_movie_duration"
+                    ),
+                    "movie_file": self.movies[movie_trial_nr],
+                    "blank": blank,
+                },
+                training_mode=self.training_mode,
+            )
             self.trials.append(trial)
 
         outro_trial = OutroTrial(
@@ -230,8 +230,7 @@ class HCPMovieELSession(PylinkEyetrackerSession):
         if self.eyetracker_on:
             self.start_recording_eyetracker()
         for trial in self.trials:
-            self.fixation.circle.color = self.settings['stimuli'].get(
-                'fix_fill_color')
+            self.fixation.circle.color = self.settings["stimuli"].get("fix_fill_color")
             trial.run()
 
         self.close()
@@ -271,8 +270,7 @@ class HCPMovieELSessionGrading(HCPMovieELSession):
         dummy_trial = DummyWaiterTrial(
             session=self,
             trial_nr=1,
-            phase_durations=[
-                np.inf, self.settings["design"].get("start_duration")],
+            phase_durations=[np.inf, self.settings["design"].get("start_duration")],
             txt="Waiting for experiment to start",
         )
 
@@ -290,7 +288,9 @@ class HCPMovieELSessionGrading(HCPMovieELSession):
                 phase_names=["fix_pre", "movie", "fix_post"],
                 parameters={
                     "movie_index": movie_trial_nr,
-                    "movie_duration": self.settings["stimuli"].get("experiment_movie_duration"),
+                    "movie_duration": self.settings["stimuli"].get(
+                        "experiment_movie_duration"
+                    ),
                     "movie_file": self.movies[movie_trial_nr],
                 },
             )
@@ -322,8 +322,7 @@ class HCPMovieELSessionGrading(HCPMovieELSession):
         for trial in self.trials:
             trial.run()
             save_grades_to_csv(
-                self.grades, os.path.join(
-                    self.output_dir, f"{self.output_str}_grades")
+                self.grades, os.path.join(self.output_dir, f"{self.output_str}_grades")
             )
 
         self.close()
@@ -363,8 +362,7 @@ class HCPMovieELSessionLabeling(HCPMovieELSession):
         dummy_trial = DummyWaiterTrial(
             session=self,
             trial_nr=1,
-            phase_durations=[
-                np.inf, self.settings["design"].get("start_duration")],
+            phase_durations=[np.inf, self.settings["design"].get("start_duration")],
             txt="Waiting for experiment to start",
         )
 
@@ -385,7 +383,9 @@ class HCPMovieELSessionLabeling(HCPMovieELSession):
                 # phase_names=['fix_pre', 'movie', 'fix_post'],
                 parameters={
                     "movie_index": movie_trial_nr,
-                    "movie_duration": self.settings["stimuli"].get("experiment_movie_duration"),
+                    "movie_duration": self.settings["stimuli"].get(
+                        "experiment_movie_duration"
+                    ),
                     "movie_file": self.movies[movie_trial_nr],
                 },
             )
@@ -419,8 +419,7 @@ class HCPMovieELSessionLabeling(HCPMovieELSession):
         for trial in self.trials:
             trial.run()
             save_grades_to_csv(
-                self.grades, os.path.join(
-                    self.output_dir, f"{self.output_str}_labels")
+                self.grades, os.path.join(self.output_dir, f"{self.output_str}_labels")
             )
 
         self.close()

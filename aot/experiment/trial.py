@@ -85,7 +85,8 @@ class HCPMovieELTrial(Trial):
 
     def draw(self):
         if self.phase == 1:
-            self.session.movie_stims[self.parameters["movie_index"]].draw()
+            if self.parameters["blank"] == 0:
+                self.session.movie_stims[self.parameters["movie_index"]].draw()
             if (
                 self.session.tracker
                 and self.session.settings["various"]["eyemovements_alert"]
@@ -95,7 +96,7 @@ class HCPMovieELTrial(Trial):
                     if el_smp.isLeftSample():
                         sample = np.array(el_smp.getLeftEye().getGaze())
                         fix_dist_pix = np.linalg.norm(
-                            (np.array(self.session.win.size)/2) - np.array(sample)
+                            (np.array(self.session.win.size) / 2) - np.array(sample)
                         )
                         fix_dist_deg = fix_dist_pix / self.session.pix_per_deg
                         if (
@@ -105,17 +106,28 @@ class HCPMovieELTrial(Trial):
                             self.session.fixation.circle.color = [1, -1, -1]
                             playsound(str(soundfile))
                             # stop the movie playing
-                            self.session.movie_stims[self.parameters["movie_index"]].stop(
-                            )
+                            self.session.movie_stims[
+                                self.parameters["movie_index"]
+                            ].stop()
                             if (
                                 fix_dist_deg
                                 < self.session.settings["various"]["gaze_threshold_deg"]
                             ):
                                 self.session.fixation.circle.color = [1, 1, 1]
-                                self.session.movie_stims[self.parameters["movie_index"]].play(
-                                )
+                                self.session.movie_stims[
+                                    self.parameters["movie_index"]
+                                ].play()
 
         self.session.fixation.draw()
+
+    def get_events(self):
+        events = super().get_events()
+
+        if events is not None:
+            for key, t in events:
+                if self.phase == 0:
+                    if key == "t":
+                        self.stop_phase()
 
 
 class HCPMovieELTrialGrading(Trial):
@@ -279,23 +291,19 @@ class HCPMovieELTrialLabeling(Trial):
             label = self.text_list[label_index]
             for key, t in events:
                 if key == "J" or key == "j":
-                    self.session.grades[self.parameters["movie_file"]
-                                        ][label] = key
+                    self.session.grades[self.parameters["movie_file"]][label] = key
                     # self.session.grades.append((self.parameters['movie_file'], key))
                     self.stop_phase()
                 elif key == "K" or key == "k":
-                    self.session.grades[self.parameters["movie_file"]
-                                        ][label] = key
+                    self.session.grades[self.parameters["movie_file"]][label] = key
                     # self.session.grades.append((self.parameters['movie_file'], key))
                     self.stop_phase()
                 if key == "L" or key == "l":
-                    self.session.grades[self.parameters["movie_file"]
-                                        ][label] = key
+                    self.session.grades[self.parameters["movie_file"]][label] = key
                     # self.session.grades.append((self.parameters['movie_file'], key))
                     self.stop_phase()
                 elif key == ":" or key == ";":
-                    self.session.grades[self.parameters["movie_file"]
-                                        ][label] = key
+                    self.session.grades[self.parameters["movie_file"]][label] = key
                     # self.session.grades.append((self.parameters['movie_file'], key))
                     self.stop_phase()
 
@@ -306,7 +314,6 @@ class InstructionTrial(Trial):
     def __init__(
         self, session, trial_nr, phase_durations=[np.inf], txt=None, keys=None, **kwargs
     ):
-
         super().__init__(session, trial_nr, phase_durations, **kwargs)
 
         txt_height = self.session.settings["various"].get("text_height")
@@ -349,7 +356,6 @@ class DummyWaiterTrial(InstructionTrial):
         txt="Waiting for scanner triggers.",
         **kwargs
     ):
-
         super().__init__(session, trial_nr, phase_durations, txt, **kwargs)
 
     def draw(self):
@@ -362,7 +368,7 @@ class DummyWaiterTrial(InstructionTrial):
 
         if events:
             for key, t in events:
-                if key == self.session.mri_trigger:
+                if key == "t":
                     if self.phase == 0:
                         self.stop_phase()
 
@@ -371,7 +377,6 @@ class OutroTrial(InstructionTrial):
     """Simple trial with only fixation cross."""
 
     def __init__(self, session, trial_nr, phase_durations, txt="", **kwargs):
-
         txt = """"""
         super().__init__(session, trial_nr, phase_durations, txt=txt, **kwargs)
 
