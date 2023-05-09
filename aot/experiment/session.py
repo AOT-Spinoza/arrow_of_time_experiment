@@ -97,7 +97,7 @@ class HCPMovieELSession(PylinkEyetrackerSession):
             "experiment_movie_duration")
 
         # we dont need this for lab computer but required by my laptop????
-        #self.pix_per_deg = self.win.size[0] / self.win.monitor.getWidth()
+        # self.pix_per_deg = self.win.size[0] / self.win.monitor.getWidth()
 
         self.fixation = FixationBullsEye(
             win=self.win,
@@ -167,43 +167,37 @@ class HCPMovieELSession(PylinkEyetrackerSession):
             trial_nr=1,
             phase_durations=[
                 np.inf, self.settings["design"].get("start_duration")],
-            txt="Waiting for experiment to start",
+            txt="",
         )
 
         self.trials = [instruction_trial, dummy_trial]
 
         for movie_trial_nr in range(self.n_trials):
             if self.movies[movie_trial_nr] == "blank":
-                print(f"blank trial {movie_trial_nr}")
-                trial = DummyWaiterTrial(
-                    session=self,
-                    trial_nr=2 + movie_trial_nr,
-                    phase_durations=[
-                        self.settings["design"].get("blank_duration")
-                    ],
-                    txt="",
-                )
+                blank = 1
             else:
-                trial = HCPMovieELTrial(
-                    session=self,
-                    # this trial number is not explicitly used in the trial class for movie playing
-                    trial_nr=2 + movie_trial_nr,
-                    phase_durations=[
-                        self.settings["design"].get("pre_fix_movie_interval"),
-                        self.settings["stimuli"].get(
-                            "experiment_movie_duration"),
-                        self.settings["design"].get("post_fix_movie_interval"),
-                    ],
-                    phase_names=["fix_pre", "movie", "fix_post"],
-                    parameters={
-                        # movie trail draw the movie by self.session.movie_stims[self.parameters["movie_index"]].draw()
-                        # this movie_trail_nr is used to index the movie_stims list
-                        "movie_index": movie_trial_nr,
-                        "movie_duration": self.settings["stimuli"].get("experiment_movie_duration"),
-                        "movie_file": self.movies[movie_trial_nr],
-                    },
-                    training_mode=self.training_mode
-                )
+                blank = 0
+            trial = HCPMovieELTrial(
+                session=self,
+                # this trial number is not explicitly used in the trial class for movie playing
+                trial_nr=2 + movie_trial_nr,
+                phase_durations=[
+                    self.settings["design"].get("pre_fix_movie_interval"),
+                    self.settings["stimuli"].get(
+                        "experiment_movie_duration"),
+                    self.settings["design"].get("post_fix_movie_interval"),
+                ],
+                phase_names=["fix_pre", "movie", "fix_post"],
+                parameters={
+                    # movie trail draw the movie by self.session.movie_stims[self.parameters["movie_index"]].draw()
+                    # this movie_trail_nr is used to index the movie_stims list
+                    "movie_index": movie_trial_nr,
+                    "movie_duration": self.settings["stimuli"].get("experiment_movie_duration"),
+                    "movie_file": self.movies[movie_trial_nr],
+                    "blank": blank
+                },
+                training_mode=self.training_mode
+            )
             self.trials.append(trial)
 
         outro_trial = OutroTrial(

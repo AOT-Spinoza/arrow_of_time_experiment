@@ -85,7 +85,8 @@ class HCPMovieELTrial(Trial):
 
     def draw(self):
         if self.phase == 1:
-            self.session.movie_stims[self.parameters["movie_index"]].draw()
+            if self.parameters['blank'] == 0:
+                self.session.movie_stims[self.parameters["movie_index"]].draw()
             if (
                 self.session.tracker
                 and self.session.settings["various"]["eyemovements_alert"]
@@ -116,6 +117,15 @@ class HCPMovieELTrial(Trial):
                                 )
 
         self.session.fixation.draw()
+
+    def get_events(self):
+        events = super().get_events()
+
+        if events is not None:
+            for key, t in events:
+                if self.phase == 0:
+                    if key == 't':
+                        self.stop_phase()
 
 
 class HCPMovieELTrialGrading(Trial):
@@ -362,7 +372,7 @@ class DummyWaiterTrial(InstructionTrial):
 
         if events:
             for key, t in events:
-                if key == self.session.mri_trigger:
+                if key == 't':
                     if self.phase == 0:
                         self.stop_phase()
 
