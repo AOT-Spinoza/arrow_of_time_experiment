@@ -235,6 +235,26 @@ class HCPMovieELSession(PylinkEyetrackerSession):
 
         self.close()
 
+class HCPMovieELSessionMemory(HCPMovieELSession):##########################施工中
+    def __init__(
+        self,
+        output_str: str,
+        output_dir: Path,
+        core_settings_file: Path,
+        run_settings_file: Path,
+        eyetracker_on: bool = True,
+        training_mode: bool = False,
+    ):
+        super().__init__(
+            output_str,
+            output_dir,
+            core_settings_file,
+            run_settings_file,
+            eyetracker_on,
+            training_mode,
+        )
+        self.grades = {}
+
 
 class HCPMovieELSessionGrading(HCPMovieELSession):
     def __init__(
