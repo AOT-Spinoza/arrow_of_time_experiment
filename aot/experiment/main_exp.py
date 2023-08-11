@@ -15,7 +15,7 @@ parser.add_argument("--subject", default=1, nargs="?")
 parser.add_argument("--ses", default=1, nargs="?")
 parser.add_argument("--run", default=1, nargs="?")
 
-parser.add_argument("--eyelink", default=True,
+parser.add_argument("--eyelink", default=False,
                     action=argparse.BooleanOptionalAction)
 
 cmd_args = parser.parse_args()
