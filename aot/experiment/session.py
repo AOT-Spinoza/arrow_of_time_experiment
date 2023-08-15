@@ -359,7 +359,7 @@ class HCPMovieELSessionMemory(PylinkEyetrackerSession):
             txt="Waiting for experiment to start",
         )
 
-        self.trials = [instruction_trial, dummy_trial]
+        self.trials = [instruction_trial]#, dummy_trial]
         #self.trials = []
 
         for picture_trial_nr in range(self.n_trials):
