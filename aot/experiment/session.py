@@ -95,7 +95,7 @@ class HCPMovieELSession(PylinkEyetrackerSession):
         self.settings["stimuli"].update(video_files["stimuli"])
 
         experiment_movie_duration = self.settings["stimuli"].get(
-            "experiment_movie_duration"
+            "experiment_movie_duration"     
         )
 
         # we dont need this for lab computer but required by my laptop????
