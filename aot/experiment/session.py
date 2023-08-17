@@ -131,14 +131,24 @@ class HCPMovieELSession(PylinkEyetrackerSession):
         self.n_trials = len(
             self.settings["stimuli"].get("movie_files")
         )  # include the movdies and blank trials
-        self.movies = [
-            "blank"
-            if self.settings["stimuli"].get("movie_files")[i] == "blank"
-            else self.settings["paths"].get("stimuli_path")
-            + "/"
-            + self.settings["stimuli"].get("movie_files")[i]
-            for i in range(len(self.settings["stimuli"].get("movie_files")))
-        ]
+        if os.path.exists("/Users/shufanzhang/Documents/PhD/Arrow_of_time/arrow_of_time/aot"):
+            self.movies = [
+                "blank"
+                if self.settings["stimuli"].get("movie_files")[i] == "blank"
+                else self.settings["paths"].get("stimuli_path")
+                + "/"
+                + self.settings["stimuli"].get("movie_files")[i]
+                for i in range(len(self.settings["stimuli"].get("movie_files")))
+            ]
+        else: #at spinoza
+            self.movies = [
+                "blank"
+                if self.settings["stimuli"].get("movie_files")[i] == "blank"
+                else self.settings["paths"].get("stimuli_path_spinoza")
+                + "/"
+                + self.settings["stimuli"].get("movie_files")[i]
+                for i in range(len(self.settings["stimuli"].get("movie_files")))
+            ]
         print(self.movies)
 
         # count the time for loading the movies
