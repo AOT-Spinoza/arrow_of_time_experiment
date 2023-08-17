@@ -9,7 +9,6 @@ eyetracker:
     address: 100.1.1.1
     dot_size: 0.1
     options:
-        active_eye: left
         automatic_calibration_pacing: 1000
         autothreshold_click: true
         autothreshold_repeat: true
@@ -53,6 +52,8 @@ paths:
     sound_path: beep-02.wav
     stimuli_degraded_path: /tank/shared/2022/arrow_of_time/arrow_of_time/videos1_degraded/stimuli_flat_degraded
     stimuli_path: /Users/shufanzhang/Documents/PhD/Arrow_of_time/arrow_of_time/stimuli_flat
+    stimuli_path_spinoza1: /experiments/knapen_aot/videos
+    stimuli_path_spinoza2: /experiments/aot
     stimuli_picture_path: /Users/shufanzhang/Documents/PhD/Arrow_of_time/arrow_of_time/pictures
     stimuli_processing_path: /Users/shufanzhang/Documents/PhD/Arrow_of_time/arrow_of_time/stimuli
 preferences:
@@ -86,7 +87,6 @@ various:
     - semicolon
     eyemovements_alert: false
     gaze_threshold_deg: 1.0
-    img_number_per_session: null
     monitor_framerate: 120
     piechart_width: 1
     run_number: 10
