@@ -9,6 +9,7 @@ eyetracker:
     address: 100.1.1.1
     dot_size: 0.1
     options:
+        active_eye: left
         automatic_calibration_pacing: 1000
         autothreshold_click: true
         autothreshold_repeat: true
@@ -78,7 +79,7 @@ stimuli:
     - 1536
     - 1080
 various:
-    blank_number_per_run: 15
+    blank_number_per_run: 12
     button_size: 2
     buttons:
     - j
@@ -98,7 +99,7 @@ various:
     - Arousing or not?
     - Reverse or not?
     text_width: 14
-    unique_video_number_per_session: 225
+    unique_video_number_per_session: 180
 window:
     color:
     - 0
