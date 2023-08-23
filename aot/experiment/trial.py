@@ -196,29 +196,17 @@ class HCPMovieELTrialLearning(Trial):
         if self.phase == 1:
             if self.parameters["blank"] == 0:
                 self.session.movie_stims[self.parameters["movie_index"]].draw()
-            if self.session.tracker and self.session.settings["various"]["eyemovements_alert"]:
-                el_smp = self.session.tracker.getNewestSample()
-                if el_smp != None:
-                    if el_smp.isLeftSample():
-                        sample = np.array(el_smp.getLeftEye().getGaze())
-                        fix_dist_pix = np.linalg.norm(
-                            (np.array(self.session.win.size) / 2) -
-                            np.array(sample)
-                        )
-                        fix_dist_deg = fix_dist_pix / self.session.pix_per_deg
-                        if (
-                            fix_dist_deg
-                            > self.session.settings["various"]["gaze_threshold_deg"]*2.2
-                        ):
-                            self.session.fixation.circle.color = [
-                                1, -1, -1]
-                            playsound(str(soundfile))
-                            # stop the movie playing
-                            '''
-                            self.session.movie_stims[
-                                self.parameters["movie_index"]
-                            ].stop()
-                            '''
+            if self.session.tracker and self.parameters["blank"] != 0:
+                if self.session.settings["various"]["eyemovements_alert"]:
+                    el_smp = self.session.tracker.getNewestSample()
+                    if el_smp != None:
+                        if el_smp.isLeftSample():
+                            sample = np.array(el_smp.getLeftEye().getGaze())
+                            fix_dist_pix = np.linalg.norm(
+                                (np.array(self.session.win.size) / 2) -
+                                np.array(sample)
+                            )
+                            fix_dist_deg = fix_dist_pix / self.session.pix_per_deg
                             if (
                                 fix_dist_deg
                                 < self.session.settings["various"]["gaze_threshold_deg"]
