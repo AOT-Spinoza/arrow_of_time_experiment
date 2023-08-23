@@ -1,6 +1,6 @@
 import os.path as op
 import argparse
-from psychopy import loggingss
+from psychopy import logging
 import yaml
 from session import HCPMovieELSession
 from pathlib import Path
