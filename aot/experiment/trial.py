@@ -141,6 +141,8 @@ class HCPMovieELTrial(Trial):
                         if key == "t":
                             self.stop_phase()
         '''
+
+
 class HCPMovieELTrialLearning(Trial):
     def __init__(
         self,
@@ -194,34 +196,38 @@ class HCPMovieELTrialLearning(Trial):
         if self.phase == 1:
             if self.parameters["blank"] == 0:
                 self.session.movie_stims[self.parameters["movie_index"]].draw()
-            if self.session.tracker:
-                if self.session.settings["various"]["eyemovements_alert"]:#################
-                    el_smp = self.session.tracker.getNewestSample()
-                    if el_smp != None:
-                        if el_smp.isLeftSample():
-                            sample = np.array(el_smp.getLeftEye().getGaze())
-                            fix_dist_pix = np.linalg.norm(
-                                (np.array(self.session.win.size) / 2) - np.array(sample)
-                            )
-                            fix_dist_deg = fix_dist_pix / self.session.pix_per_deg
+            if self.session.tracker and self.session.settings["various"]["eyemovements_alert"]:
+                el_smp = self.session.tracker.getNewestSample()
+                if el_smp != None:
+                    if el_smp.isLeftSample():
+                        sample = np.array(el_smp.getLeftEye().getGaze())
+                        fix_dist_pix = np.linalg.norm(
+                            (np.array(self.session.win.size) / 2) -
+                            np.array(sample)
+                        )
+                        fix_dist_deg = fix_dist_pix / self.session.pix_per_deg
+                        if (
+                            fix_dist_deg
+                            > self.session.settings["various"]["gaze_threshold_deg"]*2.2
+                        ):
+                            self.session.fixation.circle.color = [
+                                1, -1, -1]
+                            playsound(str(soundfile))
+                            # stop the movie playing
+                            '''
+                            self.session.movie_stims[
+                                self.parameters["movie_index"]
+                            ].stop()
+                            '''
                             if (
                                 fix_dist_deg
-                                > self.session.settings["various"]["gaze_threshold_deg"]
+                                < self.session.settings["various"]["gaze_threshold_deg"]
                             ):
-                                self.session.fixation.circle.color = [1, -1, -1]
-                                playsound(str(soundfile))
-                                # stop the movie playing
+                                self.session.fixation.circle.color = [
+                                    1, 1, 1]
                                 self.session.movie_stims[
                                     self.parameters["movie_index"]
-                                ].stop()
-                                if (
-                                    fix_dist_deg
-                                    < self.session.settings["various"]["gaze_threshold_deg"]
-                                ):
-                                    self.session.fixation.circle.color = [1, 1, 1]
-                                    self.session.movie_stims[
-                                        self.parameters["movie_index"]
-                                    ].play()
+                                ].play()
 
         self.session.fixation.draw()
 
@@ -244,6 +250,7 @@ class HCPMovieELTrialLearning(Trial):
                         if key == "t":
                             self.stop_phase()
         '''
+
 
 class HCPMovieELTrialMemory(Trial):
     def __init__(
@@ -473,19 +480,23 @@ class HCPMovieELTrialLabeling(Trial):
             label = self.text_list[label_index]
             for key, t in events:
                 if key == "J" or key == "j":
-                    self.session.grades[self.parameters["movie_file"]][label] = key
+                    self.session.grades[self.parameters["movie_file"]
+                                        ][label] = key
                     # self.session.grades.append((self.parameters['movie_file'], key))
                     self.stop_phase()
                 elif key == "K" or key == "k":
-                    self.session.grades[self.parameters["movie_file"]][label] = key
+                    self.session.grades[self.parameters["movie_file"]
+                                        ][label] = key
                     # self.session.grades.append((self.parameters['movie_file'], key))
                     self.stop_phase()
                 if key == "L" or key == "l":
-                    self.session.grades[self.parameters["movie_file"]][label] = key
+                    self.session.grades[self.parameters["movie_file"]
+                                        ][label] = key
                     # self.session.grades.append((self.parameters['movie_file'], key))
                     self.stop_phase()
                 elif key == ":" or key == ";":
-                    self.session.grades[self.parameters["movie_file"]][label] = key
+                    self.session.grades[self.parameters["movie_file"]
+                                        ][label] = key
                     # self.session.grades.append((self.parameters['movie_file'], key))
                     self.stop_phase()
 

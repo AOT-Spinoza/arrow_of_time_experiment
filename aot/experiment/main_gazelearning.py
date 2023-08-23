@@ -29,7 +29,8 @@ subject, ses, run, eyelink = (
 
 
 def main():
-    settings_dir = base_dir / core_settings["paths"]["settings_path"] / "learning"
+    settings_dir = base_dir / \
+        core_settings["paths"]["settings_path"] / "learning"
     output_dir = base_dir / core_settings["paths"]["output_path"] / "learning"
     output_str = f"sub-{str(subject).zfill(2)}_ses-{str(ses).zfill(2)}_run-{str(run).zfill(2)}_task-movie"
     runs_input_yaml = settings_dir / \
@@ -38,7 +39,7 @@ def main():
     session_object = HCPMovieELSessionLearning(
         output_str=output_str,
         output_dir=output_dir,
-        core_settings_file=core_expt_yaml_path,    
+        core_settings_file=core_expt_yaml_path,
         run_settings_file=runs_input_yaml,
         eyetracker_on=eyelink,
     )

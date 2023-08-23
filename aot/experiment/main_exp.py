@@ -7,7 +7,7 @@ from pathlib import Path
 import aot
 
 base_dir = Path(aot.__path__[0])
-core_expt_yaml_path = base_dir / "experiment/core_exp_settings.yml" 
+core_expt_yaml_path = base_dir / "experiment/core_exp_settings.yml"
 core_settings = yaml.load(open(core_expt_yaml_path), Loader=yaml.FullLoader)
 
 parser = argparse.ArgumentParser()
@@ -16,7 +16,7 @@ parser.add_argument("--ses", default=1, nargs="?")
 parser.add_argument("--run", default=1, nargs="?")
 
 parser.add_argument("--eyelink", default=True,
-                    action=argparse.BooleanOptionalAction) 
+                    action=argparse.BooleanOptionalAction)
 
 
 cmd_args = parser.parse_args()
@@ -38,7 +38,7 @@ def main():
     session_object = HCPMovieELSession(
         output_str=output_str,
         output_dir=output_dir,
-        core_settings_file=core_expt_yaml_path,    
+        core_settings_file=core_expt_yaml_path,
         run_settings_file=runs_input_yaml,
         eyetracker_on=eyelink,
     )
