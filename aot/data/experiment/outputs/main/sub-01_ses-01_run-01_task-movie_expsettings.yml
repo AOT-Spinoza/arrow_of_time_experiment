@@ -9,6 +9,7 @@ eyetracker:
     address: 100.1.1.1
     dot_size: 0.1
     options:
+        active_eye: left
         automatic_calibration_pacing: 1000
         autothreshold_click: true
         autothreshold_repeat: true
@@ -90,8 +91,8 @@ various:
     monitor_framerate: 120
     piechart_width: 1
     run_number: 10
-    session_number: 6
-    subject_number: 5
+    session_number: 8
+    subject_number: 6
     text_height: 22.5
     text_list:
     - Positive negative?

@@ -1,6 +1,6 @@
 import os.path as op
 import argparse
-from psychopy import loggingss
+from psychopy import logging
 import yaml
 from session import HCPMovieELSession
 from pathlib import Path
@@ -15,7 +15,7 @@ parser.add_argument("--subject", default=1, nargs="?")
 parser.add_argument("--ses", default=1, nargs="?")
 parser.add_argument("--run", default=1, nargs="?")
 
-parser.add_argument("--eyelink", default=True,
+parser.add_argument("--eyelink", default=False,
                     action=argparse.BooleanOptionalAction) 
 
 
