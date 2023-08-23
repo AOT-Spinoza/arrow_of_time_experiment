@@ -194,8 +194,8 @@ class HCPMovieELTrialLearning(Trial):
         if self.phase == 1:
             if self.parameters["blank"] == 0:
                 self.session.movie_stims[self.parameters["movie_index"]].draw()
-            if self.session.tracker:
-                if self.session.settings["various"]["eyemovements_alert"]:#################
+            if self.session.tracker and self.parameters["blank"] != 0:
+                if self.session.settings["various"]["eyemovements_alert"]:################# 
                     el_smp = self.session.tracker.getNewestSample()
                     if el_smp != None:
                         if el_smp.isLeftSample():
