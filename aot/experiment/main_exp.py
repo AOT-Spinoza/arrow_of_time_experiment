@@ -7,7 +7,7 @@ from pathlib import Path
 import aot
 
 base_dir = Path(aot.__path__[0])
-core_expt_yaml_path = base_dir / "experiment/core_exp_settings.yml"
+core_expt_yaml_path = base_dir / "experiment/core_exp_settings.yml" 
 core_settings = yaml.load(open(core_expt_yaml_path), Loader=yaml.FullLoader)
 
 parser = argparse.ArgumentParser()
@@ -15,8 +15,8 @@ parser.add_argument("--subject", default=1, nargs="?")
 parser.add_argument("--ses", default=1, nargs="?")
 parser.add_argument("--run", default=1, nargs="?")
 
-parser.add_argument("--eyelink", default=False,
-                    action=argparse.BooleanOptionalAction)
+parser.add_argument("--eyelink", default=True,
+                    action=argparse.BooleanOptionalAction) 
 
 cmd_args = parser.parse_args()
 subject, ses, run, eyelink = (

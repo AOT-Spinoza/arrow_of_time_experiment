@@ -436,7 +436,7 @@ class HCPMovieELSessionLearning(PylinkEyetrackerSession):
             session=self,
             trial_nr=0,
             phase_durations=[np.inf],
-            txt="Please keep fixating at the center.",
+            txt="Please keep fixating at the center, Otherwise the fixation point will turn red with beep sound.", 
             keys=["space"],
         )
 
@@ -618,7 +618,7 @@ class HCPMovieELSessionMemory(PylinkEyetrackerSession):
             session=self,
             trial_nr=0,
             phase_durations=[np.inf],
-            txt="Please press buttons to indeicate whether you have seen the picture from movie before. J for yes, k for no",
+            txt="Please press buttons to indicate whether you have seen the picture from movies in the session. J for yes, k for no",
             keys=["space"],
         )
 
