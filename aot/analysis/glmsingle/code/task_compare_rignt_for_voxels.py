@@ -4,6 +4,7 @@ import numpy as np
 import cortex
 import matplotlib.pyplot as plt
 import pickle
+import nibabel as nib
 
 '''
 def condition_order_list_for_all():
@@ -53,6 +54,7 @@ print('betas90.shape:',betas90.shape)
 print('betas80.shape:',betas80.shape)
 
 #chekc nan
+'''
 if np.isnan(betasall).any():
     print('nan in betasall')
 if np.isnan(betas72).any():
@@ -61,8 +63,10 @@ if np.isnan(betas90).any():
     print('nan in betas90')
 if np.isnan(betas80).any():
     print('nan in betas80')
+'''
 
 #count nan numbers
+
 print('nan in betasall:',np.count_nonzero(np.isnan(betasall)))
 print('nan in betas72:',np.count_nonzero(np.isnan(betas72)))
 print('nan in betas90:',np.count_nonzero(np.isnan(betas90)))
@@ -98,6 +102,102 @@ def concatentate_betas_for_all_tasks(betas72,betas90,betas80):
     print('betas_concated.shape:',betas_concated.shape)
     return betas_concated
 
+def compute_betas_dict_for_each_condition_task(betas_concated,condition_dict):
+    beta_dict_72 = {}
+    beta_dict_90 = {}
+    beta_dict_80 = {}
+    for key in condition_dict.keys():
+        beta_dict_72[key] = []
+        beta_dict_90[key] = []
+        beta_dict_80[key] = []
+        for index in condition_dict[key]:
+            if index < 144:
+                beta_dict_72[key].append(betas_concated[:,:,:,index])
+            elif 144<= index <(144+180):
+                beta_dict_90[key].append(betas_concated[:,:,:,index])
+            elif (144+180)<= index <(144+180+160):
+                beta_dict_80[key].append(betas_concated[:,:,:,index])
+            else:
+                print('index out of range:',index)
+    return beta_dict_72,beta_dict_90,beta_dict_80
+
+def compute_corrolation_for_each_condition_task(beta_dict_72,beta_dict_90,beta_dict_80):
+    betameandiff_img_72 = pickle.load(open('/tank/shared/2022/arrow_of_time/arrow_of_time/aot/analysis/glmsingle/outputon7_voxels/average_distance_map_72.pkl','rb'))
+    betameandiff_img_90 = pickle.load(open('/tank/shared/2022/arrow_of_time/arrow_of_time/aot/analysis/glmsingle/outputon7_voxels/average_distance_map_90.pkl','rb'))
+    betameandiff_img_80 = pickle.load(open('/tank/shared/2022/arrow_of_time/arrow_of_time/aot/analysis/glmsingle/outputon7_voxels/average_distance_map_80.pkl','rb'))
+    R2_img_all = nib.load('/tank/shared/2022/arrow_of_time/arrow_of_time/aot/analysis/glmsingle/code/all_R2.nii.gz')
+    betameandiff_data_72 = betameandiff_img_72#.get_fdata()
+    betameandiff_data_90 = betameandiff_img_90#.get_fdata()
+    betameandiff_data_80 = betameandiff_img_80#.get_fdata()
+    R2_data_all = R2_img_all.get_fdata()
+    print('betameandiff_data_72.shape:',betameandiff_data_72.shape)
+    print('betameandiff_data_90.shape:',betameandiff_data_90.shape)
+    print('betameandiff_data_80.shape:',betameandiff_data_80.shape)
+    orig_image_fn = '/tank/shared/2022/arrow_of_time/preproc7/sub-001/ses-pilot/func/sub-001_ses-pilot_task-90_acq-nordic_run-01_space-T1w_desc-preproc_bold.nii.gz'
+    bg_image_fn = '/tank/shared/2022/arrow_of_time/preproc7/sub-001/ses-pilot/func/sub-001_ses-pilot_task-90_acq-nordic_run-01_space-T1w_boldref.nii.gz'
+    bm_image_fn = '/tank/shared/2022/arrow_of_time/preproc7/sub-001/ses-pilot/func/sub-001_ses-pilot_task-90_acq-nordic_run-01_space-T1w_desc-brain_mask.nii.gz'
+    r2mask = R2_data_all > 25
+    bmask = nib.load(bm_image_fn).get_fdata().astype(bool)
+    bmask = np.logical_and(bmask, r2mask)
+    def mask(data,bmask = bmask):
+        maskeddata = np.zeros_like(data)
+        maskeddata[bmask] = data[bmask]
+        return maskeddata
+    def compute_corrolation_for_one_task(beta_dict):
+        corrolation_dict = {}
+        for key in beta_dict.keys():
+            corrolation_dict[key] = []
+            '''
+            for i in range(len(beta_dict[key])):
+                for j in range(i+1,len(beta_dict[key])):
+                    #data_combine = np.concatenate((beta_dict[key][i].flatten(),beta_dict[key][j].flatten()),axis=0) 
+                    corr_matrix = np.corrcoef(beta_dict[key][i].flatten(),beta_dict[key][j].flatten())
+                    print('corr_matrix.shape:',corr_matrix.shape)
+                    corrolation_dict[key].append(corr_matrix[0,1])
+                    #print('corrolation_dict[key].shape:',corrolation_dict[key].shape)
+                    #print('corrolation_dict[key]:',corrolation_dict[key])
+            '''
+            x = mask(beta_dict[key][0])
+            y = mask(beta_dict[key][1])
+            print("shape x:",x.shape)
+            print('nan in x:',np.count_nonzero(np.isnan(x)))
+            print("shape y:",y.shape)
+            print('nan in y:',np.count_nonzero(np.isnan(y)))
+            #x = beta_dict[key][0].flatten()
+            #y = beta_dict[key][1].flatten()
+            x = x.flatten()
+            y = y.flatten()
+            print("shape x:",x.shape)
+            print('nan in x:',np.count_nonzero(np.isnan(x)))
+            print("shape y:",y.shape)
+            print('nan in y:',np.count_nonzero(np.isnan(y)))
+            #remove nan
+
+            x = x[~np.isnan(x)]
+            y = y[~np.isnan(y)]
+            
+            print("shape x nan removed:",x.shape)
+            print("shape y nan removed:",y.shape)
+            if x.shape == y.shape:
+                corr_matrix = np.corrcoef(x,y)
+                corr = corr_matrix[0,1]
+                print('corr:',corr)
+                corrolation_dict[key] = corr
+            else:
+                print('x and y shape not equal')
+            
+            #print('corrolation_dict[key].shape:',corrolation_dict[key].shape)
+            #print('corrolation_dict[key]:',corrolation_dict[key])           
+        return corrolation_dict
+    corrolation_dict_72 = compute_corrolation_for_one_task(beta_dict_72)
+    corrolation_dict_90 = compute_corrolation_for_one_task(beta_dict_90)
+    corrolation_dict_80 = compute_corrolation_for_one_task(beta_dict_80)
+    pickle.dump(corrolation_dict_72,open(os.path.join(save_dir,'corrolation_dict_72.pkl'),'wb'))
+    pickle.dump(corrolation_dict_90,open(os.path.join(save_dir,'corrolation_dict_90.pkl'),'wb'))
+    pickle.dump(corrolation_dict_80,open(os.path.join(save_dir,'corrolation_dict_80.pkl'),'wb'))
+    return corrolation_dict_72,corrolation_dict_90,corrolation_dict_80
+
+
 def compute_mean_beta_for_each_condition_task(betas_concated,betas_all,condition_dict):#betas_all is the betas for all tasks, beta_concated is the betas for 72,90,80 (they are different!)
     beta_dict_72 = {}
     beta_dict_90 = {}
@@ -128,6 +228,7 @@ def compute_mean_beta_for_each_condition_task(betas_concated,betas_all,condition
         mean_beta_dict_80[key] = np.mean(np.array(beta_dict_80[key]),axis=0)
         mean_beta_dict_all[key] = np.mean(np.array(beta_dict_all[key]),axis=0)
     return mean_beta_dict_72,mean_beta_dict_90,mean_beta_dict_80,mean_beta_dict_all
+
 
 def compare_mean_betas(mean_beta_dict_72,mean_beta_dict_90,mean_beta_dict_80,mean_beta_dict_all):
     compare_dict_72 = {}
@@ -189,14 +290,14 @@ def final_compare_maps_average_condition(compare_dict_72,compare_dict_90,compare
         
         
 if __name__ == '__main__':
-    
     condition_dict = get_repeat_6_condition_dict_taskall()
     betas_concated = concatentate_betas_for_all_tasks(betas72,betas90,betas80)
-    mean_beta_dict_72,mean_beta_dict_90,mean_beta_dict_80,mean_beta_dict_all = compute_mean_beta_for_each_condition_task(betas_concated,betasall,condition_dict)
-
-    
-    compare_dict_72,compare_dict_90,compare_dict_80 = compare_mean_betas(mean_beta_dict_72,mean_beta_dict_90,mean_beta_dict_80,mean_beta_dict_all)
-    final_compare_maps_average_condition(compare_dict_72,compare_dict_90,compare_dict_80)
+    #mean_beta_dict_72,mean_beta_dict_90,mean_beta_dict_80,mean_beta_dict_all = compute_mean_beta_for_each_condition_task(betas_concated,betasall,condition_dict)
+    #compare_dict_72,compare_dict_90,compare_dict_80 = compare_mean_betas(mean_beta_dict_72,mean_beta_dict_90,mean_beta_dict_80,mean_beta_dict_all)
+    #final_compare_maps_average_condition(compare_dict_72,compare_dict_90,compare_dict_80)
+    beta_dict_72,beta_dict_90,beta_dict_80 = compute_betas_dict_for_each_condition_task(betas_concated,condition_dict)
+    #get correlation for each condition
+    corrolation_dict_72,corrolation_dict_90,corrolation_dict_80 = compute_corrolation_for_each_condition_task(beta_dict_72,beta_dict_90,beta_dict_80)
     #average_distance_map_72,average_distance_map_90,average_distance_map_80 = condition_average_distance_for_tasks(compare_dict_72,compare_dict_90,compare_dict_80)
     pass
 
