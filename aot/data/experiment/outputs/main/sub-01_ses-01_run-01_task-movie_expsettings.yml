@@ -1,11 +1,10 @@
 design:
-    blank_duration: 3.2
-    end_duration: 1.0
+    end_duration: 14.3
     fix_movie_interval: 1
     n_trials: 1
-    post_fix_movie_interval: 0.75
-    pre_fix_movie_interval: 0.0
-    start_duration: 1.0
+    post_fix_movie_interval: 0.1
+    pre_fix_movie_interval: 90
+    start_duration: 14.3
 eyetracker:
     address: 100.1.1.1
     dot_size: 0.1
@@ -14,17 +13,19 @@ eyetracker:
         autothreshold_click: true
         autothreshold_repeat: true
         binocular_enabled: false
+        calibration_area_proportion: 0.4 0.4
         calibration_type: HV13
         enable_automatic_calibration: true
         enable_camera_position_detect: true
         enable_search_limits: true
         file_event_filter: LEFT,RIGHT,FIXATION,SACCADE,BLINK,MESSAGE,BUTTON,INPUT
-        heuristic_filter: 0
+        heuristic_filter: 2
         link_event_filter: LEFT,RIGHT,FIXATION,SACCADE,BLINK,BUTTON
         link_sample_data: LEFT,RIGHT,GAZE,GAZERES,AREA,STATUS,HTARGET
         pupil_size_diameter: true
         sample_rate: 1000
         track_search_limits: true
+        validation_area_proportion: 0.4 0.4
         x_gaze_constraint: AUTO
         y_gaze_constraint: AUTO
 monitor:
@@ -48,8 +49,12 @@ paths:
     information_list_original: information_list_originals.tsv
     output_path: data/experiment/outputs
     settings_path: data/experiment/settings
-    sound_path: /home/wang/Projects/arrow_of_time/beep-02.wav
-    stimuli_path: /experiments/aot/videos
+    sound_path: beep-02.wav
+    stimuli_degraded_path: /tank/shared/2022/arrow_of_time/arrow_of_time/videos1_degraded/stimuli_flat_degraded
+    stimuli_path: /Users/shufanzhang/Documents/PhD/Arrow_of_time/arrow_of_time/stimuli_flat
+    stimuli_path_spinoza1: /experiments/knapen_aot/videos
+    stimuli_path_spinoza2: /experiments/aot
+    stimuli_picture_path: /Users/shufanzhang/Documents/PhD/Arrow_of_time/arrow_of_time/pictures
     stimuli_processing_path: /Users/shufanzhang/Documents/PhD/Arrow_of_time/arrow_of_time/stimuli
 preferences:
     general:
@@ -73,27 +78,27 @@ stimuli:
     - 1536
     - 1080
 various:
-    blank_number_per_run: 15
+    blank_number_per_run: 12
     button_size: 2
     buttons:
     - j
     - k
     - l
     - semicolon
-    eyemovements_alert: false
+    eyemovements_alert: true
     gaze_threshold_deg: 1.0
     monitor_framerate: 120
     piechart_width: 1
     run_number: 10
-    session_number: 6
-    subject_number: 5
+    session_number: 8
+    subject_number: 6
     text_height: 22.5
     text_list:
     - Positive negative?
     - Arousing or not?
     - Reverse or not?
     text_width: 14
-    unique_video_number_per_session: 225
+    unique_video_number_per_session: 180
 window:
     color:
     - 0
@@ -103,6 +108,7 @@ window:
     pos:
     - 0
     - 0
+    screen: 1
     size:
     - 1920
     - 1080

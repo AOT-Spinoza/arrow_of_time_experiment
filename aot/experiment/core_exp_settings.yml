@@ -26,15 +26,17 @@ design:
   start_duration: 14.3 ###################################################
   end_duration: 14.3 #########################
   pre_fix_movie_interval: 90
-  post_fix_movie_interval: 0.6
+  #post_fix_movie_interval: 0.6
+  post_fix_movie_interval: 0.1
   fix_movie_interval: 1
 
 various:
-  subject_number: 5
-  session_number: 6
+  subject_number: 6
+  session_number: 8
   run_number: 10
-  unique_video_number_per_session: 225
-  blank_number_per_run: 15
+  unique_video_number_per_session: 180
+  #img_number_per_session : euqal to unique_video_number_per_session
+  blank_number_per_run: 12
   piechart_width: 1
   text_width: 14
   text_height: 22.5
@@ -42,7 +44,7 @@ various:
   button_size: 2
   text_list: ['Positive negative?','Arousing or not?','Reverse or not?'] 
   monitor_framerate: 120 ###################################################
-  eyemovements_alert: False
+  eyemovements_alert: True
   gaze_threshold_deg: 1.0
 
 stimuli:
@@ -59,14 +61,16 @@ paths:
   information_list_original: 'information_list_originals.tsv' 
   settings_path: 'data/experiment/settings'
   output_path : 'data/experiment/outputs'
-  stimuli_path : '/experiments/aot'
-  #stimuli_path : '/tank/shared/2022/arrow_of_time/arrow_of_time/videos1'
-  #stimuli_path : '/Users/shufanzhang/Documents/PhD/Arrow_of_time/arrow_of_time/stimuli_flat'  
+  stimuli_path : '/Users/shufanzhang/Documents/PhD/Arrow_of_time/arrow_of_time/stimuli_flat'  
+  stimuli_path_spinoza2 : '/experiments/aot'
+  stimuli_path_spinoza1 : '/experiments/knapen_aot/videos'
+  stimuli_picture_path : '/Users/shufanzhang/Documents/PhD/Arrow_of_time/arrow_of_time/pictures'
   stimuli_processing_path : '/Users/shufanzhang/Documents/PhD/Arrow_of_time/arrow_of_time/stimuli'
   grades_path : 'data/grading'
   sound_path : 'beep-02.wav'
-  #stimuli_degraded_path : '/Users/shufanzhang/Documents/PhD/Arrow_of_time/arrow_of_time/stimuli_flat_degraded'
   stimuli_degraded_path : '/tank/shared/2022/arrow_of_time/arrow_of_time/videos1_degraded/stimuli_flat_degraded'
+  #stimuli_degraded_path : '/Users/shufanzhang/Documents/PhD/Arrow_of_time/arrow_of_time/stimuli_flat_degraded'
+  #stimuli_path : '/tank/shared/2022/arrow_of_time/arrow_of_time/videos1'
   #streched_path : 'stimuli/resampled'
   #reversed_path : 'stimuli/reversed'
   #category_path : 'stimuli/raws'

@@ -135,7 +135,7 @@ venv.bak/
 
 .log
 .events
-*_events.tsv
+#*_events.tsv
 *_log.txt
 *_frames.pdf
 *_expsettings.yml
@@ -150,5 +150,13 @@ venv.bak/
 *.nii.gz
 *.nii
 *.gii
+
+#pictures
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.tif
+
 
 
