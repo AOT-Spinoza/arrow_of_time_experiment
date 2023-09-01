@@ -195,8 +195,8 @@ class HCPMovieELTrialLearning(Trial):
     def draw(self):
         if self.phase == 1:
             if self.parameters["blank"] == 0:
-                self.session.movie_stims[self.parameters["movie_index"]].draw()
-            if self.session.tracker and self.parameters["blank"] != 0:
+                self.session.movie_stims[self.parameters["movie_index"]].draw()          
+            if self.session.tracker and self.parameters["blank"] != 1:
                 if self.session.settings["various"]["eyemovements_alert"]:
                     el_smp = self.session.tracker.getNewestSample()
                     if el_smp != None:
@@ -493,7 +493,7 @@ class InstructionTrial(Trial):
     """Simple trial with instruction text."""
 
     def __init__(
-        self, session, trial_nr, phase_durations=[np.inf], txt=None, keys=None, **kwargs
+        self, session, trial_nr, phase_durations=[np.inf], txt=None, keys=None, pos = (0,0),**kwargs
     ):
         super().__init__(session, trial_nr, phase_durations, **kwargs)
 
@@ -504,7 +504,7 @@ class InstructionTrial(Trial):
             txt = """Press any button to continue."""
 
         self.text = TextStim(
-            self.session.win, txt, height=txt_height, wrapWidth=txt_width, **kwargs
+            self.session.win, txt, height=txt_height, wrapWidth=txt_width, pos = pos, **kwargs
         )
 
         self.keys = keys

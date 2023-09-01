@@ -105,6 +105,11 @@ class HCPMovieELSession(PylinkEyetrackerSession):
         if os.path.exists("/Users/shufanzhang/Documents/PhD/Arrow_of_time/arrow_of_time/aot"):
             self.pix_per_deg = self.win.size[0] / self.win.monitor.getWidth()
 
+        originalsize = self.settings["stimuli"].get("movie_size_pix")
+        shrink_factor = self.settings["stimuli"].get("shrink_factor")
+        display_size = [l*shrink_factor for l in originalsize]
+        self.shiftedpos = (0,-originalsize[1]*(1-shrink_factor)/2)
+
         self.fixation = FixationBullsEye(
             win=self.win,
             outer_radius=max(self.win.size),
@@ -119,7 +124,9 @@ class HCPMovieELSession(PylinkEyetrackerSession):
             dot_perimeter_smoothness=self.settings["stimuli"].get(
                 "fix_perimeter_smooth"
             ),
+            pos = self.shiftedpos
         )
+       
         # self.error_sound = sound.Sound('A')
         # self.error_sound.play()
         # print(self.error_sound)
@@ -166,18 +173,16 @@ class HCPMovieELSession(PylinkEyetrackerSession):
 
         # count the time for loading the movies
         start = time.perf_counter()
-        # this self.movie_stims is the list that accessed by the trial class by using movie_trial_nr
         self.movie_stims = [
             "blank"
             if movie == "blank"
             else MovieStim3(
                 self.win,
                 filename=movie,
-                size=self.settings["stimuli"].get(
-                    "movie_size_pix",
-                ),
+                size=display_size,
                 noAudio=True,
                 fps=None,
+                pos = self.shiftedpos
             )
             for movie in self.movies  # movie is movie file path name
         ]
@@ -195,6 +200,7 @@ class HCPMovieELSession(PylinkEyetrackerSession):
             phase_durations=[np.inf],
             txt="Please keep fixating at the center.",
             keys=["space"],
+            pos = self.shiftedpos
         )
 
         dummy_trial = DummyWaiterTrial(
@@ -410,15 +416,16 @@ class HCPMovieELSessionLearning(PylinkEyetrackerSession):
         # count the time for loading the movies
         start = time.perf_counter()
         # this self.movie_stims is the list that accessed by the trial class by using movie_trial_nr
+        originalsize = self.settings["stimuli"].get("movie_size_pix")
+        #shrink_factor = self.settings["stimuli"].get("shrink_factor")
+        #display_size = [l*shrink_factor for l in size]
         self.movie_stims = [
             "blank"
             if movie == "blank"
             else MovieStim3(
                 self.win,
                 filename=movie,
-                size=self.settings["stimuli"].get(
-                    "movie_size_pix",
-                ),
+                size=originalsize,
                 noAudio=True,
                 fps=None,
             )
@@ -436,7 +443,7 @@ class HCPMovieELSessionLearning(PylinkEyetrackerSession):
             session=self,
             trial_nr=0,
             phase_durations=[np.inf],
-            txt="Please keep fixating at the center, Otherwise the fixation point will turn red with beep sound.", 
+            txt="Please keep fixating at the center, Otherwise the fixation point will turn red with beep sound.Try to blink only during the blank", 
             keys=["space"],
         )
 
