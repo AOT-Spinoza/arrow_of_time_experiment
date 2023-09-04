@@ -9,6 +9,7 @@ eyetracker:
     address: 100.1.1.1
     dot_size: 0.1
     options:
+        active_eye: left
         automatic_calibration_pacing: 1000
         autothreshold_click: true
         autothreshold_repeat: true
@@ -77,6 +78,7 @@ stimuli:
     movie_size_pix:
     - 1536
     - 1080
+    shrink_factor: 0.8
 various:
     blank_number_per_run: 12
     button_size: 2
@@ -88,6 +90,9 @@ various:
     eyemovements_alert: true
     gaze_threshold_deg: 1.0
     monitor_framerate: 120
+    movie_size:
+    - 1920
+    - 1080
     piechart_width: 1
     run_number: 10
     session_number: 8
