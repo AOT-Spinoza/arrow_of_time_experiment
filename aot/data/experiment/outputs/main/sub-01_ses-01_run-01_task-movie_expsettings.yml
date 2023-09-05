@@ -9,7 +9,6 @@ eyetracker:
     address: 100.1.1.1
     dot_size: 0.1
     options:
-        active_eye: left
         automatic_calibration_pacing: 1000
         autothreshold_click: true
         autothreshold_repeat: true
@@ -88,7 +87,7 @@ various:
     - l
     - semicolon
     eyemovements_alert: true
-    gaze_threshold_deg: 1.0
+    gaze_threshold_deg: 5
     monitor_framerate: 120
     movie_size:
     - 1920
