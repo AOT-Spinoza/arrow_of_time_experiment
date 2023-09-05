@@ -467,14 +467,14 @@ class HCPMovieELSessionEyetracking(PylinkEyetrackerSession):
 
             if (movie_trial_nr+4) % 4 == 0:
                 phase_durations = [
-                    1,
+                    np.inf,
                     self.settings["stimuli"].get("experiment_movie_duration"),
                     self.settings["design"].get(
                         "post_fix_movie_interval"),  # 0.1
                 ]
             else:
                 phase_durations = [
-                    1,
+                    np.inf,
                     self.settings["stimuli"].get("experiment_movie_duration"),
                     self.settings["design"].get(
                         "post_fix_movie_interval"),  # 0.1

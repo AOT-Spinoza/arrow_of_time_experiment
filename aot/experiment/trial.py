@@ -203,19 +203,8 @@ class HCPMovieELTrialEyetracking(Trial):
         if events is not None:
             for key, t in events:
                 if self.phase == 0:
-                    if self.session.fourcount == 4:
-                        if key == "t":
-                            self.stop_phase()
-        '''
-        if events is not None:
-            for key, t in events:
-                if self.phase == 0:
-                    if self.session.fourcount < 4:##########################
+                    if key == "space":
                         self.stop_phase()
-                    elif self.session.fourcount == 4:
-                        if key == "t":
-                            self.stop_phase()
-        '''
 
 
 class HCPMovieELTrialLearning(Trial):
