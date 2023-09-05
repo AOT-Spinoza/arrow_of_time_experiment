@@ -278,7 +278,6 @@ class HCPMovieELTrialLearning(Trial):
                                 self.session.fixation.circle.color = [
                                     1, -1, -1]
                                 playsound(str(soundfile))
-                                # stop the movie playing
                                 if (
                                     fix_dist_deg
                                     < self.session.settings["various"]["gaze_threshold_deg"]
