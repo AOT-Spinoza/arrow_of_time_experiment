@@ -142,6 +142,70 @@ class HCPMovieELTrial(Trial):
                             self.stop_phase()
         '''
 
+class HCPMovieELTrialEyetracking(Trial):
+    def __init__(
+        self,
+        session,
+        trial_nr,
+        phase_durations,
+        phase_names,
+        parameters,
+        timing="seconds",
+        verbose=True,
+        training_mode: bool = False,
+    ):
+        """Initializes a StroopTrial object.
+
+        Parameters
+        ----------
+        session : exptools Session object
+            A Session object (needed for metadata)
+        trial_nr: int
+            Trial nr of trial
+        phase_durations : array-like
+            List/tuple/array with phase durations
+        phase_names : array-like
+            List/tuple/array with names for phases (only for logging),
+            optional (if None, all are named 'stim')
+        parameters : dict
+            Dict of parameters that needs to be added to the log of this trial
+        timing : str
+            The "units" of the phase durations. Default is 'seconds', where we
+            assume the phase-durations are in seconds. The other option is
+            'frames', where the phase-"duration" refers to the number of frames.
+        verbose : bool
+            Whether to print extra output (mostly timing info)
+        """
+        super().__init__(
+            session,
+            trial_nr,
+            phase_durations,
+            phase_names,
+            parameters,
+            timing,
+            load_next_during_phase=None,
+            verbose=verbose,
+        )
+        self.training_mode = training_mode
+
+    def create_trial(self):
+        pass
+
+    def draw(self):
+        if self.phase == 1:
+            if self.parameters["blank"] == 0:
+                self.session.movie_stims[self.parameters["movie_index"]].draw()
+    
+
+    def get_events(self):
+        events = super().get_events()
+
+        if events is not None:
+            for key, t in events:
+                if self.phase == 0:
+                    if key == "space":
+                        self.stop_phase()
+
 
 class HCPMovieELTrialLearning(Trial):
     def __init__(
@@ -195,8 +259,8 @@ class HCPMovieELTrialLearning(Trial):
     def draw(self):
         if self.phase == 1:
             if self.parameters["blank"] == 0:
-                self.session.movie_stims[self.parameters["movie_index"]].draw()
-            if self.session.tracker and self.parameters["blank"] != 0:
+                self.session.movie_stims[self.parameters["movie_index"]].draw()          
+            if self.session.tracker and self.parameters["blank"] != 1:
                 if self.session.settings["various"]["eyemovements_alert"]:
                     el_smp = self.session.tracker.getNewestSample()
                     if el_smp != None:
@@ -493,7 +557,7 @@ class InstructionTrial(Trial):
     """Simple trial with instruction text."""
 
     def __init__(
-        self, session, trial_nr, phase_durations=[np.inf], txt=None, keys=None, **kwargs
+        self, session, trial_nr, phase_durations=[np.inf], txt=None, keys=None, pos = (0,0),**kwargs
     ):
         super().__init__(session, trial_nr, phase_durations, **kwargs)
 
@@ -504,7 +568,7 @@ class InstructionTrial(Trial):
             txt = """Press any button to continue."""
 
         self.text = TextStim(
-            self.session.win, txt, height=txt_height, wrapWidth=txt_width, **kwargs
+            self.session.win, txt, height=txt_height, wrapWidth=txt_width, pos = pos, **kwargs
         )
 
         self.keys = keys
