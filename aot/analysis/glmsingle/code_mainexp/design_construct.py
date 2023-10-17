@@ -19,8 +19,11 @@ video_db_path = base_dir / 'data/videos/database_originals.tsv'
 video_db = pd.read_csv(video_db_path, sep='\t')
 run_number = core_settings['various']['run_number']
 
-bold_data_root = '/tank/shared/2022/arrow_of_time/aotfull_preprocs/fullpreproc3/sub-001/ses-01/func'
+#bold_data_root = '/tank/shared/2022/arrow_of_time/aotfull_preprocs/fullpreproc3/sub-001/ses-01/func'
+#bold_data_root_wrong = '/tank/shared/2022/arrow_of_time/aotfull_preprocs/fullpreproc03/sub-001/ses-01/func'
+bold_data_root = '/tank/shared/2022/arrow_of_time/aotfull_preprocs/fullpreproc03'
 output_root = '/tank/shared/2022/arrow_of_time/arrow_of_time/aot/analysis/glmsingle/outputs/mainexp'
+
 
 def movie_conditions_dict():#include blank condition as 0
     original_video_names = []
@@ -76,6 +79,8 @@ def index_to_exp_yml(sub,ses,run):
 def construct_design_for_one_session(sub,ses):
     list_of_designs = []
     for run in range(1,run_number+1):
+        #if run == 2:###################################
+        #    continue
         target_path = index_to_exp_yml(sub,ses,run)
         list_of_designs.append(construct_design_from_exp_design_yml(target_path, movie_conditions))
     return list_of_designs
@@ -85,8 +90,8 @@ def index_to_bold_data_fsnative(sub,ses,run): #input: int,int,int
     sub = str(sub)
     ses = str(ses)
     run = str(run)
-    Left_bold_path = bold_data_root + "/" +'sub-'+sub.zfill(3)+'_ses-'+ses.zfill(2)+'_task-AOT_run-'+run+'_space-fsaverage_hemi-L_bold.func.gii'
-    Right_bold_path = bold_data_root + "/" +'sub-'+sub.zfill(3)+'_ses-'+ses.zfill(2)+'_task-AOT_run-'+run+'_space-fsaverage_hemi-R_bold.func.gii'
+    Left_bold_path = bold_data_root +"/"+'sub-'+sub.zfill(3)+'/ses-'+ses.zfill(2) + "/func/" +'sub-'+sub.zfill(3)+'_ses-'+ses.zfill(2)+'_task-AOT_run-'+run+'_space-fsaverage_hemi-L_bold.func.gii'
+    Right_bold_path = bold_data_root +"/"+'sub-'+sub.zfill(3)+'/ses-'+ses.zfill(2) + "/func/" +'sub-'+sub.zfill(3)+'_ses-'+ses.zfill(2)+'_task-AOT_run-'+run+'_space-fsaverage_hemi-R_bold.func.gii'
     #load and concatenate the bold data from left and right hemispheres
     img_L = nib.load(Left_bold_path)
     img_data_L = [x.data for x in img_L.darrays]
@@ -108,7 +113,7 @@ def index_to_bold_data_T1W(sub,ses,run): #input: int,int,int
     sub = str(sub)
     ses = str(ses)
     run = str(run)
-    bold_path = bold_data_root + "/" +'sub-'+sub.zfill(3)+'_ses-'+ses.zfill(2)+'_task-AOT_run-'+run+'_space-T1w_desc-preproc_bold.nii.gz'
+    bold_path = bold_data_root +"/"+'sub-'+sub.zfill(3)+'/ses-'+ses.zfill(2)+ "/func/" +'sub-'+sub.zfill(3)+'_ses-'+ses.zfill(2)+'_task-AOT_run-'+run+'_space-T1w_desc-preproc_bold.nii.gz'
     img = nib.load(bold_path)
     img_data = img.get_fdata()
     print('bold data shape:',img_data.shape)
@@ -122,6 +127,8 @@ def construct_bold_for_one_session(sub,ses,datatype):#fsnative or §T1W
         return list_of_bold_data
     elif datatype == 'T1W':
         for run in range(1,run_number+1):
+            #if run == 2:###################################
+            #    continue
             list_of_bold_data.append(index_to_bold_data_T1W(sub,ses,run))
         return list_of_bold_data
 
@@ -177,6 +184,7 @@ def apply_glmsingle_for_one_session(sub,ses):
 
 
 if __name__ == '__main__':
+
     movie_conditions = movie_conditions_dict()
     #sample_yml = '/tank/shared/2022/arrow_of_time/arrow_of_time/aot/data/experiment/settings/main/experiment_settings_sub_01_ses_01_run_01.yml'
     #construct_design_from_exp_design_yml(sample_yml, movie_conditions)
@@ -187,7 +195,7 @@ if __name__ == '__main__':
     #bold_list = construct_bold_for_one_session(sub=1,ses=1,datatype='T1W')
     #print(len(bold_list))
 
-    apply_glmsingle_for_one_session(sub=1,ses=1)
+    apply_glmsingle_for_one_session(sub=2,ses=1)
 
 
 
