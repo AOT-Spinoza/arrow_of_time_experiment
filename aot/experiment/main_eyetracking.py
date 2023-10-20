@@ -7,7 +7,7 @@ from pathlib import Path
 import aot
 
 base_dir = Path(aot.__path__[0])
-core_expt_yaml_path = base_dir / "experiment/core_exp_settings_eyetracking.yml"
+core_expt_yaml_path = base_dir / "experiment/core_exp_settings_eyetracking.yml" 
 core_settings = yaml.load(open(core_expt_yaml_path), Loader=yaml.FullLoader)
 
 parser = argparse.ArgumentParser()
@@ -15,7 +15,7 @@ parser.add_argument("--subject", default=1, nargs="?")
 parser.add_argument("--ses", default=1, nargs="?")
 parser.add_argument("--run", default=1, nargs="?")
 
-parser.add_argument("--eyelink", default=False,
+parser.add_argument("--eyelink", default=True,
                     action=argparse.BooleanOptionalAction)
 
 
@@ -29,7 +29,7 @@ subject, ses, run, eyelink = (
 
 
 def main():
-    settings_dir = base_dir / core_settings["paths"]["settings_path"] / "main"
+    settings_dir = base_dir / core_settings["paths"]["settings_path"] / "eyetracking" # shoule not be main anymore
     output_dir = base_dir / \
         core_settings["paths"]["output_path"] / "eyetracking"
     output_str = f"sub-{str(subject).zfill(2)}_ses-{str(ses).zfill(2)}_run-{str(run).zfill(2)}_task-movie"
