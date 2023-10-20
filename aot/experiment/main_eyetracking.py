@@ -19,7 +19,7 @@ parser.add_argument("--eyelink", default=True,
                     action=argparse.BooleanOptionalAction)
 
 
-cmd_args = parser.parse_args()
+cmd_args = parser.parse_args()   #20 subjects, 
 subject, ses, run, eyelink = (
     cmd_args.subject,
     cmd_args.ses,
