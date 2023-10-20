@@ -19,7 +19,7 @@ parser.add_argument("--eyelink", default=True,
                     action=argparse.BooleanOptionalAction)
 
 
-cmd_args = parser.parse_args()   #20 subjects, 
+cmd_args = parser.parse_args()   #20 subjects, 8 sessions, 10 runs
 subject, ses, run, eyelink = (
     cmd_args.subject,
     cmd_args.ses,
@@ -29,7 +29,7 @@ subject, ses, run, eyelink = (
 
 
 def main():
-    settings_dir = base_dir / core_settings["paths"]["settings_path"] / "main"   #"eyetracking" # shoule not be main anymore
+    settings_dir = base_dir / core_settings["paths"]["settings_path"] / "eyetracking" # shoule not be main anymore 
     output_dir = base_dir / \
         core_settings["paths"]["output_path"] / "eyetracking"
     output_str = f"sub-{str(subject).zfill(2)}_ses-{str(ses).zfill(2)}_run-{str(run).zfill(2)}_task-movie"
