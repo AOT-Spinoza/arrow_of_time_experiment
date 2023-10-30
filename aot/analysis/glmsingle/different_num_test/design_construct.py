@@ -27,6 +27,9 @@ bold_data_root = '/tank/shared/2022/arrow_of_time/derivatives/fmripreps/aotfull_
 output_root = '/tank/shared/2022/arrow_of_time/arrow_of_time_exp/aot/analysis/glmsingle/outputs/dif_run'
 
 
+
+
+
 def movie_conditions_dict():#include blank condition as 0
     original_video_names = []
     for i in range(1,len(video_db)):
@@ -37,7 +40,8 @@ def movie_conditions_dict():#include blank condition as 0
     reversed_video_names = ["R_"+name for name in resampled_video_names]
     total_video_names = copy.deepcopy(resampled_video_names) + copy.deepcopy(reversed_video_names)
     movies_conditions = {}
-    condnum = 0
+    #condnum = 0
+    condnum = -1 #now the blank condition is -1 , every other condition(movie) is a non-negative number which could be used as index
     movies_conditions["blank"] = condnum
     for i in range(len(total_video_names)):
         if total_video_names[i] not in movies_conditions and total_video_names[i] != 'blank':
@@ -45,29 +49,42 @@ def movie_conditions_dict():#include blank condition as 0
             movies_conditions[total_video_names[i]] = condnum
     print("total videos number: ", len(total_video_names))
     print(movies_conditions)
+    video_condition_file_path = base_dir / 'data/videos/video_conditions.tsv'
+    video_condition_file = open(video_condition_file_path,'w')
+    for key in movies_conditions.keys():
+        video_condition_file.write(key+"\t"+str(movies_conditions[key])+"\n")
+    video_condition_file.close()
+
     return movies_conditions
 
 movie_conditions = movie_conditions_dict()
 
 def construct_design_from_exp_design_yml(ymlfile, movies_conditions):
+    BLANK = -1
     #read in the experiment design yaml file
     settings_sample = yaml.load(open(ymlfile), Loader=yaml.FullLoader)
     #get the movie files
     movies  = settings_sample['stimuli']['movie_files']
     original_condition_list = [movies_conditions[movie] for movie in movies]
     #add blank condition to each element in the list
-    original_condition_list = [[x,x]+[0,0] for x in original_condition_list]
+    #original_condition_list = [[x,x]+[0,0] for x in original_condition_list]
+    original_condition_list = [[x]+[BLANK,BLANK,BLANK] for x in original_condition_list]
     #flatten the list
     original_condition_list = [item for sublist in original_condition_list for item in sublist]
     #add 16 0s to the start and end of the list
-    original_condition_list = [0]*16 + original_condition_list + [0]*16
+    original_condition_list = [BLANK]*16 + original_condition_list + [BLANK]*16
     print(original_condition_list)
     print("desing len:",len(original_condition_list))
     #construct the design matrix from the condition list (one-hot encoding)
+
     design_matrix = np.zeros((len(original_condition_list),len(movies_conditions)))
     for i in range(len(original_condition_list)):
-        if original_condition_list[i] != 0:
+        if original_condition_list[i] != BLANK:
             design_matrix[i][original_condition_list[i]] = 1
+
+
+    return design_matrix
+
 
     return design_matrix
 
