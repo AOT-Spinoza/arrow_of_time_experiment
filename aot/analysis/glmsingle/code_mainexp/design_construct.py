@@ -210,7 +210,7 @@ if __name__ == '__main__':
     #bold_list = construct_bold_for_one_session(sub=1,ses=1,datatype='T1W')
     #print(len(bold_list))
 
-    apply_glmsingle_for_one_session(sub=2,ses=1)
+    #apply_glmsingle_for_one_session(sub=2,ses=1)
     apply_glmsingle_for_one_session(sub=1,ses=1)
 
 
