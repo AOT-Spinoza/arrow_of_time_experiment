@@ -48,6 +48,9 @@ various:
   eyemovements_alert: True
   gaze_threshold_deg: 5
   movie_size: [1920, 1080] ###################################################
+  subject_number_eyetracking: 20
+  session_number_eyetracking: 8
+  run_number_eyetracking: 10
 
 stimuli:
   fix_size: 0.0625
