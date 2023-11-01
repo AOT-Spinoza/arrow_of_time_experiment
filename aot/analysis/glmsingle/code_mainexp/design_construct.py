@@ -140,6 +140,8 @@ def construct_bold_for_one_session(sub,ses,datatype):#fsnative or §T1W
     list_of_bold_data = []
     if datatype == 'fsaverage':
         for run in range(1,run_number+1):
+            #if run == 2:###################################
+            #    continue
             list_of_bold_data.append(index_to_bold_data_fsaverage(sub,ses,run))
         return list_of_bold_data
     elif datatype == 'T1W':
@@ -212,8 +214,8 @@ if __name__ == '__main__':
     #bold_list = construct_bold_for_one_session(sub=1,ses=1,datatype='T1W')
     #print(len(bold_list))
 
-    apply_glmsingle_for_one_session(sub=2,ses=1,datatype='fsaverage')
-    #apply_glmsingle_for_one_session(sub=1,ses=1)
+    #apply_glmsingle_for_one_session(sub=2,ses=1,datatype='fsaverage')
+    apply_glmsingle_for_one_session(sub=1,ses=1,datatype='fsaverage')
 
 
 
