@@ -100,7 +100,7 @@ def construct_design_for_one_session(sub,ses):
         list_of_designs.append(construct_design_from_exp_design_yml(target_path, movie_conditions))
     return list_of_designs
 
-def index_to_bold_data_fsnative(sub,ses,run): #input: int,int,int
+def index_to_bold_data_fsaverage(sub,ses,run): #input: int,int,int
     #sample :/tank/shared/2022/arrow_of_time/aotfull_preprocs/fullpreproc3/sub-001/ses-01/func/sub-001_ses-01_task-AOT_run-1_space-fsaverage_hemi-L_bold.func.gii  
     sub = str(sub)
     ses = str(ses)
@@ -109,15 +109,17 @@ def index_to_bold_data_fsnative(sub,ses,run): #input: int,int,int
     Right_bold_path = bold_data_root +"/"+'sub-'+sub.zfill(3)+'/ses-'+ses.zfill(2) + "/func/" +'sub-'+sub.zfill(3)+'_ses-'+ses.zfill(2)+'_task-AOT_run-'+run+'_space-fsaverage_hemi-R_bold.func.gii'
     #load and concatenate the bold data from left and right hemispheres
     img_L = nib.load(Left_bold_path)
+    #print('bold data:',img_L)
     img_data_L = [x.data for x in img_L.darrays]
-    cur_data_L = img_data_L[0]
+    #print('bold data:',img_data_L)
+    cur_data_L = np.array(img_data_L)#[0]
     #swap the first two dimensions#########################################maybe need to change
-    #cur_data_L = np.swapaxes(cur_data_L,0,1)
+    cur_data_L = np.swapaxes(cur_data_L,0,1)
     print('bold data shape:',cur_data_L.shape)
     img_R = nib.load(Right_bold_path)
     img_data_R = [x.data for x in img_R.darrays]
-    cur_data_R = img_data_R[0]
-    #cur_data_R = np.swapaxes(cur_data_R,0,1)
+    cur_data_R = np.array(img_data_R)#[0]
+    cur_data_R = np.swapaxes(cur_data_R,0,1)
     print('bold data shape:',cur_data_R.shape)
     cur_data = np.concatenate((cur_data_L,cur_data_R),axis=0)
     print('bold data shape:',cur_data.shape)
@@ -136,9 +138,9 @@ def index_to_bold_data_T1W(sub,ses,run): #input: int,int,int
 
 def construct_bold_for_one_session(sub,ses,datatype):#fsnative or §T1W
     list_of_bold_data = []
-    if datatype == 'fsnative':
+    if datatype == 'fsaverage':
         for run in range(1,run_number+1):
-            list_of_bold_data.append(index_to_bold_data_fsnative(sub,ses,run))
+            list_of_bold_data.append(index_to_bold_data_fsaverage(sub,ses,run))
         return list_of_bold_data
     elif datatype == 'T1W':
         for run in range(1,run_number+1):
@@ -163,18 +165,18 @@ def merge_bold_data(test_bold_file_L,test_bold_file_R): #directly from old, mayb
     print('bold data shape:',cur_data.shape)
     return cur_data
 
-def construct_output_dir(sub,ses):
-    output_dir = output_root + "/" +'sub-'+str(sub).zfill(3)+'_ses-'+str(ses).zfill(2)
+def construct_output_dir(sub,ses,data_type='T1W'):
+    output_dir = output_root + "/" +'sub-'+str(sub).zfill(3)+'_ses-'+str(ses).zfill(2)+'_'+data_type
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
     return output_dir
 
 
 
-def apply_glmsingle_for_one_session(sub,ses):
-    bolds = construct_bold_for_one_session(sub,ses,datatype='T1W')
+def apply_glmsingle_for_one_session(sub,ses,datatype='T1W'):
+    bolds = construct_bold_for_one_session(sub,ses,datatype)
     designs = construct_design_for_one_session(sub,ses)
-    output_dir = construct_output_dir(sub,ses)
+    output_dir = construct_output_dir(sub,ses,datatype)
     opt = dict()
     # set important fields for completeness (but these would be enabled by default)
     opt['wantlibrary'] = 1
@@ -210,8 +212,8 @@ if __name__ == '__main__':
     #bold_list = construct_bold_for_one_session(sub=1,ses=1,datatype='T1W')
     #print(len(bold_list))
 
-    apply_glmsingle_for_one_session(sub=2,ses=1)
-    apply_glmsingle_for_one_session(sub=1,ses=1)
+    apply_glmsingle_for_one_session(sub=2,ses=1,datatype='fsaverage')
+    #apply_glmsingle_for_one_session(sub=1,ses=1)
 
 
 
