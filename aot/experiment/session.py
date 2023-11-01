@@ -804,7 +804,7 @@ class HCPMovieELSessionMemory(PylinkEyetrackerSession):
         )  # initialize parent class!
 
         # check whether the program is running on the my laptop
-        if os.path.exists("/Users/shufanzhang/Documents/PhD/Arrow_of_time/arrow_of_time/aot"):
+        if os.path.exists("/Users/shufanzhang/Documents/PhD"):
             self.pix_per_deg = self.win.size[0] / self.win.monitor.getWidth()
 
         self.fixation = FixationBullsEye(
@@ -834,12 +834,23 @@ class HCPMovieELSessionMemory(PylinkEyetrackerSession):
         self.n_trials = len(
             self.settings["stimuli"].get("picture_files")
         )  # include the movdies and blank trials
-        self.pictures = [
-            self.settings["paths"].get("stimuli_picture_path")
-            + "/"
-            + self.settings["stimuli"].get("picture_files")[i]
-            for i in range(len(self.settings["stimuli"].get("picture_files")))
-        ]
+
+        #detect location
+        if os.path.exists("/Users/shufanzhang/Documents/PhD"):
+            self.pictures = [
+                self.settings["paths"].get("stimuli_picture_path_laptop")
+                + "/"
+                + self.settings["stimuli"].get("picture_files")[i]
+                for i in range(len(self.settings["stimuli"].get("picture_files")))
+            ]
+        elif os.path.exists("/home/egter/Projects/arrow_of_time_experiment/aot"):
+            self.pictures = [
+                self.settings["paths"].get("stimuli_picture_path_sophie")
+                + "/"
+                + self.settings["stimuli"].get("picture_files")[i]
+                for i in range(len(self.settings["stimuli"].get("picture_files")))
+            ]
+
         print(self.pictures)
 
         # count the time for loading the movies

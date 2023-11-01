@@ -47,6 +47,9 @@ various:
   eyemovements_alert: True
   gaze_threshold_deg: 5
   movie_size: [1920, 1080] ###################################################
+  subject_number_eyetracking: 20
+  session_number_eyetracking: 8
+  run_number_eyetracking: 10
 
 stimuli:
   fix_size: 0.0625
@@ -66,7 +69,8 @@ paths:
   stimuli_path : '/Users/shufanzhang/Documents/PhD/Arrow_of_time/arrow_of_time/stimuli_flat'  
   stimuli_path_spinoza2 : '/experiments/aot'
   stimuli_path_spinoza1 : '/experiments/knapen_aot/videos'
-  stimuli_picture_path : '/Users/shufanzhang/Documents/PhD/Arrow_of_time/arrow_of_time/pictures'
+  stimuli_picture_path_laptop : '/Users/shufanzhang/Documents/PhD/Arrow_of_time/arrow_of_time/pictures'
+  stimuli_picture_path_sophie : ''
   stimuli_processing_path : '/Users/shufanzhang/Documents/PhD/Arrow_of_time/arrow_of_time/stimuli'
   grades_path : 'data/grading'
   sound_path : 'beep-02.wav'
