@@ -806,6 +806,8 @@ class HCPMovieELSessionMemory(PylinkEyetrackerSession):
         # check whether the program is running on the my laptop
         if os.path.exists("/Users/shufanzhang/Documents/PhD"):
             self.pix_per_deg = self.win.size[0] / self.win.monitor.getWidth()
+        elif os.path.exists("/home/egter/Projects/arrow_of_time_experiment/aot"):
+            self.pix_per_deg = self.win.size[0] / self.win.monitor.getWidth()
 
         self.fixation = FixationBullsEye(
             win=self.win,
