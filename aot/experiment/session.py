@@ -507,7 +507,7 @@ class HCPMovieELSessionEyetracking(PylinkEyetrackerSession):
             session=self,
             trial_nr=len(self.trials) + 1,
             phase_durations=[self.settings["design"].get("end_duration")],
-            txt="Thank you for participating in this experiment!",
+            txt="End of this run",
         )
         self.trials.append(outro_trial)
         # switch the tail of the trials(?)
