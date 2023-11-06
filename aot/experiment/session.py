@@ -507,7 +507,7 @@ class HCPMovieELSessionEyetracking(PylinkEyetrackerSession):
             session=self,
             trial_nr=len(self.trials) + 1,
             phase_durations=[self.settings["design"].get("end_duration")],
-            txt="Thank you for participating in this experiment!",
+            txt="End of this run",
         )
         self.trials.append(outro_trial)
         # switch the tail of the trials(?)
@@ -805,6 +805,8 @@ class HCPMovieELSessionMemory(PylinkEyetrackerSession):
 
         # check whether the program is running on the my laptop
         if os.path.exists("/Users/shufanzhang/Documents/PhD"):
+            self.pix_per_deg = self.win.size[0] / self.win.monitor.getWidth()
+        elif os.path.exists("/home/egter/Projects/arrow_of_time_experiment/aot"):
             self.pix_per_deg = self.win.size[0] / self.win.monitor.getWidth()
 
         self.fixation = FixationBullsEye(

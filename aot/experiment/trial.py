@@ -631,7 +631,7 @@ class OutroTrial(InstructionTrial):
     """Simple trial with only fixation cross."""
 
     def __init__(self, session, trial_nr, phase_durations, txt="", **kwargs):
-        txt = """"""
+        #txt = txt
         super().__init__(session, trial_nr, phase_durations, txt=txt, **kwargs)
 
     def get_events(self):
@@ -641,3 +641,8 @@ class OutroTrial(InstructionTrial):
             for key, t in events:
                 if key == "space":
                     self.stop_phase()
+    
+    def draw(self):
+        self.session.fixation.draw()
+        if self.phase == 0:
+            self.text.draw()
