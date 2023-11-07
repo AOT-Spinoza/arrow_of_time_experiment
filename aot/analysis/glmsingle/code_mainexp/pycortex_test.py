@@ -6,6 +6,8 @@ import matplotlib.colors as colors
 import matplotlib.pyplot as pl
 import time
 
+from cortex import freesurfer
+
 
 data_dir = '/tank/shared/2022/arrow_of_time/arrow_of_time_exp/aot/analysis/glmsingle/outputs/mainexp'
 fs_dir = '/tank/shared/2022/arrow_of_time/derivatives/fmripreps/aotfull_preprocs/fullpreproc03/sourcedata/freesurfer'
