@@ -8,21 +8,22 @@ import time
 
 
 data_dir = '/Users/shufanzhang/disks/rom_Sh/2022/arrow_of_time/arrow_of_time_exp/aot/analysis/glmsingle/outputs/mainexp'
-fs_dir = '/Users/shufanzhang/disks/rom_Sh//2022/arrow_of_time/derivatives/fmripreps/aotfull_preprocs/fullpreproc03/sourcedata/freesurfer'
-os.listdir("/tank/zhangs/anaconda3/share/pycortex/db")
+fs_dir = '/Users/shufanzhang/disks/rom_Sh/2022/arrow_of_time/derivatives/fmripreps/aotfull_preprocs/fullpreproc03/sourcedata/freesurfer'
+os.listdir("/Users/shufanzhang/opt/anaconda3/envs/pycortex/share/pycortex/db")
 
-os.system("ln -s '/Users/shufanzhang/disks/rom_Sh//2022/arrow_of_time/derivatives/fmripreps/aotfull_preprocs/fullpreproc03/sourcedata/freesurfer/sub-001/surf/lh.pial.T1' '/Users/shufanzhang/disks/rom_Sh//2022/arrow_of_time/derivatives/fmripreps/aotfull_preprocs/fullpreproc03/sourcedata/freesurfer/sub-001/surf/lh.pial'")
-os.system("ln -s '/Users/shufanzhang/disks/rom_Sh//2022/arrow_of_time/derivatives/fmripreps/aotfull_preprocs/fullpreproc03/sourcedata/freesurfer/sub-001/surf/rh.pial.T1' '/Users/shufanzhang/disks/rom_Sh//2022/arrow_of_time/derivatives/fmripreps/aotfull_preprocs/fullpreproc03/sourcedata/freesurfer/sub-001/surf/rh.pial'")
+
+os.system("ln -s '/Users/shufanzhang/disks/rom_Sh/2022/arrow_of_time/derivatives/fmripreps/aotfull_preprocs/fullpreproc03/sourcedata/freesurfer/sub-001/surf/lh.pial.T1' '/Users/shufanzhang/disks/rom_Sh/2022/arrow_of_time/derivatives/fmripreps/aotfull_preprocs/fullpreproc03/sourcedata/freesurfer/sub-001/surf/lh.pial'")
+os.system("ln -s '/Users/shufanzhang/disks/rom_Sh/2022/arrow_of_time/derivatives/fmripreps/aotfull_preprocs/fullpreproc03/sourcedata/freesurfer/sub-001/surf/rh.pial.T1' '/Users/shufanzhang/disks/rom_Sh/2022/arrow_of_time/derivatives/fmripreps/aotfull_preprocs/fullpreproc03/sourcedata/freesurfer/sub-001/surf/rh.pial'")
 
 for i in [1]:
     cortex.freesurfer.import_subj(fs_subject='sub-'+str(i).zfill(3), cx_subject='sub-'+str(i).zfill(3), freesurfer_subject_dir=fs_dir)
     #cortex.freesurfer.import_flat('sub-'+str(i).zfill(3), patch='full', freesurfer_subject_dir=fs_dir)
 
 
-test_data_path = '/Users/shufanzhang/disks/rom_Sh//2022/arrow_of_time/arrow_of_time_exp/aot/analysis/glmsingle/outputs/mainexp/sub-001_ses-01_voxel/TYPEC_FITHRF_GLMDENOISE.npy'
+test_data_path = '/Users/shufanzhang/disks/rom_Sh/2022/arrow_of_time/arrow_of_time_exp/aot/analysis/glmsingle/outputs/mainexp/sub-001_ses-01_voxel/TYPEC_FITHRF_GLMDENOISE.npy'
 test_data = np.load(test_data_path, allow_pickle=True).item()
 #print(test_data)
-#os.system("ln -s '/Users/shufanzhang/disks/rom_Sh//2022/arrow_of_time/derivatives/fmripreps/aotfull_preprocs/fullpreproc03/sourcedata/freesurfer/sub-001/surf/lh.pial.T1' '/Users/shufanzhang/disks/rom_Sh//2022/arrow_of_time/derivatives/fmripreps/aotfull_preprocs/fullpreproc03/sourcedata/freesurfer/sub-001/surf/lh.pial'")
+#os.system("ln -s '/Users/shufanzhang/disks/rom_Sh/2022/arrow_of_time/derivatives/fmripreps/aotfull_preprocs/fullpreproc03/sourcedata/freesurfer/sub-001/surf/lh.pial.T1' '/Users/shufanzhang/disks/rom_Sh/2022/arrow_of_time/derivatives/fmripreps/aotfull_preprocs/fullpreproc03/sourcedata/freesurfer/sub-001/surf/lh.pial'")
 
 for key in test_data:
     print(key)

@@ -23,10 +23,27 @@ run_number = core_settings["various"]["run_number"]
 # bold_data_root_wrong = '/tank/shared/2022/arrow_of_time/aotfull_preprocs/fullpreproc03/sub-001/ses-01/func'
 bold_data_root = "/tank/shared/2022/arrow_of_time/derivatives/fmripreps/aotfull_preprocs/fullpreproc03"
 output_root = "/tank/shared/2022/arrow_of_time/arrow_of_time_exp/aot/analysis/glmsingle/outputs/mainexp"
-design_output_root = '/tank/shared/2022/arrow_of_time/arrow_of_time_exp/aot/analysis/glmsingle/outputs/design'
 
 
 def movie_conditions_dict():  # include blank condition as 0
+    def is_reverse(video_name):
+        if video_name[0] == "R":
+            return True
+        else:
+            return False
+
+    def is_not_reverse(video_name):
+        if video_name[0] == "S":
+            return True
+        else:
+            return False
+
+    def name_dual(video_name):
+        if is_reverse(video_name):
+            return video_name[2:]
+        elif is_not_reverse(video_name):
+            return "R_" + video_name
+
     original_video_names = []
     for i in range(1, len(video_db)):
         if (
@@ -52,8 +69,12 @@ def movie_conditions_dict():  # include blank condition as 0
             total_video_names[i] not in movies_conditions
             and total_video_names[i] != "blank"
         ):
-            condnum += 1
-            movies_conditions[total_video_names[i]] = condnum
+            dualname = name_dual(total_video_names[i])
+            if dualname in movies_conditions:
+                movies_conditions[total_video_names[i]] = movies_conditions[dualname]
+            else:
+                condnum += 1
+                movies_conditions[total_video_names[i]] = condnum
     print("total videos number: ", len(total_video_names))
     print(movies_conditions)
     video_condition_file_path = base_dir / "data/videos/video_conditions.tsv"
@@ -110,25 +131,14 @@ def index_to_exp_yml(sub, ses, run):
     return target_path
 
 
-def index_to_design_output(sub, ses, run):
-    sub = str(sub).zfill(2)
-    ses = str(ses).zfill(2)
-    run = str(run).zfill(2)
-    target_path =  design_output_root +"/"+ f"design_sub_{sub}_ses_{ses}_run_{run}.npy"
-    return target_path
-
-
 def construct_design_for_one_session(sub, ses):
     list_of_designs = []
     for run in range(1, run_number + 1):
         # if run == 2:###################################
         #    continue
         target_path = index_to_exp_yml(sub, ses, run)
-        newdesign = construct_design_from_exp_design_yml(target_path, movie_conditions)
-        save_path = index_to_design_output(sub, ses, run)
-        np.save(save_path, newdesign)
         list_of_designs.append(
-            newdesign
+            construct_design_from_exp_design_yml(target_path, movie_conditions)
         )
     return list_of_designs
 
@@ -297,15 +307,21 @@ def apply_glmsingle_for_one_session(sub, ses, datatype="T1W", suffix=""):
 
 
 if __name__ == "__main__":
-    #movie_conditions = movie_conditions_dict()
-    # sample_yml = '/tank/shared/2022/arrow_of_time/arrow_of_time/aot/data/experiment/settings/main/experiment_settings_sub_01_ses_01_run_01.yml'
+    movie_conditions = movie_conditions_dict()
+    print("len conditions:", len(movie_conditions))
+    # sample_yml = '/tank/shared/2022/arrow_of_time/arrow_of_time_exp/aot/data/experiment/settings/main/experiment_settings_sub_01_ses_01_run_01.yml'
     # construct_design_from_exp_design_yml(sample_yml, movie_conditions)
+    # testdesign = construct_design_for_one_session(1,1)
+    # print(len(testdesign))
+    # flatten the list
+    # testdesign = [item for sublist in testdesign for item in sublist]
+    # print(testdesign)
     # sample_bold = index_to_bold_data_T1W(1,1,1)
 
-    design_list = construct_design_for_one_session(sub=2,ses=1)
+    # design_list = construct_design_for_one_session(sub=1,ses=1)
     # print(len(design_list))
     # bold_list = construct_bold_for_one_session(sub=1,ses=1,datatype='T1W')
     # print(len(bold_list))
 
-    #apply_glmsingle_for_one_session(sub=2, ses=1, datatype="T1W", suffix="glmnew")
+    apply_glmsingle_for_one_session(sub=2, ses=1, datatype="T1W")
     # apply_glmsingle_for_one_session(sub=1,ses=1,datatype='fsaverage')
