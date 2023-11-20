@@ -21,7 +21,7 @@ run_number = core_settings["various"]["run_number"]
 
 # bold_data_root = '/tank/shared/2022/arrow_of_time/aotfull_preprocs/fullpreproc3/sub-001/ses-01/func'
 # bold_data_root_wrong = '/tank/shared/2022/arrow_of_time/aotfull_preprocs/fullpreproc03/sub-001/ses-01/func'
-bold_data_root = "/tank/shared/2022/arrow_of_time/derivatives/fmripreps/aotfull_preprocs/fullpreproc03"
+bold_data_root = "/tank/shared/2022/arrow_of_time/derivatives/fmripreps/aotfull_preprocs/fullpreprocFinal"
 output_root = "/tank/shared/2022/arrow_of_time/arrow_of_time_exp/aot/analysis/glmsingle/outputs/mainexp"
 
 
@@ -323,5 +323,5 @@ if __name__ == "__main__":
     # bold_list = construct_bold_for_one_session(sub=1,ses=1,datatype='T1W')
     # print(len(bold_list))
 
-    apply_glmsingle_for_one_session(sub=2, ses=1, datatype="T1W")
-    # apply_glmsingle_for_one_session(sub=1,ses=1,datatype='fsaverage')
+    apply_glmsingle_for_one_session(sub=2, ses=1, datatype="T1W", suffix="direc_merge_runfix")
+    apply_glmsingle_for_one_session(sub=1,ses=1,datatype='T1W',suffix='direc_merge_runfix')

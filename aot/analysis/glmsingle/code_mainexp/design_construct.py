@@ -21,7 +21,7 @@ run_number = core_settings["various"]["run_number"]
 
 # bold_data_root = '/tank/shared/2022/arrow_of_time/aotfull_preprocs/fullpreproc3/sub-001/ses-01/func'
 # bold_data_root_wrong = '/tank/shared/2022/arrow_of_time/aotfull_preprocs/fullpreproc03/sub-001/ses-01/func'
-bold_data_root = "/tank/shared/2022/arrow_of_time/derivatives/fmripreps/aotfull_preprocs/fullpreproc03"
+bold_data_root = "/tank/shared/2022/arrow_of_time/derivatives/fmripreps/aotfull_preprocs/fullpreprocFinal"
 output_root = "/tank/shared/2022/arrow_of_time/arrow_of_time_exp/aot/analysis/glmsingle/outputs/mainexp"
 design_output_root = '/tank/shared/2022/arrow_of_time/arrow_of_time_exp/aot/analysis/glmsingle/outputs/design'
 
@@ -302,10 +302,10 @@ if __name__ == "__main__":
     # construct_design_from_exp_design_yml(sample_yml, movie_conditions)
     # sample_bold = index_to_bold_data_T1W(1,1,1)
 
-    design_list = construct_design_for_one_session(sub=2,ses=1)
+    #design_list = construct_design_for_one_session(sub=2,ses=1)
     # print(len(design_list))
     # bold_list = construct_bold_for_one_session(sub=1,ses=1,datatype='T1W')
     # print(len(bold_list))
 
-    #apply_glmsingle_for_one_session(sub=2, ses=1, datatype="T1W", suffix="glmnew")
-    # apply_glmsingle_for_one_session(sub=1,ses=1,datatype='fsaverage')
+    apply_glmsingle_for_one_session(sub=2, ses=1, datatype="T1W", suffix="glmnew_runfix")
+    apply_glmsingle_for_one_session(sub=1,ses=1, datatype='T1W',suffix='glmnew_runfix')
