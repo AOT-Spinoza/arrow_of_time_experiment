@@ -10,6 +10,9 @@ from wordcloud import WordCloud
 
 base_dir = Path(aot.__path__[0])
 video_db_path = base_dir / "data/videos/database_originals.tsv"
+savepath = (
+    base_dir / "analysis/video_analysis/metadata_analysis/categories_wordcloud.png"
+)
 
 # read tsv file
 categories_count = {}
@@ -26,6 +29,10 @@ with open(video_db_path, "r") as f:
             categories_count[category] += 1
 
 print(categories_count)
+# remove top 3 categories
+categories_count.pop("YouTubeBB")
+categories_count.pop("scenesclips")
+categories_count.pop("pexelsclips")
 
 freq_dic = {}
 for key, value in categories_count.items():
@@ -34,6 +41,6 @@ for key, value in categories_count.items():
 print(freq_dic)
 
 # make a wordcloud picture
-wordcloud = WordCloud(background_color="white", max_words=1000)
+wordcloud = WordCloud(background_color="white", max_words=1000,width=800, height=600)
 wordcloud.generate_from_frequencies(freq_dic)
-wordcloud.to_file("categories_wordcloud.png")
+wordcloud.to_file(savepath)
