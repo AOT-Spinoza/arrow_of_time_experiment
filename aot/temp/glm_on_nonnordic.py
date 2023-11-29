@@ -21,7 +21,8 @@ run_number = core_settings["various"]["run_number"]
 
 # bold_data_root = '/tank/shared/2022/arrow_of_time/aotfull_preprocs/fullpreproc3/sub-001/ses-01/func'
 # bold_data_root_wrong = '/tank/shared/2022/arrow_of_time/aotfull_preprocs/fullpreproc03/sub-001/ses-01/func'
-bold_data_root = "/tank/shared/2022/arrow_of_time/derivatives/fmripreps/aotfull_preprocs/fullpreprocFinal"
+# bold_data_root = "/tank/shared/2022/arrow_of_time/derivatives/fmripreps/aotfull_preprocs/fullpreprocFinal"
+bold_data_root = "/tank/shared/2022/arrow_of_time/temp/stc_on_nonnordic"
 output_root = "/tank/shared/2022/arrow_of_time/arrow_of_time_exp/aot/analysis/glmsingle/outputs/mainexp"
 design_output_root = "/tank/shared/2022/arrow_of_time/arrow_of_time_exp/aot/analysis/glmsingle/outputs/design"
 
@@ -118,79 +119,21 @@ def index_to_design_output(sub, ses, run):
     return target_path
 
 
-def construct_design_for_one_run(sub, ses, run):
-    target_path = index_to_exp_yml(sub, ses, run)
-    newdesign = construct_design_from_exp_design_yml(target_path, movie_conditions)
-    save_path = index_to_design_output(sub, ses, run)
-    np.save(save_path, newdesign)
-    return newdesign
-
-
 def construct_design_for_one_session(sub, ses):
     list_of_designs = []
     for run in range(1, run_number + 1):
-        list_of_designs.append(construct_design_for_one_run(sub, ses, run))
+        # if run == 2:###################################
+        #    continue
+        target_path = index_to_exp_yml(sub, ses, run)
+        newdesign = construct_design_from_exp_design_yml(target_path, movie_conditions)
+        save_path = index_to_design_output(sub, ses, run)
+        np.save(save_path, newdesign)
+        list_of_designs.append(newdesign)
     return list_of_designs
 
 
-def index_to_bold_data_fsaverage(sub, ses, run):  # input: int,int,int
-    # sample :/tank/shared/2022/arrow_of_time/aotfull_preprocs/fullpreproc3/sub-001/ses-01/func/sub-001_ses-01_task-AOT_run-1_space-fsaverage_hemi-L_bold.func.gii
-    sub = str(sub)
-    ses = str(ses)
-    run = str(run)
-    Left_bold_path = (
-        bold_data_root
-        + "/"
-        + "sub-"
-        + sub.zfill(3)
-        + "/ses-"
-        + ses.zfill(2)
-        + "/func/"
-        + "sub-"
-        + sub.zfill(3)
-        + "_ses-"
-        + ses.zfill(2)
-        + "_task-AOT_run-"
-        + run
-        + "_space-fsaverage_hemi-L_bold.func.gii"
-    )
-    Right_bold_path = (
-        bold_data_root
-        + "/"
-        + "sub-"
-        + sub.zfill(3)
-        + "/ses-"
-        + ses.zfill(2)
-        + "/func/"
-        + "sub-"
-        + sub.zfill(3)
-        + "_ses-"
-        + ses.zfill(2)
-        + "_task-AOT_run-"
-        + run
-        + "_space-fsaverage_hemi-R_bold.func.gii"
-    )
-    # load and concatenate the bold data from left and right hemispheres
-    img_L = nib.load(Left_bold_path)
-    # print('bold data:',img_L)
-    img_data_L = [x.data for x in img_L.darrays]
-    # print('bold data:',img_data_L)
-    cur_data_L = np.array(img_data_L)  # [0]
-    # swap the first two dimensions#########################################maybe need to change
-    cur_data_L = np.swapaxes(cur_data_L, 0, 1)
-    print("bold data shape:", cur_data_L.shape)
-    img_R = nib.load(Right_bold_path)
-    img_data_R = [x.data for x in img_R.darrays]
-    cur_data_R = np.array(img_data_R)  # [0]
-    cur_data_R = np.swapaxes(cur_data_R, 0, 1)
-    print("bold data shape:", cur_data_R.shape)
-    cur_data = np.concatenate((cur_data_L, cur_data_R), axis=0)
-    print("bold data shape:", cur_data.shape)
-    return cur_data
-
-
 def index_to_bold_data_T1W(sub, ses, run):  # input: int,int,int
-    # sample : /tank/shared/2022/arrow_of_time/aotfull_preprocs/fullpreproc3/sub-001/ses-01/func/sub-001_ses-01_task-AOT_run-1_space-T1w_desc-preproc_bold.nii.gz
+    # sample : /tank/shared/2022/arrow_of_time/temp/stc_on_nonnordic/sub-001/ses-01-slicetime/sub-001_ses-01_task-AOT_run-01_bold.nii.gz
     sub = str(sub)
     ses = str(ses)
     run = str(run)
@@ -201,54 +144,30 @@ def index_to_bold_data_T1W(sub, ses, run):  # input: int,int,int
         + sub.zfill(3)
         + "/ses-"
         + ses.zfill(2)
-        + "/func/"
+        + "-slicetime/"
         + "sub-"
         + sub.zfill(3)
         + "_ses-"
         + ses.zfill(2)
         + "_task-AOT_run-"
-        + run
-        + "_space-T1w_desc-preproc_bold.nii.gz"
+        + run.zfill(2)
+        + "_bold.nii.gz"
     )
     img = nib.load(bold_path)
     img_data = img.get_fdata()
     print("bold data shape:", img_data.shape)
-    return img_data
+    cur_data = img_data
+    return cur_data
 
 
 def construct_bold_for_one_session(sub, ses, datatype):  # fsnative or §T1W
     list_of_bold_data = []
-    if datatype == "fsaverage":
-        for run in range(1, run_number + 1):
-            # if run == 2:###################################
-            #    continue
-            list_of_bold_data.append(index_to_bold_data_fsaverage(sub, ses, run))
-        return list_of_bold_data
-    elif datatype == "T1W":
+    if datatype == "T1W":
         for run in range(1, run_number + 1):
             # if run == 2:###################################
             #    continue
             list_of_bold_data.append(index_to_bold_data_T1W(sub, ses, run))
         return list_of_bold_data
-
-
-def merge_bold_data(
-    test_bold_file_L, test_bold_file_R
-):  # directly from old, maybe need some change
-    img_L = nib.load(test_bold_file_L)
-    img_data_L = [x.data for x in img_L.darrays]
-    cur_data_L = img_data_L[0]
-    # swap the first two dimensions
-    cur_data_L = np.swapaxes(cur_data_L, 0, 1)
-    print("bold data shape:", cur_data_L.shape)
-    img_R = nib.load(test_bold_file_R)
-    img_data_R = [x.data for x in img_R.darrays]
-    cur_data_R = img_data_R[0]
-    cur_data_R = np.swapaxes(cur_data_R, 0, 1)
-    print("bold data shape:", cur_data_R.shape)
-    cur_data = np.concatenate((cur_data_L, cur_data_R), axis=0)
-    print("bold data shape:", cur_data.shape)
-    return cur_data
 
 
 def construct_output_dir(sub, ses, data_type="T1W", suffix=""):  # input: int,int
@@ -269,9 +188,7 @@ def construct_output_dir(sub, ses, data_type="T1W", suffix=""):  # input: int,in
     return output_dir
 
 
-def apply_glmsingle_for_one_session(
-    sub, ses, datatype="T1W", suffix="", outputtype=[1, 1, 1, 1]
-):
+def apply_glmsingle_for_one_session(sub, ses, datatype="T1W", suffix="raw_nonnordic"):
     bolds = construct_bold_for_one_session(sub, ses, datatype)
     designs = construct_design_for_one_session(sub, ses)
     output_dir = construct_output_dir(sub, ses, datatype, suffix)
@@ -279,14 +196,11 @@ def apply_glmsingle_for_one_session(
     # set important fields for completeness (but these would be enabled by default)
     opt["wantlibrary"] = 1
     opt["wantglmdenoise"] = 1
-    if outputtype[-1] == 1:
-        opt["wantfracridge"] = 1
-    else:
-        opt["wantfracridge"] = 0
+    opt["wantfracridge"] = 1
     # for the purpose of this example we will keep the relevant outputs in memory
     # and also save them to the disk
-    opt["wantfileoutputs"] = outputtype
-    opt["wantmemoryoutputs"] = outputtype
+    opt["wantfileoutputs"] = [1, 1, 1, 1]
+    opt["wantmemoryoutputs"] = [1, 1, 1, 1]
 
     # opt['n_pcs'] = 3###################################################
     # opt['brainthresh'] = [99, 0] # which allows all voxels to pass the intensity threshold --> we use surface data#####
@@ -311,64 +225,10 @@ if __name__ == "__main__":
     # print(len(design_list))
     # bold_list = construct_bold_for_one_session(sub=1,ses=1,datatype='T1W')
     # print(len(bold_list))
-    """
+
     apply_glmsingle_for_one_session(
-        sub=2, ses=1, datatype="T1W", suffix="glmnew_runfix"
+        sub=2, ses=1, datatype="T1W", suffix="raw_nonnordic"
     )
     apply_glmsingle_for_one_session(
-        sub=1, ses=1, datatype="T1W", suffix="glmnew_runfix"
+        sub=1, ses=1, datatype="T1W", suffix="raw_nonnordic"
     )
-    """
-
-    # run typec 5 times then do average
-    """
-    for i in range(5):
-        apply_glmsingle_for_one_session(
-            sub=2,
-            ses=1,
-            datatype="T1W",
-            suffix="sample" + str(i + 1),
-            outputtype=[1, 1, 1, 0],
-        )
-    """
-
-    # run only on sub1 ses1 run4&5 on tom's result
-    def temptesttom():
-        sub1ses1run5 = "/tank/shared/2022/arrow_of_time/derivatives/ants/merged/sub-001/ses-01/run-05/registered/sub-001_ses-01_run-05.nii.gz"
-        sub1ses1run4 = "/tank/shared/2022/arrow_of_time/derivatives/ants/merged/sub-001/ses-01/run-04/registered/sub-001_ses-01_run-04_check.nii.gz"
-        list_of_bold_data = []
-        list_of_designs = []
-        img = nib.load(sub1ses1run5)
-        img_data = img.get_fdata()
-        print("bold data shape:", img_data.shape)
-        list_of_bold_data.append(img_data)
-        img = nib.load(sub1ses1run4)
-        img_data = img.get_fdata()
-        print("bold data shape:", img_data.shape)
-        list_of_bold_data.append(img_data)
-        list_of_designs.append(np.load(index_to_design_output(1, 1, 5)))
-        list_of_designs.append(np.load(index_to_design_output(1, 1, 4)))
-        output_dir = construct_output_dir(1, 1, "T1W", "tomtestrun4and5")
-        opt = dict()
-        outputtype = [1, 1, 1, 1]    
-        opt["wantlibrary"] = 1
-        opt["wantglmdenoise"] = 1
-        opt["wantfracridge"] = 1
-        # for the purpose of this example we will keep the relevant outputs in memory
-        # and also save them to the disk
-        opt["wantfileoutputs"] = outputtype
-        opt["wantmemoryoutputs"] = outputtype
-        glmsingle_obj = GLM_single(opt)
-        glmsingle_obj.fit(
-            design=list_of_designs, data=list_of_bold_data, stimdur=2.5, tr=0.9, outputdir=output_dir
-        )
-
-
-    temptesttom()
-
-
-
-
-
-
-
