@@ -21,9 +21,9 @@ run_number = core_settings["various"]["run_number"]
 
 # bold_data_root = '/tank/shared/2022/arrow_of_time/aotfull_preprocs/fullpreproc3/sub-001/ses-01/func'
 # bold_data_root_wrong = '/tank/shared/2022/arrow_of_time/aotfull_preprocs/fullpreproc03/sub-001/ses-01/func'
-bold_data_root = "/tank/shared/2022/arrow_of_time/derivatives/fmripreps/aotfull_preprocs/fullpreproc03"
+bold_data_root = "/tank/shared/2022/arrow_of_time/derivatives/fmripreps/aotfull_preprocs/fullpreprocFinal"
 output_root = "/tank/shared/2022/arrow_of_time/arrow_of_time_exp/aot/analysis/glmsingle/outputs/mainexp"
-design_output_root = '/tank/shared/2022/arrow_of_time/arrow_of_time_exp/aot/analysis/glmsingle/outputs/design'
+design_output_root = "/tank/shared/2022/arrow_of_time/arrow_of_time_exp/aot/analysis/glmsingle/outputs/design"
 
 
 def movie_conditions_dict():  # include blank condition as 0
@@ -114,22 +114,22 @@ def index_to_design_output(sub, ses, run):
     sub = str(sub).zfill(2)
     ses = str(ses).zfill(2)
     run = str(run).zfill(2)
-    target_path =  design_output_root +"/"+ f"design_sub_{sub}_ses_{ses}_run_{run}.npy"
+    target_path = design_output_root + "/" + f"design_sub_{sub}_ses_{ses}_run_{run}.npy"
     return target_path
+
+
+def construct_design_for_one_run(sub, ses, run):
+    target_path = index_to_exp_yml(sub, ses, run)
+    newdesign = construct_design_from_exp_design_yml(target_path, movie_conditions)
+    save_path = index_to_design_output(sub, ses, run)
+    np.save(save_path, newdesign)
+    return newdesign
 
 
 def construct_design_for_one_session(sub, ses):
     list_of_designs = []
     for run in range(1, run_number + 1):
-        # if run == 2:###################################
-        #    continue
-        target_path = index_to_exp_yml(sub, ses, run)
-        newdesign = construct_design_from_exp_design_yml(target_path, movie_conditions)
-        save_path = index_to_design_output(sub, ses, run)
-        np.save(save_path, newdesign)
-        list_of_designs.append(
-            newdesign
-        )
+        list_of_designs.append(construct_design_for_one_run(sub, ses, run))
     return list_of_designs
 
 
@@ -261,7 +261,7 @@ def construct_output_dir(sub, ses, data_type="T1W", suffix=""):  # input: int,in
         + str(ses).zfill(2)
         + "_"
         + data_type
-        + "_merge_"
+        + "_"
         + suffix
     )
     if not os.path.exists(output_dir):
@@ -269,7 +269,9 @@ def construct_output_dir(sub, ses, data_type="T1W", suffix=""):  # input: int,in
     return output_dir
 
 
-def apply_glmsingle_for_one_session(sub, ses, datatype="T1W", suffix=""):
+def apply_glmsingle_for_one_session(
+    sub, ses, datatype="T1W", suffix="", outputtype=[1, 1, 1, 1]
+):
     bolds = construct_bold_for_one_session(sub, ses, datatype)
     designs = construct_design_for_one_session(sub, ses)
     output_dir = construct_output_dir(sub, ses, datatype, suffix)
@@ -277,11 +279,14 @@ def apply_glmsingle_for_one_session(sub, ses, datatype="T1W", suffix=""):
     # set important fields for completeness (but these would be enabled by default)
     opt["wantlibrary"] = 1
     opt["wantglmdenoise"] = 1
-    opt["wantfracridge"] = 1
+    if outputtype[-1] == 1:
+        opt["wantfracridge"] = 1
+    else:
+        opt["wantfracridge"] = 0
     # for the purpose of this example we will keep the relevant outputs in memory
     # and also save them to the disk
-    opt["wantfileoutputs"] = [1, 1, 1, 1]
-    opt["wantmemoryoutputs"] = [1, 1, 1, 1]
+    opt["wantfileoutputs"] = outputtype
+    opt["wantmemoryoutputs"] = outputtype
 
     # opt['n_pcs'] = 3###################################################
     # opt['brainthresh'] = [99, 0] # which allows all voxels to pass the intensity threshold --> we use surface data#####
@@ -297,15 +302,73 @@ def apply_glmsingle_for_one_session(sub, ses, datatype="T1W", suffix=""):
 
 
 if __name__ == "__main__":
-    #movie_conditions = movie_conditions_dict()
+    # movie_conditions = movie_conditions_dict()
     # sample_yml = '/tank/shared/2022/arrow_of_time/arrow_of_time/aot/data/experiment/settings/main/experiment_settings_sub_01_ses_01_run_01.yml'
     # construct_design_from_exp_design_yml(sample_yml, movie_conditions)
     # sample_bold = index_to_bold_data_T1W(1,1,1)
 
-    design_list = construct_design_for_one_session(sub=2,ses=1)
+    # design_list = construct_design_for_one_session(sub=2,ses=1)
     # print(len(design_list))
     # bold_list = construct_bold_for_one_session(sub=1,ses=1,datatype='T1W')
     # print(len(bold_list))
+    """
+    apply_glmsingle_for_one_session(
+        sub=2, ses=1, datatype="T1W", suffix="glmnew_runfix"
+    )
+    apply_glmsingle_for_one_session(
+        sub=1, ses=1, datatype="T1W", suffix="glmnew_runfix"
+    )
+    """
 
-    #apply_glmsingle_for_one_session(sub=2, ses=1, datatype="T1W", suffix="glmnew")
-    # apply_glmsingle_for_one_session(sub=1,ses=1,datatype='fsaverage')
+    # run typec 5 times then do average
+    """
+    for i in range(5):
+        apply_glmsingle_for_one_session(
+            sub=2,
+            ses=1,
+            datatype="T1W",
+            suffix="sample" + str(i + 1),
+            outputtype=[1, 1, 1, 0],
+        )
+    """
+
+    # run only on sub1 ses1 run4&5 on tom's result
+    def temptesttom():
+        sub1ses1run5 = "/tank/shared/2022/arrow_of_time/derivatives/ants/merged/sub-001/ses-01/run-05/registered/sub-001_ses-01_run-05.nii.gz"
+        sub1ses1run4 = "/tank/shared/2022/arrow_of_time/derivatives/ants/merged/sub-001/ses-01/run-04/registered/sub-001_ses-01_run-04_check.nii.gz"
+        list_of_bold_data = []
+        list_of_designs = []
+        img = nib.load(sub1ses1run5)
+        img_data = img.get_fdata()
+        print("bold data shape:", img_data.shape)
+        list_of_bold_data.append(img_data)
+        img = nib.load(sub1ses1run4)
+        img_data = img.get_fdata()
+        print("bold data shape:", img_data.shape)
+        list_of_bold_data.append(img_data)
+        list_of_designs.append(np.load(index_to_design_output(1, 1, 5)))
+        list_of_designs.append(np.load(index_to_design_output(1, 1, 4)))
+        output_dir = construct_output_dir(1, 1, "T1W", "tomtestrun4and5")
+        opt = dict()
+        outputtype = [1, 1, 1, 1]    
+        opt["wantlibrary"] = 1
+        opt["wantglmdenoise"] = 1
+        opt["wantfracridge"] = 1
+        # for the purpose of this example we will keep the relevant outputs in memory
+        # and also save them to the disk
+        opt["wantfileoutputs"] = outputtype
+        opt["wantmemoryoutputs"] = outputtype
+        glmsingle_obj = GLM_single(opt)
+        glmsingle_obj.fit(
+            design=list_of_designs, data=list_of_bold_data, stimdur=2.5, tr=0.9, outputdir=output_dir
+        )
+
+
+    temptesttom()
+
+
+
+
+
+
+
