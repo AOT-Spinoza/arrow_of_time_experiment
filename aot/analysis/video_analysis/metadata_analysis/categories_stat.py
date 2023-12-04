@@ -30,9 +30,9 @@ with open(video_db_path, "r") as f:
 
 print(categories_count)
 # remove top 3 categories
-categories_count.pop("YouTubeBB")
-categories_count.pop("scenesclips")
-categories_count.pop("pexelsclips")
+#categories_count.pop("YouTubeBB")
+#categories_count.pop("scenesclips")
+#categories_count.pop("pexelsclips")
 
 freq_dic = {}
 for key, value in categories_count.items():
