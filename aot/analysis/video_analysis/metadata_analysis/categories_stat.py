@@ -6,6 +6,7 @@ import aot
 from pathlib import Path
 import csv
 from wordcloud import WordCloud
+import json
 
 
 base_dir = Path(aot.__path__[0])
@@ -29,10 +30,22 @@ with open(video_db_path, "r") as f:
             categories_count[category] += 1
 
 print(categories_count)
+# save the dictionary as json
+with open(
+    base_dir / "analysis/video_analysis/metadata_analysis/categories_count.json", "w"
+) as f:
+    json.dump(categories_count, f)
 # remove top 3 categories
-#categories_count.pop("YouTubeBB")
-#categories_count.pop("scenesclips")
-#categories_count.pop("pexelsclips")
+categories_count.pop("YouTubeBB")
+categories_count.pop("scenesclips")
+categories_count.pop("pexelsclips")
+
+# count the rest
+total = 0
+for key, value in categories_count.items():
+    total += value
+
+print(total)
 
 freq_dic = {}
 for key, value in categories_count.items():
@@ -41,6 +54,6 @@ for key, value in categories_count.items():
 print(freq_dic)
 
 # make a wordcloud picture
-wordcloud = WordCloud(background_color="white", max_words=1000,width=800, height=600)
-wordcloud.generate_from_frequencies(freq_dic)
-wordcloud.to_file(savepath)
+# wordcloud = WordCloud(background_color="white", max_words=1000,width=800, height=600)
+# wordcloud.generate_from_frequencies(freq_dic)
+# wordcloud.to_file(savepath)
