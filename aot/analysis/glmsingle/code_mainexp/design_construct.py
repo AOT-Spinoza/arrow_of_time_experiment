@@ -21,7 +21,7 @@ run_number = core_settings["various"]["run_number"]
 
 # bold_data_root = '/tank/shared/2022/arrow_of_time/aotfull_preprocs/fullpreproc3/sub-001/ses-01/func'
 # bold_data_root_wrong = '/tank/shared/2022/arrow_of_time/aotfull_preprocs/fullpreproc03/sub-001/ses-01/func'
-bold_data_root = "/tank/shared/2022/arrow_of_time/derivatives/fmripreps/aotfull_preprocs/fullpreprocFinal"
+bold_data_root = "/tank/shared/2022/arrow_of_time/derivatives/fmripreps/aotfull_preprocs/fullpreprocFinal_nofmriprepstc" 
 output_root = "/tank/shared/2022/arrow_of_time/arrow_of_time_exp/aot/analysis/glmsingle/outputs/mainexp"
 design_output_root = "/tank/shared/2022/arrow_of_time/arrow_of_time_exp/aot/analysis/glmsingle/outputs/design"
 
@@ -311,15 +311,14 @@ if __name__ == "__main__":
     # print(len(design_list))
     # bold_list = construct_bold_for_one_session(sub=1,ses=1,datatype='T1W')
     # print(len(bold_list))
-    """
+    '''
     apply_glmsingle_for_one_session(
-        sub=2, ses=1, datatype="T1W", suffix="glmnew_runfix"
+        sub=2, ses=1, datatype="T1W", suffix="nofmriprepstc"
     )
     apply_glmsingle_for_one_session(
-        sub=1, ses=1, datatype="T1W", suffix="glmnew_runfix"
+        sub=1, ses=1, datatype="T1W", suffix="nofmriprepstc" 
     )
-    """
-
+    '''
     # run typec 5 times then do average
     """
     for i in range(5):
@@ -333,6 +332,7 @@ if __name__ == "__main__":
     """
 
     # run only on sub1 ses1 run4&5 on tom's result
+    
     def temptesttom():
         sub1ses1run5 = "/tank/shared/2022/arrow_of_time/derivatives/ants/merged/sub-001/ses-01/run-05/registered/sub-001_ses-01_run-05.nii.gz"
         sub1ses1run4 = "/tank/shared/2022/arrow_of_time/derivatives/ants/merged/sub-001/ses-01/run-04/registered/sub-001_ses-01_run-04_check.nii.gz"
@@ -350,7 +350,7 @@ if __name__ == "__main__":
         list_of_designs.append(np.load(index_to_design_output(1, 1, 4)))
         output_dir = construct_output_dir(1, 1, "T1W", "tomtestrun4and5")
         opt = dict()
-        outputtype = [1, 1, 1, 1]    
+        outputtype = [1, 1, 1, 1]
         opt["wantlibrary"] = 1
         opt["wantglmdenoise"] = 1
         opt["wantfracridge"] = 1
@@ -360,15 +360,12 @@ if __name__ == "__main__":
         opt["wantmemoryoutputs"] = outputtype
         glmsingle_obj = GLM_single(opt)
         glmsingle_obj.fit(
-            design=list_of_designs, data=list_of_bold_data, stimdur=2.5, tr=0.9, outputdir=output_dir
+            design=list_of_designs,
+            data=list_of_bold_data,
+            stimdur=2.5,
+            tr=0.9,
+            outputdir=output_dir,
         )
-
+    
 
     temptesttom()
-
-
-
-
-
-
-
