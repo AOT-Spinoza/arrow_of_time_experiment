@@ -21,7 +21,7 @@ run_number = core_settings["various"]["run_number"]
 
 # bold_data_root = '/tank/shared/2022/arrow_of_time/aotfull_preprocs/fullpreproc3/sub-001/ses-01/func'
 # bold_data_root_wrong = '/tank/shared/2022/arrow_of_time/aotfull_preprocs/fullpreproc03/sub-001/ses-01/func'
-bold_data_root = "/tank/shared/2022/arrow_of_time/derivatives/fmripreps/aotfull_preprocs/fullpreprocFinal_nofmriprepstc" 
+bold_data_root = "/tank/shared/2022/arrow_of_time/derivatives/fmripreps/aotfull_preprocs/fullpreprocFinal_nonnordic"
 output_root = "/tank/shared/2022/arrow_of_time/arrow_of_time_exp/aot/analysis/glmsingle/outputs/mainexp"
 design_output_root = "/tank/shared/2022/arrow_of_time/arrow_of_time_exp/aot/analysis/glmsingle/outputs/design"
 
@@ -311,14 +311,35 @@ if __name__ == "__main__":
     # print(len(design_list))
     # bold_list = construct_bold_for_one_session(sub=1,ses=1,datatype='T1W')
     # print(len(bold_list))
-    '''
+    
     apply_glmsingle_for_one_session(
-        sub=2, ses=1, datatype="T1W", suffix="nofmriprepstc"
+        sub=2, ses=1, datatype="T1W", suffix="nonnordic"
     )
     apply_glmsingle_for_one_session(
-        sub=1, ses=1, datatype="T1W", suffix="nofmriprepstc" 
+        sub=1, ses=1, datatype="T1W", suffix="nonnordic"
     )
-    '''
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     # run typec 5 times then do average
     """
     for i in range(5):
@@ -332,7 +353,7 @@ if __name__ == "__main__":
     """
 
     # run only on sub1 ses1 run4&5 on tom's result
-    
+    '''
     def temptesttom():
         sub1ses1run5 = "/tank/shared/2022/arrow_of_time/derivatives/ants/merged/sub-001/ses-01/run-05/registered/sub-001_ses-01_run-05.nii.gz"
         sub1ses1run4 = "/tank/shared/2022/arrow_of_time/derivatives/ants/merged/sub-001/ses-01/run-04/registered/sub-001_ses-01_run-04_check.nii.gz"
@@ -366,6 +387,6 @@ if __name__ == "__main__":
             tr=0.9,
             outputdir=output_dir,
         )
-    
+    '''
 
-    temptesttom()
+    #temptesttom()
