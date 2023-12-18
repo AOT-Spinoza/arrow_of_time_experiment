@@ -22,8 +22,8 @@ run_number = core_settings["various"]["run_number"]
 # bold_data_root = '/tank/shared/2022/arrow_of_time/aotfull_preprocs/fullpreproc3/sub-001/ses-01/func'
 # bold_data_root_wrong = '/tank/shared/2022/arrow_of_time/aotfull_preprocs/fullpreproc03/sub-001/ses-01/func'
 bold_data_root = "/tank/shared/2022/arrow_of_time/derivatives/fmripreps/aotfull_preprocs/fullpreprocFinal_nonnordic"
-output_root = "/tank/shared/2022/arrow_of_time/arrow_of_time_exp/aot/analysis/glmsingle/outputs/mainexp"
-design_output_root = "/tank/shared/2022/arrow_of_time/arrow_of_time_exp/aot/analysis/glmsingle/outputs/design"
+output_root = str(base_dir / "analysis/glmsingle/outputs/mainexp")
+design_output_root = str(base_dir / "analysis/glmsingle/outputs/design") 
 
 
 def movie_conditions_dict():  # include blank condition as 0
@@ -110,7 +110,7 @@ def index_to_exp_yml(sub, ses, run):
     return target_path
 
 
-def index_to_design_output(sub, ses, run):
+def index_to_design_output(sub, ses, run): 
     sub = str(sub).zfill(2)
     ses = str(ses).zfill(2)
     run = str(run).zfill(2)
