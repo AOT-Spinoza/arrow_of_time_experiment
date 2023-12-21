@@ -11,8 +11,8 @@ core_expt_yaml_path = base_dir / "experiment/core_exp_settings.yml"
 core_settings = yaml.load(open(core_expt_yaml_path), Loader=yaml.FullLoader)
 
 parser = argparse.ArgumentParser()
-parser.add_argument("--subject", default=5, nargs="?")
-parser.add_argument("--ses", default=4, nargs="?") # ses 1~8
+parser.add_argument("--subject", default=2, nargs="?")
+parser.add_argument("--ses", default=8, nargs="?") # ses 1~8
 parser.add_argument("--run", default=1, nargs="?")# only run 1 
 
 parser.add_argument("--eyelink", default=False,
