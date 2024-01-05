@@ -19,11 +19,10 @@ video_db_path = base_dir / "data/videos/database_originals.tsv"
 video_db = pd.read_csv(video_db_path, sep="\t")
 run_number = core_settings["various"]["run_number"]
 
-# bold_data_root = '/tank/shared/2022/arrow_of_time/aotfull_preprocs/fullpreproc3/sub-001/ses-01/func'
-# bold_data_root_wrong = '/tank/shared/2022/arrow_of_time/aotfull_preprocs/fullpreproc03/sub-001/ses-01/func'
-bold_data_root = "/tank/shared/2022/arrow_of_time/derivatives/fmripreps/aotfull_preprocs/fullpreprocFinal"
-output_root = "/tank/shared/2022/arrow_of_time/arrow_of_time_exp/aot/analysis/glmsingle/outputs/mainexp"
-design_output_root = "/tank/shared/2022/arrow_of_time/arrow_of_time_exp/aot/analysis/glmsingle/outputs/design"
+
+bold_data_root = "/tank/shared/2022/arrow_of_time/derivatives/fmripreps/aotfull_preprocs/fullpreprocFinal_nofmriprepstc" 
+output_root = str(base_dir / "analysis/glmsingle/outputs/mainexp")
+design_output_root = str(base_dir / "analysis/glmsingle/outputs/design")
 
 
 def movie_conditions_dict():  # include blank condition as 0
@@ -68,7 +67,7 @@ def movie_conditions_dict():  # include blank condition as 0
 movie_conditions = movie_conditions_dict()
 
 
-def construct_design_from_exp_design_yml(ymlfile, movies_conditions):
+def construct_design_from_exp_design_yml(ymlfile, movies_conditions, shift=0):
     BLANK = -1
     # read in the experiment design yaml file
     settings_sample = yaml.load(open(ymlfile), Loader=yaml.FullLoader)
@@ -85,7 +84,9 @@ def construct_design_from_exp_design_yml(ymlfile, movies_conditions):
         item for sublist in original_condition_list for item in sublist
     ]
     # add 16 0s to the start and end of the list
-    original_condition_list = [BLANK] * 16 + original_condition_list + [BLANK] * 16
+    original_condition_list = (
+        [BLANK] * (16 + shift) + original_condition_list + [BLANK] * (16 - shift)
+    )
     print(original_condition_list)
     print("desing len:", len(original_condition_list))
     # construct the design matrix from the condition list (one-hot encoding)
@@ -118,18 +119,20 @@ def index_to_design_output(sub, ses, run):
     return target_path
 
 
-def construct_design_for_one_run(sub, ses, run):
+def construct_design_for_one_run(sub, ses, run, shift=0):
     target_path = index_to_exp_yml(sub, ses, run)
-    newdesign = construct_design_from_exp_design_yml(target_path, movie_conditions)
+    newdesign = construct_design_from_exp_design_yml(
+        target_path, movie_conditions, shift
+    )
     save_path = index_to_design_output(sub, ses, run)
     np.save(save_path, newdesign)
     return newdesign
 
 
-def construct_design_for_one_session(sub, ses):
+def construct_design_for_one_session(sub, ses, shift=0):
     list_of_designs = []
     for run in range(1, run_number + 1):
-        list_of_designs.append(construct_design_for_one_run(sub, ses, run))
+        list_of_designs.append(construct_design_for_one_run(sub, ses, run, shift))
     return list_of_designs
 
 
@@ -269,12 +272,32 @@ def construct_output_dir(sub, ses, data_type="T1W", suffix=""):  # input: int,in
     return output_dir
 
 
+def construct_figuredir(sub, ses, data_type="T1W", suffix=""):  # input: int,int
+    figure_dir = (
+        output_root
+        + "/"
+        + "sub-"
+        + str(sub).zfill(3)
+        + "_ses-"
+        + str(ses).zfill(2)
+        + "_"
+        + data_type
+        + "_"
+        + suffix
+        + "/figures"
+    )
+    if not os.path.exists(figure_dir):
+        os.makedirs(figure_dir)
+    return figure_dir
+
+
 def apply_glmsingle_for_one_session(
-    sub, ses, datatype="T1W", suffix="", outputtype=[1, 1, 1, 1]
+    sub, ses, datatype="T1W", suffix="", outputtype=[1, 1, 1, 1], shift=0
 ):
     bolds = construct_bold_for_one_session(sub, ses, datatype)
-    designs = construct_design_for_one_session(sub, ses)
+    designs = construct_design_for_one_session(sub, ses, shift)
     output_dir = construct_output_dir(sub, ses, datatype, suffix)
+    figuredir = construct_figuredir(sub, ses, datatype, suffix)
     opt = dict()
     # set important fields for completeness (but these would be enabled by default)
     opt["wantlibrary"] = 1
@@ -297,7 +320,12 @@ def apply_glmsingle_for_one_session(
     # set modelmd as full set of single trial regressors
     glmsingle_obj = GLM_single(opt)
     glmsingle_obj.fit(
-        design=designs, data=bolds, stimdur=2.5, tr=0.9, outputdir=output_dir
+        design=designs,
+        data=bolds,
+        stimdur=2.5,
+        tr=0.9,
+        outputdir=output_dir,
+        figuredir=figuredir,
     )
 
 
@@ -311,64 +339,19 @@ if __name__ == "__main__":
     # print(len(design_list))
     # bold_list = construct_bold_for_one_session(sub=1,ses=1,datatype='T1W')
     # print(len(bold_list))
+
     """
     apply_glmsingle_for_one_session(
-        sub=2, ses=1, datatype="T1W", suffix="glmnew_runfix"
-    )
-    apply_glmsingle_for_one_session(
-        sub=1, ses=1, datatype="T1W", suffix="glmnew_runfix"
+        sub=2, ses=1, datatype="T1W", suffix="nofmriprepstc_reversedstc_withfigure_shift_0",shift=0
     )
     """
 
-    # run typec 5 times then do average
-    """
-    for i in range(5):
+    shifts = [-4,-5]
+    for shift in shifts:
         apply_glmsingle_for_one_session(
             sub=2,
             ses=1,
             datatype="T1W",
-            suffix="sample" + str(i + 1),
-            outputtype=[1, 1, 1, 0],
+            suffix="nofmriprepstc_reversedstc_shift_" + str(shift),
+            shift=shift,
         )
-    """
-
-    # run only on sub1 ses1 run4&5 on tom's result
-    def temptesttom():
-        sub1ses1run5 = "/tank/shared/2022/arrow_of_time/derivatives/ants/merged/sub-001/ses-01/run-05/registered/sub-001_ses-01_run-05.nii.gz"
-        sub1ses1run4 = "/tank/shared/2022/arrow_of_time/derivatives/ants/merged/sub-001/ses-01/run-04/registered/sub-001_ses-01_run-04_check.nii.gz"
-        list_of_bold_data = []
-        list_of_designs = []
-        img = nib.load(sub1ses1run5)
-        img_data = img.get_fdata()
-        print("bold data shape:", img_data.shape)
-        list_of_bold_data.append(img_data)
-        img = nib.load(sub1ses1run4)
-        img_data = img.get_fdata()
-        print("bold data shape:", img_data.shape)
-        list_of_bold_data.append(img_data)
-        list_of_designs.append(np.load(index_to_design_output(1, 1, 5)))
-        list_of_designs.append(np.load(index_to_design_output(1, 1, 4)))
-        output_dir = construct_output_dir(1, 1, "T1W", "tomtestrun4and5")
-        opt = dict()
-        outputtype = [1, 1, 1, 1]    
-        opt["wantlibrary"] = 1
-        opt["wantglmdenoise"] = 1
-        opt["wantfracridge"] = 1
-        # for the purpose of this example we will keep the relevant outputs in memory
-        # and also save them to the disk
-        opt["wantfileoutputs"] = outputtype
-        opt["wantmemoryoutputs"] = outputtype
-        glmsingle_obj = GLM_single(opt)
-        glmsingle_obj.fit(
-            design=list_of_designs, data=list_of_bold_data, stimdur=2.5, tr=0.9, outputdir=output_dir
-        )
-
-
-    temptesttom()
-
-
-
-
-
-
-
