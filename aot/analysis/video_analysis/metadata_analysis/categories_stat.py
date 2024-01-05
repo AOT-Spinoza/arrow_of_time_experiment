@@ -30,26 +30,17 @@ with open(video_db_path, "r") as f:
             categories_count[category] += 1
 
 print(categories_count)
-<<<<<<< HEAD
-#save the dictionary as json
-with open(base_dir / "analysis/video_analysis/metadata_analysis/categories_count.json", "w") as f:
-=======
 # save the dictionary as json
 with open(
     base_dir / "analysis/video_analysis/metadata_analysis/categories_count.json", "w"
 ) as f:
->>>>>>> 72b93153ad314176230c8f43983d3ebb78ba04f5
     json.dump(categories_count, f)
 # remove top 3 categories
 categories_count.pop("YouTubeBB")
 categories_count.pop("scenesclips")
 categories_count.pop("pexelsclips")
 
-<<<<<<< HEAD
 #count the rest
-=======
-# count the rest
->>>>>>> 72b93153ad314176230c8f43983d3ebb78ba04f5
 total = 0
 for key, value in categories_count.items():
     total += value
