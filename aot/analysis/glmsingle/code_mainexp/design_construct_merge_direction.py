@@ -279,10 +279,30 @@ def construct_output_dir(sub, ses, data_type="T1W", suffix=""):  # input: int,in
     return output_dir
 
 
+def construct_figuredir(sub, ses, data_type="T1W", suffix=""):  # input: int,int
+    figure_dir = (
+        output_root
+        + "/"
+        + "sub-"
+        + str(sub).zfill(3)
+        + "_ses-"
+        + str(ses).zfill(2)
+        + "_"
+        + data_type
+        + "_merge_"
+        + suffix
+        + "/figures"
+    )
+    if not os.path.exists(figure_dir):
+        os.makedirs(figure_dir)
+    return figure_dir
+
+
 def apply_glmsingle_for_one_session(sub, ses, datatype="T1W", suffix=""):
     bolds = construct_bold_for_one_session(sub, ses, datatype)
     designs = construct_design_for_one_session(sub, ses)
     output_dir = construct_output_dir(sub, ses, datatype, suffix)
+    figuredir = construct_figuredir(sub, ses, datatype, suffix)
     opt = dict()
     # set important fields for completeness (but these would be enabled by default)
     opt["wantlibrary"] = 1
@@ -302,7 +322,12 @@ def apply_glmsingle_for_one_session(sub, ses, datatype="T1W", suffix=""):
     # set modelmd as full set of single trial regressors
     glmsingle_obj = GLM_single(opt)
     glmsingle_obj.fit(
-        design=designs, data=bolds, stimdur=2.5, tr=0.9, outputdir=output_dir
+        design=designs,
+        data=bolds,
+        stimdur=2.5,
+        tr=0.9,
+        outputdir=output_dir,
+        figuredir=figuredir,
     )
 
 
@@ -323,5 +348,11 @@ if __name__ == "__main__":
     # bold_list = construct_bold_for_one_session(sub=1,ses=1,datatype='T1W')
     # print(len(bold_list))
 
-    apply_glmsingle_for_one_session(sub=2, ses=1, datatype="T1W", suffix="direc_merge_runfix")
-    apply_glmsingle_for_one_session(sub=1,ses=1,datatype='T1W',suffix='direc_merge_runfix')
+    apply_glmsingle_for_one_session(
+        sub=2, ses=1, datatype="T1W", suffix="direc_merge_runfix_withfigure"
+    )
+    '''
+    apply_glmsingle_for_one_session(
+        sub=1, ses=1, datatype="T1W", suffix="direc_merge_runfix_withfigure"
+    )
+    '''

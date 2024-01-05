@@ -3,9 +3,9 @@ import os
 from pathlib import Path
 import aot
 
-events_tsvfile_sample = '/Users/shufanzhang/Documents/PhD/Arrow_of_time/arrow_of_time/aot/data/experiment/outputs/main/sub-01_ses-01_run-01_task-movie_events.tsv'
+#events_tsvfile_sample = '/Users/shufanzhang/Documents/PhD/Arrow_of_time/arrow_of_time/aot/data/experiment/outputs/main/sub-01_ses-01_run-01_task-movie_events.tsv'
 #events_tsvfile_sample = '/home/wang/Projects/arrow_of_time/aot/data/experiment/outputs/main/sub-01_ses-01_run-01_task-movie_events.tsv'
-
+events_tsvfile_sample = '/tank/shared/2022/arrow_of_time/arrow_of_time_exp/aot/data/experiment/outputs/main/sub-01_ses-01_run-03_task-movie_events.tsv'
 
 def count_duration_for_each_trail(events_tsvfile_sample):
     with open(events_tsvfile_sample, newline='') as csvfile:
@@ -23,7 +23,7 @@ def count_duration_for_each_trail(events_tsvfile_sample):
             trail_num = int(row['trial_nr'])
 
     trail_duration_dict = {}
-    for i in range(len(trail_start_dict)-1):
+    for i in range(len(trail_start_dict)-2):
         trail_duration_dict[i] = float(
             trail_start_dict[i+1]) - float(trail_start_dict[i])
 
