@@ -26,7 +26,7 @@ design_output_root = base_dir / "analysis/glmsingle/outputs/design"
 bold_data_root = "/tank/shared/2022/arrow_of_time/derivatives/fmripreps/aotfull_preprocs/fullpreprocFinal_nofmriprepstc"
 
 
-def get_affine_matrix(sub, ses):
+def get_affine_matrix(sub, ses): 
     """
     input: sub and ses number
 
