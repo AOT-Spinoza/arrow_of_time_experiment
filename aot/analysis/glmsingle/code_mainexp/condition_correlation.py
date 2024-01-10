@@ -77,56 +77,69 @@ def load_betas(glmoutputfile):
 
 def condition_to_timepoints(condition_index, design):
     timepoints_indexs = design[:, condition_index]
-    print("timepoints_indexs:", timepoints_indexs.shape)
+    # print("timepoints_indexs:", timepoints_indexs.shape)
     timepoints_indexs = np.where(timepoints_indexs == 1)[0]
-    print("timepoints_indexs:", timepoints_indexs)
+    # print("timepoints_indexs:", timepoints_indexs)
     return timepoints_indexs
 
 
-def get_corrolation_maps(design, betas):  # return a array of [n_conditions, x,y,z]
-    corrolation_maps = []
-    for condition_index in range(design.shape[1]):
-        timepoints_indexs = condition_to_timepoints(condition_index, design)
-        timepoints_betas = betas[:, :, :, timepoints_indexs]
-        print("timepoints_betas:", timepoints_betas.shape)
-        mapshape = timepoints_betas.shape[:-1]
-        print("mapshape:", mapshape)
-        # timepoints_betas = timepoints_betas.reshape(-1,2)
-        # print("timepoints_betas:", timepoints_betas.shape)
-        # calculate the corrolation map (x,y,z) for each condition and each voxel
-        corrolation_map = np.zeros(mapshape)
-        for x in range(mapshape[0]):
-            for y in range(mapshape[1]):
-                for z in range(mapshape[2]):
-                    corr_pair = timepoints_betas[x, y, z, :].T
-                    # print("corr_pair shape:", corr_pair.shape)
-                    # print("corr_pair:", corr_pair)
-                    # corr_value = np.corrcoef(timepoints_betas[x,y,z,:])#[0,1]         this would be meaningless
-                    diff = np.diff(corr_pair)
-                    # print("corr_value:", corr_value)
-                    corr_value = 1 / np.abs(diff)
-                    corrolation_map[x, y, z] = corr_value
-
-        print("corrolation_map:", corrolation_map.shape)
-        corrolation_maps.append(corrolation_map)
-    corrolation_maps = np.array(corrolation_maps)
-    print("corrolation_maps:", corrolation_maps.shape)
-    return corrolation_maps
+def get_correlation_maps(design, betas):  # return a array of [x,y,z]
+    corrolation_map = np.zeros((betas.shape[0], betas.shape[1], betas.shape[2]))
+    betas_shape = betas.shape  # [x,y,z,t]
+    # iterate over voxels
+    for x in range(betas_shape[0]):
+        for y in range(betas_shape[1]):
+            for z in range(betas_shape[2]):
+                voxel_betas = betas[x, y, z, :]
+                voxel_points_for_corrolation = []
+                # iterate over conditions
+                for condition_index in range(design.shape[1]):
+                    timepoints_indexs = condition_to_timepoints(condition_index, design)
+                    condition_betas = voxel_betas[
+                        timepoints_indexs
+                    ]  # should be the condition beta for one sinlge voxel
+                    voxel_points_for_corrolation.append(condition_betas)
+                voxel_points_for_corrolation = np.array(
+                    voxel_points_for_corrolation
+                ).T  ##########################################################################################
+                # print("voxel_points_for_corrolation:", voxel_points_for_corrolation.shape)
+                # calculate corrolation
+                corrolation = np.corrcoef(voxel_points_for_corrolation)[0, 1]
+                corrolation_map[x, y, z] = corrolation
+    return corrolation_map
 
 
 def test():
     # get the design for one session
     design_sample = index_to_cleaned_design(2, 1)
-    test_glm_file = "/tank/shared/2022/arrow_of_time/arrow_of_time_exp/aot/analysis/glmsingle/outputs/mainexp/sub-002_ses-01_T1W_nofmriprepstc/TYPEC_FITHRF_GLMDENOISE.npy"
+    print("design_sample:", design_sample.shape)
+    test_glm_file = "/tank/shared/2022/arrow_of_time/arrow_of_time_exp/aot/analysis/glmsingle/outputs/mainexp/sub-002_ses-01_T1W_nofmriprepstc/TYPED_FITHRF_GLMDENOISE_RR.npy"
     betas = load_betas(test_glm_file)
-    corrolation_maps = get_corrolation_maps(design_sample, betas)
+    corrolation_maps = get_correlation_maps(design_sample, betas)
     print("corrolation_maps:", corrolation_maps.shape)
     # save the corrolation maps
-    savefile = "/tank/shared/2022/arrow_of_time/arrow_of_time_exp/aot/analysis/glmsingle/outputs/mainexp/sub-002_ses-01_T1W_nofmriprepstc/TYPEC_FITHRF_GLMDENOISE/corrolation_maps.nii"
-    #save as nifti
+    savefile = "/tank/shared/2022/arrow_of_time/arrow_of_time_exp/aot/analysis/glmsingle/outputs/mainexp/sub-002_ses-01_T1W_nofmriprepstc/TYPED_FITHRF_GLMDENOISE_RR/correlation_maps.nii"
+    # save as nifti
+    data = corrolation_maps
+    data = nib.Nifti1Image(data, np.eye(4))
+    nib.save(data, savefile)
+
+
+def test2():
+    # get the design for one session
+    design_sample = index_to_cleaned_design(1, 1)
+    print("design_sample:", design_sample.shape)
+    test_glm_file = "/tank/shared/2022/arrow_of_time/arrow_of_time_exp/aot/analysis/glmsingle/outputs/mainexp/sub-001_ses-01_T1W_nofmriprepstc/TYPED_FITHRF_GLMDENOISE_RR.npy"
+    betas = load_betas(test_glm_file)
+    corrolation_maps = get_correlation_maps(design_sample, betas)
+    print("corrolation_maps:", corrolation_maps.shape)
+    # save the corrolation maps
+    savefile = "/tank/shared/2022/arrow_of_time/arrow_of_time_exp/aot/analysis/glmsingle/outputs/mainexp/sub-001_ses-01_T1W_nofmriprepstc/TYPED_FITHRF_GLMDENOISE_RR/correlation_maps.nii"
+    # save as nifti
     data = corrolation_maps
     data = nib.Nifti1Image(data, np.eye(4))
     nib.save(data, savefile)
 
 
 test()
+test2()
