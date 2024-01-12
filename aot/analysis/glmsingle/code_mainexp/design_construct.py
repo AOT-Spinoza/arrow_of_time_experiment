@@ -20,8 +20,9 @@ video_db = pd.read_csv(video_db_path, sep="\t")
 run_number = core_settings["various"]["run_number"]
 
 
-bold_data_root = "/tank/shared/2022/arrow_of_time/derivatives/fmripreps/aotfull_preprocs/fullpreprocFinal_nofmriprepstc" 
+bold_data_root = "/tank/shared/2022/arrow_of_time/derivatives/fmripreps/aotfull_preprocs/fullpreprocFinal_3blanksstc"
 output_root = str(base_dir / "analysis/glmsingle/outputs/mainexp")
+
 design_output_root = str(base_dir / "analysis/glmsingle/outputs/design")
 
 
@@ -75,7 +76,6 @@ def construct_design_from_exp_design_yml(ymlfile, movies_conditions, shift=0):
     movies = settings_sample["stimuli"]["movie_files"]
     original_condition_list = [movies_conditions[movie] for movie in movies]
     # add blank condition to each element in the list
-    # original_condition_list = [[x,x]+[0,0] for x in original_condition_list]
     original_condition_list = [
         [x] + [BLANK, BLANK, BLANK] for x in original_condition_list
     ]
@@ -175,9 +175,7 @@ def index_to_bold_data_fsaverage(sub, ses, run):  # input: int,int,int
     )
     # load and concatenate the bold data from left and right hemispheres
     img_L = nib.load(Left_bold_path)
-    # print('bold data:',img_L)
     img_data_L = [x.data for x in img_L.darrays]
-    # print('bold data:',img_data_L)
     cur_data_L = np.array(img_data_L)  # [0]
     # swap the first two dimensions#########################################maybe need to change
     cur_data_L = np.swapaxes(cur_data_L, 0, 1)
@@ -223,14 +221,10 @@ def construct_bold_for_one_session(sub, ses, datatype):  # fsnative or §T1W
     list_of_bold_data = []
     if datatype == "fsaverage":
         for run in range(1, run_number + 1):
-            # if run == 2:###################################
-            #    continue
             list_of_bold_data.append(index_to_bold_data_fsaverage(sub, ses, run))
         return list_of_bold_data
     elif datatype == "T1W":
         for run in range(1, run_number + 1):
-            # if run == 2:###################################
-            #    continue
             list_of_bold_data.append(index_to_bold_data_T1W(sub, ses, run))
         return list_of_bold_data
 
@@ -330,28 +324,18 @@ def apply_glmsingle_for_one_session(
 
 
 if __name__ == "__main__":
-    # movie_conditions = movie_conditions_dict()
-    # sample_yml = '/tank/shared/2022/arrow_of_time/arrow_of_time/aot/data/experiment/settings/main/experiment_settings_sub_01_ses_01_run_01.yml'
-    # construct_design_from_exp_design_yml(sample_yml, movie_conditions)
-    # sample_bold = index_to_bold_data_T1W(1,1,1)
-
-    # design_list = construct_design_for_one_session(sub=2,ses=1)
-    # print(len(design_list))
-    # bold_list = construct_bold_for_one_session(sub=1,ses=1,datatype='T1W')
-    # print(len(bold_list))
-
-    """
     apply_glmsingle_for_one_session(
-        sub=2, ses=1, datatype="T1W", suffix="nofmriprepstc_reversedstc_withfigure_shift_0",shift=0
+        sub=2,
+        ses=1,
+        datatype="T1W",
+        suffix="nofmriprepstc_3blankssstc_shift_0",
+        shift=0,
     )
-    """
-
-    shifts = [-4,-5]
-    for shift in shifts:
-        apply_glmsingle_for_one_session(
-            sub=2,
-            ses=1,
-            datatype="T1W",
-            suffix="nofmriprepstc_reversedstc_shift_" + str(shift),
-            shift=shift,
-        )
+    
+    apply_glmsingle_for_one_session(
+        sub=1,
+        ses=1,
+        datatype="T1W",
+        suffix="nofmriprepstc_3blanksstc_shift_0",
+        shift=0,
+    )
