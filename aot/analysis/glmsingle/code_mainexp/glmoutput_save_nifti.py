@@ -26,7 +26,7 @@ design_output_root = base_dir / "analysis/glmsingle/outputs/design"
 bold_data_root = "/tank/shared/2022/arrow_of_time/derivatives/fmripreps/aotfull_preprocs/fullpreprocFinal_nofmriprepstc"
 
 
-def get_affine_matrix(sub, ses): 
+def get_affine_matrix(sub, ses):
     """
     input: sub and ses number
 
@@ -63,7 +63,6 @@ def get_sub_ses_number_from_glm_output_folder(glm_output_folder):
     print("sub id:", sub_id)
     print("ses id:", ses_id)
     return sub_id, ses_id
-
 
 
 def save_niftis_for_one_folder(glm_output_folder, sub, ses):
@@ -117,5 +116,14 @@ def save_niftis_for_all_folders(root_folder):
 
 
 if __name__ == "__main__":
-    save_niftis_for_all_folders(glmsingle_output_root) 
-    
+    # save_niftis_for_all_folders(glmsingle_output_root)
+    save_niftis_for_one_folder(
+        Path("/tank/shared/2022/arrow_of_time/arrow_of_time_exp/aot/analysis/glmsingle/outputs/mainexp/sub-001_ses-01_T1W_nofmriprepstc_3blanksstc_shift_0"),
+        1,
+        1,
+    )
+    save_niftis_for_one_folder(
+        Path("/tank/shared/2022/arrow_of_time/arrow_of_time_exp/aot/analysis/glmsingle/outputs/mainexp/sub-002_ses-01_T1W_nofmriprepstc_3blankssstc_shift_0"),
+        2,
+        1,
+    )
