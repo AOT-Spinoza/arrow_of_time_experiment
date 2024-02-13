@@ -355,7 +355,6 @@ class HCPMovieELSessionEyetracking(PylinkEyetrackerSession):
         elif os.path.exists("/home/egter/Projects/arrow_of_time_experiment/aot"):
             self.pix_per_deg = self.win.size[0] / self.win.monitor.getWidth()
 
-
         self.fixation = FixationBullsEye(
             win=self.win,
             outer_radius=max(self.win.size),
@@ -638,20 +637,21 @@ class HCPMovieELSessionLearning(PylinkEyetrackerSession):
                 + self.settings["stimuli"].get("movie_files")[i]
                 for i in range(len(self.settings["stimuli"].get("movie_files")))
             ]
-        elif os.path.exists(self.settings['paths'].get('stimuli_path_spinoza1')):
+        # the eyetracking training is using the old videos
+        elif os.path.exists(self.settings['paths'].get('oldstimuli_path_spinoza1')):
             self.movies = [
                 "blank"
                 if self.settings["stimuli"].get("movie_files")[i] == "blank"
-                else self.settings["paths"].get("stimuli_path_spinoza1")
+                else self.settings["paths"].get("oldstimuli_path_spinoza1")
                 + "/"
                 + self.settings["stimuli"].get("movie_files")[i]
                 for i in range(len(self.settings["stimuli"].get("movie_files")))
             ]
-        elif os.path.exists(self.settings['paths'].get('stimuli_path_spinoza2')):
+        elif os.path.exists(self.settings['paths'].get('oldstimuli_path_spinoza2')):
             self.movies = [
                 "blank"
                 if self.settings["stimuli"].get("movie_files")[i] == "blank"
-                else self.settings["paths"].get("stimuli_path_spinoza2")
+                else self.settings["paths"].get("oldstimuli_path_spinoza2")
                 + "/"
                 + self.settings["stimuli"].get("movie_files")[i]
                 for i in range(len(self.settings["stimuli"].get("movie_files")))
@@ -837,7 +837,7 @@ class HCPMovieELSessionMemory(PylinkEyetrackerSession):
             self.settings["stimuli"].get("picture_files")
         )  # include the movdies and blank trials
 
-        #detect location
+        # detect location
         if os.path.exists("/Users/shufanzhang/Documents/PhD"):
             self.pictures = [
                 self.settings["paths"].get("stimuli_picture_path_laptop")
@@ -1125,7 +1125,7 @@ class HCPMovieELSessionLabeling(HCPMovieELSession):
         if self.eyetracker_on:
             self.start_recording_eyetracker()
 
-        # with open(os.path.join(self.output_dir, f'{self.output_str}_grades.txt'), 'w') as outfile: 
+        # with open(os.path.join(self.output_dir, f'{self.output_str}_grades.txt'), 'w') as outfile:
 
         for trial in self.trials:
             trial.run()
