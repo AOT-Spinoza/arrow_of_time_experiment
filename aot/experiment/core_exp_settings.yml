@@ -33,11 +33,11 @@ design:
 various:
   subject_number: 6
   session_number: 8
-  run_number: 10
+  run_number: 12
   unique_video_number_per_session: 180
-  total_video_number: 2214
-  #img_number_per_session : euqal to unique_video_number_per_session
-  blank_number_per_run: 12
+  total_video_number: 2179 
+  #img_number_per_session : euqal to unique_video_number_per_session                
+  blank_number_per_run: 12 
   piechart_width: 1
   text_width: 14
   text_height: 22.5
@@ -66,11 +66,13 @@ stimuli:
 paths: 
   information_list_original: 'information_list_originals.tsv' 
   settings_path: 'data/experiment/settings'
-  output_path : 'data/experiment/outputs'
-  stimuli_path : '/Users/shufanzhang/Documents/PhD/Arrow_of_time/arrow_of_time/stimuli_flat'  
-  stimuli_path_spinoza2 : '/experiments/aot'
-  stimuli_path_spinoza1 : '/experiments/knapen_aot/videos'
-  stimuli_picture_path_laptop : '/Users/shufanzhang/Documents/PhD/Arrow_of_time/arrow_of_time/pictures'
+  output_path : 'data/experiment/outputs'     
+  stimuli_path : '/Users/shufanzhang/AOT_stimuli/rescaled_final'     
+  oldstimuli_path_spinoza2 : '/experiments/aot'
+  oldstimuli_path_spinoza1 : '/experiments/knapen_aot/oldvideos'
+  stimuli_path_spinoza1 : '/experiments/knapen_aot/AOT/AOT_stimuli/rescaled_final'
+  #stimuli_picture_path_laptop : '/Users/shufanzhang/Documents/PhD/Arrow_of_time/arrow_of_time/pictures'
+  stimuli_picture_path_laptop : '/Users/shufanzhang/AOT_stimuli/pictures'
   stimuli_picture_path_sophie : '/home/egter/Projects/stimuli/pictures'
   stimuli_processing_path : '/Users/shufanzhang/Documents/PhD/Arrow_of_time/arrow_of_time/stimuli'
   grades_path : 'data/grading'

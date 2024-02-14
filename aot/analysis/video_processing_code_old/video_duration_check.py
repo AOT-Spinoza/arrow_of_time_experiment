@@ -5,7 +5,7 @@ from pathlib import Path
 import ffmpeg
 
 
-video_path = "/tank/shared/2022/arrow_of_time/arrow_of_time_exp/videos1"
+video_path = "/tank/shared/2022/arrow_of_time/derivatives/stimuli/rescaled"
 
 #check whether all videos are 2.5 seconds long
 invalide_videos = []

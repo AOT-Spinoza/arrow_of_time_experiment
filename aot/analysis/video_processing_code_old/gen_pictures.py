@@ -17,7 +17,7 @@ def video_to_pic(video_path):
 
 
 
-if __name__ == "__main__":
+if __name__ == "__main__": 
     for video in os.listdir(flat_path):
         if video.endswith(".mp4"):
             video_to_pic(flat_path / video)

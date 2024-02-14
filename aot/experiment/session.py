@@ -103,7 +103,7 @@ class HCPMovieELSession(PylinkEyetrackerSession):
 
         # we dont need this for lab computer but required by my laptop????
         # check whether the program is running on the my laptop
-        if os.path.exists("/Users/shufanzhang/Documents/PhD/Arrow_of_time/arrow_of_time/aot"):
+        if os.path.exists("/Users/shufanzhang/Documents/PhD/Arrow_of_time"):
             self.pix_per_deg = self.win.size[0] / self.win.monitor.getWidth()
 
         originalsize = self.settings["stimuli"].get("movie_size_pix")
@@ -143,7 +143,7 @@ class HCPMovieELSession(PylinkEyetrackerSession):
         self.n_trials = len(
             self.settings["stimuli"].get("movie_files")
         )  # include the movdies and blank trials
-        if os.path.exists("/Users/shufanzhang/Documents/PhD/Arrow_of_time/arrow_of_time/aot"):
+        if os.path.exists("/Users/shufanzhang/Documents/PhD/Arrow_of_time"):
             self.movies = [
                 "blank"
                 if self.settings["stimuli"].get("movie_files")[i] == "blank"
@@ -350,11 +350,10 @@ class HCPMovieELSessionEyetracking(PylinkEyetrackerSession):
             "experiment_movie_duration"
         )
 
-        if os.path.exists("/Users/shufanzhang/Documents/PhD/Arrow_of_time/arrow_of_time/aot"):
+        if os.path.exists("/Users/shufanzhang/Documents/PhD/Arrow_of_time"):
             self.pix_per_deg = self.win.size[0] / self.win.monitor.getWidth()
         elif os.path.exists("/home/egter/Projects/arrow_of_time_experiment/aot"):
             self.pix_per_deg = self.win.size[0] / self.win.monitor.getWidth()
-
 
         self.fixation = FixationBullsEye(
             win=self.win,
@@ -374,7 +373,7 @@ class HCPMovieELSessionEyetracking(PylinkEyetrackerSession):
 
         # we dont need this for lab computer but required by my laptop????
         # check whether the program is running on the my laptop
-        if os.path.exists("/Users/shufanzhang/Documents/PhD/Arrow_of_time/arrow_of_time/aot"):
+        if os.path.exists("/Users/shufanzhang/Documents/PhD/Arrow_of_time"):
             self.pix_per_deg = self.win.size[0] / self.win.monitor.getWidth()
 
         originalsize = self.settings["stimuli"].get("movie_size_pix")
@@ -394,7 +393,7 @@ class HCPMovieELSessionEyetracking(PylinkEyetrackerSession):
         self.n_trials = len(
             self.settings["stimuli"].get("movie_files")
         )  # include the movdies and blank trials
-        if os.path.exists("/Users/shufanzhang/Documents/PhD/Arrow_of_time/arrow_of_time/aot"):
+        if os.path.exists("/Users/shufanzhang/Documents/PhD/Arrow_of_time"):
             self.movies = [
                 "blank"
                 if self.settings["stimuli"].get("movie_files")[i] == "blank"
@@ -403,20 +402,20 @@ class HCPMovieELSessionEyetracking(PylinkEyetrackerSession):
                 + self.settings["stimuli"].get("movie_files")[i]
                 for i in range(len(self.settings["stimuli"].get("movie_files")))
             ]
-        elif os.path.exists(self.settings['paths'].get('stimuli_path_spinoza1')):
+        elif os.path.exists(self.settings['paths'].get('oldstimuli_path_spinoza1')):
             self.movies = [
                 "blank"
                 if self.settings["stimuli"].get("movie_files")[i] == "blank"
-                else self.settings["paths"].get("stimuli_path_spinoza1")
+                else self.settings["paths"].get("oldstimuli_path_spinoza1")
                 + "/"
                 + self.settings["stimuli"].get("movie_files")[i]
                 for i in range(len(self.settings["stimuli"].get("movie_files")))
             ]
-        elif os.path.exists(self.settings['paths'].get('stimuli_path_spinoza2')):
+        elif os.path.exists(self.settings['paths'].get('oldstimuli_path_spinoza2')):
             self.movies = [
                 "blank"
                 if self.settings["stimuli"].get("movie_files")[i] == "blank"
-                else self.settings["paths"].get("stimuli_path_spinoza2")
+                else self.settings["paths"].get("oldstimuli_path_spinoza2")
                 + "/"
                 + self.settings["stimuli"].get("movie_files")[i]
                 for i in range(len(self.settings["stimuli"].get("movie_files")))
@@ -596,7 +595,7 @@ class HCPMovieELSessionLearning(PylinkEyetrackerSession):
 
         # we dont need this for lab computer but required by my laptop????
         # check whether the program is running on the my laptop
-        if os.path.exists("/Users/shufanzhang/Documents/PhD/Arrow_of_time/arrow_of_time/aot"):
+        if os.path.exists("/Users/shufanzhang/Documents/PhD/Arrow_of_time"):
             self.pix_per_deg = self.win.size[0] / self.win.monitor.getWidth()
 
         self.fixation = FixationBullsEye(
@@ -629,7 +628,7 @@ class HCPMovieELSessionLearning(PylinkEyetrackerSession):
         self.n_trials = len(
             self.settings["stimuli"].get("movie_files")
         )  # include the movdies and blank trials
-        if os.path.exists("/Users/shufanzhang/Documents/PhD/Arrow_of_time/arrow_of_time/aot"):
+        if os.path.exists("/Users/shufanzhang/Documents/PhD/Arrow_of_time"):
             self.movies = [
                 "blank"
                 if self.settings["stimuli"].get("movie_files")[i] == "blank"
@@ -638,20 +637,21 @@ class HCPMovieELSessionLearning(PylinkEyetrackerSession):
                 + self.settings["stimuli"].get("movie_files")[i]
                 for i in range(len(self.settings["stimuli"].get("movie_files")))
             ]
-        elif os.path.exists(self.settings['paths'].get('stimuli_path_spinoza1')):
+        # the eyetracking training is using the old videos
+        elif os.path.exists(self.settings['paths'].get('oldstimuli_path_spinoza1')):
             self.movies = [
                 "blank"
                 if self.settings["stimuli"].get("movie_files")[i] == "blank"
-                else self.settings["paths"].get("stimuli_path_spinoza1")
+                else self.settings["paths"].get("oldstimuli_path_spinoza1")
                 + "/"
                 + self.settings["stimuli"].get("movie_files")[i]
                 for i in range(len(self.settings["stimuli"].get("movie_files")))
             ]
-        elif os.path.exists(self.settings['paths'].get('stimuli_path_spinoza2')):
+        elif os.path.exists(self.settings['paths'].get('oldstimuli_path_spinoza2')):
             self.movies = [
                 "blank"
                 if self.settings["stimuli"].get("movie_files")[i] == "blank"
-                else self.settings["paths"].get("stimuli_path_spinoza2")
+                else self.settings["paths"].get("oldstimuli_path_spinoza2")
                 + "/"
                 + self.settings["stimuli"].get("movie_files")[i]
                 for i in range(len(self.settings["stimuli"].get("movie_files")))
@@ -837,7 +837,7 @@ class HCPMovieELSessionMemory(PylinkEyetrackerSession):
             self.settings["stimuli"].get("picture_files")
         )  # include the movdies and blank trials
 
-        #detect location
+        # detect location
         if os.path.exists("/Users/shufanzhang/Documents/PhD"):
             self.pictures = [
                 self.settings["paths"].get("stimuli_picture_path_laptop")
