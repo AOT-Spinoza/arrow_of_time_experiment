@@ -1,3 +1,365 @@
-trial_nr	onset	event_type	phase	response	nr_frames	onset_abs	duration
-0	0.016051054000854492	stim	0		284.0	23.93091106414795	2.3678109645843506
-0	1.525895118713379	response	0	escape		25.440755128860474	
+trial_nr	onset	event_type	phase	response	nr_frames	picture_index	picture_file	onset_abs	duration
+0	0.01708197593688965	stim	0		587.0			23.56313991546631	4.904346942901611
+0	4.905112028121948	response	0	space				28.451169967651367	
+2	4.921428918838501	picture	0		227.0	0.0	/home/egter/Projects/stimuli/pictures/S_comp_LA_A006_C008_PSNK_ALL_LOGOS_v10_SDR_PS_FINAL_20180801_SDR_2K_AVC.png	28.46748685836792	1.8980979919433594
+2	6.798092842102051	response	0	j		0.0	/home/egter/Projects/stimuli/pictures/S_comp_LA_A006_C008_PSNK_ALL_LOGOS_v10_SDR_PS_FINAL_20180801_SDR_2K_AVC.png	30.34415078163147	
+3	6.81952691078186	picture	0		94.0	1.0	/home/egter/Projects/stimuli/pictures/n01737021_9851.JPEG	30.36558485031128	0.791593074798584
+3	7.589750051498413	response	0	k		1.0	/home/egter/Projects/stimuli/pictures/n01737021_9851.JPEG	31.135807991027832	
+4	7.611119985580444	picture	0		87.0	2.0	/home/egter/Projects/stimuli/pictures/R_S_yt-hLNq_Qp9J70_36.png	31.157177925109863	0.7290959358215332
+4	8.329807043075562	response	0	j		2.0	/home/egter/Projects/stimuli/pictures/R_S_yt-hLNq_Qp9J70_36.png	31.87586498260498	
+5	8.340215921401978	picture	0		81.0	3.0	/home/egter/Projects/stimuli/pictures/S_yt-6KJ_yZR-Jco_14.png	31.886273860931396	0.6812069416046143
+5	8.998122930526733	response	0	j		3.0	/home/egter/Projects/stimuli/pictures/S_yt-6KJ_yZR-Jco_14.png	32.54418087005615	
+6	9.021422863006592	picture	0		79.0	4.0	/home/egter/Projects/stimuli/pictures/R_S_yt-KV8X9IBWuJk_48.png	32.56748080253601	0.6591660976409912
+6	9.671520948410034	response	0	j		4.0	/home/egter/Projects/stimuli/pictures/R_S_yt-KV8X9IBWuJk_48.png	33.21757888793945	
+7	9.680588960647583	picture	0		78.0	5.0	/home/egter/Projects/stimuli/pictures/R_S_pexels-cottonbro-10640532.png	33.226646900177	0.652695894241333
+7	10.32151484489441	response	0	j		5.0	/home/egter/Projects/stimuli/pictures/R_S_pexels-cottonbro-10640532.png	33.86757278442383	
+8	10.333284854888916	picture	0		83.0	6.0	/home/egter/Projects/stimuli/pictures/n02114712_22469.JPEG	33.879342794418335	0.6965210437774658
+8	11.006341934204102	response	0	k		6.0	/home/egter/Projects/stimuli/pictures/n02114712_22469.JPEG	34.55239987373352	
+9	11.029805898666382	picture	0		83.0	7.0	/home/egter/Projects/stimuli/pictures/n03956157_8039.JPEG	34.5758638381958	0.6999340057373047
+9	11.71316385269165	response	0	k		7.0	/home/egter/Projects/stimuli/pictures/n03956157_8039.JPEG	35.25922179222107	
+10	11.729739904403687	picture	0		80.0	8.0	/home/egter/Projects/stimuli/pictures/S_yt-Ev39pXXfr1Y_152.png	35.275797843933105	0.6734089851379395
+10	12.388896942138672	response	0	j		8.0	/home/egter/Projects/stimuli/pictures/S_yt-Ev39pXXfr1Y_152.png	35.93495488166809	
+11	12.403148889541626	picture	0		81.0	9.0	/home/egter/Projects/stimuli/pictures/R_S_yt-x7TqP8l4lCA_39.png	35.949206829071045	0.6801130771636963
+11	13.071537017822266	response	0	j		9.0	/home/egter/Projects/stimuli/pictures/R_S_yt-x7TqP8l4lCA_39.png	36.617594957351685	
+12	13.083261966705322	picture	0		76.0	10.0	/home/egter/Projects/stimuli/pictures/R_S_ILSVRC2015_train_00518001.png	36.62931990623474	0.6320080757141113
+12	13.704905033111572	response	0	j		10.0	/home/egter/Projects/stimuli/pictures/R_S_ILSVRC2015_train_00518001.png	37.25096297264099	
+13	13.715270042419434	picture	0		87.0	11.0	/home/egter/Projects/stimuli/pictures/n01729322_16251.JPEG	37.26132798194885	0.7311389446258545
+13	14.430500984191895	response	0	k		11.0	/home/egter/Projects/stimuli/pictures/n01729322_16251.JPEG	37.97655892372131	
+14	14.446408987045288	picture	0		73.0	12.0	/home/egter/Projects/stimuli/pictures/n01855672_6948.JPEG	37.99246692657471	0.608975887298584
+14	15.046485900878906	response	0	k		12.0	/home/egter/Projects/stimuli/pictures/n01855672_6948.JPEG	38.592543840408325	
+15	15.055384874343872	picture	0		93.0	13.0	/home/egter/Projects/stimuli/pictures/n02859443_32287.JPEG	38.60144281387329	0.7778129577636719
+15	15.814677000045776	response	0	k		13.0	/home/egter/Projects/stimuli/pictures/n02859443_32287.JPEG	39.360734939575195	
+16	15.833197832107544	picture	0		67.0	14.0	/home/egter/Projects/stimuli/pictures/n02099267_6777.JPEG	39.37925577163696	0.5555920600891113
+16	16.379804849624634	response	0	k		14.0	/home/egter/Projects/stimuli/pictures/n02099267_6777.JPEG	39.92586278915405	
+17	16.388789892196655	picture	0		102.0	15.0	/home/egter/Projects/stimuli/pictures/S_yt-w7dXHLrfZI4_223.png	39.934847831726074	0.8541059494018555
+17	17.22980499267578	response	0	k		15.0	/home/egter/Projects/stimuli/pictures/S_yt-w7dXHLrfZI4_223.png	40.7758629322052	
+18	17.24289584159851	picture	0		82.0	16.0	/home/egter/Projects/stimuli/pictures/n04372370_23586.JPEG	40.78895378112793	0.6951720714569092
+18	17.921462059020996	response	0	k		16.0	/home/egter/Projects/stimuli/pictures/n04372370_23586.JPEG	41.467519998550415	
+19	17.93806791305542	picture	0		74.0	17.0	/home/egter/Projects/stimuli/pictures/S_yt-kxWtOXNIsRA_329.png	41.48412585258484	0.6173560619354248
+19	18.54645586013794	response	0	j		17.0	/home/egter/Projects/stimuli/pictures/S_yt-kxWtOXNIsRA_329.png	42.09251379966736	
+20	18.555423974990845	picture	0		81.0	18.0	/home/egter/Projects/stimuli/pictures/n02123159_8283.JPEG	42.101481914520264	0.6805710792541504
+20	19.222230911254883	response	0	k		18.0	/home/egter/Projects/stimuli/pictures/n02123159_8283.JPEG	42.7682888507843	
+21	19.235995054244995	picture	0		83.0	19.0	/home/egter/Projects/stimuli/pictures/S_yt-4BAsE47kJNk_88.png	42.782052993774414	0.6944007873535156
+21	19.92144799232483	response	0	j		19.0	/home/egter/Projects/stimuli/pictures/S_yt-4BAsE47kJNk_88.png	43.46750593185425	
+22	19.93039584159851	picture	0		72.0	20.0	/home/egter/Projects/stimuli/pictures/n13037406_3364.JPEG	43.47645378112793	0.6042540073394775
+22	20.52145290374756	response	0	k		20.0	/home/egter/Projects/stimuli/pictures/n13037406_3364.JPEG	44.06751084327698	
+23	20.53464984893799	picture	0		83.0	21.0	/home/egter/Projects/stimuli/pictures/S_yt-IXMtF998XFY_547.png	44.08070778846741	0.7016701698303223
+23	21.2147958278656	response	0	j		21.0	/home/egter/Projects/stimuli/pictures/S_yt-IXMtF998XFY_547.png	44.76085376739502	
+24	21.23632001876831	picture	0		77.0	22.0	/home/egter/Projects/stimuli/pictures/n04456115_11230.JPEG	44.78237795829773	0.645474910736084
+24	21.871450901031494	response	0	k		22.0	/home/egter/Projects/stimuli/pictures/n04456115_11230.JPEG	45.41750884056091	
+25	21.881794929504395	picture	0		94.0	23.0	/home/egter/Projects/stimuli/pictures/n04347754_22099.JPEG	45.42785286903381	0.7846701145172119
+25	22.65479588508606	response	0	k		23.0	/home/egter/Projects/stimuli/pictures/n04347754_22099.JPEG	46.20085382461548	
+26	22.666465044021606	picture	0		71.0	24.0	/home/egter/Projects/stimuli/pictures/n02018795_3621.JPEG	46.212522983551025	0.5902788639068604
+26	23.24642586708069	response	0	k		24.0	/home/egter/Projects/stimuli/pictures/n02018795_3621.JPEG	46.79248380661011	
+27	23.256743907928467	picture	0		70.0	25.0	/home/egter/Projects/stimuli/pictures/n02094258_5674.JPEG	46.802801847457886	0.5834310054779053
+27	23.829795837402344	response	0	k		25.0	/home/egter/Projects/stimuli/pictures/n02094258_5674.JPEG	47.37585377693176	
+28	23.840174913406372	picture	0		102.0	26.0	/home/egter/Projects/stimuli/pictures/S_yt-bQRBtP9zkms_111.png	47.38623285293579	0.8541181087493896
+28	24.680500030517578	response	0	j		26.0	/home/egter/Projects/stimuli/pictures/S_yt-bQRBtP9zkms_111.png	48.226557970047	
+29	24.69429302215576	picture	0		82.0	27.0	/home/egter/Projects/stimuli/pictures/n01630670_4369.JPEG	48.24035096168518	0.6874449253082275
+29	25.371428966522217	response	0	k		27.0	/home/egter/Projects/stimuli/pictures/n01630670_4369.JPEG	48.917486906051636	
+30	25.38173794746399	picture	0		84.0	28.0	/home/egter/Projects/stimuli/pictures/R_S_yt_R-lST38EdfMMQ_5.png	48.92779588699341	0.701348066329956
+30	26.071509838104248	response	0	j		28.0	/home/egter/Projects/stimuli/pictures/R_S_yt_R-lST38EdfMMQ_5.png	49.61756777763367	
+31	26.083086013793945	picture	0		100.0	29.0	/home/egter/Projects/stimuli/pictures/S_wc-4cMsVgeKgq_t_1.png	49.629143953323364	0.8334000110626221
+31	26.904793977737427	response	0	k		29.0	/home/egter/Projects/stimuli/pictures/S_wc-4cMsVgeKgq_t_1.png	50.450851917266846	
+32	26.916486024856567	picture	0		63.0	30.0	/home/egter/Projects/stimuli/pictures/n03720891_15866.JPEG	50.462543964385986	0.5299818515777588
+32	27.430474042892456	response	0	k		30.0	/home/egter/Projects/stimuli/pictures/n03720891_15866.JPEG	50.976531982421875	
+33	27.446467876434326	picture	0		85.0	31.0	/home/egter/Projects/stimuli/pictures/S_yt-FhnT_42bV7M_11.png	50.992525815963745	0.7130711078643799
+33	28.146458864212036	response	0	j		31.0	/home/egter/Projects/stimuli/pictures/S_yt-FhnT_42bV7M_11.png	51.692516803741455	
+34	28.159538984298706	picture	0		81.0	32.0	/home/egter/Projects/stimuli/pictures/S_yt-OLDm2slgfA4_3.png	51.705596923828125	0.6804840564727783
+34	28.82983684539795	response	0	j		32.0	/home/egter/Projects/stimuli/pictures/S_yt-OLDm2slgfA4_3.png	52.37589478492737	
+35	28.840023040771484	picture	0		78.0	33.0	/home/egter/Projects/stimuli/pictures/S_yt-_6j2NXrB-zE_28.png	52.3860809803009	0.6529297828674316
+35	29.479753971099854	response	0	j		33.0	/home/egter/Projects/stimuli/pictures/S_yt-_6j2NXrB-zE_28.png	53.02581191062927	
+36	29.492952823638916	picture	0		76.0	34.0	/home/egter/Projects/stimuli/pictures/n01644900_17351.JPEG	53.039010763168335	0.6386880874633789
+36	30.12147283554077	response	0	k		34.0	/home/egter/Projects/stimuli/pictures/n01644900_17351.JPEG	53.66753077507019	
+37	30.131640911102295	picture	0		86.0	35.0	/home/egter/Projects/stimuli/pictures/S_comp_GMT026_363A_103NC_E1027_KOREA_JAPAN_NIGHT_v18_SDR_PS_20180907_SDR_2K_AVC.png	53.677698850631714	0.7153069972991943
+37	30.838084936141968	response	0	j		35.0	/home/egter/Projects/stimuli/pictures/S_comp_GMT026_363A_103NC_E1027_KOREA_JAPAN_NIGHT_v18_SDR_PS_20180907_SDR_2K_AVC.png	54.38414287567139	
+38	30.84694790840149	picture	0		86.0	36.0	/home/egter/Projects/stimuli/pictures/R_S_yt-4oT-2eGhmUo_102.png	54.39300584793091	0.7226459980010986
+38	31.55537486076355	response	0	j		36.0	/home/egter/Projects/stimuli/pictures/R_S_yt-4oT-2eGhmUo_102.png	55.10143280029297	
+39	31.569593906402588	picture	0		93.0	37.0	/home/egter/Projects/stimuli/pictures/n04347754_624.JPEG	55.11565184593201	0.7850661277770996
+39	32.33809304237366	response	0	k		37.0	/home/egter/Projects/stimuli/pictures/n04347754_624.JPEG	55.884150981903076	
+40	32.35466003417969	picture	0		126.0	38.0	/home/egter/Projects/stimuli/pictures/n02077923_15442.JPEG	55.900717973709106	1.054931879043579
+40	33.39030885696411	response	0	k		38.0	/home/egter/Projects/stimuli/pictures/n02077923_15442.JPEG	56.93636679649353	
+41	33.40959191322327	picture	0		82.0	39.0	/home/egter/Projects/stimuli/pictures/S_yt-R-SETZtYWaA_336.png	56.955649852752686	0.687345027923584
+41	34.08804988861084	response	0	j		39.0	/home/egter/Projects/stimuli/pictures/S_yt-R-SETZtYWaA_336.png	57.63410782814026	
+42	34.09693694114685	picture	0		81.0	40.0	/home/egter/Projects/stimuli/pictures/S_yt-kbf7N5K5cS0_35.png	57.64299488067627	0.9514529705047607
+42	34.763696908950806	response	0	k		40.0	/home/egter/Projects/stimuli/pictures/S_yt-kbf7N5K5cS0_35.png	58.309754848480225	
+43	35.04838991165161	picture	0		85.0	41.0	/home/egter/Projects/stimuli/pictures/S_I004_C014_SDR_2K_AVC.png	58.59444785118103	1.5902421474456787
+43	35.74644088745117	response	0	j		41.0	/home/egter/Projects/stimuli/pictures/S_I004_C014_SDR_2K_AVC.png	59.29249882698059	
+44	36.63863205909729	picture	0		95.0	42.0	/home/egter/Projects/stimuli/pictures/R_S_pexels-cottonbro-5310858.png	60.18468999862671	0.7915859222412109
+44	37.414681911468506	response	0	j		42.0	/home/egter/Projects/stimuli/pictures/R_S_pexels-cottonbro-5310858.png	60.960739850997925	
+45	37.4302179813385	picture	0		92.0	43.0	/home/egter/Projects/stimuli/pictures/R_S_flickr-claywakening-27928940166_2.png	60.97627592086792	0.7711079120635986
+45	38.18803095817566	response	0	j		43.0	/home/egter/Projects/stimuli/pictures/R_S_flickr-claywakening-27928940166_2.png	61.73408889770508	
+46	38.2013258934021	picture	0		79.0	44.0	/home/egter/Projects/stimuli/pictures/n02138441_7328.JPEG	61.74738383293152	0.6663939952850342
+46	38.85470795631409	response	0	k		44.0	/home/egter/Projects/stimuli/pictures/n02138441_7328.JPEG	62.400765895843506	
+47	38.867719888687134	picture	0		91.0	45.0	/home/egter/Projects/stimuli/pictures/S_yt-jfPayShydzE_1233.png	62.41377782821655	0.7638659477233887
+47	39.61463689804077	response	0	k		45.0	/home/egter/Projects/stimuli/pictures/S_yt-jfPayShydzE_1233.png	63.16069483757019	
+48	39.63158583641052	picture	0		81.0	46.0	/home/egter/Projects/stimuli/pictures/n01944390_1053.JPEG	63.17764377593994	0.6735670566558838
+48	40.29635405540466	response	0	k		46.0	/home/egter/Projects/stimuli/pictures/n01944390_1053.JPEG	63.84241199493408	
+49	40.305152893066406	picture	0		77.0	47.0	/home/egter/Projects/stimuli/pictures/S_yt-VyVvEvP6MRM_124.png	63.851210832595825	0.6459240913391113
+49	40.93805694580078	response	0	k		47.0	/home/egter/Projects/stimuli/pictures/S_yt-VyVvEvP6MRM_124.png	64.4841148853302	
+50	40.95107698440552	picture	0		66.0	48.0	/home/egter/Projects/stimuli/pictures/n03590841_2262.JPEG	64.49713492393494	0.5555028915405273
+50	41.496392011642456	response	0	k		48.0	/home/egter/Projects/stimuli/pictures/n03590841_2262.JPEG	65.04244995117188	
+51	41.506579875946045	picture	0		83.0	49.0	/home/egter/Projects/stimuli/pictures/n04081281_2467.JPEG	65.05263781547546	0.6944260597229004
+51	42.1880419254303	response	0	k		49.0	/home/egter/Projects/stimuli/pictures/n04081281_2467.JPEG	65.73409986495972	
+52	42.201005935668945	picture	0		85.0	50.0	/home/egter/Projects/stimuli/pictures/S_yt-KVB49z48sZU_55.png	65.74706387519836	0.7153429985046387
+52	42.90470886230469	response	0	j		50.0	/home/egter/Projects/stimuli/pictures/S_yt-KVB49z48sZU_55.png	66.4507668018341	
+53	42.916348934173584	picture	0		89.0	51.0	/home/egter/Projects/stimuli/pictures/R_S_pexels-anna-tarazevich-6189268.png	66.462406873703	0.7429869174957275
+53	43.6463840007782	response	0	j		51.0	/home/egter/Projects/stimuli/pictures/R_S_pexels-anna-tarazevich-6189268.png	67.19244194030762	
+54	43.65933585166931	picture	0		110.0	52.0	/home/egter/Projects/stimuli/pictures/S_yt-h09NHEfoKb0_8.png	67.20539379119873	0.9235670566558838
+54	44.571351051330566	response	0	j		52.0	/home/egter/Projects/stimuli/pictures/S_yt-h09NHEfoKb0_8.png	68.11740899085999	
+55	44.582902908325195	picture	0		84.0	53.0	/home/egter/Projects/stimuli/pictures/n03854065_10600.JPEG	68.12896084785461	0.7014570236206055
+55	45.271296977996826	response	0	k		53.0	/home/egter/Projects/stimuli/pictures/n03854065_10600.JPEG	68.81735491752625	
+56	45.2843599319458	picture	0		72.0	54.0	/home/egter/Projects/stimuli/pictures/ILSVRC2012_test_00044615.JPEG	68.83041787147522	0.6041839122772217
+56	45.879714012145996	response	0	k		54.0	/home/egter/Projects/stimuli/pictures/ILSVRC2012_test_00044615.JPEG	69.42577195167542	
+57	45.88854384422302	picture	0		80.0	55.0	/home/egter/Projects/stimuli/pictures/S_yt-11S5tcT2Tm0_254.png	69.43460178375244	0.666560173034668
+57	46.54637694358826	response	0	j		55.0	/home/egter/Projects/stimuli/pictures/S_yt-11S5tcT2Tm0_254.png	70.09243488311768	
+58	46.55510401725769	picture	0		78.0	56.0	/home/egter/Projects/stimuli/pictures/S_ILSVRC2015_train_00569003.png	70.10116195678711	0.6527838706970215
+58	47.196305990219116	response	0	j		56.0	/home/egter/Projects/stimuli/pictures/S_ILSVRC2015_train_00569003.png	70.74236392974854	
+59	47.20788788795471	picture	0		110.0	57.0	/home/egter/Projects/stimuli/pictures/S_yt-AbJBxqEYoMg_27.png	70.75394582748413	0.9217021465301514
+59	48.11301898956299	response	0	j		57.0	/home/egter/Projects/stimuli/pictures/S_yt-AbJBxqEYoMg_27.png	71.65907692909241	
+60	48.12959003448486	picture	0		79.0	58.0	/home/egter/Projects/stimuli/pictures/n03792972_985.JPEG	71.67564797401428	0.6618139743804932
+60	48.779661893844604	response	0	k		58.0	/home/egter/Projects/stimuli/pictures/n03792972_985.JPEG	72.32571983337402	
+61	48.791404008865356	picture	0		77.0	59.0	/home/egter/Projects/stimuli/pictures/n02910353_8726.JPEG	72.33746194839478	0.6387250423431396
+61	49.41462993621826	response	0	k		59.0	/home/egter/Projects/stimuli/pictures/n02910353_8726.JPEG	72.96068787574768	
+62	49.430129051208496	picture	0		90.0	60.0	/home/egter/Projects/stimuli/pictures/R_S_yt-2IxVZeiSv3g_28.png	72.97618699073792	0.7578189373016357
+62	50.17135286331177	response	0	j		60.0	/home/egter/Projects/stimuli/pictures/R_S_yt-2IxVZeiSv3g_28.png	73.71741080284119	
+63	50.18794798851013	picture	0		80.0	61.0	/home/egter/Projects/stimuli/pictures/S_ILSVRC2015_train_00689000.png	73.73400592803955	0.6727728843688965
+63	50.839624881744385	response	0	j		61.0	/home/egter/Projects/stimuli/pictures/S_ILSVRC2015_train_00689000.png	74.3856828212738	
+64	50.86072087287903	picture	0		71.0	62.0	/home/egter/Projects/stimuli/pictures/n03868242_3480.JPEG	74.40677881240845	0.5971519947052002
+64	51.439502000808716	response	0	k		62.0	/home/egter/Projects/stimuli/pictures/n03868242_3480.JPEG	74.98555994033813	
+65	51.45787286758423	picture	0		96.0	63.0	/home/egter/Projects/stimuli/pictures/R_S_yt-Wf-RauSbVgA_56.png	75.00393080711365	0.7985551357269287
+65	52.239495038986206	response	0	j		63.0	/home/egter/Projects/stimuli/pictures/R_S_yt-Wf-RauSbVgA_56.png	75.78555297851562	
+66	52.25642800331116	picture	0		75.0	64.0	/home/egter/Projects/stimuli/pictures/n02097047_726.JPEG	75.80248594284058	0.6250379085540771
+66	52.8712739944458	response	0	k		64.0	/home/egter/Projects/stimuli/pictures/n02097047_726.JPEG	76.41733193397522	
+67	52.881465911865234	picture	0		85.0	65.0	/home/egter/Projects/stimuli/pictures/R_S_yt-xrWo3lnbshw_80.png	76.42752385139465	0.7083430290222168
+67	53.579663038253784	response	0	j		65.0	/home/egter/Projects/stimuli/pictures/R_S_yt-xrWo3lnbshw_80.png	77.1257209777832	
+68	53.58980894088745	picture	0		160.0	66.0	/home/egter/Projects/stimuli/pictures/S_production_ID_4101234.png	77.13586688041687	1.333292007446289
+68	54.912986040115356	response	0	k		66.0	/home/egter/Projects/stimuli/pictures/S_production_ID_4101234.png	78.45904397964478	
+69	54.92310094833374	picture	0		79.0	67.0	/home/egter/Projects/stimuli/pictures/R_S_production_ID_3923518.png	78.46915888786316	0.6597049236297607
+69	55.571287870407104	response	0	j		67.0	/home/egter/Projects/stimuli/pictures/R_S_production_ID_3923518.png	79.11734580993652	
+70	55.5828058719635	picture	0		107.0	68.0	/home/egter/Projects/stimuli/pictures/R_S_yt-I2n2eo2zoZs_94.png	79.12886381149292	0.8888850212097168
+70	56.462992906570435	response	0	j		68.0	/home/egter/Projects/stimuli/pictures/R_S_yt-I2n2eo2zoZs_94.png	80.00905084609985	
+71	56.47169089317322	picture	0		88.0	69.0	/home/egter/Projects/stimuli/pictures/R_S_yt--WPE_4bqQXc_26.png	80.01774883270264	0.7360939979553223
+71	57.19634389877319	response	0	j		69.0	/home/egter/Projects/stimuli/pictures/R_S_yt--WPE_4bqQXc_26.png	80.74240183830261	
+72	57.20778489112854	picture	0		72.0	70.0	/home/egter/Projects/stimuli/pictures/S_pexels-cottonbro-5310858.png	80.75384283065796	0.6050870418548584
+72	57.796321868896484	response	0	j		70.0	/home/egter/Projects/stimuli/pictures/S_pexels-cottonbro-5310858.png	81.3423798084259	
+73	57.8128719329834	picture	0		77.0	71.0	/home/egter/Projects/stimuli/pictures/n01980166_1581.JPEG	81.35892987251282	0.6449339389801025
+73	58.44626498222351	response	0	k		71.0	/home/egter/Projects/stimuli/pictures/n01980166_1581.JPEG	81.99232292175293	
+74	58.4578058719635	picture	0		72.0	72.0	/home/egter/Projects/stimuli/pictures/n13052670_528.JPEG	82.00386381149292	0.5972039699554443
+74	59.04623603820801	response	0	k		72.0	/home/egter/Projects/stimuli/pictures/n13052670_528.JPEG	82.59229397773743	
+75	59.055009841918945	picture	0		74.0	73.0	/home/egter/Projects/stimuli/pictures/S_yt-78k6vUHDWAI_206.png	82.60106778144836	0.6180222034454346
+75	59.662960052490234	response	0	j		73.0	/home/egter/Projects/stimuli/pictures/S_yt-78k6vUHDWAI_206.png	83.20901799201965	
+76	59.67303204536438	picture	0		92.0	74.0	/home/egter/Projects/stimuli/pictures/n02704792_5138.JPEG	83.2190899848938	0.773169994354248
+76	60.42277383804321	response	0	k		74.0	/home/egter/Projects/stimuli/pictures/n02704792_5138.JPEG	83.96883177757263	
+77	60.44620203971863	picture	0		86.0	75.0	/home/egter/Projects/stimuli/pictures/n03496892_5197.JPEG	83.99225997924805	0.7198739051818848
+77	61.15458583831787	response	0	k		75.0	/home/egter/Projects/stimuli/pictures/n03496892_5197.JPEG	84.70064377784729	
+78	61.16607594490051	picture	0		92.0	76.0	/home/egter/Projects/stimuli/pictures/R_S_ILSVRC2015_train_00369004.png	84.71213388442993	0.771759033203125
+78	61.92134189605713	response	0	j		76.0	/home/egter/Projects/stimuli/pictures/R_S_ILSVRC2015_train_00369004.png	85.46739983558655	
+79	61.93783497810364	picture	0		94.0	77.0	/home/egter/Projects/stimuli/pictures/n09468604_18775.JPEG	85.48389291763306	0.7838239669799805
+79	62.712862968444824	response	0	k		77.0	/home/egter/Projects/stimuli/pictures/n09468604_18775.JPEG	86.25892090797424	
+80	62.72165894508362	picture	0		130.0	78.0	/home/egter/Projects/stimuli/pictures/R_S_pexels-cottonbro-6789234.png	86.26771688461304	1.0833380222320557
+80	63.79626989364624	response	0	j		78.0	/home/egter/Projects/stimuli/pictures/R_S_pexels-cottonbro-6789234.png	87.34232783317566	
+81	63.804996967315674	picture	0		87.0	79.0	/home/egter/Projects/stimuli/pictures/n04613696_9693.JPEG	87.35105490684509	0.7291769981384277
+81	64.52126502990723	response	0	k		79.0	/home/egter/Projects/stimuli/pictures/n04613696_9693.JPEG	88.06732296943665	
+82	64.5341739654541	picture	0		73.0	80.0	/home/egter/Projects/stimuli/pictures/n01685808_499.JPEG	88.08023190498352	0.6181209087371826
+82	65.1384048461914	response	0	k		80.0	/home/egter/Projects/stimuli/pictures/n01685808_499.JPEG	88.68446278572083	
+83	65.15229487419128	picture	0		90.0	81.0	/home/egter/Projects/stimuli/pictures/R_S_yt-7K5X1G7Cpls_965.png	88.6983528137207	0.7569460868835449
+83	65.89644193649292	response	0	j		81.0	/home/egter/Projects/stimuli/pictures/R_S_yt-7K5X1G7Cpls_965.png	89.44249987602234	
+84	65.90924096107483	picture	0		93.0	82.0	/home/egter/Projects/stimuli/pictures/R_S_yt-_BvMLZo0MG0_1226.png	89.45529890060425	0.7847180366516113
+84	66.68005204200745	response	0	j		82.0	/home/egter/Projects/stimuli/pictures/R_S_yt-_BvMLZo0MG0_1226.png	90.22610998153687	
+85	66.69395899772644	picture	0		96.0	83.0	/home/egter/Projects/stimuli/pictures/n01518878_10165.JPEG	90.24001693725586	0.8054349422454834
+85	67.4878900051117	response	0	k		83.0	/home/egter/Projects/stimuli/pictures/n01518878_10165.JPEG	91.03394794464111	
+86	67.49939393997192	picture	0		78.0	84.0	/home/egter/Projects/stimuli/pictures/R_S_3WAnGcPubBY_179.png	91.04545187950134	0.6528170108795166
+86	68.13833999633789	response	0	j		84.0	/home/egter/Projects/stimuli/pictures/R_S_3WAnGcPubBY_179.png	91.68439793586731	
+87	68.15221095085144	picture	0		77.0	85.0	/home/egter/Projects/stimuli/pictures/S_pexels-c-technical-6753390.png	91.69826889038086	0.6458029747009277
+87	68.78794002532959	response	0	j		85.0	/home/egter/Projects/stimuli/pictures/S_pexels-c-technical-6753390.png	92.33399796485901	
+88	68.79801392555237	picture	0		200.0	86.0	/home/egter/Projects/stimuli/pictures/n09468604_7800.JPEG	92.34407186508179	1.666611909866333
+88	70.4545419216156	response	0	k		86.0	/home/egter/Projects/stimuli/pictures/n09468604_7800.JPEG	94.00059986114502	
+89	70.4646258354187	picture	0		153.0	87.0	/home/egter/Projects/stimuli/pictures/R_S_yt-0aHV3uU8xFY_75.png	94.01068377494812	1.2777881622314453
+89	71.72968292236328	response	0	j		87.0	/home/egter/Projects/stimuli/pictures/R_S_yt-0aHV3uU8xFY_75.png	95.2757408618927	
+90	71.74241399765015	picture	0		89.0	88.0	/home/egter/Projects/stimuli/pictures/R_S_yt-ZTAaH5XbtfE_3.png	95.28847193717957	0.74310302734375
+90	72.47168302536011	response	0	j		88.0	/home/egter/Projects/stimuli/pictures/R_S_yt-ZTAaH5XbtfE_3.png	96.01774096488953	
+91	72.4855170249939	picture	0		99.0	89.0	/home/egter/Projects/stimuli/pictures/S_yt-YlA-FPDylDE_100.png	96.03157496452332	0.8333749771118164
+91	73.30495190620422	response	0	j		89.0	/home/egter/Projects/stimuli/pictures/S_yt-YlA-FPDylDE_100.png	96.85100984573364	
+92	73.31889200210571	picture	0		101.0	90.0	/home/egter/Projects/stimuli/pictures/R_S_yt-eoASPwIAiHY_244.png	96.86494994163513	0.8471009731292725
+92	74.15457391738892	response	0	j		90.0	/home/egter/Projects/stimuli/pictures/R_S_yt-eoASPwIAiHY_244.png	97.70063185691833	
+93	74.16599297523499	picture	0		70.0	91.0	/home/egter/Projects/stimuli/pictures/ILSVRC2012_test_00047815.JPEG	97.7120509147644	0.5833148956298828
+93	74.73790287971497	response	0	k		91.0	/home/egter/Projects/stimuli/pictures/ILSVRC2012_test_00047815.JPEG	98.28396081924438	
+94	74.74930787086487	picture	0		88.0	92.0	/home/egter/Projects/stimuli/pictures/n04423845_23917.JPEG	98.29536581039429	0.736565113067627
+94	75.47162795066833	response	0	k		92.0	/home/egter/Projects/stimuli/pictures/n04423845_23917.JPEG	99.01768589019775	
+95	75.4858729839325	picture	0		72.0	93.0	/home/egter/Projects/stimuli/pictures/n01855672_6523.JPEG	99.03193092346191	0.6037230491638184
+95	76.07960796356201	response	0	k		93.0	/home/egter/Projects/stimuli/pictures/n01855672_6523.JPEG	99.62566590309143	
+96	76.08959603309631	picture	0		78.0	94.0	/home/egter/Projects/stimuli/pictures/R_S_yt-h09NHEfoKb0_8.png	99.63565397262573	0.6528499126434326
+96	76.72952485084534	response	0	j		94.0	/home/egter/Projects/stimuli/pictures/R_S_yt-h09NHEfoKb0_8.png	100.27558279037476	
+97	76.74244594573975	picture	0		71.0	95.0	/home/egter/Projects/stimuli/pictures/n02099429_5840.JPEG	100.28850388526917	0.5971200466156006
+97	77.32974004745483	response	0	k		95.0	/home/egter/Projects/stimuli/pictures/n02099429_5840.JPEG	100.87579798698425	
+98	77.33956599235535	picture	0		83.0	96.0	/home/egter/Projects/stimuli/pictures/n01978455_4275.JPEG	100.88562393188477	0.6982369422912598
+98	78.01483798027039	response	0	k		96.0	/home/egter/Projects/stimuli/pictures/n01978455_4275.JPEG	101.5608959197998	
+99	78.0378029346466	picture	0		77.0	97.0	/home/egter/Projects/stimuli/pictures/R_S_comp_H007_C003_PS_v01_SDR_PS_20180925_SDR_2K_AVC.png	101.58386087417603	0.6420550346374512
+99	78.67119598388672	response	0	j		97.0	/home/egter/Projects/stimuli/pictures/R_S_comp_H007_C003_PS_v01_SDR_PS_20180925_SDR_2K_AVC.png	102.21725392341614	
+100	78.67985796928406	picture	0		94.0	98.0	/home/egter/Projects/stimuli/pictures/R_S_yt-ibDaDIEazxg_3.png	102.22591590881348	0.7846829891204834
+100	79.4477870464325	response	0	j		98.0	/home/egter/Projects/stimuli/pictures/R_S_yt-ibDaDIEazxg_3.png	102.99384498596191	
+101	79.46454095840454	picture	0		79.0	99.0	/home/egter/Projects/stimuli/pictures/n04033901_37452.JPEG	103.01059889793396	0.6596970558166504
+101	80.11287593841553	response	0	k		99.0	/home/egter/Projects/stimuli/pictures/n04033901_37452.JPEG	103.65893387794495	
+102	80.12423801422119	picture	0		113.0	100.0	/home/egter/Projects/stimuli/pictures/S_yt-cAFx29wS_xo_130.png	103.67029595375061	0.9445199966430664
+102	81.05490398406982	response	0	k		100.0	/home/egter/Projects/stimuli/pictures/S_yt-cAFx29wS_xo_130.png	104.60096192359924	
+103	81.06875801086426	picture	0		83.0	101.0	/home/egter/Projects/stimuli/pictures/n02116738_5048.JPEG	104.61481595039368	0.6943368911743164
+103	81.75456094741821	response	0	k		101.0	/home/egter/Projects/stimuli/pictures/n02116738_5048.JPEG	105.30061888694763	
+104	81.76309490203857	picture	0		116.0	102.0	/home/egter/Projects/stimuli/pictures/n12144580_31450.JPEG	105.309152841568	0.9723320007324219
+104	82.72153782844543	response	0	k		102.0	/home/egter/Projects/stimuli/pictures/n12144580_31450.JPEG	106.26759576797485	
+105	82.735426902771	picture	0		73.0	103.0	/home/egter/Projects/stimuli/pictures/n02447366_2109.JPEG	106.28148484230042	0.6109859943389893
+105	83.33783292770386	response	0	k		103.0	/home/egter/Projects/stimuli/pictures/n02447366_2109.JPEG	106.88389086723328	
+106	83.34641289710999	picture	0		350.0	104.0	/home/egter/Projects/stimuli/pictures/n02101556_5125.JPEG	106.8924708366394	2.916677951812744
+106	86.2478539943695	response	0	k		104.0	/home/egter/Projects/stimuli/pictures/n02101556_5125.JPEG	109.79391193389893	
+107	86.26309084892273	picture	0		96.0	105.0	/home/egter/Projects/stimuli/pictures/R_S_ILSVRC2015_train_00441000.png	109.80914878845215	0.8079919815063477
+107	87.04777097702026	response	0	j		105.0	/home/egter/Projects/stimuli/pictures/R_S_ILSVRC2015_train_00441000.png	110.59382891654968	
+108	87.07108283042908	picture	0		107.0	106.0	/home/egter/Projects/stimuli/pictures/R_S_m-aeoYPMqfg_185.png	110.6171407699585	0.8933830261230469
+108	87.954519033432	response	0	j		106.0	/home/egter/Projects/stimuli/pictures/R_S_m-aeoYPMqfg_185.png	111.50057697296143	
+109	87.96446585655212	picture	0		87.0	107.0	/home/egter/Projects/stimuli/pictures/n04465501_4549.JPEG	111.51052379608154	0.7291810512542725
+109	88.67983794212341	response	0	k		107.0	/home/egter/Projects/stimuli/pictures/n04465501_4549.JPEG	112.22589588165283	
+110	88.6936469078064	picture	0		83.0	108.0	/home/egter/Projects/stimuli/pictures/n03126707_2346.JPEG	112.23970484733582	0.6944479942321777
+110	89.37950801849365	response	0	k		108.0	/home/egter/Projects/stimuli/pictures/n03126707_2346.JPEG	112.92556595802307	
+111	89.38809490203857	picture	0		225.0	109.0	/home/egter/Projects/stimuli/pictures/S_yt-jcuaf9iSEkI_169.png	112.934152841568	1.8749480247497559
+111	91.24769592285156	response	0	j		109.0	/home/egter/Projects/stimuli/pictures/S_yt-jcuaf9iSEkI_169.png	114.79375386238098	
+112	91.26304292678833	picture	0		497.0	110.0	/home/egter/Projects/stimuli/pictures/R_S_production_ID_3709168.png	114.80910086631775	4.14581298828125
+112	95.39615988731384	response	0	j		110.0	/home/egter/Projects/stimuli/pictures/R_S_production_ID_3709168.png	118.94221782684326	
+113	95.40885591506958	picture	0		108.0	111.0	/home/egter/Projects/stimuli/pictures/S_ahJft-G235A_122.png	118.954913854599	0.895888090133667
+113	96.29622387886047	response	0	j		111.0	/home/egter/Projects/stimuli/pictures/S_ahJft-G235A_122.png	119.84228181838989	
+114	96.30474400520325	picture	0		81.0	112.0	/home/egter/Projects/stimuli/pictures/n03792782_1030.JPEG	119.85080194473267	0.6805269718170166
+114	96.97150683403015	response	0	k		112.0	/home/egter/Projects/stimuli/pictures/n03792782_1030.JPEG	120.51756477355957	
+115	96.98527097702026	picture	0		87.0	113.0	/home/egter/Projects/stimuli/pictures/n01632458_3672.JPEG	120.53132891654968	0.7291090488433838
+115	97.7044529914856	response	0	k		113.0	/home/egter/Projects/stimuli/pictures/n01632458_3672.JPEG	121.25051093101501	
+116	97.71438002586365	picture	0		185.0	114.0	/home/egter/Projects/stimuli/pictures/R_S_yt-wUqpCtBOFBA_89.png	121.26043796539307	1.5416278839111328
+116	99.23932099342346	response	0	k		114.0	/home/egter/Projects/stimuli/pictures/R_S_yt-wUqpCtBOFBA_89.png	122.78537893295288	
+117	99.25600790977478	picture	0		75.0	115.0	/home/egter/Projects/stimuli/pictures/S_yt-WFiEvQuOqqg_18.png	122.8020658493042	0.6250231266021729
+117	99.87110805511475	response	0	j		115.0	/home/egter/Projects/stimuli/pictures/S_yt-WFiEvQuOqqg_18.png	123.41716599464417	
+118	99.88103103637695	picture	0		69.0	116.0	/home/egter/Projects/stimuli/pictures/R_S_yt-jcuaf9iSEkI_169.png	123.42708897590637	0.5763537883758545
+118	100.4393138885498	response	0	j		116.0	/home/egter/Projects/stimuli/pictures/R_S_yt-jcuaf9iSEkI_169.png	123.98537182807922	
+119	100.45738482475281	picture	0		89.0	117.0	/home/egter/Projects/stimuli/pictures/R_S_yt-RlHmMGUjT9E_130.png	124.00344276428223	0.7430801391601562
+119	101.18778896331787	response	0	j		117.0	/home/egter/Projects/stimuli/pictures/R_S_yt-RlHmMGUjT9E_130.png	124.73384690284729	
+120	101.20046496391296	picture	0		84.0	118.0	/home/egter/Projects/stimuli/pictures/R_S_flickr-csgzs-8144064966_10.png	124.74652290344238	0.7014400959014893
+120	101.88801693916321	response	0	j		118.0	/home/egter/Projects/stimuli/pictures/R_S_flickr-csgzs-8144064966_10.png	125.43407487869263	
+121	101.90190505981445	picture	0		78.0	119.0	/home/egter/Projects/stimuli/pictures/n01756291_7571.JPEG	125.44796299934387	0.6526718139648438
+121	102.54627704620361	response	0	k		119.0	/home/egter/Projects/stimuli/pictures/n01756291_7571.JPEG	126.09233498573303	
+122	102.5545768737793	picture	0		97.0	120.0	/home/egter/Projects/stimuli/pictures/R_S_yt-1n1jTroiwJs_163.png	126.10063481330872	0.8125500679016113
+122	103.35450887680054	response	0	j		120.0	/home/egter/Projects/stimuli/pictures/R_S_yt-1n1jTroiwJs_163.png	126.90056681632996	
+123	103.36712694168091	picture	0		123.0	121.0	/home/egter/Projects/stimuli/pictures/R_S_comp_A001_C004_1207W5_v23_SDR_FINAL_20180706_SDR_2K_AVC.png	126.91318488121033	1.0207600593566895
+123	104.37945890426636	response	0	j		121.0	/home/egter/Projects/stimuli/pictures/R_S_comp_A001_C004_1207W5_v23_SDR_FINAL_20180706_SDR_2K_AVC.png	127.92551684379578	
+124	104.3878870010376	picture	0		78.0	122.0	/home/egter/Projects/stimuli/pictures/n03954731_3132.JPEG	127.93394494056702	0.6528120040893555
+124	105.0294508934021	response	0	k		122.0	/home/egter/Projects/stimuli/pictures/n03954731_3132.JPEG	128.57550883293152	
+125	105.04069900512695	picture	0		105.0	123.0	/home/egter/Projects/stimuli/pictures/R_S_yt-Ozx_f0a0ZDI_32.png	128.58675694465637	0.8749868869781494
+125	105.90448594093323	response	0	j		123.0	/home/egter/Projects/stimuli/pictures/R_S_yt-Ozx_f0a0ZDI_32.png	129.45054388046265	
+126	105.9156858921051	picture	0		162.0	124.0	/home/egter/Projects/stimuli/pictures/S_yt-bWXohhodbjg_86.png	129.46174383163452	1.347135066986084
+126	107.24769687652588	response	0	k		124.0	/home/egter/Projects/stimuli/pictures/S_yt-bWXohhodbjg_86.png	130.7937548160553	
+127	107.26282095909119	picture	0		119.0	125.0	/home/egter/Projects/stimuli/pictures/R_S_production_ID_4101309.png	130.8088788986206	0.9930980205535889
+127	108.23936700820923	response	0	j		125.0	/home/egter/Projects/stimuli/pictures/R_S_production_ID_4101309.png	131.78542494773865	
+128	108.25591897964478	picture	0		122.0	126.0	/home/egter/Projects/stimuli/pictures/R_S_comp_DB_D008_C010_PSNK_v21_SDR_PS_20180914_F0F16157_SDR_2K_AVC.png	131.8019769191742	1.0211858749389648
+128	109.26294994354248	response	0	j		126.0	/home/egter/Projects/stimuli/pictures/R_S_comp_DB_D008_C010_PSNK_v21_SDR_PS_20180914_F0F16157_SDR_2K_AVC.png	132.8090078830719	
+129	109.27710485458374	picture	0		76.0	127.0	/home/egter/Projects/stimuli/pictures/S_yt-s2tZ2NIQrxg_175.png	132.82316279411316	0.6385509967803955
+129	109.9044418334961	response	0	j		127.0	/home/egter/Projects/stimuli/pictures/S_yt-s2tZ2NIQrxg_175.png	133.4504997730255	
+130	109.91565585136414	picture	0		186.0	128.0	/home/egter/Projects/stimuli/pictures/S_ILSVRC2015_train_00532000.png	133.46171379089355	1.548586130142212
+130	111.44773483276367	response	0	k		128.0	/home/egter/Projects/stimuli/pictures/S_ILSVRC2015_train_00532000.png	134.9937927722931	
+131	111.46424198150635	picture	0		87.0	129.0	/home/egter/Projects/stimuli/pictures/S_yt-J2PiBa1MXI0_210.png	135.01029992103577	0.7292158603668213
+131	112.17962503433228	response	0	j		129.0	/home/egter/Projects/stimuli/pictures/S_yt-J2PiBa1MXI0_210.png	135.7256829738617	
+132	112.19345784187317	picture	0		75.0	130.0	/home/egter/Projects/stimuli/pictures/R_S_yt-bOgChEHiroI_20.png	135.7395157814026	0.6319530010223389
+132	112.81268501281738	response	0	j		130.0	/home/egter/Projects/stimuli/pictures/R_S_yt-bOgChEHiroI_20.png	136.3587429523468	
+133	112.82541084289551	picture	0		87.0	131.0	/home/egter/Projects/stimuli/pictures/S_goAwcQiFu1Q_99.png	136.37146878242493	0.7221400737762451
+133	113.53772282600403	response	0	j		131.0	/home/egter/Projects/stimuli/pictures/S_goAwcQiFu1Q_99.png	137.08378076553345	
+134	113.54755091667175	picture	0		116.0	132.0	/home/egter/Projects/stimuli/pictures/R_S_yt-fP2JRJAFGZ4_25.png	137.09360885620117	0.9652590751647949
+134	114.50438094139099	response	0	j		132.0	/home/egter/Projects/stimuli/pictures/R_S_yt-fP2JRJAFGZ4_25.png	138.0504388809204	
+135	114.51280999183655	picture	0		85.0	133.0	/home/egter/Projects/stimuli/pictures/n02687172_40216.JPEG	138.05886793136597	0.7083320617675781
+135	115.21269702911377	response	0	k		133.0	/home/egter/Projects/stimuli/pictures/n02687172_40216.JPEG	138.7587549686432	
+136	115.22114205360413	picture	0		98.0	134.0	/home/egter/Projects/stimuli/pictures/n04536866_12208.JPEG	138.76719999313354	0.819462776184082
+136	116.0294120311737	response	0	k		134.0	/home/egter/Projects/stimuli/pictures/n04536866_12208.JPEG	139.57546997070312	
+137	116.04060482978821	picture	0		94.0	135.0	/home/egter/Projects/stimuli/pictures/S_yt-e9AZJKNv9ow_359.png	139.58666276931763	0.7847681045532227
+137	116.8127429485321	response	0	j		135.0	/home/egter/Projects/stimuli/pictures/S_yt-e9AZJKNv9ow_359.png	140.35880088806152	
+138	116.82537293434143	picture	0		80.0	136.0	/home/egter/Projects/stimuli/pictures/n03770679_10833.JPEG	140.37143087387085	0.6665980815887451
+138	117.47937488555908	response	0	k		136.0	/home/egter/Projects/stimuli/pictures/n03770679_10833.JPEG	141.0254328250885	
+139	117.49197101593018	picture	0		114.0	137.0	/home/egter/Projects/stimuli/pictures/S_yt-wUqpCtBOFBA_89.png	141.0380289554596	0.9514298439025879
+139	118.42952799797058	response	0	j		137.0	/home/egter/Projects/stimuli/pictures/S_yt-wUqpCtBOFBA_89.png	141.9755859375	
+140	118.44340085983276	picture	0		81.0	138.0	/home/egter/Projects/stimuli/pictures/n02361337_10879.JPEG	141.98945879936218	0.6805040836334229
+140	119.11268901824951	response	0	k		138.0	/home/egter/Projects/stimuli/pictures/n02361337_10879.JPEG	142.65874695777893	
+141	119.12390494346619	picture	0		103.0	139.0	/home/egter/Projects/stimuli/pictures/S_pexels-rodnae-productions-5993237_1.png	142.6699628829956	0.8611009120941162
+141	119.97120094299316	response	0	k		139.0	/home/egter/Projects/stimuli/pictures/S_pexels-rodnae-productions-5993237_1.png	143.51725888252258	
+142	119.9850058555603	picture	0		96.0	140.0	/home/egter/Projects/stimuli/pictures/S_yt-EvKV7iY1_HM_193.png	143.53106379508972	0.8055460453033447
+142	120.77944993972778	response	0	j		140.0	/home/egter/Projects/stimuli/pictures/S_yt-EvKV7iY1_HM_193.png	144.3255078792572	
+143	120.79055190086365	picture	0		88.0	141.0	/home/egter/Projects/stimuli/pictures/R_S_yt-11S5tcT2Tm0_254.png	144.33660984039307	0.7361760139465332
+143	121.51294994354248	response	0	j		141.0	/home/egter/Projects/stimuli/pictures/R_S_yt-11S5tcT2Tm0_254.png	145.0590078830719	
+144	121.52672791481018	picture	0		70.0	142.0	/home/egter/Projects/stimuli/pictures/n02493509_10681.JPEG	145.0727858543396	0.5902059078216553
+144	122.10435605049133	response	0	j		142.0	/home/egter/Projects/stimuli/pictures/n02493509_10681.JPEG	145.65041399002075	
+145	122.11693382263184	picture	0		143.0	143.0	/home/egter/Projects/stimuli/pictures/R_S_ahJft-G235A_122.png	145.66299176216125	1.1956720352172852
+145	123.29601192474365	response	0	j		143.0	/home/egter/Projects/stimuli/pictures/R_S_ahJft-G235A_122.png	146.84206986427307	
+146	123.31260585784912	picture	0		58.0	144.0	/home/egter/Projects/stimuli/pictures/n04389033_34247.JPEG	146.85866379737854	0.4848620891571045
+146	123.78763890266418	response	0	k		144.0	/home/egter/Projects/stimuli/pictures/n04389033_34247.JPEG	147.3336968421936	
+147	123.79746794700623	picture	0		97.0	145.0	/home/egter/Projects/stimuli/pictures/n03089624_55361.JPEG	147.34352588653564	0.8125500679016113
+147	124.59609389305115	response	0	k		145.0	/home/egter/Projects/stimuli/pictures/n03089624_55361.JPEG	148.14215183258057	
+148	124.61001801490784	picture	0		80.0	146.0	/home/egter/Projects/stimuli/pictures/S_yt-eoASPwIAiHY_244.png	148.15607595443726	0.6735780239105225
+148	125.26433491706848	response	0	j		146.0	/home/egter/Projects/stimuli/pictures/S_yt-eoASPwIAiHY_244.png	148.8103928565979	
+149	125.28359603881836	picture	0		101.0	147.0	/home/egter/Projects/stimuli/pictures/R_S_ILSVRC2015_train_00411001.png	148.82965397834778	0.8402218818664551
+149	126.11273193359375	response	0	j		147.0	/home/egter/Projects/stimuli/pictures/R_S_ILSVRC2015_train_00411001.png	149.65878987312317	
+150	126.12381792068481	picture	0		86.0	148.0	/home/egter/Projects/stimuli/pictures/R_S_SPNvf6JCjGw_123.png	149.66987586021423	0.7152891159057617
+150	126.82930493354797	response	0	j		148.0	/home/egter/Projects/stimuli/pictures/R_S_SPNvf6JCjGw_123.png	150.3753628730774	
+151	126.83910703659058	picture	0		84.0	149.0	/home/egter/Projects/stimuli/pictures/S_yt-4i1b6NQ9NKs_5.png	150.38516497612	0.7013809680938721
+151	127.52934694290161	response	0	j		149.0	/home/egter/Projects/stimuli/pictures/S_yt-4i1b6NQ9NKs_5.png	151.07540488243103	
+152	127.54048800468445	picture	0		99.0	150.0	/home/egter/Projects/stimuli/pictures/S_video_inspire_uk_edinburgh_arthursseat_010.png	151.08654594421387	0.8264579772949219
+152	128.35434794425964	response	0	j		150.0	/home/egter/Projects/stimuli/pictures/S_video_inspire_uk_edinburgh_arthursseat_010.png	151.90040588378906	
+153	128.36694598197937	picture	0		98.0	151.0	/home/egter/Projects/stimuli/pictures/R_S_S003_C020_SDR_2K_AVC.png	151.9130039215088	0.8124010562896729
+153	129.17099595069885	response	0	j		151.0	/home/egter/Projects/stimuli/pictures/R_S_S003_C020_SDR_2K_AVC.png	152.71705389022827	
+154	129.17934703826904	picture	0		81.0	152.0	/home/egter/Projects/stimuli/pictures/S_yt-7NjoFHBdP7c_102.png	152.72540497779846	0.680804967880249
+154	129.83912992477417	response	0	j		152.0	/home/egter/Projects/stimuli/pictures/S_yt-7NjoFHBdP7c_102.png	153.3851878643036	
+155	129.8601520061493	picture	0		98.0	153.0	/home/egter/Projects/stimuli/pictures/n03933933_11785.JPEG	153.4062099456787	0.8191449642181396
+155	130.66425895690918	response	0	k		153.0	/home/egter/Projects/stimuli/pictures/n03933933_11785.JPEG	154.2103168964386	
+156	130.67929697036743	picture	0		96.0	154.0	/home/egter/Projects/stimuli/pictures/S_yt-4oT-2eGhmUo_102.png	154.22535490989685	0.8059859275817871
+156	131.46422600746155	response	0	j		154.0	/home/egter/Projects/stimuli/pictures/S_yt-4oT-2eGhmUo_102.png	155.01028394699097	
+157	131.48528289794922	picture	0		85.0	155.0	/home/egter/Projects/stimuli/pictures/S_yt-y6JsUW0eSW8_32.png	155.03134083747864	0.7189691066741943
+157	132.18768191337585	response	0	j		155.0	/home/egter/Projects/stimuli/pictures/S_yt-y6JsUW0eSW8_32.png	155.73373985290527	
+158	132.2042520046234	picture	0		72.0	156.0	/home/egter/Projects/stimuli/pictures/n03459775_6721.JPEG	155.75030994415283	0.6000149250030518
+158	132.79596996307373	response	0	k		156.0	/home/egter/Projects/stimuli/pictures/n03459775_6721.JPEG	156.34202790260315	
+159	132.80426692962646	picture	0		97.0	157.0	/home/egter/Projects/stimuli/pictures/S_yt-_BvMLZo0MG0_1226.png	156.35032486915588	0.8125560283660889
+159	133.60440492630005	response	0	j		157.0	/home/egter/Projects/stimuli/pictures/S_yt-_BvMLZo0MG0_1226.png	157.15046286582947	
+160	133.61682295799255	picture	0		139.0	158.0	/home/egter/Projects/stimuli/pictures/S_pexels-diva-plavalaguna-6985395_1.png	157.16288089752197	1.1598360538482666
+160	134.7627079486847	response	0	j		158.0	/home/egter/Projects/stimuli/pictures/S_pexels-diva-plavalaguna-6985395_1.png	158.3087658882141	
+161	134.77665901184082	picture	0		84.0	159.0	/home/egter/Projects/stimuli/pictures/n02814533_88199.JPEG	158.32271695137024	0.7086458206176758
+161	135.46416592597961	response	0	k		159.0	/home/egter/Projects/stimuli/pictures/n02814533_88199.JPEG	159.01022386550903	
+162	135.4853048324585	picture	0		72.0	160.0	/home/egter/Projects/stimuli/pictures/n02058221_4417.JPEG	159.03136277198792	0.6036791801452637
+162	136.07248187065125	response	0	k		160.0	/home/egter/Projects/stimuli/pictures/n02058221_4417.JPEG	159.61853981018066	
+163	136.08898401260376	picture	0		82.0	161.0	/home/egter/Projects/stimuli/pictures/R_S_yt-cM5PvgE7aJs_243.png	159.63504195213318	0.6876118183135986
+163	136.7626609802246	response	0	j		161.0	/home/egter/Projects/stimuli/pictures/R_S_yt-cM5PvgE7aJs_243.png	160.30871891975403	
+164	136.77659583091736	picture	0		91.0	162.0	/home/egter/Projects/stimuli/pictures/n02865351_5992.JPEG	160.32265377044678	0.7637901306152344
+164	137.52929186820984	response	0	k		162.0	/home/egter/Projects/stimuli/pictures/n02865351_5992.JPEG	161.07534980773926	
+165	137.5403859615326	picture	0		70.0	163.0	/home/egter/Projects/stimuli/pictures/n04238763_25524.JPEG	161.086443901062	0.5888550281524658
+165	138.1126470565796	response	0	k		163.0	/home/egter/Projects/stimuli/pictures/n04238763_25524.JPEG	161.658704996109	
+166	138.12924098968506	picture	0		100.0	164.0	/home/egter/Projects/stimuli/pictures/n03495258_5143.JPEG	161.67529892921448	0.8416569232940674
+166	138.95430088043213	response	0	k		164.0	/home/egter/Projects/stimuli/pictures/n03495258_5143.JPEG	162.50035881996155	
+167	138.97089791297913	picture	0		83.0	165.0	/home/egter/Projects/stimuli/pictures/n02114712_6162.JPEG	162.51695585250854	0.6944351196289062
+167	139.6474609375	response	0	k		165.0	/home/egter/Projects/stimuli/pictures/n02114712_6162.JPEG	163.19351887702942	
+168	139.66533303260803	picture	0		104.0	166.0	/home/egter/Projects/stimuli/pictures/S_yt-oAVThIM5Bhg_241.png	163.21139097213745	0.8681559562683105
+168	140.52095103263855	response	0	k		166.0	/home/egter/Projects/stimuli/pictures/S_yt-oAVThIM5Bhg_241.png	164.06700897216797	
+169	140.53348898887634	picture	0		68.0	167.0	/home/egter/Projects/stimuli/pictures/n02096177_10984.JPEG	164.07954692840576	0.5623989105224609
+169	141.08754992485046	response	0	k		167.0	/home/egter/Projects/stimuli/pictures/n02096177_10984.JPEG	164.63360786437988	
+170	141.0958878993988	picture	0		95.0	168.0	/home/egter/Projects/stimuli/pictures/R_S_yt-N7ztk2fa3Ls_137.png	164.64194583892822	0.7916610240936279
+170	141.87929582595825	response	0	j		168.0	/home/egter/Projects/stimuli/pictures/R_S_yt-N7ztk2fa3Ls_137.png	165.42535376548767	
+171	141.88754892349243	picture	0		100.0	169.0	/home/egter/Projects/stimuli/pictures/R_S_yt-b7bIulV49DQ_81.png	165.43360686302185	0.8333170413970947
+171	142.71263885498047	response	0	j		169.0	/home/egter/Projects/stimuli/pictures/R_S_yt-b7bIulV49DQ_81.png	166.2586967945099	
+172	142.72086596488953	picture	0		140.0	170.0	/home/egter/Projects/stimuli/pictures/S_yt-AJypa57HKqM_28.png	166.26692390441895	1.166679859161377
+172	143.8792929649353	response	0	k		170.0	/home/egter/Projects/stimuli/pictures/S_yt-AJypa57HKqM_28.png	167.42535090446472	
+173	143.8875458240509	picture	0		58.0	171.0	/home/egter/Projects/stimuli/pictures/ILSVRC2012_test_00098427.JPEG	167.43360376358032	0.4861421585083008
+173	144.3626549243927	response	0	k		171.0	/home/egter/Projects/stimuli/pictures/ILSVRC2012_test_00098427.JPEG	167.90871286392212	
+174	144.3736879825592	picture	0		78.0	172.0	/home/egter/Projects/stimuli/pictures/n04141327_2397.JPEG	167.91974592208862	0.6528310775756836
+174	145.01259303092957	response	0	k		172.0	/home/egter/Projects/stimuli/pictures/n04141327_2397.JPEG	168.55865097045898	
+175	145.0265190601349	picture	0		93.0	173.0	/home/egter/Projects/stimuli/pictures/n04347754_265.JPEG	168.5725769996643	0.777662992477417
+175	145.7959749698639	response	0	k		173.0	/home/egter/Projects/stimuli/pictures/n04347754_265.JPEG	169.3420329093933	
+176	145.8041820526123	picture	0		71.0	174.0	/home/egter/Projects/stimuli/pictures/n03100240_8232.JPEG	169.35023999214172	0.5974087715148926
+176	146.38757586479187	response	0	k		174.0	/home/egter/Projects/stimuli/pictures/n03100240_8232.JPEG	169.9336338043213	
+177	146.4015908241272	picture	0		84.0	175.0	/home/egter/Projects/stimuli/pictures/S_ILSVRC2015_train_00753000.png	169.94764876365662	0.708219051361084
+177	147.0959348678589	response	0	k		175.0	/home/egter/Projects/stimuli/pictures/S_ILSVRC2015_train_00753000.png	170.6419928073883	
+178	147.10980987548828	picture	0		77.0	176.0	/home/egter/Projects/stimuli/pictures/S_ILSVRC2015_train_00682005.png	170.6558678150177	0.6459610462188721
+178	147.7459259033203	response	0	j		176.0	/home/egter/Projects/stimuli/pictures/S_ILSVRC2015_train_00682005.png	171.29198384284973	
+179	147.75577092170715	picture	0		74.0	177.0	/home/egter/Projects/stimuli/pictures/n03977966_801.JPEG	171.30182886123657	0.6178240776062012
+179	148.36257791519165	response	0	k		177.0	/home/egter/Projects/stimuli/pictures/n03977966_801.JPEG	171.90863585472107	
+180	148.37359499931335	picture	0		80.0	178.0	/home/egter/Projects/stimuli/pictures/n01530575_6375.JPEG	171.91965293884277	0.6667330265045166
+180	149.02922105789185	response	0	k		178.0	/home/egter/Projects/stimuli/pictures/n01530575_6375.JPEG	172.57527899742126	
+181	149.04032802581787	picture	0		116.0	179.0	/home/egter/Projects/stimuli/pictures/S_yt-7n_ndwObq_54.png	172.5863859653473	0.9652519226074219
+181	149.99594593048096	response	0	k		179.0	/home/egter/Projects/stimuli/pictures/S_yt-7n_ndwObq_54.png	173.54200387001038	
+182	150.0055799484253	stim	0		304.0			173.5516378879547	2.5347049236297607
+182	152.52923583984375	response	0	space				176.07529377937317	
