@@ -402,20 +402,20 @@ class HCPMovieELSessionEyetracking(PylinkEyetrackerSession):
                 + self.settings["stimuli"].get("movie_files")[i]
                 for i in range(len(self.settings["stimuli"].get("movie_files")))
             ]
-        elif os.path.exists(self.settings['paths'].get('stimuli_path_spinoza1')):
+        elif os.path.exists(self.settings['paths'].get('oldstimuli_path_spinoza1')):
             self.movies = [
                 "blank"
                 if self.settings["stimuli"].get("movie_files")[i] == "blank"
-                else self.settings["paths"].get("stimuli_path_spinoza1")
+                else self.settings["paths"].get("oldstimuli_path_spinoza1")
                 + "/"
                 + self.settings["stimuli"].get("movie_files")[i]
                 for i in range(len(self.settings["stimuli"].get("movie_files")))
             ]
-        elif os.path.exists(self.settings['paths'].get('stimuli_path_spinoza2')):
+        elif os.path.exists(self.settings['paths'].get('oldstimuli_path_spinoza2')):
             self.movies = [
                 "blank"
                 if self.settings["stimuli"].get("movie_files")[i] == "blank"
-                else self.settings["paths"].get("stimuli_path_spinoza2")
+                else self.settings["paths"].get("oldstimuli_path_spinoza2")
                 + "/"
                 + self.settings["stimuli"].get("movie_files")[i]
                 for i in range(len(self.settings["stimuli"].get("movie_files")))
