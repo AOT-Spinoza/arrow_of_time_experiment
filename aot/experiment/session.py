@@ -103,7 +103,7 @@ class HCPMovieELSession(PylinkEyetrackerSession):
 
         # we dont need this for lab computer but required by my laptop????
         # check whether the program is running on the my laptop
-        if os.path.exists("/Users/shufanzhang/Documents/PhD/Arrow_of_time"):
+        if os.path.exists(self.settings["paths"].get("stimuli_path")):  
             self.pix_per_deg = self.win.size[0] / self.win.monitor.getWidth()
 
         originalsize = self.settings["stimuli"].get("movie_size_pix")
@@ -143,7 +143,7 @@ class HCPMovieELSession(PylinkEyetrackerSession):
         self.n_trials = len(
             self.settings["stimuli"].get("movie_files")
         )  # include the movdies and blank trials
-        if os.path.exists("/Users/shufanzhang/Documents/PhD/Arrow_of_time"):
+        if os.path.exists(self.settings["paths"].get("stimuli_path")):
             self.movies = [
                 "blank"
                 if self.settings["stimuli"].get("movie_files")[i] == "blank"
@@ -393,7 +393,7 @@ class HCPMovieELSessionEyetracking(PylinkEyetrackerSession):
         self.n_trials = len(
             self.settings["stimuli"].get("movie_files")
         )  # include the movdies and blank trials
-        if os.path.exists("/Users/shufanzhang/Documents/PhD/Arrow_of_time"):
+        if os.path.exists(self.settings["paths"].get("stimuli_path")):
             self.movies = [
                 "blank"
                 if self.settings["stimuli"].get("movie_files")[i] == "blank"
@@ -804,10 +804,11 @@ class HCPMovieELSessionMemory(PylinkEyetrackerSession):
         )  # initialize parent class!
 
         # check whether the program is running on the my laptop
-        if os.path.exists("/Users/shufanzhang/Documents/PhD"):
+        if os.path.exists(self.settings["paths"].get("stimuli_newpicture_path_laptop")):
             self.pix_per_deg = self.win.size[0] / self.win.monitor.getWidth()
-        elif os.path.exists("/home/egter/Projects/arrow_of_time_experiment/aot"):
+        elif os.path.exists(self.settings["paths"].get("stimuli_picture_path_sophie")):
             self.pix_per_deg = self.win.size[0] / self.win.monitor.getWidth()
+
 
         self.fixation = FixationBullsEye(
             win=self.win,
@@ -838,16 +839,30 @@ class HCPMovieELSessionMemory(PylinkEyetrackerSession):
         )  # include the movdies and blank trials
 
         # detect location
-        if os.path.exists("/Users/shufanzhang/Documents/PhD"):
+        if os.path.exists(self.settings["paths"].get("stimuli_newpicture_path_laptop")):
             self.pictures = [
-                self.settings["paths"].get("stimuli_picture_path_laptop")
+                self.settings["paths"].get("stimuli_newpicture_path_laptop")
                 + "/"
                 + self.settings["stimuli"].get("picture_files")[i]
                 for i in range(len(self.settings["stimuli"].get("picture_files")))
             ]
-        elif os.path.exists("/home/egter/Projects/arrow_of_time_experiment/aot"):
+        elif os.path.exists(self.settings["paths"].get("stimuli_picture_path_sophie")):
             self.pictures = [
                 self.settings["paths"].get("stimuli_picture_path_sophie")
+                + "/"
+                + self.settings["stimuli"].get("picture_files")[i]
+                for i in range(len(self.settings["stimuli"].get("picture_files")))
+            ]
+        elif os.path.exists(self.settings['paths'].get('stimuli_newpicture_path_spinoza1')):
+            self.pictures = [
+                self.settings["paths"].get("stimuli_newpicture_path_spinoza1")
+                + "/"
+                + self.settings["stimuli"].get("picture_files")[i]
+                for i in range(len(self.settings["stimuli"].get("picture_files")))
+            ]
+        elif os.path.exists(self.settings['paths'].get('stimuli_newpicture_path_spinoza2')):
+            self.pictures = [
+                self.settings["paths"].get("stimuli_newpicture_path_spinoza2")
                 + "/"
                 + self.settings["stimuli"].get("picture_files")[i]
                 for i in range(len(self.settings["stimuli"].get("picture_files")))
