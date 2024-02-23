@@ -24,12 +24,14 @@ subject, ses, run, eyelink = (
     cmd_args.ses,
     cmd_args.run,
     cmd_args.eyelink,
-) 
+)
 
 
 def main():
-    settings_dir = base_dir / core_settings["paths"]["settings_path"] / "memory_main"
-    output_dir = base_dir / core_settings["paths"]["output_path"] / "memory_main"
+    settings_dir = base_dir / \
+        core_settings["paths"]["settings_path"] / "memory_main"
+    output_dir = base_dir / \
+        core_settings["paths"]["output_path"] / "memory_main"
     output_str = f"sub-{str(subject).zfill(2)}_ses-{str(ses).zfill(2)}_run-{str(run).zfill(2)}_task-memory"
     runs_input_yaml = settings_dir / \
         f"experiment_settings_sub_{str(subject).zfill(2)}_ses_{str(ses).zfill(2)}_run_{str(run).zfill(2)}.yml"
@@ -47,7 +49,5 @@ def main():
     session_object.close()
 
 
-
 if __name__ == "__main__":
     main()
-    
