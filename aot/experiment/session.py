@@ -1268,14 +1268,14 @@ class HCPMovieELSessionRatio(PylinkEyetrackerSession):
         )
 
     def create_trials(self):
-        """Creates trials (ideally before running your session!)"""
+        """Creates trials (ideally before running your session!)""" 
 
         instruction_trial = InstructionTrial(
             session=self,
             trial_nr=0,
             phase_durations=[np.inf],
             txt="is the fixation point at the center of your view? is the upper edge of the picture at the upper edge of your view?", 
-            keys=["space"],
+            keys=["space"], 
         )
 
         dummy_trial = DummyWaiterTrial(
