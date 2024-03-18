@@ -21,9 +21,9 @@ run_number = core_settings["various"]["run_number"]
 
 
 bold_data_root = "/tank/shared/2022/arrow_of_time/derivatives/fmripreps/aotfull_preprocs/fullpreprocFinal_3blanksstc"
-output_root = str(base_dir / "analysis/glmsingle/outputs/mainexp")
+output_root = "/tank/shared/2024/visual/AOT/derivatives/glmsingle/mainexp"
 
-design_output_root = str(base_dir / "analysis/glmsingle/outputs/design")
+design_output_root = "/tank/shared/2024/visual/AOT/derivatives/glmsingle/mainexp/design"
 
 
 def movie_conditions_dict():  # include blank condition as 0
