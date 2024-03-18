@@ -1150,3 +1150,188 @@ class HCPMovieELSessionLabeling(HCPMovieELSession):
             )
 
         self.close()
+
+
+
+
+
+
+
+
+
+
+class HCPMovieELSessionRatio(PylinkEyetrackerSession):
+    def __init__(
+        self,
+        output_str: str,
+        output_dir: Path,
+        core_settings_file: Path,
+        run_settings_file: Path,
+        eyetracker_on: bool = True,
+    ):
+        super().__init__(
+            output_str,
+            output_dir=output_dir,
+            settings_file=core_settings_file,
+            eyetracker_on=eyetracker_on,
+        )  # initialize parent class!
+
+        # check whether the program is running on the my laptop
+        if os.path.exists(self.settings["paths"].get("stimuli_newpicture_path_laptop")):
+            self.pix_per_deg = self.win.size[0] / self.win.monitor.getWidth()
+        elif os.path.exists(self.settings["paths"].get("stimuli_picture_path_sophie")):
+            self.pix_per_deg = self.win.size[0] / self.win.monitor.getWidth()
+
+
+        originalsize = self.settings["stimuli"].get("movie_size_pix")
+        shrink_factor = self.settings["stimuli"].get("shrink_factor")
+        display_size = [l*shrink_factor for l in originalsize]
+        self.shiftedpos = (0, -originalsize[1]*(1-shrink_factor)/2)
+
+        self.fixation = FixationBullsEye(
+            win=self.win,
+            outer_radius=max(self.win.size),
+            line_color=self.settings["stimuli"].get("fix_line_color"),
+            line_width=self.settings["stimuli"].get("fix_line_width"),
+            dot_color=self.settings["stimuli"].get("fix_fill_color"),
+            dot_size=self.settings["stimuli"].get(
+                "fix_size") * self.pix_per_deg,
+            dot_perimeter_size=self.settings["stimuli"].get(
+                "fix_perimeter_size")
+            * self.pix_per_deg,
+            dot_perimeter_smoothness=self.settings["stimuli"].get(
+                "fix_perimeter_smooth"
+            ),
+            pos=self.shiftedpos
+        )
+        self.grades = {}
+        picture_files = yaml.load(
+            open(run_settings_file), Loader=yaml.FullLoader)
+        self.settings["stimuli"].update(picture_files["stimuli"])
+        self.win._monitorFrameRate = self.settings["various"].get(
+            "monitor_framerate"
+        )  # 120? yaml?
+        # movie_trial_nr is in range(self.n_trials) that comes from the number of movies listed in the yaml file
+        # but not all of them are actually movies, some are blank trials, we have to deal with that
+        self.n_trials = len(
+            self.settings["stimuli"].get("picture_files")
+        )  # include the movdies and blank trials
+
+        # detect location
+        if os.path.exists(self.settings["paths"].get("stimuli_newpicture_path_laptop")):
+            self.pictures = [
+                self.settings["paths"].get("stimuli_newpicture_path_laptop")
+                + "/"
+                + self.settings["stimuli"].get("picture_files")[i]
+                for i in range(len(self.settings["stimuli"].get("picture_files")))
+            ]
+        elif os.path.exists(self.settings["paths"].get("stimuli_picture_path_sophie")):
+            self.pictures = [
+                self.settings["paths"].get("stimuli_picture_path_sophie")
+                + "/"
+                + self.settings["stimuli"].get("picture_files")[i]
+                for i in range(len(self.settings["stimuli"].get("picture_files")))
+            ]
+        elif os.path.exists(self.settings['paths'].get('stimuli_newpicture_path_spinoza1')):
+            self.pictures = [
+                self.settings["paths"].get("stimuli_newpicture_path_spinoza1")
+                + "/"
+                + self.settings["stimuli"].get("picture_files")[i]
+                for i in range(len(self.settings["stimuli"].get("picture_files")))
+            ]
+        elif os.path.exists(self.settings['paths'].get('stimuli_newpicture_path_spinoza2')):
+            self.pictures = [
+                self.settings["paths"].get("stimuli_newpicture_path_spinoza2")
+                + "/"
+                + self.settings["stimuli"].get("picture_files")[i]
+                for i in range(len(self.settings["stimuli"].get("picture_files")))
+            ]
+
+        print(self.pictures)
+
+        # count the time for loading the movies
+        start = time.perf_counter()
+        # this self.movie_stims is the list that accessed by the trial class by using movie_trial_nr
+        self.picture_stims = [
+            # use the picture stim class
+            ImageStim(
+                self.win,
+                image=picture,
+                size=display_size,
+                pos=self.shiftedpos
+            )
+            for picture in self.pictures  # movie is movie file path name
+        ]
+
+        print(
+            f"loading {len(self.pictures)} movies took {time.perf_counter()-start} seconds"
+        )
+
+    def create_trials(self):
+        """Creates trials (ideally before running your session!)""" 
+
+        instruction_trial = InstructionTrial(
+            session=self,
+            trial_nr=0,
+            phase_durations=[np.inf],
+            txt="is the fixation point at the center of your view? is the upper edge of the picture at the upper edge of your view?", 
+            keys=["space"], 
+        )
+
+        dummy_trial = DummyWaiterTrial(
+            session=self,
+            trial_nr=1,
+            phase_durations=[
+                np.inf, self.settings["design"].get("start_duration")],
+            txt="Waiting for experiment to start",
+        )
+
+        self.trials = [instruction_trial]  # , dummy_trial]
+        # self.trials = []
+
+        for picture_trial_nr in range(self.n_trials):
+            trial = HCPMovieELTrialMemory(
+                session=self,
+                trial_nr=picture_trial_nr+2,
+                phase_durations=[
+                    np.inf,
+                ],
+                phase_names=["picture"],
+                parameters={
+                    "picture_index": picture_trial_nr,
+                    "picture_file": self.pictures[picture_trial_nr],
+                },
+            )
+            self.trials.append(trial)
+
+        outro_trial = OutroTrial(
+            session=self,
+            trial_nr=len(self.trials) + 1,
+            phase_durations=[self.settings["design"].get("end_duration")],
+            txt="",
+        )
+        self.trials.append(outro_trial)
+
+    def create_trial(self):
+        pass
+
+    def run(self):
+        """Runs experiment."""
+        # self.create_trials()  # create them *before* running!
+
+        if self.eyetracker_on:
+            self.calibrate_eyetracker()
+
+        self.start_experiment()
+
+        if self.eyetracker_on:
+            self.start_recording_eyetracker()
+
+        for trial in self.trials:
+            trial.run()
+            save_grades_to_csv(
+                self.grades, os.path.join(
+                    self.output_dir, f"{self.output_str}_memory")
+            )
+
+        self.close()
