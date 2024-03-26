@@ -20,6 +20,7 @@ total_video_number = core_settings["various"]["total_video_number"]
 
 
 bold_data_root = "/tank/shared/2024/visual/AOT/derivatives/fmripreps/aotfull_preprocs/fullpreproc1"
+bold_data_root_nonnordic = "/tank/shared/2024/visual/AOT/derivatives/fmripreps/aotfull_preprocs/fullpreproc_nonnordic"
 output_root = "/tank/shared/2024/visual/AOT/derivatives/glmsingle/mainexp"
 
 design_output_root = "/tank/shared/2024/visual/AOT/derivatives/glmsingle/mainexp/design"
@@ -180,34 +181,52 @@ def index_to_bold_data_fsaverage(sub, ses, run):  # input: int,int,int
     return cur_data
 
 
-def index_to_bold_data_T1W(sub, ses, run):  # input: int,int,int
+def index_to_bold_data_T1W(sub, ses, run, nordictype="nordicstc"):  # input: int,int,int
     # sample : /tank/shared/2022/arrow_of_time/aotfull_preprocs/fullpreproc3/sub-001/ses-01/func/sub-001_ses-01_task-AOT_run-1_space-T1w_desc-preproc_bold.nii.gz
     sub = str(sub)
     ses = str(ses)
     run = str(run)
-    bold_path = (
-        bold_data_root
-        + "/"
-        + "sub-"
-        + sub.zfill(3)
-        + "/ses-"
-        + ses.zfill(2)
-        + "/func/"
-        + "sub-"
-        + sub.zfill(3)
-        + "_ses-"
-        + ses.zfill(2)
-        + "_task-AOT_rec-nordicstc_run-"
-        + run
-        + "_space-T1w_desc-preproc_part-mag_bold.nii.gz"
-    )
+    if nordictype == "nordicstc":
+        bold_path = (
+            bold_data_root
+            + "/"
+            + "sub-"
+            + sub.zfill(3)
+            + "/ses-"
+            + ses.zfill(2)
+            + "/func/"
+            + "sub-"
+            + sub.zfill(3)
+            + "_ses-"
+            + ses.zfill(2)
+            + "_task-AOT_rec-nordicstc_run-"
+            + run
+            + "_space-T1w_desc-preproc_part-mag_bold.nii.gz"
+        )
+    elif nordictype == "nonnordicstc":
+        bold_path = (
+            bold_data_root_nonnordic
+            + "/"
+            + "sub-"
+            + sub.zfill(3)
+            + "/ses-"
+            + ses.zfill(2)
+            + "/func/"
+            + "sub-"
+            + sub.zfill(3)
+            + "_ses-"
+            + ses.zfill(2)
+            + "_task-AOT_rec-nonnordicstc_run-"
+            + run
+            + "_space-T1w_desc-preproc_part-mag_bold.nii.gz"
+        )
     img = nib.load(bold_path)
     img_data = img.get_fdata()
     print("bold data shape:", img_data.shape)
     return img_data
 
 
-def construct_bold_for_one_session(sub, ses, datatype):  # fsnative or §T1W
+def construct_bold_for_one_session(sub, ses, datatype, nordictype = "nordicstc"):  # fsnative or §T1W
     list_of_bold_data = []
     if datatype == "fsaverage":
         for run in range(1, run_number + 1):
@@ -215,7 +234,7 @@ def construct_bold_for_one_session(sub, ses, datatype):  # fsnative or §T1W
         return list_of_bold_data
     elif datatype == "T1W":
         for run in range(1, run_number + 1):
-            list_of_bold_data.append(index_to_bold_data_T1W(sub, ses, run))
+            list_of_bold_data.append(index_to_bold_data_T1W(sub, ses, run, nordictype))
         return list_of_bold_data
 
 
@@ -238,7 +257,7 @@ def merge_bold_data(
     return cur_data
 
 
-def construct_output_dir(sub, ses, data_type="T1W", suffix=""):  # input: int,int
+def construct_output_dir(sub, ses, data_type="T1W", nordictype = "nordicstc", suffix=""):  # input: int,int
     output_dir = (
         output_root
         + "/"
@@ -249,6 +268,8 @@ def construct_output_dir(sub, ses, data_type="T1W", suffix=""):  # input: int,in
         + "_"
         + data_type
         + "_"
+        + nordictype
+        + "_"
         + suffix
     )
     if not os.path.exists(output_dir):
@@ -256,7 +277,7 @@ def construct_output_dir(sub, ses, data_type="T1W", suffix=""):  # input: int,in
     return output_dir
 
 
-def construct_figuredir(sub, ses, data_type="T1W", suffix=""):  # input: int,int
+def construct_figuredir(sub, ses, data_type="T1W", nordictype = "nordicstc", suffix=""):  # input: int,int
     figure_dir = (
         output_root
         + "/"
@@ -267,6 +288,8 @@ def construct_figuredir(sub, ses, data_type="T1W", suffix=""):  # input: int,int
         + "_"
         + data_type
         + "_"
+        + nordictype
+        + "_"
         + suffix
         + "/figures"
     )
@@ -276,12 +299,12 @@ def construct_figuredir(sub, ses, data_type="T1W", suffix=""):  # input: int,int
 
 
 def apply_glmsingle_for_one_session(
-    sub, ses, datatype="T1W", suffix="", outputtype=[1, 1, 1, 1], shift=0
+    sub, ses, datatype="T1W", nordictype = "nordicstc",suffix="", outputtype=[1, 1, 1, 1], shift=0
 ):
-    bolds = construct_bold_for_one_session(sub, ses, datatype)
+    bolds = construct_bold_for_one_session(sub, ses, datatype, nordictype)
     designs = construct_design_for_one_session(sub, ses, shift)
-    output_dir = construct_output_dir(sub, ses, datatype, suffix)
-    figuredir = construct_figuredir(sub, ses, datatype, suffix)
+    output_dir = construct_output_dir(sub, ses, datatype, nordictype,suffix)
+    figuredir = construct_figuredir(sub, ses, datatype, nordictype,suffix)
     opt = dict()
     # set important fields for completeness (but these would be enabled by default)
     opt["wantlibrary"] = 1
@@ -318,8 +341,16 @@ if __name__ == "__main__":
         sub=1,
         ses=1,
         datatype="T1W",
-        suffix="mainfull_3blanksstc_shift_0",
+        nordictype="nonnordicstc",
+        suffix="mainfull",
         shift=0,
     )
-
+    apply_glmsingle_for_one_session(
+        sub=1,
+        ses=2,  
+        datatype="T1W",
+        nordictype="nonnordicstc",
+        suffix="mainfull",
+        shift=0,
+    )
 
