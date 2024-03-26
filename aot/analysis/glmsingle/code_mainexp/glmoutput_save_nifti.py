@@ -25,6 +25,8 @@ glmsingle_output_root = Path("/tank/shared/2024/visual/AOT/derivatives/glmsingle
 design_output_root =  "/tank/shared/2024/visual/AOT/derivatives/glmsingle/mainexp/design"
 bold_data_root = "/tank/shared/2024/visual/AOT/derivatives/fmripreps/aotfull_preprocs/fullpreproc1" 
 
+bold_data_root_nonnordic = "/tank/shared/2024/visual/AOT/derivatives/fmripreps/aotfull_preprocs/fullpreproc_nonnordic"   
+
 
 def get_affine_matrix(sub, ses):
     """
@@ -111,7 +113,6 @@ def save_niftis_for_one_folder(glm_output_folder, sub, ses):
             save_nifti_for_one_type(file)
         except:
             print("error saving niftis for file: " + str(file))
-        
 
 
 def save_niftis_for_all_folders(root_folder):
