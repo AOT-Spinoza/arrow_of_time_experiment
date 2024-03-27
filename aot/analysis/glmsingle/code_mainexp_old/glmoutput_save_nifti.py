@@ -20,12 +20,10 @@ video_db_path = base_dir / "data/videos/database_originals.tsv"
 video_db = pd.read_csv(video_db_path, sep="\t")
 run_number = core_settings["various"]["run_number"]
 
+glmsingle_output_root = base_dir / "analysis/glmsingle/outputs/mainexp"
+design_output_root = base_dir / "analysis/glmsingle/outputs/design"
 
-glmsingle_output_root = Path("/tank/shared/2024/visual/AOT/derivatives/glmsingle/mainexp") 
-design_output_root =  "/tank/shared/2024/visual/AOT/derivatives/glmsingle/mainexp/design"
-bold_data_root = "/tank/shared/2024/visual/AOT/derivatives/fmripreps/aotfull_preprocs/fullpreproc1" 
-
-bold_data_root_nonnordic = "/tank/shared/2024/visual/AOT/derivatives/fmripreps/aotfull_preprocs/fullpreproc_nonnordic"   
+bold_data_root = "/tank/shared/2022/arrow_of_time/derivatives/fmripreps/aotfull_preprocs/fullpreprocFinal_nofmriprepstc"
 
 
 def get_affine_matrix(sub, ses):
@@ -48,7 +46,7 @@ def get_affine_matrix(sub, ses):
         + str(sub).zfill(3)
         + "_ses-"
         + str(ses).zfill(2)
-        + "_task-AOT_rec-nordicstc_run-1_space-T1w_part-mag_boldref.nii.gz"
+        + "_task-AOT_run-1_space-T1w_boldref.nii.gz"
     )
     print("affine matrix source path:", affine_matrix_path)
     affine_matrix = nib.load(affine_matrix_path).affine
@@ -58,8 +56,6 @@ def get_affine_matrix(sub, ses):
 def get_sub_ses_number_from_glm_output_folder(glm_output_folder):
     sub_id = re.search("sub-\d+", glm_output_folder)  # .group()
     ses_id = re.search("ses-\d+", glm_output_folder)  # .group()
-    if sub_id == None or ses_id == None:
-        return None, None
     sub_id = sub_id.group()
     ses_id = ses_id.group()
     sub_id = int(sub_id.split("-")[1])
@@ -87,17 +83,13 @@ def save_niftis_for_one_folder(glm_output_folder, sub, ses):
             data = test_data[key]
             # make the data nifti
             affine = get_affine_matrix(sub, ses)
-
             try:
                 data = nib.Nifti1Image(data, affine)  # np.eye(4))
                 nib.save(data, nifti_file_name)
             except:
-                #print error information
-                
                 print(
-                    "error saving nifti file: " + nifti_file_name + " for key: " + key,
+                    "error saving nifti file: " + nifti_file_name + " for key: " + key
                 )
-            
 
     # get all the files in the folder
     filenames = [
@@ -108,7 +100,6 @@ def save_niftis_for_one_folder(glm_output_folder, sub, ses):
     ]
     for file in filenames:
         file = glm_output_folder / file
-        
         try:
             save_nifti_for_one_type(file)
         except:
@@ -120,12 +111,19 @@ def save_niftis_for_all_folders(root_folder):
     folders = os.listdir(root_folder)
     for folder in folders:
         sub, ses = get_sub_ses_number_from_glm_output_folder(folder)
-        if sub ==None or ses == None:
-            #the case that the folder is not a output folder (like a design folder)
-            continue
         folder = root_folder / folder
         save_niftis_for_one_folder(folder, sub, ses)
 
 
 if __name__ == "__main__":
-    save_niftis_for_all_folders(glmsingle_output_root)
+    # save_niftis_for_all_folders(glmsingle_output_root)
+    save_niftis_for_one_folder(
+        Path("/tank/shared/2022/arrow_of_time/arrow_of_time_exp/aot/analysis/glmsingle/outputs/mainexp/sub-001_ses-01_T1W_nofmriprepstc_3blanksstc_shift_0"),
+        1,
+        1,
+    )
+    save_niftis_for_one_folder(
+        Path("/tank/shared/2022/arrow_of_time/arrow_of_time_exp/aot/analysis/glmsingle/outputs/mainexp/sub-002_ses-01_T1W_nofmriprepstc_3blankssstc_shift_0"),
+        2,
+        1,
+    )
