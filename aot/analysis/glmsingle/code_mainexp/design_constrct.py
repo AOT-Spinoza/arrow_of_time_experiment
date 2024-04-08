@@ -8,6 +8,7 @@ from pathlib import Path
 from glmsingle.glmsingle import GLM_single
 import copy
 import aot
+from aot.analysis.glmsingle.code_mainexp.glmoutput_save_nifti import save_niftis_for_one_folder
 
 base_dir = Path(aot.__path__[0])
 core_expt_yaml_path = base_dir / "experiment/core_exp_settings.yml"
@@ -299,7 +300,7 @@ def construct_figuredir(sub, ses, data_type="T1W", nordictype = "nordicstc", suf
 
 
 def apply_glmsingle_for_one_session(
-    sub, ses, datatype="T1W", nordictype = "nordicstc",suffix="", outputtype=[1, 1, 1, 1], shift=0
+    sub, ses, datatype="T1W", nordictype = "nordicstc",suffix="", outputtype=[1, 1, 1, 1], shift=0,save_nifti=True
 ):
     bolds = construct_bold_for_one_session(sub, ses, datatype, nordictype)
     designs = construct_design_for_one_session(sub, ses, shift)
@@ -334,23 +335,20 @@ def apply_glmsingle_for_one_session(
         outputdir=output_dir,
         figuredir=figuredir,
     )
+    # save the niftis
+    if save_nifti:
+        save_niftis_for_one_folder(output_dir, sub, ses)
 
 
 if __name__ == "__main__":
     apply_glmsingle_for_one_session(
-        sub=1,
+        sub=2,
         ses=1,
         datatype="T1W",
-        nordictype="nonnordicstc",
+        nordictype="nordicstc",
         suffix="mainfull",
         shift=0,
     )
-    apply_glmsingle_for_one_session(
-        sub=1,
-        ses=2,  
-        datatype="T1W",
-        nordictype="nonnordicstc",
-        suffix="mainfull",
-        shift=0,
-    )
+
+
 
