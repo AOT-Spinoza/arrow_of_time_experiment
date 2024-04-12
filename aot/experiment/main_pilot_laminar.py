@@ -17,10 +17,10 @@ parser.add_argument("--ses", default=1, nargs="?")
 parser.add_argument("--run", default=1, nargs="?")
 #only sub1 and ses1, run 1-20
 
-parser.add_argument("--eyelink", default=True, action=argparse.BooleanOptionalAction)
+parser.add_argument("--eyelink", default=False, action=argparse.BooleanOptionalAction)
 
 
-cmd_args = parser.parse_args()
+cmd_args = parser.parse_args()  
 subject, ses, run, eyelink = (
     cmd_args.subject,
     cmd_args.ses,
