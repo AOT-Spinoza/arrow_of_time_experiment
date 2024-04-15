@@ -14,13 +14,14 @@ core_settings = yaml.load(open(core_expt_yaml_path), Loader=yaml.FullLoader)
 parser = argparse.ArgumentParser()
 parser.add_argument("--subject", default=1, nargs="?")
 parser.add_argument("--ses", default=1, nargs="?")
-parser.add_argument("--run", default=2, nargs="?")
-#only sub1 and ses1, run 1-20
+parser.add_argument("--run", default=1, nargs="?")
+# only sub1 and ses1, run 1-20
 
-parser.add_argument("--eyelink", default=False, action=argparse.BooleanOptionalAction)
+parser.add_argument("--eyelink", default=False,
+                    action=argparse.BooleanOptionalAction)
 
 
-cmd_args = parser.parse_args()  
+cmd_args = parser.parse_args()
 subject, ses, run, eyelink = (
     cmd_args.subject,
     cmd_args.ses,
@@ -30,8 +31,10 @@ subject, ses, run, eyelink = (
 
 
 def main():
-    settings_dir = base_dir / core_settings["paths"]["settings_path"] / "pilot_laminar"
-    output_dir = base_dir / core_settings["paths"]["output_path"] / "pilot_laminar"
+    settings_dir = base_dir / \
+        core_settings["paths"]["settings_path"] / "pilot_laminar"
+    output_dir = base_dir / \
+        core_settings["paths"]["output_path"] / "pilot_laminar"
     output_str = f"sub-{str(subject).zfill(2)}_ses-{str(ses).zfill(2)}_run-{str(run).zfill(2)}_task-movie"
     runs_input_yaml = settings_dir / \
         f"run_{str(run).zfill(2)}.yml"
