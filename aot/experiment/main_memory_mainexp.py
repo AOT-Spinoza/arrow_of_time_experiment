@@ -12,7 +12,7 @@ core_settings = yaml.load(open(core_expt_yaml_path), Loader=yaml.FullLoader)
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--subject", default=1, nargs="?")
-parser.add_argument("--ses", default=8, nargs="?")
+parser.add_argument("--ses", default=9, nargs="?")
 parser.add_argument("--run", default=1, nargs="?")
 
 parser.add_argument("--eyelink", default=True,
