@@ -70,6 +70,7 @@ def get_sub_ses_number_from_glm_output_folder(glm_output_folder):
 
 
 def save_niftis_for_one_folder(glm_output_folder, sub, ses):
+    glm_output_folder = Path(glm_output_folder)
     def save_nifti_for_one_type(file):  # input is a complete path to a file
         # make a folder for this type of nifti with the same name as the file but without the .npy
         save_folder_path = str(file).split(".")[0]

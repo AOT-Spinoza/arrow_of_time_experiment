@@ -20,7 +20,7 @@ run_number = core_settings["various"]["run_number"]
 total_video_number = core_settings["various"]["total_video_number"]
 
 
-bold_data_root = "/tank/shared/2024/visual/AOT/derivatives/fmripreps/aotfull_preprocs/fullpreproc1"
+bold_data_root = "/tank/shared/2024/visual/AOT/derivatives/fmripreps/aotfull_preprocs/fullpreproc_forcesyn"
 bold_data_root_nonnordic = "/tank/shared/2024/visual/AOT/derivatives/fmripreps/aotfull_preprocs/fullpreproc_nonnordic"
 output_root = "/tank/shared/2024/visual/AOT/derivatives/glmsingle/mainexp"
 
@@ -341,14 +341,53 @@ def apply_glmsingle_for_one_session(
 
 
 if __name__ == "__main__":
+    '''
     apply_glmsingle_for_one_session(
         sub=2,
-        ses=1,
+        ses=2,
         datatype="T1W",
         nordictype="nordicstc",
         suffix="mainfull",
         shift=0,
     )
-
-
-
+    '''
+    apply_glmsingle_for_one_session(
+        sub=1,
+        ses=3,
+        datatype="T1W",
+        nordictype="nordicstc",
+        suffix="mainfull",
+        shift=0,
+    )
+    apply_glmsingle_for_one_session(
+        sub=1,
+        ses=7,
+        datatype="T1W",
+        nordictype="nordicstc",
+        suffix="mainfull",
+        shift=0,
+    )
+    apply_glmsingle_for_one_session(
+        sub=1,
+        ses=8,
+        datatype="T1W",
+        nordictype="nordicstc",
+        suffix="mainfull",
+        shift=0,
+    )
+    apply_glmsingle_for_one_session(
+        sub=1,
+        ses=9,
+        datatype="T1W",
+        nordictype="nordicstc",
+        suffix="mainfull",
+        shift=0,
+    )
+    apply_glmsingle_for_one_session(
+        sub=1,
+        ses=10,
+        datatype="T1W",
+        nordictype="nordicstc",
+        suffix="mainfull",
+        shift=0,
+    )
