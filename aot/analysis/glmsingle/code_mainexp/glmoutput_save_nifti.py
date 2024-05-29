@@ -23,7 +23,7 @@ run_number = core_settings["various"]["run_number"]
 
 glmsingle_output_root = Path("/tank/shared/2024/visual/AOT/derivatives/glmsingle/mainexp") 
 design_output_root =  "/tank/shared/2024/visual/AOT/derivatives/glmsingle/mainexp/design"
-bold_data_root = "/tank/shared/2024/visual/AOT/derivatives/fmripreps/aotfull_preprocs/fullpreproc1" 
+bold_data_root = "/tank/shared/2024/visual/AOT/derivatives/fmripreps/aotfull_preprocs/fullpreproc_forcesyn"
 
 bold_data_root_nonnordic = "/tank/shared/2024/visual/AOT/derivatives/fmripreps/aotfull_preprocs/fullpreproc_nonnordic"   
 
