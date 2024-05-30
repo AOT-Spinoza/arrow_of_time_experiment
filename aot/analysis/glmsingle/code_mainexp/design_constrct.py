@@ -341,53 +341,12 @@ def apply_glmsingle_for_one_session(
 
 
 if __name__ == "__main__":
-    '''
     apply_glmsingle_for_one_session(
         sub=2,
-        ses=2,
+        ses=5,
         datatype="T1W",
         nordictype="nordicstc",
         suffix="mainfull",
         shift=0,
     )
-    '''
-    apply_glmsingle_for_one_session(
-        sub=1,
-        ses=3,
-        datatype="T1W",
-        nordictype="nordicstc",
-        suffix="mainfull",
-        shift=0,
-    )
-    apply_glmsingle_for_one_session(
-        sub=1,
-        ses=7,
-        datatype="T1W",
-        nordictype="nordicstc",
-        suffix="mainfull",
-        shift=0,
-    )
-    apply_glmsingle_for_one_session(
-        sub=1,
-        ses=8,
-        datatype="T1W",
-        nordictype="nordicstc",
-        suffix="mainfull",
-        shift=0,
-    )
-    apply_glmsingle_for_one_session(
-        sub=1,
-        ses=9,
-        datatype="T1W",
-        nordictype="nordicstc",
-        suffix="mainfull",
-        shift=0,
-    )
-    apply_glmsingle_for_one_session(
-        sub=1,
-        ses=10,
-        datatype="T1W",
-        nordictype="nordicstc",
-        suffix="mainfull",
-        shift=0,
-    )
+ 
