@@ -27,10 +27,12 @@ subject, ses, run, eyelink = (
 
 
 def main():
-
-    settings_dir = base_dir / core_settings["paths"]["settings_path"] / "memory_main"
-    output_dir = base_dir / core_settings["paths"]["output_path"] / "memory_main"
-
+    settings_dir = (
+        base_dir / core_settings["paths"]["settings_path"] / "memory_main_complete"
+    )
+    output_dir = (
+        base_dir / core_settings["paths"]["output_path"] / "memory_main_complete"
+    )
     output_str = f"sub-{str(subject).zfill(2)}_ses-{str(ses).zfill(2)}_run-{str(run).zfill(2)}_task-memory"
     runs_input_yaml = (
         settings_dir
