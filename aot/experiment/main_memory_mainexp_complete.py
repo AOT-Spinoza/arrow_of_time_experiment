@@ -12,10 +12,11 @@ core_settings = yaml.load(open(core_expt_yaml_path), Loader=yaml.FullLoader)
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--subject", default=2, nargs="?")
-parser.add_argument("--ses", default=6, nargs="?")
+parser.add_argument("--ses", default=7, nargs="?")
 parser.add_argument("--run", default=1, nargs="?")
 
-parser.add_argument("--eyelink", default=True, action=argparse.BooleanOptionalAction)
+parser.add_argument("--eyelink", default=True,
+                    action=argparse.BooleanOptionalAction)
 
 cmd_args = parser.parse_args()
 subject, ses, run, eyelink = (
@@ -28,10 +29,12 @@ subject, ses, run, eyelink = (
 
 def main():
     settings_dir = (
-        base_dir / core_settings["paths"]["settings_path"] / "memory_main_complete"
+        base_dir /
+        core_settings["paths"]["settings_path"] / "memory_main_complete"
     )
     output_dir = (
-        base_dir / core_settings["paths"]["output_path"] / "memory_main_complete"
+        base_dir / core_settings["paths"]["output_path"] /
+        "memory_main_complete"
     )
     output_str = f"sub-{str(subject).zfill(2)}_ses-{str(ses).zfill(2)}_run-{str(run).zfill(2)}_task-memory"
     runs_input_yaml = (
