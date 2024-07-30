@@ -22,11 +22,13 @@ run_number = core_settings["various"]["run_number"]
 total_video_number = core_settings["various"]["total_video_number"]
 
 
-bold_data_root = "/tank/shared/2024/visual/AOT/derivatives/fmripreps/aotfull_preprocs/fullpreproc_forcesyn_old"
+bold_data_root = "/tank/shared/2024/visual/AOT/derivatives/fmripreps/aotfull_preprocs/fullpreproc_forcesyn_endfix"
 bold_data_root_nonnordic = "/tank/shared/2024/visual/AOT/derivatives/fmripreps/aotfull_preprocs/fullpreproc_nonnordic"
-output_root = "/tank/shared/2024/visual/AOT/derivatives/glmsingle/mainexp"
+output_root = "/tank/shared/2024/visual/AOT/derivatives/glmsingle/mainexp_shapetest"
 
-design_output_root = "/tank/shared/2024/visual/AOT/derivatives/glmsingle/mainexp/design"
+design_output_root = (
+    "/tank/shared/2024/visual/AOT/derivatives/glmsingle/mainexp_shapetest/design"
+)
 
 
 def movie_conditions_dict():  # include blank condition as 0
@@ -358,9 +360,9 @@ def apply_glmsingle_for_one_session(
 if __name__ == "__main__":
     apply_glmsingle_for_one_session(
         sub=1,
-        ses=2,
+        ses=1,
         datatype="T1W",
         nordictype="nordicstc",
-        suffix="mainfull_shapefix",
+        suffix="mainfull_endfixfmriprep_oldglmsingle",
         shift=0,
     )
