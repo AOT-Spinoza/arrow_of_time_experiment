@@ -21,11 +21,13 @@ video_db = pd.read_csv(video_db_path, sep="\t")
 run_number = core_settings["various"]["run_number"]
 
 
-glmsingle_output_root = Path("/tank/shared/2024/visual/AOT/derivatives/glmsingle/mainexp") 
-design_output_root =  "/tank/shared/2024/visual/AOT/derivatives/glmsingle/mainexp/design"
-bold_data_root = "/tank/shared/2024/visual/AOT/derivatives/fmripreps/aotfull_preprocs/fullpreproc_forcesyn"
+glmsingle_output_root = Path(
+    "/tank/shared/2024/visual/AOT/derivatives/glmsingle/mainexp"
+)
+design_output_root = "/tank/shared/2024/visual/AOT/derivatives/glmsingle/mainexp/design"
+bold_data_root = "/tank/shared/2024/visual/AOT/derivatives/fmripreps/aotfull_preprocs/fullpreproc_forcesyn_old"
 
-bold_data_root_nonnordic = "/tank/shared/2024/visual/AOT/derivatives/fmripreps/aotfull_preprocs/fullpreproc_nonnordic"   
+bold_data_root_nonnordic = "/tank/shared/2024/visual/AOT/derivatives/fmripreps/aotfull_preprocs/fullpreproc_nonnordic"
 
 
 def get_affine_matrix(sub, ses):
@@ -71,6 +73,7 @@ def get_sub_ses_number_from_glm_output_folder(glm_output_folder):
 
 def save_niftis_for_one_folder(glm_output_folder, sub, ses):
     glm_output_folder = Path(glm_output_folder)
+
     def save_nifti_for_one_type(file):  # input is a complete path to a file
         # make a folder for this type of nifti with the same name as the file but without the .npy
         save_folder_path = str(file).split(".")[0]
@@ -93,12 +96,11 @@ def save_niftis_for_one_folder(glm_output_folder, sub, ses):
                 data = nib.Nifti1Image(data, affine)  # np.eye(4))
                 nib.save(data, nifti_file_name)
             except:
-                #print error information
-                
+                # print error information
+
                 print(
                     "error saving nifti file: " + nifti_file_name + " for key: " + key,
                 )
-            
 
     # get all the files in the folder
     filenames = [
@@ -109,7 +111,7 @@ def save_niftis_for_one_folder(glm_output_folder, sub, ses):
     ]
     for file in filenames:
         file = glm_output_folder / file
-        
+
         try:
             save_nifti_for_one_type(file)
         except:
@@ -121,12 +123,14 @@ def save_niftis_for_all_folders(root_folder):
     folders = os.listdir(root_folder)
     for folder in folders:
         sub, ses = get_sub_ses_number_from_glm_output_folder(folder)
-        if sub ==None or ses == None:
-            #the case that the folder is not a output folder (like a design folder)
+        if sub == None or ses == None:
+            # the case that the folder is not a output folder (like a design folder)
             continue
         folder = root_folder / folder
         save_niftis_for_one_folder(folder, sub, ses)
 
 
 if __name__ == "__main__":
-    save_niftis_for_all_folders(glmsingle_output_root)
+    # save_niftis_for_all_folders(glmsingle_output_root)
+    folder = "/tank/shared/2024/visual/AOT/derivatives/glmsingle/mainexp/sub-001_ses-01_T1W_nordicstc_mainfull_shapefix"
+    save_niftis_for_one_folder(folder, 1, 1)

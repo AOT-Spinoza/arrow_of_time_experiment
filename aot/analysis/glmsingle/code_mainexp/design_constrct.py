@@ -8,7 +8,9 @@ from pathlib import Path
 from glmsingle.glmsingle import GLM_single
 import copy
 import aot
-from aot.analysis.glmsingle.code_mainexp.glmoutput_save_nifti import save_niftis_for_one_folder
+from aot.analysis.glmsingle.code_mainexp.glmoutput_save_nifti import (
+    save_niftis_for_one_folder,
+)
 
 base_dir = Path(aot.__path__[0])
 core_expt_yaml_path = base_dir / "experiment/core_exp_settings.yml"
@@ -20,7 +22,7 @@ run_number = core_settings["various"]["run_number"]
 total_video_number = core_settings["various"]["total_video_number"]
 
 
-bold_data_root = "/tank/shared/2024/visual/AOT/derivatives/fmripreps/aotfull_preprocs/fullpreproc_forcesyn"
+bold_data_root = "/tank/shared/2024/visual/AOT/derivatives/fmripreps/aotfull_preprocs/fullpreproc_forcesyn_old"
 bold_data_root_nonnordic = "/tank/shared/2024/visual/AOT/derivatives/fmripreps/aotfull_preprocs/fullpreproc_nonnordic"
 output_root = "/tank/shared/2024/visual/AOT/derivatives/glmsingle/mainexp"
 
@@ -30,9 +32,9 @@ design_output_root = "/tank/shared/2024/visual/AOT/derivatives/glmsingle/mainexp
 def movie_conditions_dict():  # include blank condition as 0
     total_video_names = []
     for i in range(1, total_video_number + 1):
-        total_video_names.append(str(i).zfill(4)+"_fw.mp4")
-        total_video_names.append(str(i).zfill(4)+"_rv.mp4")
-    
+        total_video_names.append(str(i).zfill(4) + "_fw.mp4")
+        total_video_names.append(str(i).zfill(4) + "_rv.mp4")
+
     movies_conditions = {}
     # condnum = 0
     condnum = (
@@ -227,7 +229,9 @@ def index_to_bold_data_T1W(sub, ses, run, nordictype="nordicstc"):  # input: int
     return img_data
 
 
-def construct_bold_for_one_session(sub, ses, datatype, nordictype = "nordicstc"):  # fsnative or §T1W
+def construct_bold_for_one_session(
+    sub, ses, datatype, nordictype="nordicstc"
+):  # fsnative or §T1W
     list_of_bold_data = []
     if datatype == "fsaverage":
         for run in range(1, run_number + 1):
@@ -258,7 +262,9 @@ def merge_bold_data(
     return cur_data
 
 
-def construct_output_dir(sub, ses, data_type="T1W", nordictype = "nordicstc", suffix=""):  # input: int,int
+def construct_output_dir(
+    sub, ses, data_type="T1W", nordictype="nordicstc", suffix=""
+):  # input: int,int
     output_dir = (
         output_root
         + "/"
@@ -278,7 +284,9 @@ def construct_output_dir(sub, ses, data_type="T1W", nordictype = "nordicstc", su
     return output_dir
 
 
-def construct_figuredir(sub, ses, data_type="T1W", nordictype = "nordicstc", suffix=""):  # input: int,int
+def construct_figuredir(
+    sub, ses, data_type="T1W", nordictype="nordicstc", suffix=""
+):  # input: int,int
     figure_dir = (
         output_root
         + "/"
@@ -300,12 +308,19 @@ def construct_figuredir(sub, ses, data_type="T1W", nordictype = "nordicstc", suf
 
 
 def apply_glmsingle_for_one_session(
-    sub, ses, datatype="T1W", nordictype = "nordicstc",suffix="", outputtype=[1, 1, 1, 1], shift=0,save_nifti=True
+    sub,
+    ses,
+    datatype="T1W",
+    nordictype="nordicstc",
+    suffix="",
+    outputtype=[1, 1, 1, 1],
+    shift=0,
+    save_nifti=True,
 ):
     bolds = construct_bold_for_one_session(sub, ses, datatype, nordictype)
     designs = construct_design_for_one_session(sub, ses, shift)
-    output_dir = construct_output_dir(sub, ses, datatype, nordictype,suffix)
-    figuredir = construct_figuredir(sub, ses, datatype, nordictype,suffix)
+    output_dir = construct_output_dir(sub, ses, datatype, nordictype, suffix)
+    figuredir = construct_figuredir(sub, ses, datatype, nordictype, suffix)
     opt = dict()
     # set important fields for completeness (but these would be enabled by default)
     opt["wantlibrary"] = 1
@@ -342,11 +357,10 @@ def apply_glmsingle_for_one_session(
 
 if __name__ == "__main__":
     apply_glmsingle_for_one_session(
-        sub=2,
-        ses=5,
+        sub=1,
+        ses=2,
         datatype="T1W",
         nordictype="nordicstc",
-        suffix="mainfull",
+        suffix="mainfull_shapefix",
         shift=0,
     )
- 
