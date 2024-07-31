@@ -22,7 +22,7 @@ run_number = core_settings["various"]["run_number"]
 
 
 glmsingle_output_root = Path(
-    "/tank/shared/2024/visual/AOT/derivatives/glmsingle/mainexp"
+    "/tank/shared/2024/visual/AOT/derivatives/glmsingle/mainexp_shapetest"
 )
 design_output_root = "/tank/shared/2024/visual/AOT/derivatives/glmsingle/mainexp/design"
 bold_data_root = "/tank/shared/2024/visual/AOT/derivatives/fmripreps/aotfull_preprocs/fullpreproc_forcesyn_old"
@@ -131,6 +131,4 @@ def save_niftis_for_all_folders(root_folder):
 
 
 if __name__ == "__main__":
-    # save_niftis_for_all_folders(glmsingle_output_root)
-    folder = "/tank/shared/2024/visual/AOT/derivatives/glmsingle/mainexp/sub-001_ses-01_T1W_nordicstc_mainfull_shapefix"
-    save_niftis_for_one_folder(folder, 1, 1)
+    save_niftis_for_all_folders(glmsingle_output_root)
