@@ -34,7 +34,7 @@ def main():
     output_dir = base_dir / core_settings["paths"]["output_path"] / "learning"
     output_str = f"sub-{str(subject).zfill(2)}_ses-{str(ses).zfill(2)}_run-{str(run).zfill(2)}_task-movie"
     runs_input_yaml = settings_dir / \
-        f"experiment_settings_sub_{str(subject).zfill(2)}_ses_{str(ses).zfill(2)}_run_{str(run).zfill(2)}.yml"
+        f"experiment_settings_sub_{str(1).zfill(2)}_ses_{str(1).zfill(2)}_run_{str(1).zfill(2)}.yml"
 
     session_object = HCPMovieELSessionLearning(
         output_str=output_str,
