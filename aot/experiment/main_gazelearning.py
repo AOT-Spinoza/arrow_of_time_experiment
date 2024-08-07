@@ -28,7 +28,7 @@ subject, ses, run, eyelink = (
 )
 
 
-def main():  
+def main():
     settings_dir = base_dir / \
         core_settings["paths"]["settings_path"] / "learning"
     output_dir = base_dir / core_settings["paths"]["output_path"] / "learning"
