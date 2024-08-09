@@ -25,7 +25,7 @@ glmsingle_output_root = Path(
     "/tank/shared/2024/visual/AOT/derivatives/glmsingle/mainexp"
 )
 design_output_root = "/tank/shared/2024/visual/AOT/derivatives/glmsingle/mainexp/design"
-bold_data_root = "/tank/shared/2024/visual/AOT/derivatives/fmripreps/aotfull_preprocs/fullpreproc_forcesyn_old"
+bold_data_root = "/tank/shared/2024/visual/AOT/derivatives/fmripreps/aotfull_preprocs/fullpreproc_forcesyn_endfix"
 
 bold_data_root_nonnordic = "/tank/shared/2024/visual/AOT/derivatives/fmripreps/aotfull_preprocs/fullpreproc_nonnordic"
 
