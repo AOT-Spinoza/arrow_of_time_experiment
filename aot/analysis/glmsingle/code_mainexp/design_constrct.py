@@ -358,17 +358,8 @@ def apply_glmsingle_for_one_session(
 if __name__ == "__main__":
 
     apply_glmsingle_for_one_session(
-        sub=2,
-        ses=8,
-        datatype="T1W",
-        nordictype="nordicstc",
-        suffix="mainfull_endfix",
-        shift=0,
-    )
-
-    apply_glmsingle_for_one_session(
-        sub=2,
-        ses=9,
+        sub=3,
+        ses=1,
         datatype="T1W",
         nordictype="nordicstc",
         suffix="mainfull_endfix",
