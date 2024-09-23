@@ -18,7 +18,7 @@ stimuli_temp_path = base_dir / "experiment/stimuli_settings_temp.yml"
 core_settings = yaml.load(open(core_expt_yaml_path), Loader=yaml.FullLoader)
 stimuli_settings_temp = yaml.load(open(stimuli_temp_path), Loader=yaml.FullLoader)
 settings_root_path = base_dir / core_settings["paths"]["settings_path"]
-run_number = core_settings["various"]["run_number"]
+run_number = 11
 total_video_number = core_settings["various"]["total_video_number"]
 
 
@@ -94,6 +94,8 @@ def construct_design_from_exp_design_yml(ymlfile, movies_conditions, shift=0):
 
 
 def index_to_exp_yml(sub, ses, run):
+    if run == 11:
+        run = 10
     sub = str(sub).zfill(2)
     ses = str(ses).zfill(2)
     run = str(run).zfill(2)
@@ -370,25 +372,7 @@ if __name__ == "__main__":
 
     apply_glmsingle_for_one_session(
         sub=3,
-        ses=8,
-        datatype="T1W",
-        nordictype="nordicstc",
-        suffix="mainfull_endfix",
-        shift=0,
-    )
-
-    apply_glmsingle_for_one_session(
-        sub=3,
-        ses=9,
-        datatype="T1W",
-        nordictype="nordicstc",
-        suffix="mainfull_endfix",
-        shift=0,
-    )
-
-    apply_glmsingle_for_one_session(
-        sub=2,
-        ses=10,
+        ses=4,
         datatype="T1W",
         nordictype="nordicstc",
         suffix="mainfull_endfix",
