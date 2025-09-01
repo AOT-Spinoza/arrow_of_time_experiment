@@ -31,7 +31,7 @@ def main():
     output_dir = base_dir / core_settings["paths"]["output_path"] / "aottest"
     output_str = f"sub-{str(subject).zfill(2)}_ses-aottest_run-{str(run).zfill(2)}_task-movie"
     runs_input_yaml = settings_dir / \
-        f"experiment_settings_sub_{str(subject).zfill(2)}_ses_aottest_run_{str(run).zfill(2)}.yml"
+        f"experiment_settings_sub_{str(subject).zfill(3)}_ses_aottest_run_{str(run).zfill(2)}.yml"
 
     session_object = HCPMovieELSession(
         output_str=output_str,
