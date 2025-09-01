@@ -13,14 +13,13 @@ core_settings = yaml.load(open(core_expt_yaml_path), Loader=yaml.FullLoader)
 parser = argparse.ArgumentParser()
 parser.add_argument("--subject", default=1, nargs="?")
 parser.add_argument("--run", default=1, nargs="?")
-parser.add_argument("--eyelink", default=True,
+parser.add_argument("--eyelink", default=False,
                     action=argparse.BooleanOptionalAction)
 
 
 cmd_args = parser.parse_args()
-subject, ses, run, eyelink = (
+subject, run, eyelink = (
     cmd_args.subject,
-    cmd_args.ses,
     cmd_args.run,
     cmd_args.eyelink,
 )
@@ -31,7 +30,7 @@ def main():
     output_dir = base_dir / core_settings["paths"]["output_path"] / "aottest"
     output_str = f"sub-{str(subject).zfill(2)}_ses-aottest_run-{str(run).zfill(2)}_task-movie"
     runs_input_yaml = settings_dir / \
-        f"experiment_settings_sub_{str(subject).zfill(3)}_ses_aottest_run_{str(run).zfill(2)}.yml"
+        f"experiment_settings_sub_{str(subject).zfill(2)}_ses_aottest_run_{str(run).zfill(2)}.yml"
 
     session_object = HCPMovieELSession(
         output_str=output_str,
