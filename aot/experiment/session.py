@@ -15,7 +15,7 @@ from trial import (
     HCPMovieELTrialLearning,
     HCPMovieELTrialEyetracking,
 )
-from psychopy.visual import MovieStim3
+from psychopy.visual import MovieStim
 from psychopy.visual import ImageStim
 import pandas as pd
 from pathlib import Path
@@ -103,7 +103,7 @@ class HCPMovieELSession(PylinkEyetrackerSession):
 
         # we dont need this for lab computer but required by my laptop????
         # check whether the program is running on the my laptop
-        if os.path.exists(self.settings["paths"].get("stimuli_path")):  
+        if os.path.exists(self.settings["paths"].get("stimuli_path")):
             self.pix_per_deg = self.win.size[0] / self.win.monitor.getWidth()
 
         originalsize = self.settings["stimuli"].get("movie_size_pix")
@@ -177,12 +177,11 @@ class HCPMovieELSession(PylinkEyetrackerSession):
         self.movie_stims = [
             "blank"
             if movie == "blank"
-            else MovieStim3(
+            else MovieStim(
                 self.win,
                 filename=movie,
                 size=display_size,
                 noAudio=True,
-                fps=None,
                 pos=self.shiftedpos
             )
             for movie in self.movies  # movie is movie file path name
@@ -427,12 +426,11 @@ class HCPMovieELSessionEyetracking(PylinkEyetrackerSession):
         self.movie_stims = [
             "blank"
             if movie == "blank"
-            else MovieStim3(
+            else MovieStim(
                 self.win,
                 filename=movie,
                 size=originalsize,
                 noAudio=True,
-                fps=None,
             )
             for movie in self.movies  # movie is movie file path name
         ]
@@ -667,12 +665,11 @@ class HCPMovieELSessionLearning(PylinkEyetrackerSession):
         self.movie_stims = [
             "blank"
             if movie == "blank"
-            else MovieStim3(
+            else MovieStim(
                 self.win,
                 filename=movie,
                 size=originalsize,
                 noAudio=True,
-                fps=None,
             )
             for movie in self.movies  # movie is movie file path name
         ]
@@ -808,7 +805,6 @@ class HCPMovieELSessionMemory(PylinkEyetrackerSession):
             self.pix_per_deg = self.win.size[0] / self.win.monitor.getWidth()
         elif os.path.exists(self.settings["paths"].get("stimuli_picture_path_sophie")):
             self.pix_per_deg = self.win.size[0] / self.win.monitor.getWidth()
-
 
         self.fixation = FixationBullsEye(
             win=self.win,
@@ -1152,14 +1148,6 @@ class HCPMovieELSessionLabeling(HCPMovieELSession):
         self.close()
 
 
-
-
-
-
-
-
-
-
 class HCPMovieELSessionRatio(PylinkEyetrackerSession):
     def __init__(
         self,
@@ -1181,7 +1169,6 @@ class HCPMovieELSessionRatio(PylinkEyetrackerSession):
             self.pix_per_deg = self.win.size[0] / self.win.monitor.getWidth()
         elif os.path.exists(self.settings["paths"].get("stimuli_picture_path_sophie")):
             self.pix_per_deg = self.win.size[0] / self.win.monitor.getWidth()
-
 
         originalsize = self.settings["stimuli"].get("movie_size_pix")
         shrink_factor = self.settings["stimuli"].get("shrink_factor")
@@ -1268,14 +1255,14 @@ class HCPMovieELSessionRatio(PylinkEyetrackerSession):
         )
 
     def create_trials(self):
-        """Creates trials (ideally before running your session!)""" 
+        """Creates trials (ideally before running your session!)"""
 
         instruction_trial = InstructionTrial(
             session=self,
             trial_nr=0,
             phase_durations=[np.inf],
-            txt="is the fixation point at the center of your view? is the upper edge of the picture at the upper edge of your view?", 
-            keys=["space"], 
+            txt="is the fixation point at the center of your view? is the upper edge of the picture at the upper edge of your view?",
+            keys=["space"],
         )
 
         dummy_trial = DummyWaiterTrial(
