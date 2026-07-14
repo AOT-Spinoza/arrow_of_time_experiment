@@ -1,0 +1,465 @@
+trial_nr	onset	event_type	phase	response	nr_frames	movie_index	movie_duration	movie_file	blank	onset_abs	duration
+0	0.17492365837097168	stim	0		1					16.75035786628723	0.008301258087158203
+0	0.09798145294189453	response	0	space						16.673415660858154	
+1	0.18322491645812988	stim	0		3902					16.75865912437439	32.5324490070343
+1	32.7059268951416	pulse	0	t						49.28136110305786	
+1	32.71567392349243	stim	1		1716					49.29110813140869	14.307959794998169
+1	34.29692482948303	pulse	1	t						50.87235903739929	
+1	35.897151470184326	pulse	1	t						52.472585678100586	
+1	37.497366189956665	pulse	1	t						54.072800397872925	
+1	39.09763813018799	pulse	1	t						55.67307233810425	
+1	40.69783163070679	pulse	1	t						57.27326583862305	
+1	42.298049211502075	pulse	1	t						58.873483419418335	
+1	43.89877796173096	pulse	1	t						60.47421216964722	
+1	45.49876642227173	pulse	1	t						62.07420063018799	
+2	47.0236337184906	fix_pre	0		10	0.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0622_rv.mp4	0.0	63.59906792640686	0.10016846656799316
+2	47.09878134727478	pulse	0	t		0.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0622_rv.mp4	0.0	63.67421555519104	
+2	47.123802185058594	movie	1		289	0.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0622_rv.mp4	0.0	63.69923639297485	2.491917371749878
+2	48.698867321014404	pulse	1	t		0.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0622_rv.mp4	0.0	65.27430152893066	
+2	49.61571955680847	fix_post	2		12	0.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0622_rv.mp4	0.0	66.19115376472473	0.10006165504455566
+3	49.71578121185303	fix_pre	0		120	1.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1789_fw.mp4	0.0	66.29121541976929	1.0085043907165527
+3	50.29944586753845	pulse	0	t		1.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1789_fw.mp4	0.0	66.87488007545471	
+3	50.72428560256958	movie	1		277	1.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1789_fw.mp4	0.0	67.29971981048584	2.4919230937957764
+3	51.897855281829834	pulse	1	t		1.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1789_fw.mp4	0.0	68.4732894897461	
+3	53.216208696365356	fix_post	2		12	1.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1789_fw.mp4	0.0	69.79164290428162	0.10012578964233398
+4	53.31633448600769	fix_pre	0		120	2.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0592_fw.mp4	0.0	69.89176869392395	1.0083980560302734
+4	53.499842405319214	pulse	0	t		2.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0592_fw.mp4	0.0	70.07527661323547	
+4	54.324732542037964	movie	1		282	2.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0592_fw.mp4	0.0	70.90016674995422	2.4920856952667236
+4	55.09790897369385	pulse	1	t		2.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0592_fw.mp4	0.0	71.67334318161011	
+4	56.698089361190796	pulse	1	t		2.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0592_fw.mp4	0.0	73.27352356910706	
+4	56.81681823730469	fix_post	2		12	2.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0592_fw.mp4	0.0	73.39225244522095	0.10003662109375
+5	56.91685485839844	fix_pre	0		120	3.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1097_fw.mp4	0.0	73.4922890663147	1.0084757804870605
+5	57.9253306388855	movie	1		286	3.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1097_fw.mp4	0.0	74.50076484680176	2.4919912815093994
+5	58.29897904396057	pulse	1	t		3.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1097_fw.mp4	0.0	74.87441325187683	
+5	59.89865446090698	pulse	1	t		3.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1097_fw.mp4	0.0	76.47408866882324	
+5	60.4173219203949	fix_post	2		12	3.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1097_fw.mp4	0.0	76.99275612831116	0.09999585151672363
+6	60.51731777191162	fix_pre	0		119	4.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0442_fw.mp4	0.0	77.09275197982788	1.0001416206359863
+6	61.50106191635132	pulse	0	t		4.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0442_fw.mp4	0.0	78.07649612426758	
+6	61.51745939254761	movie	1		290	4.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0442_fw.mp4	0.0	78.09289360046387	2.5004444122314453
+6	63.09966731071472	pulse	1	t		4.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0442_fw.mp4	0.0	79.67510151863098	
+6	64.01790380477905	fix_post	2		12	4.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0442_fw.mp4	0.0	80.59333801269531	0.10003113746643066
+7	64.11793494224548	fix_pre	0		120	5.0	2.5	blank	1.0	80.69336915016174	1.000131607055664
+7	64.70160841941833	pulse	0	t		5.0	2.5	blank	1.0	81.2770426273346	
+7	65.11806654930115	movie	1		300	5.0	2.5	blank	1.0	81.69350075721741	2.500310182571411
+7	66.30181574821472	pulse	1	t		5.0	2.5	blank	1.0	82.87724995613098	
+7	67.61837673187256	fix_post	2		12	5.0	2.5	blank	1.0	84.19381093978882	0.10013270378112793
+8	67.71850943565369	fix_pre	0		120	6.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0654_fw.mp4	0.0	84.29394364356995	1.0084617137908936
+8	67.9020025730133	pulse	0	t		6.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0654_fw.mp4	0.0	84.47743678092957	
+8	68.72697114944458	movie	1		287	6.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0654_fw.mp4	0.0	85.30240535736084	2.4919545650482178
+8	69.50026559829712	pulse	1	t		6.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0654_fw.mp4	0.0	86.07569980621338	
+8	71.1005470752716	pulse	1	t		6.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0654_fw.mp4	0.0	87.67598128318787	
+8	71.2189257144928	fix_post	2		12	6.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0654_fw.mp4	0.0	87.79435992240906	0.10010004043579102
+9	71.31902575492859	fix_pre	0		120	7.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/2075_fw.mp4	0.0	87.89445996284485	1.0083985328674316
+9	72.32742428779602	movie	1		276	7.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/2075_fw.mp4	0.0	88.90285849571228	2.4920294284820557
+9	72.70200204849243	pulse	1	t		7.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/2075_fw.mp4	0.0	89.27743625640869	
+9	74.30084371566772	pulse	1	t		7.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/2075_fw.mp4	0.0	90.87627792358398	
+9	74.81945371627808	fix_post	2		12	7.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/2075_fw.mp4	0.0	91.39488792419434	0.10004687309265137
+10	74.91950058937073	fix_pre	0		119	8.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/2165_fw.mp4	0.0	91.49493479728699	1.000169277191162
+10	75.89533114433289	pulse	0	t		8.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/2165_fw.mp4	0.0	92.47076535224915	
+10	75.91966986656189	movie	1		292	8.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/2165_fw.mp4	0.0	92.49510407447815	2.5004260540008545
+10	77.50189638137817	pulse	1	t		8.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/2165_fw.mp4	0.0	94.07733058929443	
+10	78.42009592056274	fix_post	2		12	8.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/2165_fw.mp4	0.0	94.995530128479	0.10002589225769043
+11	78.52012181282043	fix_pre	0		120	9.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0939_fw.mp4	0.0	95.0955560207367	1.0084350109100342
+11	79.09532904624939	pulse	0	t		9.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0939_fw.mp4	0.0	95.67076325416565	
+11	79.52855682373047	movie	1		287	9.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0939_fw.mp4	0.0	96.10399103164673	2.492011785507202
+11	80.69561123847961	pulse	1	t		9.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0939_fw.mp4	0.0	97.27104544639587	
+11	82.02056860923767	fix_post	2		12	9.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0939_fw.mp4	0.0	98.59600281715393	0.10007238388061523
+12	82.12064099311829	fix_pre	0		120	10.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1388_fw.mp4	0.0	98.69607520103455	1.0084350109100342
+12	82.29591178894043	pulse	0	t		10.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1388_fw.mp4	0.0	98.87134599685669	
+12	83.12907600402832	movie	1		288	10.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1388_fw.mp4	0.0	99.70451021194458	2.4920923709869385
+12	83.89605212211609	pulse	1	t		10.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1388_fw.mp4	0.0	100.47148633003235	
+12	85.49637460708618	pulse	1	t		10.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1388_fw.mp4	0.0	102.07180881500244	
+12	85.62116837501526	fix_post	2		12	10.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1388_fw.mp4	0.0	102.19660258293152	0.10008549690246582
+13	85.72125387191772	fix_pre	0		120	11.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0553_rv.mp4	0.0	102.29668807983398	1.0084953308105469
+13	86.72974920272827	movie	1		285	11.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0553_rv.mp4	0.0	103.30518341064453	2.491884708404541
+13	87.09489679336548	pulse	1	t		11.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0553_rv.mp4	0.0	103.67033100128174	
+13	88.69493794441223	pulse	1	t		11.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0553_rv.mp4	0.0	105.27037215232849	
+13	89.22163391113281	fix_post	2		12	11.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0553_rv.mp4	0.0	105.79706811904907	0.1000831127166748
+14	89.32171702384949	fix_pre	0		118	12.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1987_rv.mp4	0.0	105.89715123176575	0.9917974472045898
+14	90.29702281951904	pulse	0	t		12.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1987_rv.mp4	0.0	106.8724570274353	
+14	90.31351447105408	movie	1		295	12.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1987_rv.mp4	0.0	106.88894867897034	2.5003440380096436
+14	91.89578700065613	pulse	1	t		12.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1987_rv.mp4	0.0	108.47122120857239	
+14	92.81385850906372	fix_post	2		12	12.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1987_rv.mp4	0.0	109.38929271697998	0.10008573532104492
+15	92.91394424438477	fix_pre	0		120	13.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0791_rv.mp4	0.0	109.48937845230103	1.0084073543548584
+15	93.49743866920471	pulse	0	t		13.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0791_rv.mp4	0.0	110.07287287712097	
+15	93.92235159873962	movie	1		283	13.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0791_rv.mp4	0.0	110.49778580665588	2.492039203643799
+15	95.0961389541626	pulse	1	t		13.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0791_rv.mp4	0.0	111.67157316207886	
+15	96.41439080238342	fix_post	2		12	13.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0791_rv.mp4	0.0	112.98982501029968	0.10004568099975586
+16	96.51443648338318	fix_pre	0		120	14.0	2.5	blank	1.0	113.08987069129944	1.0001418590545654
+16	96.69789981842041	pulse	0	t		14.0	2.5	blank	1.0	113.27333402633667	
+16	97.51457834243774	movie	1		300	14.0	2.5	blank	1.0	114.090012550354	2.5003538131713867
+16	98.29826259613037	pulse	1	t		14.0	2.5	blank	1.0	114.87369680404663	
+16	99.89859700202942	pulse	1	t		14.0	2.5	blank	1.0	116.47403120994568	
+16	100.01493215560913	fix_post	2		12	14.0	2.5	blank	1.0	116.59036636352539	0.10000872611999512
+17	100.11494088172913	fix_pre	0		120	15.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0921_rv.mp4	0.0	116.69037508964539	1.0085523128509521
+17	101.12349319458008	movie	1		288	15.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0921_rv.mp4	0.0	117.69892740249634	2.491969108581543
+17	101.49710321426392	pulse	1	t		15.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0921_rv.mp4	0.0	118.07253742218018	
+17	103.09697890281677	pulse	1	t		15.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0921_rv.mp4	0.0	119.67241311073303	
+17	103.61546230316162	fix_post	2		12	15.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0921_rv.mp4	0.0	120.19089651107788	0.10014104843139648
+18	103.71560335159302	fix_pre	0		119	16.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0069_fw.mp4	0.0	120.29103755950928	1.000016689300537
+18	104.6996021270752	pulse	0	t		16.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0069_fw.mp4	0.0	121.27503633499146	
+18	104.71562004089355	movie	1		292	16.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0069_fw.mp4	0.0	121.29105424880981	2.5004210472106934
+18	106.29755210876465	pulse	1	t		16.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0069_fw.mp4	0.0	122.87298631668091	
+18	107.21604108810425	fix_post	2		12	16.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0069_fw.mp4	0.0	123.79147529602051	0.09999799728393555
+19	107.31603908538818	fix_pre	0		120	17.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/2102_rv.mp4	0.0	123.89147329330444	1.0084872245788574
+19	107.89967656135559	pulse	0	t		17.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/2102_rv.mp4	0.0	124.47511076927185	
+19	108.32452630996704	movie	1		284	17.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/2102_rv.mp4	0.0	124.8999605178833	2.492016077041626
+19	109.49806261062622	pulse	1	t		17.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/2102_rv.mp4	0.0	126.07349681854248	
+19	110.81654238700867	fix_post	2		12	17.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/2102_rv.mp4	0.0	127.39197659492493	0.10001134872436523
+20	110.91655373573303	fix_pre	0		120	18.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1022_rv.mp4	0.0	127.49198794364929	1.0085082054138184
+20	111.10003781318665	pulse	0	t		18.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1022_rv.mp4	0.0	127.6754720211029	
+20	111.92506194114685	movie	1		274	18.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1022_rv.mp4	0.0	128.5004961490631	2.492023229598999
+20	112.69863629341125	pulse	1	t		18.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1022_rv.mp4	0.0	129.27407050132751	
+20	114.2986159324646	pulse	1	t		18.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1022_rv.mp4	0.0	130.87405014038086	
+20	114.41708517074585	fix_post	2		12	18.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1022_rv.mp4	0.0	130.9925193786621	0.10006213188171387
+21	114.51714730262756	fix_pre	0		120	19.0	2.5	blank	1.0	131.09258151054382	1.0001194477081299
+21	115.5172667503357	movie	1		300	19.0	2.5	blank	1.0	132.09270095825195	2.500387191772461
+21	115.90077066421509	pulse	1	t		19.0	2.5	blank	1.0	132.47620487213135	
+21	117.50110387802124	pulse	1	t		19.0	2.5	blank	1.0	134.0765380859375	
+21	118.01765394210815	fix_post	2		12	19.0	2.5	blank	1.0	134.5930881500244	0.10007071495056152
+22	118.11772465705872	fix_pre	0		119	20.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0649_rv.mp4	0.0	134.69315886497498	1.0000545978546143
+22	119.10142111778259	pulse	0	t		20.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0649_rv.mp4	0.0	135.67685532569885	
+22	119.11777925491333	movie	1		289	20.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0649_rv.mp4	0.0	135.6932134628296	2.50038480758667
+22	120.69999575614929	pulse	1	t		20.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0649_rv.mp4	0.0	137.27542996406555	
+22	121.6181640625	fix_post	2		12	20.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0649_rv.mp4	0.0	138.19359827041626	0.10009002685546875
+23	121.71825408935547	fix_pre	0		120	21.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1278_rv.mp4	0.0	138.29368829727173	1.0084490776062012
+23	122.30182647705078	pulse	0	t		21.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1278_rv.mp4	0.0	138.87726068496704	
+23	122.72670316696167	movie	1		296	21.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1278_rv.mp4	0.0	139.30213737487793	2.4920060634613037
+23	123.90032911300659	pulse	1	t		21.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1278_rv.mp4	0.0	140.47576332092285	
+23	125.21870923042297	fix_post	2		12	21.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1278_rv.mp4	0.0	141.79414343833923	0.1001591682434082
+24	125.31886839866638	fix_pre	0		120	22.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1875_rv.mp4	0.0	141.89430260658264	1.0084147453308105
+24	125.4948353767395	pulse	0	t		22.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1875_rv.mp4	0.0	142.07026958465576	
+24	126.32728314399719	movie	1		279	22.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1875_rv.mp4	0.0	142.90271735191345	2.49196720123291
+24	127.10055541992188	pulse	1	t		22.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1875_rv.mp4	0.0	143.67598962783813	
+24	128.70293974876404	pulse	1	t		22.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1875_rv.mp4	0.0	145.2783739566803	
+24	128.8192503452301	fix_post	2		12	22.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1875_rv.mp4	0.0	145.39468455314636	0.10009264945983887
+25	128.91934299468994	fix_pre	0		120	23.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1886_rv.mp4	0.0	145.4947772026062	1.0084822177886963
+25	129.92782521247864	movie	1		286	23.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1886_rv.mp4	0.0	146.5032594203949	2.491971015930176
+25	130.2948498725891	pulse	1	t		23.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1886_rv.mp4	0.0	146.87028408050537	
+25	131.89496684074402	pulse	1	t		23.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1886_rv.mp4	0.0	148.47040104866028	
+25	132.4197962284088	fix_post	2		12	23.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1886_rv.mp4	0.0	148.99523043632507	0.10007905960083008
+26	132.51987528800964	fix_pre	0		118	24.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0994_rv.mp4	0.0	149.0953094959259	0.9917886257171631
+26	133.49518966674805	pulse	0	t		24.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0994_rv.mp4	0.0	150.0706238746643	
+26	133.5116639137268	movie	1		280	24.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0994_rv.mp4	0.0	150.08709812164307	2.508833408355713
+26	135.09536957740784	pulse	1	t		24.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0994_rv.mp4	0.0	151.6708037853241	
+26	136.02049732208252	fix_post	2		11	24.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0994_rv.mp4	0.0	152.59593152999878	0.09152984619140625
+27	136.11202716827393	fix_pre	0		120	25.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1355_fw.mp4	0.0	152.68746137619019	1.0085246562957764
+27	136.6956524848938	pulse	0	t		25.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1355_fw.mp4	0.0	153.27108669281006	
+27	137.1205518245697	movie	1		289	25.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1355_fw.mp4	0.0	153.69598603248596	2.49198579788208
+27	138.29592418670654	pulse	1	t		25.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1355_fw.mp4	0.0	154.8713583946228	
+27	139.61253762245178	fix_post	2		12	25.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1355_fw.mp4	0.0	156.18797183036804	0.10011577606201172
+28	139.7126533985138	fix_pre	0		120	26.0	2.5	blank	1.0	156.28808760643005	1.0000293254852295
+28	139.89609551429749	pulse	0	t		26.0	2.5	blank	1.0	156.47152972221375	
+28	140.71268272399902	movie	1		300	26.0	2.5	blank	1.0	157.28811693191528	2.5003888607025146
+28	141.4963276386261	pulse	1	t		26.0	2.5	blank	1.0	158.07176184654236	
+28	143.09662127494812	pulse	1	t		26.0	2.5	blank	1.0	159.67205548286438	
+28	143.21307158470154	fix_post	2		12	26.0	2.5	blank	1.0	159.7885057926178	0.1000678539276123
+29	143.31313943862915	fix_pre	0		120	27.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1963_rv.mp4	0.0	159.8885736465454	1.0085132122039795
+29	144.32165265083313	movie	1		280	27.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1963_rv.mp4	0.0	160.8970868587494	2.491997480392456
+29	144.6959421634674	pulse	1	t		27.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1963_rv.mp4	0.0	161.27137637138367	
+29	146.2951579093933	pulse	1	t		27.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1963_rv.mp4	0.0	162.87059211730957	
+29	146.8136501312256	fix_post	2		12	27.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1963_rv.mp4	0.0	163.38908433914185	0.10010337829589844
+30	146.91375350952148	fix_pre	0		119	28.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1430_rv.mp4	0.0	163.48918771743774	1.0000615119934082
+30	147.89736127853394	pulse	0	t		28.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1430_rv.mp4	0.0	164.4727954864502	
+30	147.9138150215149	movie	1		285	28.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1430_rv.mp4	0.0	164.48924922943115	2.500347137451172
+30	149.49591851234436	pulse	1	t		28.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1430_rv.mp4	0.0	166.07135272026062	
+30	150.41416215896606	fix_post	2		12	28.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1430_rv.mp4	0.0	166.98959636688232	0.10007071495056152
+31	150.51423287391663	fix_pre	0		120	29.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1462_rv.mp4	0.0	167.08966708183289	1.0085511207580566
+31	151.0977656841278	pulse	0	t		29.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1462_rv.mp4	0.0	167.67319989204407	
+31	151.52278399467468	movie	1		278	29.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1462_rv.mp4	0.0	168.09821820259094	2.4919838905334473
+31	152.69658875465393	pulse	1	t		29.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1462_rv.mp4	0.0	169.2720229625702	
+31	154.01476788520813	fix_post	2		12	29.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1462_rv.mp4	0.0	170.5902020931244	0.10005354881286621
+32	154.114821434021	fix_pre	0		120	30.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0534_rv.mp4	0.0	170.69025564193726	1.0084455013275146
+32	154.2983250617981	pulse	0	t		30.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0534_rv.mp4	0.0	170.87375926971436	
+32	155.1232669353485	movie	1		281	30.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0534_rv.mp4	0.0	171.69870114326477	2.4919776916503906
+32	155.89652824401855	pulse	1	t		30.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0534_rv.mp4	0.0	172.47196245193481	
+32	157.4967851638794	pulse	1	t		30.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0534_rv.mp4	0.0	174.07221937179565	
+32	157.6152446269989	fix_post	2		12	30.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0534_rv.mp4	0.0	174.19067883491516	0.10004329681396484
+33	157.71528792381287	fix_pre	0		120	31.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/2075_fw.mp4	0.0	174.29072213172913	1.008507490158081
+33	158.72379541397095	movie	1		283	31.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/2075_fw.mp4	0.0	175.2992296218872	2.491992235183716
+33	159.09779286384583	pulse	1	t		31.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/2075_fw.mp4	0.0	175.67322707176208	
+33	160.69748377799988	pulse	1	t		31.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/2075_fw.mp4	0.0	177.27291798591614	
+33	161.21578764915466	fix_post	2		12	31.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/2075_fw.mp4	0.0	177.79122185707092	0.10004162788391113
+34	161.31582927703857	fix_pre	0		119	32.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1987_fw.mp4	0.0	177.89126348495483	1.0001616477966309
+34	162.29966688156128	pulse	0	t		32.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1987_fw.mp4	0.0	178.87510108947754	
+34	162.3159909248352	movie	1		285	32.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1987_fw.mp4	0.0	178.89142513275146	2.5003511905670166
+34	163.8987307548523	pulse	1	t		32.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1987_fw.mp4	0.0	180.47416496276855	
+34	164.81634211540222	fix_post	2		12	32.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1987_fw.mp4	0.0	181.39177632331848	0.10003256797790527
+35	164.91637468338013	fix_pre	0		120	33.0	2.5	blank	1.0	181.4918088912964	1.00014066696167
+35	165.49990677833557	pulse	0	t		33.0	2.5	blank	1.0	182.07534098625183	
+35	165.9165153503418	movie	1		300	33.0	2.5	blank	1.0	182.49194955825806	2.5003674030303955
+35	167.10043334960938	pulse	1	t		33.0	2.5	blank	1.0	183.67586755752563	
+35	168.4168827533722	fix_post	2		12	33.0	2.5	blank	1.0	184.99231696128845	0.10002613067626953
+36	168.51690888404846	fix_pre	0		120	34.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1287_fw.mp4	0.0	185.09234309196472	1.0084919929504395
+36	168.7004199028015	pulse	0	t		34.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1287_fw.mp4	0.0	185.27585411071777	
+36	169.5254008769989	movie	1		284	34.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1287_fw.mp4	0.0	186.10083508491516	2.4920551776885986
+36	170.29901957511902	pulse	1	t		34.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1287_fw.mp4	0.0	186.87445378303528	
+36	171.89988112449646	pulse	1	t		34.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1287_fw.mp4	0.0	188.47531533241272	
+36	172.0174560546875	fix_post	2		12	34.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1287_fw.mp4	0.0	188.59289026260376	0.10012650489807129
+37	172.11758255958557	fix_pre	0		120	35.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1108_fw.mp4	0.0	188.69301676750183	1.008427619934082
+37	173.12601017951965	movie	1		282	35.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1108_fw.mp4	0.0	189.7014443874359	2.491971969604492
+37	173.4999930858612	pulse	1	t		35.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1108_fw.mp4	0.0	190.07542729377747	
+37	175.0995180606842	pulse	1	t		35.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1108_fw.mp4	0.0	191.67495226860046	
+37	175.61798214912415	fix_post	2		12	35.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1108_fw.mp4	0.0	192.1934163570404	0.10005474090576172
+38	175.7180368900299	fix_pre	0		119	36.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0979_fw.mp4	0.0	192.29347109794617	1.0001912117004395
+38	176.7016842365265	pulse	0	t		36.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0979_fw.mp4	0.0	193.27711844444275	
+38	176.71822810173035	movie	1		287	36.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0979_fw.mp4	0.0	193.2936623096466	2.500274181365967
+38	178.3001673221588	pulse	1	t		36.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0979_fw.mp4	0.0	194.87560153007507	
+38	179.2185022830963	fix_post	2		12	36.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0979_fw.mp4	0.0	195.79393649101257	0.10003829002380371
+39	179.31854057312012	fix_pre	0		120	37.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1420_fw.mp4	0.0	195.89397478103638	1.008474588394165
+39	179.90219140052795	pulse	0	t		37.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1420_fw.mp4	0.0	196.4776256084442	
+39	180.32701516151428	movie	1		286	37.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1420_fw.mp4	0.0	196.90244936943054	2.492030143737793
+39	181.50070595741272	pulse	1	t		37.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1420_fw.mp4	0.0	198.07614016532898	
+39	182.81904530525208	fix_post	2		12	37.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1420_fw.mp4	0.0	199.39447951316833	0.10007691383361816
+40	182.9191222190857	fix_pre	0		120	38.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1560_fw.mp4	0.0	199.49455642700195	1.0084693431854248
+40	183.10260009765625	pulse	0	t		38.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1560_fw.mp4	0.0	199.6780343055725	
+40	183.92759156227112	movie	1		286	38.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1560_fw.mp4	0.0	200.50302577018738	2.4919919967651367
+40	184.70263671875	pulse	1	t		38.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1560_fw.mp4	0.0	201.27807092666626	
+40	186.30108833312988	pulse	1	t		38.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1560_fw.mp4	0.0	202.87652254104614	
+40	186.41958355903625	fix_post	2		12	38.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1560_fw.mp4	0.0	202.99501776695251	0.1000669002532959
+41	186.51965045928955	fix_pre	0		120	39.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1311_rv.mp4	0.0	203.0950846672058	1.0085761547088623
+41	187.5282266139984	movie	1		280	39.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1311_rv.mp4	0.0	204.10366082191467	2.491905450820923
+41	187.8952522277832	pulse	1	t		39.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1311_rv.mp4	0.0	204.47068643569946	
+41	189.49527978897095	pulse	1	t		39.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1311_rv.mp4	0.0	206.0707139968872	
+41	190.02013206481934	fix_post	2		12	39.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1311_rv.mp4	0.0	206.5955662727356	0.10004854202270508
+42	190.12018060684204	fix_pre	0		118	40.0	2.5	blank	1.0	206.6956148147583	0.9834859371185303
+42	191.09561800956726	pulse	0	t		40.0	2.5	blank	1.0	207.67105221748352	
+42	191.10366654396057	movie	1		301	40.0	2.5	blank	1.0	207.67910075187683	2.5086655616760254
+42	192.69575786590576	pulse	1	t		40.0	2.5	blank	1.0	209.27119207382202	
+42	193.6123321056366	fix_post	2		12	40.0	2.5	blank	1.0	210.18776631355286	0.10013127326965332
+43	193.71246337890625	fix_pre	0		120	41.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1822_rv.mp4	0.0	210.2878975868225	1.0084173679351807
+43	194.29597353935242	pulse	0	t		41.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1822_rv.mp4	0.0	210.87140774726868	
+43	194.72088074684143	movie	1		285	41.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1822_rv.mp4	0.0	211.2963149547577	2.491978883743286
+43	195.89626121520996	pulse	1	t		41.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1822_rv.mp4	0.0	212.47169542312622	
+43	197.21285963058472	fix_post	2		12	41.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1822_rv.mp4	0.0	213.78829383850098	0.10004830360412598
+44	197.31290793418884	fix_pre	0		120	42.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0792_fw.mp4	0.0	213.8883421421051	1.0084946155548096
+44	197.49641633033752	pulse	0	t		42.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0792_fw.mp4	0.0	214.07185053825378	
+44	198.32140254974365	movie	1		286	42.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0792_fw.mp4	0.0	214.8968367576599	2.4920575618743896
+44	199.095046043396	pulse	1	t		42.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0792_fw.mp4	0.0	215.67048025131226	
+44	200.69512248039246	pulse	1	t		42.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0792_fw.mp4	0.0	217.27055668830872	
+44	200.81346011161804	fix_post	2		12	42.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0792_fw.mp4	0.0	217.3888943195343	0.10001158714294434
+45	200.913471698761	fix_pre	0		120	43.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1726_rv.mp4	0.0	217.48890590667725	1.008507490158081
+45	201.92197918891907	movie	1		287	43.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1726_rv.mp4	0.0	218.49741339683533	2.4919698238372803
+45	202.2964448928833	pulse	1	t		43.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1726_rv.mp4	0.0	218.87187910079956	
+45	203.89549279212952	pulse	1	t		43.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1726_rv.mp4	0.0	220.47092700004578	
+45	204.41394901275635	fix_post	2		12	43.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1726_rv.mp4	0.0	220.9893832206726	0.10014128684997559
+46	204.51409029960632	fix_pre	0		119	44.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/2026_rv.mp4	0.0	221.08952450752258	1.0000417232513428
+46	205.49770712852478	pulse	0	t		44.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/2026_rv.mp4	0.0	222.07314133644104	
+46	205.51413202285767	movie	1		280	44.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/2026_rv.mp4	0.0	222.08956623077393	2.5004074573516846
+46	207.0962929725647	pulse	1	t		44.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/2026_rv.mp4	0.0	223.67172718048096	
+46	208.01453948020935	fix_post	2		12	44.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/2026_rv.mp4	0.0	224.5899736881256	0.1000969409942627
+47	208.1146364212036	fix_pre	0		120	45.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0796_fw.mp4	0.0	224.69007062911987	1.008437156677246
+47	208.69806551933289	pulse	0	t		45.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0796_fw.mp4	0.0	225.27349972724915	
+47	209.12307357788086	movie	1		273	45.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0796_fw.mp4	0.0	225.69850778579712	2.4919774532318115
+47	210.2968065738678	pulse	1	t		45.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0796_fw.mp4	0.0	226.87224078178406	
+47	211.61505103111267	fix_post	2		12	45.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0796_fw.mp4	0.0	228.19048523902893	0.10015130043029785
+48	211.71520233154297	fix_pre	0		120	46.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1422_fw.mp4	0.0	228.29063653945923	1.008371353149414
+48	211.89857006072998	pulse	0	t		46.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1422_fw.mp4	0.0	228.47400426864624	
+48	212.72357368469238	movie	1		291	46.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1422_fw.mp4	0.0	229.29900789260864	2.492000102996826
+48	213.49725699424744	pulse	1	t		46.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1422_fw.mp4	0.0	230.0726912021637	
+48	215.0972101688385	pulse	1	t		46.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1422_fw.mp4	0.0	231.67264437675476	
+48	215.2155737876892	fix_post	2		12	46.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1422_fw.mp4	0.0	231.79100799560547	0.10013699531555176
+49	215.31571078300476	fix_pre	0		120	47.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1434_fw.mp4	0.0	231.89114499092102	1.0083839893341064
+49	216.32409477233887	movie	1		269	47.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1434_fw.mp4	0.0	232.89952898025513	2.4920434951782227
+49	216.69790363311768	pulse	1	t		47.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1434_fw.mp4	0.0	233.27333784103394	
+49	218.3088641166687	pulse	1	t		47.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1434_fw.mp4	0.0	234.88429832458496	
+49	218.8161382675171	fix_post	2		12	47.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1434_fw.mp4	0.0	235.39157247543335	0.0999746322631836
+50	218.91611289978027	fix_pre	0		119	48.0	2.5	blank	1.0	235.49154710769653	0.9918568134307861
+50	219.8999059200287	pulse	0	t		48.0	2.5	blank	1.0	236.47534012794495	
+50	219.90796971321106	movie	1		301	48.0	2.5	blank	1.0	236.48340392112732	2.5086851119995117
+50	221.50008177757263	pulse	1	t		48.0	2.5	blank	1.0	238.0755159854889	
+50	222.41665482521057	fix_post	2		12	48.0	2.5	blank	1.0	238.99208903312683	0.10009765625
+51	222.51675248146057	fix_pre	0		120	49.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/2014_fw.mp4	0.0	239.09218668937683	1.008486032485962
+51	223.10040473937988	pulse	0	t		49.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/2014_fw.mp4	0.0	239.67583894729614	
+51	223.52523851394653	movie	1		286	49.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/2014_fw.mp4	0.0	240.1006727218628	2.491957426071167
+51	224.69905161857605	pulse	1	t		49.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/2014_fw.mp4	0.0	241.2744858264923	
+51	226.0171959400177	fix_post	2		12	49.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/2014_fw.mp4	0.0	242.59263014793396	0.10008573532104492
+52	226.11728167533875	fix_pre	0		120	50.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1689_rv.mp4	0.0	242.692715883255	1.0085551738739014
+52	226.30076813697815	pulse	0	t		50.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1689_rv.mp4	0.0	242.8762023448944	
+52	227.12583684921265	movie	1		272	50.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1689_rv.mp4	0.0	243.7012710571289	2.491903066635132
+52	227.89920568466187	pulse	1	t		50.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1689_rv.mp4	0.0	244.47463989257812	
+52	229.4994604587555	pulse	1	t		50.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1689_rv.mp4	0.0	246.07489466667175	
+52	229.61773991584778	fix_post	2		12	50.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1689_rv.mp4	0.0	246.19317412376404	0.1000819206237793
+53	229.71782183647156	fix_pre	0		120	51.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1735_fw.mp4	0.0	246.29325604438782	1.0085594654083252
+53	230.72638130187988	movie	1		284	51.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1735_fw.mp4	0.0	247.30181550979614	2.4918973445892334
+53	231.10020637512207	pulse	1	t		51.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1735_fw.mp4	0.0	247.67564058303833	
+53	232.69967103004456	pulse	1	t		51.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1735_fw.mp4	0.0	249.27510523796082	
+53	233.21827864646912	fix_post	2		12	51.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1735_fw.mp4	0.0	249.79371285438538	0.10007762908935547
+54	233.31835627555847	fix_pre	0		119	52.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1803_rv.mp4	0.0	249.89379048347473	1.0001575946807861
+54	234.30207085609436	pulse	0	t		52.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1803_rv.mp4	0.0	250.87750506401062	
+54	234.31851387023926	movie	1		284	52.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1803_rv.mp4	0.0	250.89394807815552	2.5003466606140137
+54	235.90096974372864	pulse	1	t		52.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1803_rv.mp4	0.0	252.4764039516449	
+54	236.81886053085327	fix_post	2		12	52.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1803_rv.mp4	0.0	253.39429473876953	0.0999898910522461
+55	236.91885042190552	fix_pre	0		120	53.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0284_fw.mp4	0.0	253.49428462982178	1.0085365772247314
+55	237.5025999546051	pulse	0	t		53.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0284_fw.mp4	0.0	254.07803416252136	
+55	237.92738699913025	movie	1		282	53.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0284_fw.mp4	0.0	254.5028212070465	2.491987705230713
+55	239.10110783576965	pulse	1	t		53.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0284_fw.mp4	0.0	255.6765420436859	
+55	240.41937470436096	fix_post	2		12	53.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0284_fw.mp4	0.0	256.9948089122772	0.1001732349395752
+56	240.51954793930054	fix_pre	0		120	54.0	2.5	blank	1.0	257.0949821472168	0.9999997615814209
+56	240.70294308662415	pulse	0	t		54.0	2.5	blank	1.0	257.2783772945404	
+56	241.51954770088196	movie	1		300	54.0	2.5	blank	1.0	258.0949819087982	2.5004096031188965
+56	242.29596304893494	pulse	1	t		54.0	2.5	blank	1.0	258.8713972568512	
+56	243.89617824554443	pulse	1	t		54.0	2.5	blank	1.0	260.4716124534607	
+56	244.01995730400085	fix_post	2		12	54.0	2.5	blank	1.0	260.5953915119171	0.09999942779541016
+57	244.11995673179626	fix_pre	0		120	55.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0838_rv.mp4	0.0	260.6953909397125	1.0084519386291504
+57	245.12840867042542	movie	1		267	55.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0838_rv.mp4	0.0	261.7038428783417	2.4920430183410645
+57	245.4956886768341	pulse	1	t		55.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0838_rv.mp4	0.0	262.07112288475037	
+57	247.10422658920288	pulse	1	t		55.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0838_rv.mp4	0.0	263.67966079711914	
+57	247.62045168876648	fix_post	2		12	55.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0838_rv.mp4	0.0	264.19588589668274	0.10008740425109863
+58	247.72053909301758	fix_pre	0		118	56.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0395_fw.mp4	0.0	264.29597330093384	0.9917802810668945
+58	248.6961612701416	pulse	0	t		56.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0395_fw.mp4	0.0	265.27159547805786	
+58	248.71231937408447	movie	1		285	56.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0395_fw.mp4	0.0	265.28775358200073	2.500349998474121
+58	250.29483461380005	pulse	1	t		56.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0395_fw.mp4	0.0	266.8702688217163	
+58	251.2126693725586	fix_post	2		12	56.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0395_fw.mp4	0.0	267.78810358047485	0.1000978946685791
+59	251.31276726722717	fix_pre	0		120	57.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0654_rv.mp4	0.0	267.88820147514343	1.0084264278411865
+59	251.89678502082825	pulse	0	t		57.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0654_rv.mp4	0.0	268.4722192287445	
+59	252.32119369506836	movie	1		278	57.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0654_rv.mp4	0.0	268.8966279029846	2.4920103549957275
+59	253.49477791786194	pulse	1	t		57.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0654_rv.mp4	0.0	270.0702121257782	
+59	254.8132040500641	fix_post	2		12	57.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0654_rv.mp4	0.0	271.38863825798035	0.10007357597351074
+60	254.9132776260376	fix_pre	0		120	58.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1789_rv.mp4	0.0	271.48871183395386	1.0084998607635498
+60	255.09677529335022	pulse	0	t		58.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1789_rv.mp4	0.0	271.6722095012665	
+60	255.92177748680115	movie	1		274	58.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1789_rv.mp4	0.0	272.4972116947174	2.491950511932373
+60	256.69554901123047	pulse	1	t		58.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1789_rv.mp4	0.0	273.27098321914673	
+60	258.29716086387634	pulse	1	t		58.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1789_rv.mp4	0.0	274.8725950717926	
+60	258.4137279987335	fix_post	2		12	58.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1789_rv.mp4	0.0	274.9891622066498	0.10004115104675293
+61	258.5137691497803	fix_pre	0		120	59.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1560_rv.mp4	0.0	275.08920335769653	1.0085794925689697
+61	259.52234864234924	movie	1		287	59.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1560_rv.mp4	0.0	276.0977828502655	2.4919395446777344
+61	259.8964116573334	pulse	1	t		59.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1560_rv.mp4	0.0	276.47184586524963	
+61	261.4957594871521	pulse	1	t		59.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1560_rv.mp4	0.0	278.07119369506836	
+61	262.014288187027	fix_post	2		12	59.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1560_rv.mp4	0.0	278.58972239494324	0.10001826286315918
+62	262.11430644989014	fix_pre	0		119	60.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1254_rv.mp4	0.0	278.6897406578064	1.0001676082611084
+62	263.0979754924774	pulse	0	t		60.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1254_rv.mp4	0.0	279.6734097003937	
+62	263.11447405815125	movie	1		284	60.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1254_rv.mp4	0.0	279.6899082660675	2.5003416538238525
+62	264.69774079322815	pulse	1	t		60.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1254_rv.mp4	0.0	281.2731750011444	
+62	265.6148157119751	fix_post	2		12	60.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1254_rv.mp4	0.0	282.19024991989136	0.10000014305114746
+63	265.71481585502625	fix_pre	0		120	61.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0605_fw.mp4	0.0	282.2902500629425	1.008641242980957
+63	266.2986435890198	pulse	0	t		61.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0605_fw.mp4	0.0	282.87407779693604	
+63	266.7234570980072	movie	1		284	61.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0605_fw.mp4	0.0	283.29889130592346	2.492025852203369
+63	267.8976719379425	pulse	1	t		61.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0605_fw.mp4	0.0	284.47310614585876	
+63	269.21548295021057	fix_post	2		12	61.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0605_fw.mp4	0.0	285.79091715812683	0.09995818138122559
+64	269.3154411315918	fix_pre	0		120	62.0	2.5	blank	1.0	285.89087533950806	1.0001318454742432
+64	269.49896454811096	pulse	0	t		62.0	2.5	blank	1.0	286.0743987560272	
+64	270.31557297706604	movie	1		300	62.0	2.5	blank	1.0	286.8910071849823	2.5003199577331543
+64	271.0993537902832	pulse	1	t		62.0	2.5	blank	1.0	287.67478799819946	
+64	272.6994502544403	pulse	1	t		62.0	2.5	blank	1.0	289.27488446235657	
+64	272.8158929347992	fix_post	2		12	62.0	2.5	blank	1.0	289.39132714271545	0.10005712509155273
+65	272.91595005989075	fix_pre	0		120	63.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1287_fw.mp4	0.0	289.491384267807	1.0085201263427734
+65	273.9244701862335	movie	1		285	63.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1287_fw.mp4	0.0	290.4999043941498	2.491975784301758
+65	274.29851055145264	pulse	1	t		63.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1287_fw.mp4	0.0	290.8739447593689	
+65	275.8978388309479	pulse	1	t		63.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1287_fw.mp4	0.0	292.47327303886414	
+65	276.4164459705353	fix_post	2		12	63.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1287_fw.mp4	0.0	292.99188017845154	0.10010409355163574
+66	276.5165500640869	fix_pre	0		119	64.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0838_rv.mp4	0.0	293.0919842720032	1.0000903606414795
+66	277.5005452632904	pulse	0	t		64.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0838_rv.mp4	0.0	294.07597947120667	
+66	277.5166404247284	movie	1		278	64.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0838_rv.mp4	0.0	294.09207463264465	2.500335454940796
+66	279.1006848812103	pulse	1	t		64.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0838_rv.mp4	0.0	295.6761190891266	
+66	280.0169758796692	fix_post	2		12	64.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0838_rv.mp4	0.0	296.59241008758545	0.10006165504455566
+67	280.11703753471375	fix_pre	0		120	65.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0417_rv.mp4	0.0	296.69247174263	1.008453607559204
+67	280.70085525512695	pulse	0	t		65.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0417_rv.mp4	0.0	297.2762894630432	
+67	281.12549114227295	movie	1		288	65.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0417_rv.mp4	0.0	297.7009253501892	2.492151975631714
+67	282.2994558811188	pulse	1	t		65.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0417_rv.mp4	0.0	298.87489008903503	
+67	283.61764311790466	fix_post	2		12	65.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0417_rv.mp4	0.0	300.1930773258209	0.10002756118774414
+68	283.7176706790924	fix_pre	0		120	66.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0334_fw.mp4	0.0	300.29310488700867	1.0083894729614258
+68	283.90121817588806	pulse	0	t		66.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0334_fw.mp4	0.0	300.4766523838043	
+68	284.72606015205383	movie	1		273	66.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0334_fw.mp4	0.0	301.3014943599701	2.492055892944336
+68	285.499879360199	pulse	1	t		66.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0334_fw.mp4	0.0	302.07531356811523	
+68	287.1016640663147	pulse	1	t		66.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0334_fw.mp4	0.0	303.67709827423096	
+68	287.21811604499817	fix_post	2		12	66.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0334_fw.mp4	0.0	303.79355025291443	0.09996247291564941
+69	287.3180785179138	fix_pre	0		120	67.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1457_fw.mp4	0.0	303.8935127258301	1.008469820022583
+69	288.3265483379364	movie	1		274	67.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1457_fw.mp4	0.0	304.90198254585266	2.492241859436035
+69	288.70024251937866	pulse	1	t		67.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1457_fw.mp4	0.0	305.2756767272949	
+69	290.30170035362244	pulse	1	t		67.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1457_fw.mp4	0.0	306.8771345615387	
+69	290.81879019737244	fix_post	2		12	67.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1457_fw.mp4	0.0	307.3942244052887	0.0998685359954834
+70	290.9186587333679	fix_pre	0		119	68.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0360_rv.mp4	0.0	307.4940929412842	1.0002107620239258
+70	291.9023172855377	pulse	0	t		68.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0360_rv.mp4	0.0	308.477751493454	
+70	291.91886949539185	movie	1		276	68.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0360_rv.mp4	0.0	308.4943037033081	2.500278949737549
+70	293.50122809410095	pulse	1	t		68.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0360_rv.mp4	0.0	310.0766623020172	
+70	294.4191484451294	fix_post	2		12	68.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0360_rv.mp4	0.0	310.99458265304565	0.1000373363494873
+71	294.5191857814789	fix_pre	0		120	69.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0492_fw.mp4	0.0	311.09461998939514	1.0084784030914307
+71	295.1031835079193	pulse	0	t		69.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0492_fw.mp4	0.0	311.67861771583557	
+71	295.5276641845703	movie	1		281	69.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0492_fw.mp4	0.0	312.1030983924866	2.492157459259033
+71	296.69505405426025	pulse	1	t		69.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0492_fw.mp4	0.0	313.2704882621765	
+71	298.01982164382935	fix_post	2		12	69.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0492_fw.mp4	0.0	314.5952558517456	0.09991240501403809
+72	298.1197340488434	fix_pre	0		120	70.0	2.5	blank	1.0	314.69516825675964	1.0001819133758545
+72	298.29531836509705	pulse	0	t		70.0	2.5	blank	1.0	314.8707525730133	
+72	299.11991596221924	movie	1		300	70.0	2.5	blank	1.0	315.6953501701355	2.500319242477417
+72	299.8955225944519	pulse	1	t		70.0	2.5	blank	1.0	316.47095680236816	
+72	301.49577283859253	pulse	1	t		70.0	2.5	blank	1.0	318.0712070465088	
+72	301.62023520469666	fix_post	2		12	70.0	2.5	blank	1.0	318.1956694126129	0.10004901885986328
+73	301.7202842235565	fix_pre	0		120	71.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0573_fw.mp4	0.0	318.2957184314728	1.0085029602050781
+73	302.7287871837616	movie	1		277	71.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0573_fw.mp4	0.0	319.30422139167786	2.492006778717041
+73	303.09569549560547	pulse	1	t		71.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0573_fw.mp4	0.0	319.67112970352173	
+73	304.6959309577942	pulse	1	t		71.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0573_fw.mp4	0.0	321.27136516571045	
+73	305.22079396247864	fix_post	2		12	71.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0573_fw.mp4	0.0	321.7962281703949	0.10004019737243652
+74	305.3208341598511	fix_pre	0		118	72.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/2021_rv.mp4	0.0	321.89626836776733	0.9917590618133545
+74	306.2961926460266	pulse	0	t		72.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/2021_rv.mp4	0.0	322.87162685394287	
+74	306.31259322166443	movie	1		277	72.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/2021_rv.mp4	0.0	322.8880274295807	2.5005316734313965
+74	307.89511585235596	pulse	1	t		72.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/2021_rv.mp4	0.0	324.4705500602722	
+74	308.8131248950958	fix_post	2		12	72.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/2021_rv.mp4	0.0	325.3885591030121	0.0998837947845459
+75	308.91300868988037	fix_pre	0		120	73.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/2075_rv.mp4	0.0	325.48844289779663	1.0084774494171143
+75	309.49668765068054	pulse	0	t		73.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/2075_rv.mp4	0.0	326.0721218585968	
+75	309.9214861392975	movie	1		270	73.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/2075_rv.mp4	0.0	326.49692034721375	2.4920287132263184
+75	311.0952568054199	pulse	1	t		73.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/2075_rv.mp4	0.0	327.6706910133362	
+75	312.4135148525238	fix_post	2		12	73.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/2075_rv.mp4	0.0	328.98894906044006	0.10004520416259766
+76	312.5135600566864	fix_pre	0		120	74.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0161_fw.mp4	0.0	329.08899426460266	1.008495569229126
+76	312.69725823402405	pulse	0	t		74.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0161_fw.mp4	0.0	329.2726924419403	
+76	313.5220556259155	movie	1		272	74.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0161_fw.mp4	0.0	330.0974898338318	2.491997718811035
+76	314.29581212997437	pulse	1	t		74.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0161_fw.mp4	0.0	330.8712463378906	
+76	315.89590668678284	pulse	1	t		74.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0161_fw.mp4	0.0	332.4713408946991	
+76	316.01405334472656	fix_post	2		12	74.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0161_fw.mp4	0.0	332.5894875526428	0.10002994537353516
+77	316.1140832901001	fix_pre	0		120	75.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0352_fw.mp4	0.0	332.68951749801636	1.0084891319274902
+77	317.1225724220276	movie	1		274	75.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0352_fw.mp4	0.0	333.69800662994385	2.4920828342437744
+77	317.49655842781067	pulse	1	t		75.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0352_fw.mp4	0.0	334.07199263572693	
+77	319.09682726860046	pulse	1	t		75.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0352_fw.mp4	0.0	335.6722614765167	
+77	319.61465525627136	fix_post	2		12	75.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0352_fw.mp4	0.0	336.1900894641876	0.09995818138122559
+78	319.7146134376526	fix_pre	0		119	76.0	2.5	blank	1.0	336.29004764556885	0.9917919635772705
+78	320.69860577583313	pulse	0	t		76.0	2.5	blank	1.0	337.2740399837494	
+78	320.70640540122986	movie	1		301	76.0	2.5	blank	1.0	337.2818396091461	2.5087273120880127
+78	322.2985861301422	pulse	1	t		76.0	2.5	blank	1.0	338.8740203380585	
+78	323.21513271331787	fix_post	2		12	76.0	2.5	blank	1.0	339.79056692123413	0.10002541542053223
+79	323.3151581287384	fix_pre	0		120	77.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1102_fw.mp4	0.0	339.89059233665466	1.0085227489471436
+79	323.89886808395386	pulse	0	t		77.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1102_fw.mp4	0.0	340.4743022918701	
+79	324.32368087768555	movie	1		286	77.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1102_fw.mp4	0.0	340.8991150856018	2.4919934272766113
+79	325.49763202667236	pulse	1	t		77.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1102_fw.mp4	0.0	342.0730662345886	
+79	326.81567430496216	fix_post	2		12	77.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1102_fw.mp4	0.0	343.3911085128784	0.10015010833740234
+80	326.91582441329956	fix_pre	0		120	78.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0749_fw.mp4	0.0	343.4912586212158	1.0084097385406494
+80	327.0992271900177	pulse	0	t		78.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0749_fw.mp4	0.0	343.67466139793396	
+80	327.9242341518402	movie	1		276	78.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0749_fw.mp4	0.0	344.49966835975647	2.492049217224121
+80	328.69771003723145	pulse	1	t		78.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0749_fw.mp4	0.0	345.2731442451477	
+80	330.2998433113098	pulse	1	t		78.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0749_fw.mp4	0.0	346.8752775192261	
+80	330.41628336906433	fix_post	2		12	78.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0749_fw.mp4	0.0	346.9917175769806	0.10000491142272949
+81	330.51628828048706	fix_pre	0		120	79.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1083_fw.mp4	0.0	347.0917224884033	1.008469820022583
+81	331.52475810050964	movie	1		274	79.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1083_fw.mp4	0.0	348.1001923084259	2.4920454025268555
+81	331.8982503414154	pulse	1	t		79.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1083_fw.mp4	0.0	348.47368454933167	
+81	333.4981381893158	pulse	1	t		79.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1083_fw.mp4	0.0	350.07357239723206	
+81	334.0168035030365	fix_post	2		12	79.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1083_fw.mp4	0.0	350.59223771095276	0.10000371932983398
+82	334.11680722236633	fix_pre	0		119	80.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1340_fw.mp4	0.0	350.6922414302826	1.00044584274292
+82	335.1005620956421	pulse	0	t		80.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1340_fw.mp4	0.0	351.67599630355835	
+82	335.11725306510925	movie	1		266	80.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1340_fw.mp4	0.0	351.6926872730255	2.5001325607299805
+82	336.7008945941925	pulse	1	t		80.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1340_fw.mp4	0.0	353.27632880210876	
+82	337.61738562583923	fix_post	2		12	80.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/1340_fw.mp4	0.0	354.1928198337555	0.10004401206970215
+83	337.71742963790894	fix_pre	0		120	81.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0133_rv.mp4	0.0	354.2928638458252	1.008427619934082
+83	338.30112862586975	pulse	0	t		81.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0133_rv.mp4	0.0	354.876562833786	
+83	338.725857257843	movie	1		270	81.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0133_rv.mp4	0.0	355.3012914657593	2.4919919967651367
+83	339.89951276779175	pulse	1	t		81.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0133_rv.mp4	0.0	356.474946975708	
+83	341.21784925460815	fix_post	2		12	81.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0133_rv.mp4	0.0	357.7932834625244	0.10008907318115234
+84	341.3179383277893	fix_pre	0		119	82.0	2.5	blank	1.0	357.89337253570557	1.000084400177002
+84	341.50149726867676	pulse	0	t		82.0	2.5	blank	1.0	358.076931476593	
+84	342.3180227279663	movie	1		300	82.0	2.5	blank	1.0	358.89345693588257	2.5004076957702637
+84	343.1019492149353	pulse	1	t		82.0	2.5	blank	1.0	359.67738342285156	
+84	344.70197105407715	pulse	1	t		82.0	2.5	blank	1.0	361.2774052619934	
+84	344.8184304237366	fix_post	2		12	82.0	2.5	blank	1.0	361.39386463165283	0.0999746322631836
+85	344.91840505599976	fix_pre	0		120	83.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0796_rv.mp4	0.0	361.493839263916	1.0085034370422363
+85	345.926908493042	movie	1		269	83.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0796_rv.mp4	0.0	362.50234270095825	2.49202561378479
+85	346.30250573158264	pulse	1	t		83.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0796_rv.mp4	0.0	362.8779399394989	
+85	347.90069580078125	pulse	1	t		83.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0796_rv.mp4	0.0	364.4761300086975	
+85	348.4189341068268	fix_post	2		12	83.0	2.5	/experiments/Knapen_AOT/AOT_stimuli/rescaled_final/0796_rv.mp4	0.0	364.99436831474304	0.09998917579650879
+87	348.5189232826233	stim	0		1715					365.09435749053955	14.293832540512085
+87	349.4956810474396	pulse	0	t						366.07111525535583	
+87	351.0969364643097	pulse	0	t						367.67237067222595	
+87	352.6955051422119	pulse	0	t						369.2709393501282	
+87	354.2959976196289	pulse	0	t						370.87143182754517	
+87	355.895427942276	pulse	0	t						372.47086215019226	
+87	357.49557542800903	pulse	0	t						374.0710096359253	
+87	359.095787525177	pulse	0	t						375.67122173309326	
+87	360.6960723400116	pulse	0	t						377.27150654792786	
+87	362.29619121551514	pulse	0	t						378.8716254234314	
